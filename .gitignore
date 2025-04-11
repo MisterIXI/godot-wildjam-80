@@ -1,0 +1,13 @@
+# Ignore Godot project files
+.godot/
+/android/
+
+# Ignore all blender backup files
+*.blend1
+
+# Ignore all files in the .builds directory except the .keep file to push the directory
+.builds/*
+!.builds/.keep
+
+# Ignore all files that are local vscode settings
+.vscode/
