@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=29 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -9,8 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
-[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="8_wwtew"]
-[ext_resource type="Texture2D" uid="uid://coqqo1fmdsue2" path="res://icon.svg" id="9_wwtew"]
+[ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
 friction = 0.1
@@ -103,6 +102,27 @@ point_count = 4
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
 size = Vector2(60, 50)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uxo23"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n7rn1"]
+seamless = true
+noise = SubResource("FastNoiseLite_uxo23")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tfl1"]
+shader = ExtResource("2_n7rn1")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 29.775
+shader_parameter/noise = SubResource("NoiseTexture2D_n7rn1")
+shader_parameter/noise_speed = 5.41
+shader_parameter/distortion_str = 0.05
+shader_parameter/frame_time = 0.25
+
 [node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast")]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
@@ -160,7 +180,6 @@ position = Vector2(41, -339)
 visible = false
 z_index = 51
 scale = Vector2(0.121204, 0.121204)
-texture = ExtResource("9_wwtew")
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
 visible = false
@@ -178,7 +197,7 @@ target_position = Vector2(0, 28.35)
 max_results = 4
 
 [node name="RopeOrigin" type="Node2D" parent="."]
-position = Vector2(16, -18)
+position = Vector2(19, -20)
 
 [node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin")]
 top_level = true
@@ -190,12 +209,12 @@ rope_origin = NodePath("../RopeOrigin")
 iteration_count = 50
 
 [node name="RopeRender" type="Line2D" parent="VerletRope"]
-visible = false
 z_index = 50
 texture_repeat = 2
-material = ExtResource("8_wwtew")
+material = SubResource("ShaderMaterial_7tfl1")
 points = PackedVector2Array(0, 0, 41.42, 35.215)
-width = 20.0
+width = 30.0
+texture = ExtResource("12_7tfl1")
 texture_mode = 1
 
 [node name="Node2D" type="Node2D" parent="."]
