@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://bcvvh7wycn3bm"]
+[gd_scene load_steps=30 format=3 uid="uid://bcvvh7wycn3bm"]
 
 [ext_resource type="Script" uid="uid://b68yg4n075qm0" path="res://global/menu/pause_menu/pause_menu.gd" id="1_3h16x"]
 [ext_resource type="Texture2D" uid="uid://ddtrshylvoe7y" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-5.jpg" id="1_dsqdt"]
@@ -26,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="21_3ftqw"]
 [ext_resource type="Texture2D" uid="uid://lhevu7k1gpvt" path="res://assets/images/menu/letters/U-2.png" id="22_ruvp3"]
 [ext_resource type="Texture2D" uid="uid://cr1vj8l6l7h55" path="res://assets/images/menu/disabled_button.png" id="23_jqa2e"]
+[ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="27_lld63"]
+[ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="28_jb7ot"]
+[ext_resource type="Script" uid="uid://bpcmfk0tpjacc" path="res://components/transition/untransition.gd" id="29_sftex"]
 
 [node name="PauseMenu" type="Control" node_paths=PackedStringArray("resume_button", "settings_button", "reset_button", "menu_button")]
 process_mode = 3
@@ -287,3 +290,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("23_jqa2e")
 expand_mode = 3
+
+[node name="OnVisible2dModulate" type="Node" parent="ButtonContainer"]
+script = ExtResource("27_lld63")
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://wj7pnwgxam2o"
+
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
+script = ExtResource("28_jb7ot")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../ButtonContainer")]
+metadata/_custom_type_script = "uid://duya6nqidc6d5"
+
+[node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
+script = ExtResource("29_sftex")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../ButtonContainer")]
+_activator = [NodePath("../ButtonContainer/ResetButton"), NodePath("../ButtonContainer/ResumeButton")]
+metadata/_custom_type_script = "uid://bpcmfk0tpjacc"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cent0ph746c7e"]
+[gd_scene load_steps=46 format=3 uid="uid://cent0ph746c7e"]
 
 [ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
@@ -16,6 +16,8 @@
 [ext_resource type="Texture2D" uid="uid://sultsn8rq1rq" path="res://assets/images/menu/settings/ambience_volume.png" id="13_dslyc"]
 [ext_resource type="Texture2D" uid="uid://bvai62w7u0ndb" path="res://assets/images/menu/settings/Control1.png" id="14_7607p"]
 [ext_resource type="Texture2D" uid="uid://245hlqr21bcy" path="res://assets/images/menu/settings/Control2.png" id="15_4flft"]
+[ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="17_k1n7e"]
+[ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="18_wlmub"]
 
 [sub_resource type="Gradient" id="Gradient_mvg7e"]
 offsets = PackedFloat32Array(0.0223214, 1)
@@ -158,11 +160,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7xw0p")
-confirm_button = NodePath("ConfirmButton")
-master_volume_slider = NodePath("AudioContainer/MasterVolume/MasterSlider")
-music_volume_slider = NodePath("AudioContainer/MusicVolume/MusicSlider")
-sfx_volume_slider = NodePath("AudioContainer/SFXVolume/MusicSlider")
-ambiences_volume_slider = NodePath("AudioContainer/AmbienceVolume/MusicSlider")
+confirm_button = NodePath("Settings/ConfirmButton")
+master_volume_slider = NodePath("Settings/AudioContainer/MasterVolume/MasterSlider")
+music_volume_slider = NodePath("Settings/AudioContainer/MusicVolume/MusicSlider")
+sfx_volume_slider = NodePath("Settings/AudioContainer/SFXVolume/MusicSlider")
+ambiences_volume_slider = NodePath("Settings/AudioContainer/AmbienceVolume/MusicSlider")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 layout_mode = 1
@@ -174,14 +176,15 @@ grow_vertical = 2
 texture = ExtResource("1_d7ncu")
 expand_mode = 1
 
-[node name="Control" type="Control" parent="Wallpaper"]
-anchors_preset = 0
-offset_left = 306.0
-offset_top = 176.0
-offset_right = 1007.0
-offset_bottom = 226.0
+[node name="Settings" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="ConfirmButton" type="Button" parent="."]
+[node name="ConfirmButton" type="Button" parent="Settings"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
 anchors_preset = 7
@@ -200,7 +203,7 @@ text = "
 "
 flat = true
 
-[node name="LetterContainer" type="HBoxContainer" parent="ConfirmButton"]
+[node name="LetterContainer" type="HBoxContainer" parent="Settings/ConfirmButton"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -215,49 +218,49 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="C" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="C" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("3_k1n7e")
 expand_mode = 3
 
-[node name="O" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="O" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("4_wlmub")
 expand_mode = 3
 
-[node name="N" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="N" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("5_tb00c")
 expand_mode = 3
 
-[node name="F" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="F" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("6_3uqb3")
 expand_mode = 3
 
-[node name="I" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="I" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("7_kgtp3")
 expand_mode = 3
 
-[node name="R" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="R" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("8_p7lwn")
 expand_mode = 3
 
-[node name="M" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+[node name="M" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("9_n8dmn")
 expand_mode = 3
 
-[node name="AudioContainer" type="VBoxContainer" parent="."]
+[node name="AudioContainer" type="VBoxContainer" parent="Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -271,11 +274,11 @@ offset_bottom = -37.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MasterVolume" type="TextureRect" parent="AudioContainer"]
+[node name="MasterVolume" type="TextureRect" parent="Settings/AudioContainer"]
 layout_mode = 2
 texture = ExtResource("10_0o6ow")
 
-[node name="MasterSlider" type="HSlider" parent="AudioContainer/MasterVolume"]
+[node name="MasterSlider" type="HSlider" parent="Settings/AudioContainer/MasterVolume"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -288,11 +291,11 @@ theme = SubResource("Theme_4ks52")
 max_value = 200.0
 value = 100.0
 
-[node name="MusicVolume" type="TextureRect" parent="AudioContainer"]
+[node name="MusicVolume" type="TextureRect" parent="Settings/AudioContainer"]
 layout_mode = 2
 texture = ExtResource("11_y1s3r")
 
-[node name="MusicSlider" type="HSlider" parent="AudioContainer/MusicVolume"]
+[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/MusicVolume"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -305,11 +308,11 @@ theme = SubResource("Theme_oy6jt")
 max_value = 200.0
 value = 100.0
 
-[node name="SFXVolume" type="TextureRect" parent="AudioContainer"]
+[node name="SFXVolume" type="TextureRect" parent="Settings/AudioContainer"]
 layout_mode = 2
 texture = ExtResource("12_nayh4")
 
-[node name="MusicSlider" type="HSlider" parent="AudioContainer/SFXVolume"]
+[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/SFXVolume"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -322,11 +325,11 @@ theme = SubResource("Theme_oy6jt")
 max_value = 200.0
 value = 100.0
 
-[node name="AmbienceVolume" type="TextureRect" parent="AudioContainer"]
+[node name="AmbienceVolume" type="TextureRect" parent="Settings/AudioContainer"]
 layout_mode = 2
 texture = ExtResource("13_dslyc")
 
-[node name="MusicSlider" type="HSlider" parent="AudioContainer/AmbienceVolume"]
+[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/AmbienceVolume"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -339,7 +342,7 @@ theme = SubResource("Theme_yyeuk")
 max_value = 200.0
 value = 100.0
 
-[node name="ControlsContainer" type="HBoxContainer" parent="."]
+[node name="ControlsContainer" type="HBoxContainer" parent="Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -353,10 +356,21 @@ offset_bottom = 189.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Control1" type="TextureRect" parent="ControlsContainer"]
+[node name="Control1" type="TextureRect" parent="Settings/ControlsContainer"]
 layout_mode = 2
 texture = ExtResource("14_7607p")
 
-[node name="Control2" type="TextureRect" parent="ControlsContainer"]
+[node name="Control2" type="TextureRect" parent="Settings/ControlsContainer"]
 layout_mode = 2
 texture = ExtResource("15_4flft")
+
+[node name="OnVisible2dModulate" type="Node" parent="Settings"]
+script = ExtResource("17_k1n7e")
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://wj7pnwgxam2o"
+
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
+script = ExtResource("18_wlmub")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../Settings")]
+metadata/_custom_type_script = "uid://duya6nqidc6d5"

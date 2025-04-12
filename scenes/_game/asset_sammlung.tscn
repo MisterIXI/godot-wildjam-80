@@ -548,7 +548,7 @@ texture = ExtResource("11_llnb5")
 
 [node name="Gulli4" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_auqnv")
-position = Vector2(322, -534)
+position = Vector2(300, -601)
 texture = ExtResource("12_orjfd")
 
 [node name="Gulli" type="Sprite2D" parent="."]
