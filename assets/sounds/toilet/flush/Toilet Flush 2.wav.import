@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://c7g47tlh680s0"
+path="res://.godot/imported/Toilet Flush 2.wav-9e26845c93e31326a65d09d9cb03389e.sample"
+
+[deps]
+
+source_file="res://assets/sounds/toilet/flush/Toilet Flush 2.wav"
+dest_files=["res://.godot/imported/Toilet Flush 2.wav-9e26845c93e31326a65d09d9cb03389e.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
