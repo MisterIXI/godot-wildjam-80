@@ -1,79 +1,34 @@
-[gd_scene load_steps=37 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=35 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/_debug/y_player/verlet_rope.gd" id="1_tc1mf"]
 [ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="2_i2f1q"]
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/_debug/y_player/y_player.gd" id="3_p7ah5"]
-[ext_resource type="Texture2D" uid="uid://w5fb2lnv6ydg" path="res://assets/images/test/bobby.png" id="4_41b1n"]
+[ext_resource type="Texture2D" uid="uid://daghoato402dg" path="res://assets/images/toilet_debug.png" id="4_74n1c"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/_debug/y_player/custom_joint.gd" id="5_0dpmb"]
+[ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/_debug/Steffen/follow_cam.gd" id="5_7wess"]
+[ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="6_7wess"]
 [ext_resource type="Texture2D" uid="uid://coqqo1fmdsue2" path="res://icon.svg" id="6_ljh4r"]
+[ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/_debug/y_player/target_indicator.gd" id="7_0pdxe"]
 [ext_resource type="PackedScene" uid="uid://bq5gint4u8mmc" path="res://scenes/_debug/Steffen/trampoline.tscn" id="7_4be4q"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2i32g"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(0, 0, 256, 256)
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
+friction = 0.1
+bounce = 0.3
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_m4brd"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(256, 0, 256, 256)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3y6uy"]
+radius = 7.33754
+height = 33.8367
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cpx42"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(512, 0, 256, 256)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55gqm"]
+radius = 6.23372
+height = 22.3146
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_esm02"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(768, 0, 256, 256)
+[sub_resource type="Curve" id="Curve_7wess"]
+_data = [Vector2(0, 0), 0.0, -0.102211, 0, 0, Vector2(0.223404, 0), 0.0, 0.285454, 1, 0, Vector2(0.659575, 0.235955), 1.4624, 1.4624, 0, 0, Vector2(1, 0.449438), -0.203111, 0.0, 0, 0]
+point_count = 4
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_enpat"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(0, 256, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kgcot"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(256, 256, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4sbcb"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(512, 256, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_r31r7"]
-atlas = ExtResource("4_41b1n")
-region = Rect2(768, 256, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_fj7al"]
-animations = [{
-"frames": [{
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_2i32g")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_m4brd")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_cpx42")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_esm02")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_enpat")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_kgcot")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_4sbcb")
-}, {
-"duration": 0.3,
-"texture": SubResource("AtlasTexture_r31r7")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_d1lms"]
-radius = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
+size = Vector2(50, 50)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_esm02"]
 
@@ -132,7 +87,7 @@ pull_strength = 100.0
 rope = NodePath("RopeRender")
 rope_anchor = NodePath("Anchor")
 iteration_count = 50
-player = NodePath("../YPlayer")
+player = NodePath("../YPlayer2")
 
 [node name="Anchor" type="Node2D" parent="VerletRope"]
 top_level = true
@@ -144,30 +99,54 @@ material = ExtResource("2_i2f1q")
 points = PackedVector2Array(0, 0, 41.42, 35.215)
 texture_mode = 1
 
-[node name="YPlayer" type="RigidBody2D" parent="." node_paths=PackedStringArray("rope", "rope_target", "custom_joint")]
-position = Vector2(24, 74)
+[node name="YPlayer2" type="RigidBody2D" parent="." node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast")]
+position = Vector2(456, 77)
+physics_material_override = SubResource("PhysicsMaterial_ovmwo")
+continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_p7ah5")
 rope = NodePath("../VerletRope")
 rope_target = NodePath("../Target")
 custom_joint = NodePath("CustomJoint")
+ground_cast = NodePath("GroundShapeCheck")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="YPlayer"]
-scale = Vector2(0.16, 0.16)
-sprite_frames = SubResource("SpriteFrames_fj7al")
-autoplay = "default"
-frame_progress = 0.590128
+[node name="CharPicDebug" type="Sprite2D" parent="YPlayer2"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_74n1c")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="YPlayer"]
-shape = SubResource("CircleShape2D_d1lms")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="YPlayer2"]
+position = Vector2(-12, 2)
+rotation = -0.229376
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_3y6uy")
 
-[node name="FollowCam" type="Camera2D" parent="YPlayer"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="YPlayer2"]
+position = Vector2(7, 12)
+rotation = -1.64299
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_55gqm")
+
+[node name="FollowCam" type="Camera2D" parent="YPlayer2"]
 process_callback = 0
 position_smoothing_enabled = true
+script = ExtResource("5_7wess")
+curve = SubResource("Curve_7wess")
 
-[node name="CustomJoint" type="Node2D" parent="YPlayer"]
+[node name="CustomJoint" type="Node2D" parent="YPlayer2"]
 script = ExtResource("5_0dpmb")
+
+[node name="TargetIndicator" type="Sprite2D" parent="YPlayer2"]
+z_index = 1680
+position = Vector2(149, 6.00002)
+scale = Vector2(0.340013, 0.340013)
+texture = ExtResource("6_7wess")
+script = ExtResource("7_0pdxe")
+
+[node name="GroundShapeCheck" type="ShapeCast2D" parent="YPlayer2"]
+shape = SubResource("RectangleShape2D_434gd")
+target_position = Vector2(0, 28.35)
+max_results = 4
 
 [node name="Target" type="StaticBody2D" parent="."]
 
@@ -184,7 +163,6 @@ disabled = true
 [node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Target/ManRope"]
 
 [node name="PinJoint2D" type="PinJoint2D" parent="Target/ManRope"]
-node_a = NodePath("../../../YPlayer")
 bias = 0.9
 softness = 2.21
 angular_limit_upper = 2.03156
@@ -611,4 +589,4 @@ rotation = 0.114398
 position = Vector2(2601, -155)
 rotation = -0.484659
 
-[connection signal="body_entered" from="YPlayer" to="YPlayer" method="_on_body_entered"]
+[connection signal="body_entered" from="YPlayer2" to="YPlayer2" method="_on_body_entered"]
