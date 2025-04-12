@@ -22,6 +22,7 @@
 [ext_resource type="Texture2D" uid="uid://cr1vj8l6l7h55" path="res://assets/images/menu/disabled_button.png" id="18_7wnyk"]
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button")]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -33,6 +34,7 @@ play_button = NodePath("ButtonContainer/PlayButton")
 settings_button = NodePath("ButtonContainer/SettingsButton")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

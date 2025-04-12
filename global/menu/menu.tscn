@@ -5,27 +5,22 @@
 [ext_resource type="PackedScene" uid="uid://bcvvh7wycn3bm" path="res://global/menu/pause_menu/pause_menu.tscn" id="2_c2i1n"]
 [ext_resource type="PackedScene" uid="uid://cent0ph746c7e" path="res://global/menu/settings_menu/settings_menu.tscn" id="3_c2i1n"]
 
-[node name="Menu" type="Control" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu")]
+process_mode = 3
 script = ExtResource("1_adrvt")
 main_menu = NodePath("MainMenu")
 pause_menu = NodePath("PauseMenu")
 settings_menu = NodePath("SettingsMenu")
 
 [node name="MainMenu" parent="." instance=ExtResource("1_sjb18")]
-visible = false
-layout_mode = 1
+mouse_filter = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_c2i1n")]
 visible = false
-layout_mode = 1
+mouse_filter = 1
 
 [node name="SettingsMenu" parent="." instance=ExtResource("3_c2i1n")]
-layout_mode = 1
+visible = false
+mouse_filter = 1
 
 [editable path="PauseMenu"]
