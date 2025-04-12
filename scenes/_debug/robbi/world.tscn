@@ -6,36 +6,36 @@
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gedfl"]
 friction = 0.7
-bounce = 0.06
+bounce = 0.31
 
 [node name="world" type="Node2D"]
 
 [node name="Ground" parent="." instance=ExtResource("1_1g6ae")]
 position = Vector2(625, 354)
 
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(683, -207)
+zoom = Vector2(0.685, 0.685)
+
 [node name="Player" parent="." instance=ExtResource("1_faoyv")]
-position = Vector2(607, 257)
+position = Vector2(682, 39)
 physics_material_override = SubResource("PhysicsMaterial_gedfl")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(631, 310)
-zoom = Vector2(5.295, 5.295)
-
 [node name="Wall_01" parent="." instance=ExtResource("2_gedfl")]
-position = Vector2(639, 324)
+position = Vector2(1370, 99)
 
 [node name="Wall_04" parent="." instance=ExtResource("2_gedfl")]
-position = Vector2(599, 272)
+position = Vector2(59, 163)
 
 [node name="Wall_05" parent="." instance=ExtResource("2_gedfl")]
-position = Vector2(645, 256)
+position = Vector2(298, -171)
 
 [node name="Wall_06" parent="." instance=ExtResource("2_gedfl")]
-position = Vector2(708, 246)
+position = Vector2(1268, -275)
 
 [node name="Wall_02" parent="." instance=ExtResource("2_gedfl")]
-position = Vector2(673, 310)
+position = Vector2(692, -381)
 
 [node name="Wall_03" parent="." instance=ExtResource("2_gedfl")]
-position = Vector2(700, 333)
+position = Vector2(1688, -61)
 rotation = 1.5708
