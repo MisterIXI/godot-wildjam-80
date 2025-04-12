@@ -1,0 +1,289 @@
+[gd_scene load_steps=27 format=3 uid="uid://bcvvh7wycn3bm"]
+
+[ext_resource type="Script" uid="uid://b68yg4n075qm0" path="res://global/menu/pause_menu/pause_menu.gd" id="1_3h16x"]
+[ext_resource type="Texture2D" uid="uid://ddtrshylvoe7y" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-5.jpg" id="1_dsqdt"]
+[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="2_3h16x"]
+[ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="4_82mwn"]
+[ext_resource type="Texture2D" uid="uid://dj2vflkp5cnk7" path="res://assets/images/menu/letters/E-4.png" id="5_lld63"]
+[ext_resource type="Texture2D" uid="uid://d2pey511utwc1" path="res://assets/images/menu/letters/S-2.png" id="6_jb7ot"]
+[ext_resource type="Texture2D" uid="uid://cu2r1iabk3fyv" path="res://assets/images/menu/letters/U-3.png" id="7_ge160"]
+[ext_resource type="Texture2D" uid="uid://b3s6ihkuu57a5" path="res://assets/images/menu/letters/S.png" id="7_sftex"]
+[ext_resource type="Texture2D" uid="uid://yap44aaft0fp" path="res://assets/images/menu/letters/E-6.png" id="8_ge160"]
+[ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="8_o45e1"]
+[ext_resource type="Texture2D" uid="uid://cmgyyh5118c0s" path="res://assets/images/menu/letters/T.png" id="9_o45e1"]
+[ext_resource type="Texture2D" uid="uid://cy3335gc2loar" path="res://assets/images/menu/letters/E.png" id="9_tuqg4"]
+[ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="10_tuqg4"]
+[ext_resource type="Texture2D" uid="uid://do5m8aot4mglm" path="res://assets/images/menu/letters/I-3.png" id="11_nsrwa"]
+[ext_resource type="Texture2D" uid="uid://uad80226meta" path="res://assets/images/menu/letters/N-2.png" id="12_ufm6b"]
+[ext_resource type="Texture2D" uid="uid://dhosfmnkcfadm" path="res://assets/images/menu/letters/G.png" id="13_t5yfr"]
+[ext_resource type="Texture2D" uid="uid://bidunxrs6levk" path="res://assets/images/menu/letters/R-2.png" id="14_we2ln"]
+[ext_resource type="Texture2D" uid="uid://bvv5bx6blked0" path="res://assets/images/menu/letters/E-3.png" id="15_lkcgu"]
+[ext_resource type="Texture2D" uid="uid://dskx7541x0dh8" path="res://assets/images/menu/letters/S-3.png" id="16_q2uef"]
+[ext_resource type="Texture2D" uid="uid://bl0gklmdlhgq4" path="res://assets/images/menu/letters/E-5.png" id="17_l2joh"]
+[ext_resource type="Texture2D" uid="uid://cb2sdueo8aqlx" path="res://assets/images/menu/letters/T-5.png" id="18_62vu6"]
+[ext_resource type="Texture2D" uid="uid://dsxpehss4rdko" path="res://assets/images/menu/letters/M.png" id="19_s3xgr"]
+[ext_resource type="Texture2D" uid="uid://b4byxf1mmeva6" path="res://assets/images/menu/letters/E-2.png" id="20_7cmo5"]
+[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="21_3ftqw"]
+[ext_resource type="Texture2D" uid="uid://lhevu7k1gpvt" path="res://assets/images/menu/letters/U-2.png" id="22_ruvp3"]
+[ext_resource type="Texture2D" uid="uid://cr1vj8l6l7h55" path="res://assets/images/menu/disabled_button.png" id="23_jqa2e"]
+
+[node name="PauseMenu" type="Control" node_paths=PackedStringArray("resume_button", "settings_button", "reset_button", "menu_button")]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3h16x")
+resume_button = NodePath("ButtonContainer/ResumeButton")
+settings_button = NodePath("ButtonContainer/SettingsButton")
+reset_button = NodePath("ButtonContainer/ResetButton")
+menu_button = NodePath("ButtonContainer/MenuButton")
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dsqdt")
+expand_mode = 1
+
+[node name="ButtonContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -287.0
+offset_top = -230.0
+offset_right = 287.0
+offset_bottom = 230.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 61
+alignment = 1
+
+[node name="ResumeButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/ResumeButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="R" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("4_82mwn")
+expand_mode = 3
+
+[node name="E" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("5_lld63")
+expand_mode = 3
+
+[node name="S" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("6_jb7ot")
+expand_mode = 3
+
+[node name="U" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("7_ge160")
+expand_mode = 3
+
+[node name="M" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("8_o45e1")
+expand_mode = 3
+
+[node name="E2" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("9_tuqg4")
+expand_mode = 3
+
+[node name="SettingsButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/SettingsButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="S" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("7_sftex")
+expand_mode = 3
+
+[node name="E" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("8_ge160")
+expand_mode = 3
+
+[node name="T" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("9_o45e1")
+expand_mode = 3
+
+[node name="T2" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("10_tuqg4")
+expand_mode = 3
+
+[node name="I" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("11_nsrwa")
+expand_mode = 3
+
+[node name="N" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("12_ufm6b")
+expand_mode = 3
+
+[node name="G" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("13_t5yfr")
+expand_mode = 3
+
+[node name="S2" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("7_sftex")
+expand_mode = 3
+
+[node name="ResetButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/ResetButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="R" type="TextureRect" parent="ButtonContainer/ResetButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("14_we2ln")
+expand_mode = 3
+
+[node name="E" type="TextureRect" parent="ButtonContainer/ResetButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("15_lkcgu")
+expand_mode = 3
+
+[node name="S" type="TextureRect" parent="ButtonContainer/ResetButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("16_q2uef")
+expand_mode = 3
+
+[node name="E2" type="TextureRect" parent="ButtonContainer/ResetButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("17_l2joh")
+expand_mode = 3
+
+[node name="T" type="TextureRect" parent="ButtonContainer/ResetButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("18_62vu6")
+expand_mode = 3
+
+[node name="MenuButton" type="Button" parent="ButtonContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/MenuButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="M" type="TextureRect" parent="ButtonContainer/MenuButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("19_s3xgr")
+expand_mode = 3
+
+[node name="E" type="TextureRect" parent="ButtonContainer/MenuButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("20_7cmo5")
+expand_mode = 3
+
+[node name="N" type="TextureRect" parent="ButtonContainer/MenuButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("21_3ftqw")
+expand_mode = 3
+
+[node name="U" type="TextureRect" parent="ButtonContainer/MenuButton/LetterContainer"]
+material = ExtResource("2_3h16x")
+layout_mode = 2
+texture = ExtResource("22_ruvp3")
+expand_mode = 3
+
+[node name="TextureRect" type="TextureRect" parent="ButtonContainer/MenuButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 97.0
+offset_top = -22.0
+offset_right = -94.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("23_jqa2e")
+expand_mode = 3
