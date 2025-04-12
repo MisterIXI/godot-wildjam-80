@@ -6,14 +6,24 @@ class_name PlayerController
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
 @export var max_rope_distance : float = 300
+@export var ground_cast: ShapeCast2D
+@export var debug_movement: bool = false
+
+func is_grounded():
+	return ground_cast.is_colliding() or debug_movement
 
 func _physics_process(_delta):
+	# rotate ground ray
+	ground_cast.rotation_degrees = 360 - rotation_degrees
+	if is_grounded():
 	# on move_right and move_left, apply force to the player
-	if Input.is_action_pressed("move_right"):
-		apply_central_force(Vector2(1000, 0))
-	elif Input.is_action_pressed("move_left"):
-		apply_central_force(Vector2(-1000, 0))
-	if Input.is_action_just_pressed("up"):
+		if Input.is_action_pressed("move_right"):
+			if Vector2.RIGHT.dot(linear_velocity) < 100:
+				apply_central_force(Vector2(500, 0))
+		elif Input.is_action_pressed("move_left"):
+			if Vector2.LEFT.dot(linear_velocity) < 100:
+				apply_central_force(Vector2(-500, 0))
+	if debug_movement and Input.is_action_just_pressed("up"):
 		apply_impulse(Vector2.UP * 500)
 	# on jump, apply force to the player
 	if Input.is_action_just_pressed("toilette_paper"):
@@ -35,6 +45,8 @@ func _physics_process(_delta):
 			# spring_joint.node_a = rope_target.get_path()
 			# pin_joint.node_b = rope_target.get_path()
 			custom_joint.activate(result.position)
+			if is_grounded():
+				apply_central_impulse((result.position - global_position) * 2)
 			# print(result.position)
 	if Input.is_action_just_released("toilette_paper"):
 		rope.deactivate()
