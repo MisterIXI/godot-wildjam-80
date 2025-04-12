@@ -1,7 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://4aa2lrydyhgf"]
+[gd_scene load_steps=25 format=3 uid="uid://4aa2lrydyhgf"]
 
 [ext_resource type="Script" uid="uid://bns3wf0omgidn" path="res://global/menu/main_menu/main_menu.gd" id="1_kbhnn"]
 [ext_resource type="Texture2D" uid="uid://boxausdy83fgc" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-4.jpg" id="1_s0oey"]
+[ext_resource type="Material" uid="uid://b4uin2akd0f2b" path="res://resources/shaders/menu_transition.tres" id="2_70ii0"]
 [ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="2_sjqqk"]
 [ext_resource type="Texture2D" uid="uid://b2o2hd1njfc7x" path="res://assets/images/menu/letters/P-2.png" id="3_kbhnn"]
 [ext_resource type="Texture2D" uid="uid://dyiwkfxdprd1g" path="res://assets/images/menu/letters/L.png" id="4_ited1"]
@@ -20,8 +21,11 @@
 [ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="16_7o47f"]
 [ext_resource type="Texture2D" uid="uid://dm30tbpwnihj1" path="res://assets/images/menu/letters/T-2.png" id="17_3rt7s"]
 [ext_resource type="Texture2D" uid="uid://cr1vj8l6l7h55" path="res://assets/images/menu/disabled_button.png" id="18_7wnyk"]
+[ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="22_6riyg"]
+[ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="23_70ii0"]
+[ext_resource type="Script" uid="uid://bpcmfk0tpjacc" path="res://components/transition/untransition.gd" id="24_dpyif"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button", "button_container", "wallpaper")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -32,8 +36,11 @@ grow_vertical = 2
 script = ExtResource("1_kbhnn")
 play_button = NodePath("ButtonContainer/PlayButton")
 settings_button = NodePath("ButtonContainer/SettingsButton")
+button_container = NodePath("ButtonContainer")
+wallpaper = NodePath("Wallpaper")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
+material = ExtResource("2_70ii0")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -221,3 +228,21 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_7wnyk")
 expand_mode = 3
+
+[node name="OnVisible2dModulate" type="Node" parent="ButtonContainer"]
+script = ExtResource("22_6riyg")
+animation_duration = 0.5
+metadata/_custom_type_script = "uid://wj7pnwgxam2o"
+
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
+script = ExtResource("23_70ii0")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../ButtonContainer")]
+metadata/_custom_type_script = "uid://duya6nqidc6d5"
+
+[node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
+script = ExtResource("24_dpyif")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../ButtonContainer")]
+_activator = [NodePath("../ButtonContainer/PlayButton")]
+metadata/_custom_type_script = "uid://bpcmfk0tpjacc"
