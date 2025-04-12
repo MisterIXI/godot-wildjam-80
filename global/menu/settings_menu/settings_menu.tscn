@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cent0ph746c7e"]
+[gd_scene load_steps=44 format=3 uid="uid://cent0ph746c7e"]
 
 [ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
@@ -31,12 +31,6 @@ expand_margin_top = 7.0
 expand_margin_right = 2.0
 expand_margin_bottom = 7.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egilb"]
-bg_color = Color(9.14484e-07, 0.52081, 0.563135, 1)
-expand_margin_top = 7.0
-expand_margin_right = 2.0
-expand_margin_bottom = 7.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn7y8"]
 bg_color = Color(1, 0.790893, 0.756161, 1)
 expand_margin_top = 7.0
@@ -48,7 +42,7 @@ HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_gi2af")
 HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_gi2af")
 HSlider/icons/tick = SubResource("GradientTexture1D_gi2af")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_gcfb0")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_egilb")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_gcfb0")
 HSlider/styles/slider = SubResource("StyleBoxFlat_vn7y8")
 
 [sub_resource type="Gradient" id="Gradient_mf0bm"]
@@ -89,12 +83,6 @@ expand_margin_top = 7.0
 expand_margin_right = 2.0
 expand_margin_bottom = 7.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyope"]
-bg_color = Color(9.14484e-07, 0.52081, 0.563135, 1)
-expand_margin_top = 7.0
-expand_margin_right = 2.0
-expand_margin_bottom = 7.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48ncn"]
 bg_color = Color(0.70352, 0.679338, 0.651433, 1)
 expand_margin_top = 7.0
@@ -106,7 +94,7 @@ HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_jacii")
 HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_gcfb0")
 HSlider/icons/tick = SubResource("GradientTexture1D_vn7y8")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_4ks52")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_xyope")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_4ks52")
 HSlider/styles/slider = SubResource("StyleBoxFlat_48ncn")
 
 [sub_resource type="Gradient" id="Gradient_5pght"]
@@ -147,12 +135,6 @@ expand_margin_top = 7.0
 expand_margin_right = 2.0
 expand_margin_bottom = 7.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcghb"]
-bg_color = Color(9.14484e-07, 0.52081, 0.563135, 1)
-expand_margin_top = 7.0
-expand_margin_right = 2.0
-expand_margin_bottom = 7.0
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63mkk"]
 bg_color = Color(0.799482, 0.780656, 0.758969, 1)
 expand_margin_top = 7.0
@@ -164,7 +146,7 @@ HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_qe6y3")
 HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_5mfpw")
 HSlider/icons/tick = SubResource("GradientTexture1D_pw3by")
 HSlider/styles/grabber_area = SubResource("StyleBoxFlat_adoja")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_mcghb")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_adoja")
 HSlider/styles/slider = SubResource("StyleBoxFlat_63mkk")
 
 [node name="SettingsMenu" type="Control" node_paths=PackedStringArray("confirm_button", "master_volume_slider", "music_volume_slider", "sfx_volume_slider", "ambiences_volume_slider")]

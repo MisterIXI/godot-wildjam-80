@@ -14,6 +14,7 @@ func _ready():
     main_menu.hide()
   else:
     main_menu.show()
+    _on_mm_visibility_changed()
   
   main_menu.visibility_changed.connect(_on_mm_visibility_changed)
   main_menu.play_button.pressed.connect(_on_mm_play)
@@ -28,16 +29,19 @@ func _ready():
   settings_menu.confirm_button.pressed.connect(_on_sm_confirm)
 
 
-
 ## Main menu
 func _on_mm_visibility_changed() -> void:
   if main_menu.visible:
     pause_menu.hide()
     settings_menu.hide()
+    if not get_tree().paused:
+      print_rich("[color=MAGENTA]Game tree has been paused. Origin: " + str(get_path()))
     get_tree().paused = true
 
 func _on_mm_play() -> void:
   main_menu.hide()
+  if get_tree().paused:
+    print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
   get_tree().paused = false
 
 
@@ -52,11 +56,16 @@ func _on_pm_visibility_changed() -> void:
   if pause_menu.visible:
     main_menu.hide()
     settings_menu.hide()
+    if not get_tree().paused:
+      print_rich("[color=MAGENTA]Game tree has been paused. Origin: " + str(get_path()))
     get_tree().paused = true
 
 func _on_pm_resume() -> void:
   pause_menu.hide()
+  if get_tree().paused:
+    print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
   get_tree().paused = false
+
 
 func _on_pm_settings() -> void:
   pause_menu.hide()
@@ -65,6 +74,8 @@ func _on_pm_settings() -> void:
 
 func _on_pm_reset() -> void:
   get_tree().reload_current_scene()
+  print_rich("[color=ORANGE]Current scene has been reloaded. Origin: " + str(get_path()))
+  _on_pm_resume()
   #TODO: reset savestate
 
 func _on_pm_menu() -> void:
@@ -84,6 +95,11 @@ func _input(event: InputEvent) -> void:
     if not main_menu.visible and not settings_menu.visible:
       if pause_menu.visible:
         pause_menu.hide()
+        if get_tree().paused:
+          print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
         get_tree().paused = false
       else:
         pause_menu.show()
+    elif settings_menu.visible:
+      settings_menu.hide()
+      settings_menu.last_menu.show()
