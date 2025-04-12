@@ -5,9 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://iakcpoo8as4v" path="res://scenes/_debug/robbi/wall_01.tscn" id="2_gedfl"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gedfl"]
-friction = 0.19
-rough = true
-bounce = 0.6
+friction = 0.7
+bounce = 0.06
 
 [node name="world" type="Node2D"]
 
