@@ -81,6 +81,8 @@ func activate(new_anchor_pos: Vector2):
 	tween.tween_property(segments[-1],"pos", new_anchor_pos,0.1)
 
 func deactivate():
+	if rope_active:
+		SoundManager._make_paper_sound()
 	rope_active = false
 	rope.set_deferred("visible", false)
 	segments.clear()
