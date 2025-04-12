@@ -1,0 +1,82 @@
+[gd_scene load_steps=10 format=3 uid="uid://okoyttdy5wnl"]
+
+[ext_resource type="Script" uid="uid://cm2w6ilpiu05t" path="res://scenes/_debug/Steffen/scoreText.gd" id="1_1l066"]
+[ext_resource type="Texture2D" uid="uid://8afwn1s1ax5x" path="res://assets/images/test/dog1.png" id="2_a6k01"]
+[ext_resource type="Texture2D" uid="uid://dghxs2wfnklkf" path="res://assets/images/primitive_objects/plattform_c_ground_1080_50.png" id="3_klt8h"]
+[ext_resource type="Texture2D" uid="uid://ye24j2akgvq2" path="res://assets/images/primitive_objects/plattform_a_300_50.png" id="4_he6na"]
+[ext_resource type="Script" uid="uid://bsqas0owmnmqg" path="res://scenes/_debug/Steffen/playerController.gd" id="5_6bry8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6k01"]
+size = Vector2(1284, 180)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bry8"]
+size = Vector2(291, 38)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6bry8"]
+friction = 0.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6bry8"]
+radius = 121.0
+height = 298.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(637, 360)
+zoom = Vector2(0.25, 0.25)
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control" node_paths=PackedStringArray("playerNode")]
+layout_mode = 1
+offset_right = 103.0
+offset_bottom = 23.0
+text = "This is a label"
+script = ExtResource("1_1l066")
+playerNode = NodePath("../../RigidBody2D")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(7, 165)
+rotation = -0.00294006
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(632, 388)
+shape = SubResource("RectangleShape2D_a6k01")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+scale = Vector2(1.19074, 1.86)
+texture = ExtResource("3_klt8h")
+
+[node name="Trampoline" type="StaticBody2D" parent="."]
+position = Vector2(1449, 927)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Trampoline"]
+position = Vector2(135.5, -9)
+shape = SubResource("RectangleShape2D_6bry8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Trampoline/CollisionShape2D"]
+texture = ExtResource("4_he6na")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(397, 255)
+physics_material_override = SubResource("PhysicsMaterial_6bry8")
+lock_rotation = true
+script = ExtResource("5_6bry8")
+speed = 200.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+position = Vector2(-1, 2)
+shape = SubResource("CapsuleShape2D_6bry8")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D/CollisionShape2D"]
+texture = ExtResource("2_a6k01")
+
+[connection signal="body_entered" from="RigidBody2D" to="RigidBody2D" method="_on_body_entered"]
