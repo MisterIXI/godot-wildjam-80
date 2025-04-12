@@ -1,7 +1,9 @@
 extends RigidBody2D
 
 @export var rope: VerletRope
-
+@export var spring_joint: DampedSpringJoint2D
+@export var pin_joint: PinJoint2D
+@export var spring_target: StaticBody2D
 func _physics_process(delta):
 	# on move_right and move_left, apply force to the player
 	if Input.is_action_pressed("move_right"):
@@ -25,8 +27,13 @@ func _physics_process(delta):
 		var result = space_state.intersect_ray(query)
 		if result:
 			# get position of the hit point
-			rope.activate(result.position)
+			# rope.activate(result.position)
+			spring_target.global_position = result.position
+			# spring_joint.node_a = spring_target.get_path()
+			pin_joint.node_b = spring_target.get_path()
 			# print(result.position)
 	if Input.is_action_just_released("toilette_paper"):
-		rope.deactivate()
+		# rope.deactivate()
+		# spring_joint.node_a = ""
+		pin_joint.node_b = ""
 	
