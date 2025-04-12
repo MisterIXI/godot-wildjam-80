@@ -14,3 +14,7 @@ shape = SubResource("RectangleShape2D_8xll3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_8xll3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
