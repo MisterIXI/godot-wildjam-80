@@ -209,6 +209,7 @@ rope_origin = NodePath("../RopeOrigin")
 iteration_count = 50
 
 [node name="RopeRender" type="Line2D" parent="VerletRope"]
+visible = false
 z_index = 50
 texture_repeat = 2
 material = SubResource("ShaderMaterial_7tfl1")
