@@ -33,6 +33,7 @@ func _input(event: InputEvent) -> void:
 		_restart_scene()
 	## A  - D
 	if  event.is_action_pressed("move_left"):
+		SoundManager._play_background_music()
 		_input_direction = -1
 		_handle_moving()
 	if event.is_action_released("move_left"):
