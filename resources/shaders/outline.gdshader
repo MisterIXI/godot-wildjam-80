@@ -4,14 +4,14 @@ uniform vec4 line_color : source_color = vec4(1);
 uniform float line_thickness : hint_range(0, 20) = 1.0;
 
 const vec2 OFFSETS[8] = {
-	vec2(-1, -1), vec2(-1, 0), vec2(-1, 1), vec2(0, -1), vec2(0, 1), 
+	vec2(-1, -1), vec2(-1, 0), vec2(-1, 1), vec2(0, -1), vec2(0, 1),
 	vec2(1, -1), vec2(1, 0), vec2(1, 1)
 };
 
 void fragment() {
 	vec2 size = TEXTURE_PIXEL_SIZE * line_thickness / 2.0;
 	vec4 color = texture(TEXTURE, UV);
-	
+
 	float inline = 1.0;
 	float outline = 0.0;
 	for (int i = 0; i < OFFSETS.length(); i++) {
@@ -21,12 +21,12 @@ void fragment() {
 	}
 	outline = min(1.0, outline) - color.a;
 	inline = (1.0 - inline) * color.a;
-	
+
 	vec4 outlined_result = mix(color, line_color, outline + inline);
-	
+
 	vec4 final_color = mix(color, outlined_result, outlined_result.a);
-	
+
 	float alpha = outlined_result.a + color.a;
-	
+
 	COLOR = vec4(alpha);
 }
