@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bqihfmd6cswst"]
+[gd_scene load_steps=9 format=3 uid="uid://bqihfmd6cswst"]
 
 [ext_resource type="PackedScene" uid="uid://4aa2lrydyhgf" path="res://global/menu/main_menu/main_menu.tscn" id="1_sjb18"]
 [ext_resource type="PackedScene" uid="uid://bcvvh7wycn3bm" path="res://global/menu/pause_menu/pause_menu.tscn" id="2_c2i1n"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="3_c2i1n"]
+[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="4_0ch34"]
+[ext_resource type="Texture2D" uid="uid://vv3kbuj3i2y1" path="res://assets/images/menu/letters/B-2.png" id="5_gaine"]
+[ext_resource type="Texture2D" uid="uid://crcgfsxoot3oa" path="res://assets/images/menu/letters/A-2.png" id="6_70jwd"]
+[ext_resource type="Texture2D" uid="uid://0ukda07hg1dq" path="res://assets/images/menu/letters/C-2.png" id="7_idyvg"]
+[ext_resource type="Texture2D" uid="uid://btj7c7r3o766f" path="res://assets/images/menu/letters/K-2.png" id="8_mf0bm"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -17,6 +22,7 @@ visible = false
 layout_mode = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_c2i1n")]
+visible = false
 layout_mode = 1
 
 [node name="SettingsMenu" type="Control" parent="."]
@@ -36,3 +42,55 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_c2i1n")
 expand_mode = 1
+
+[node name="BackButton" type="Button" parent="SettingsMenu"]
+custom_minimum_size = Vector2(0, 100)
+offset_left = 13.0
+offset_top = 3.0
+offset_right = 233.0
+offset_bottom = 103.0
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="SettingsMenu/BackButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -107.0
+offset_top = -31.0
+offset_right = 108.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="B" type="TextureRect" parent="SettingsMenu/BackButton/LetterContainer"]
+material = ExtResource("4_0ch34")
+layout_mode = 2
+texture = ExtResource("5_gaine")
+expand_mode = 3
+
+[node name="A" type="TextureRect" parent="SettingsMenu/BackButton/LetterContainer"]
+material = ExtResource("4_0ch34")
+layout_mode = 2
+texture = ExtResource("6_70jwd")
+expand_mode = 3
+
+[node name="C" type="TextureRect" parent="SettingsMenu/BackButton/LetterContainer"]
+material = ExtResource("4_0ch34")
+layout_mode = 2
+texture = ExtResource("7_idyvg")
+expand_mode = 3
+
+[node name="K" type="TextureRect" parent="SettingsMenu/BackButton/LetterContainer"]
+material = ExtResource("4_0ch34")
+layout_mode = 2
+texture = ExtResource("8_mf0bm")
+expand_mode = 3
+
+[editable path="PauseMenu"]
