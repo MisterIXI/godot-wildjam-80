@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2oumfgiqyphc"]
+
+[ext_resource type="Script" uid="uid://dvwgkc251g6ht" path="res://scenes/_debug/robbi/_player.gd" id="1_etdyc"]
+[ext_resource type="Texture2D" uid="uid://fk3oxdx208x6" path="res://assets/images/primitive_objects/plattform_b_50_50.png" id="2_6w103"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8xll3"]
+size = Vector2(50, 50)
+
+[node name="Player" type="RigidBody2D"]
+script = ExtResource("1_etdyc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_8xll3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_6w103")
