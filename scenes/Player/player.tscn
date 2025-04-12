@@ -119,6 +119,7 @@ curve = SubResource("Curve_7wess")
 script = ExtResource("4_wwtew")
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
+visible = false
 z_index = 1680
 position = Vector2(149, 6.00002)
 scale = Vector2(0.340013, 0.340013)
