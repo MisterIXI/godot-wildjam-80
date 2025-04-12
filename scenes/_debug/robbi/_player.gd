@@ -52,13 +52,18 @@ func _input(event: InputEvent) -> void:
 		if _current_paper_instance.visible:
 			_remove_toilette_paper()
 			## speed and angular slow
-			linear_velocity *= TOILETTE_UNHOOK_POWER
-			angular_velocity *=TOILETTE_UNHOOK_POWER
+			var _rotation_direction :Vector2 =global_position.direction_to(_current_paper_instance.global_position)
+			
+			apply_torque( _rotation_direction.length() * TOILETTE_BOOST_POWER)
+			apply_central_impulse(_rotation_direction* TOILETTE_BOOST_POWER)
+			
 
 func _handle_moving()->void:
-	apply_impulse(Vector2(-_input_direction*100, 0), global_position)
-	if _line2d and _input_direction != 0:
-		apply_central_impulse(Vector2(_input_direction, 0.1)* TOILETTE_BOOST_POWER)
+	if _input_direction != 0:
+		if !_line2d:
+			apply_impulse(Vector2(-_input_direction*40, 0), global_position)
+		if _line2d:
+			apply_central_impulse(Vector2(_input_direction, 0.1)* TOILETTE_BOOST_POWER)
 		
 
 func _boost_to_target()->void: 
