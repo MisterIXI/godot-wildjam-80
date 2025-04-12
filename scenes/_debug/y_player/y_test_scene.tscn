@@ -2,10 +2,10 @@
 
 [ext_resource type="Texture2D" uid="uid://w5fb2lnv6ydg" path="res://assets/images/test/bobby.png" id="1_to0xh"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/_debug/y_player/verlet_rope.gd" id="2_2i32g"]
-[ext_resource type="Material" uid="uid://crk141i8rdc28" path="res://resources/shaders/outline.tres" id="2_kgcot"]
+[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="2_kgcot"]
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/_debug/y_player/y_player.gd" id="2_m4brd"]
 [ext_resource type="Texture2D" uid="uid://coqqo1fmdsue2" path="res://icon.svg" id="4_cpx42"]
-[ext_resource type="Script" path="res://scenes/_debug/y_player/custom_joint.gd" id="4_esm02"]
+[ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/_debug/y_player/custom_joint.gd" id="4_esm02"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2i32g"]
 atlas = ExtResource("1_to0xh")

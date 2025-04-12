@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=38 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/_debug/y_player/verlet_rope.gd" id="1_tc1mf"]
 [ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="2_i2f1q"]
@@ -103,13 +103,16 @@ size = Vector2(51, 937)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ovmwo"]
 size = Vector2(51, 589.542)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y6uy"]
-size = Vector2(51, 625.99)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
+size = Vector2(51, 1310.88)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_55gqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dklac"]
 size = Vector2(51, 2476.96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y6uy"]
+size = Vector2(51, 625.99)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4wg66"]
 size = Vector2(51, 2123.45)
@@ -146,6 +149,7 @@ texture_mode = 1
 
 [node name="YPlayer" type="RigidBody2D" parent="." node_paths=PackedStringArray("rope", "rope_target", "custom_joint")]
 position = Vector2(24, 74)
+lock_rotation = true
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("3_p7ah5")
@@ -339,8 +343,8 @@ position = Vector2(2242, -2556)
 rotation = -1.56644
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D24"]
-position = Vector2(-0.00170898, 626.862)
-shape = SubResource("RectangleShape2D_3y6uy")
+position = Vector2(-0.00170898, 616.537)
+shape = SubResource("RectangleShape2D_434gd")
 
 [node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D24"]
 position = Vector2(0, 629.837)
