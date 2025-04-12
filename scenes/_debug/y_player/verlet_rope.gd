@@ -43,9 +43,9 @@ func process_rope(delta: float):
 	# apply constraints
 	for i in range(iteration_count):
 		for j in range(segments.size() - 1):
-			# if j == 0:
-			# 	segments[j].pos = player.global_position
-			# 	continue
+			if j == 0:
+				segments[j].pos = player.global_position
+				# continue
 			var seg_a = segments[j]
 			var seg_b = segments[j + 1]
 			
@@ -61,6 +61,12 @@ func process_rope(delta: float):
 					seg_b.pos -= dir * diff
 				elif seg_b.pinned:
 					seg_a.pos += dir * diff
+		var dir = segments[0].pos - player.global_position
+		var dist = dir.length()
+		var diff = dist - segment_length
+		if diff > 0:
+			dir = dir.normalized()
+			# segment[0].pos += dir * diff
 			
 
 	# update render line
@@ -72,6 +78,7 @@ func process_rope(delta: float):
 	# var rope_head = segments[0].pos
 	# var to_rope = rope_head - player.global_position
 	# player.apply_central_force(to_rope * pull_strength)
+	player.linear_velocity += (segments[0].pos - player.global_position) * 100
 	player.global_position = segments[0].pos
 
 	# player.apply_central_force(((segments[0].pos + global_position) - player.global_position) * pull_strength)
