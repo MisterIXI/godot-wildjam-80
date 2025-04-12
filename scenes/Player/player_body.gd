@@ -11,6 +11,9 @@ var previousVelocity: float = 0.0
 @export var ground_cast: ShapeCast2D
 @export var debug_movement: bool = false
 
+signal toilette_paper_activated
+signal toilette_paper_deactivated
+
 func is_grounded():
 	return ground_cast.is_colliding() or debug_movement
 
@@ -49,11 +52,14 @@ func _physics_process(_delta):
 			# pin_joint.node_b = rope_target.get_path()
 			custom_joint.activate(result.position)
 			rope_target.show()
+			toilette_paper_activated.emit()
 			# #Jump on grounded with toilette paper
 			# if is_grounded():
 			# 	apply_central_impulse((result.position - global_position) * 2)
 			# print(result.position)
 	if Input.is_action_just_released("toilette_paper"):
+		if rope.rope_active:
+			toilette_paper_deactivated.emit()
 		rope.deactivate()
 		rope_target.hide()
 		# spring_joint.node_a = ""
