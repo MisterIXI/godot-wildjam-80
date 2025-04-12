@@ -2,7 +2,8 @@ extends RigidBody2D
 class_name PlayerController
 
 @export var rope: VerletRope
-@export var rope_target: StaticBody2D
+@export var rope_target: Sprite2D
+@export var rope_origin: Node2D
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
 var previousVelocity: float = 0.0
@@ -48,12 +49,14 @@ func _physics_process(_delta):
 			# spring_joint.node_a = rope_target.get_path()
 			# pin_joint.node_b = rope_target.get_path()
 			custom_joint.activate(result.position)
+			rope_target.show()
 			# #Jump on grounded with toilette paper
 			# if is_grounded():
 			# 	apply_central_impulse((result.position - global_position) * 2)
 			# print(result.position)
 	if Input.is_action_just_released("toilette_paper"):
 		rope.deactivate()
+		rope_target.hide()
 		# spring_joint.node_a = ""
 		# pin_joint.node_b = ""
 		custom_joint.deactivate()

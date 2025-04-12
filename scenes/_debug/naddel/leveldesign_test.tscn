@@ -1,10 +1,10 @@
 [gd_scene load_steps=37 format=3 uid="uid://bfmb5ycsd857g"]
 
-[ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/_debug/y_player/verlet_rope.gd" id="1_0tpld"]
+[ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="1_0tpld"]
 [ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="2_jfohu"]
-[ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/_debug/y_player/y_player.gd" id="3_ed0h0"]
+[ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="3_ed0h0"]
 [ext_resource type="Texture2D" uid="uid://w5fb2lnv6ydg" path="res://assets/images/test/bobby.png" id="4_ti5tl"]
-[ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/_debug/y_player/custom_joint.gd" id="5_isueg"]
+[ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="5_isueg"]
 [ext_resource type="Texture2D" uid="uid://coqqo1fmdsue2" path="res://icon.svg" id="6_1k4of"]
 [ext_resource type="PackedScene" uid="uid://bq5gint4u8mmc" path="res://scenes/_debug/Steffen/trampoline.tscn" id="7_tt8a2"]
 
