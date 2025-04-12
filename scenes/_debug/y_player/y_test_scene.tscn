@@ -87,7 +87,7 @@ size = Vector2(150, 20)
 
 [node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "player")]
 script = ExtResource("2_2i32g")
-target_length = 15.0
+target_length = 5.0
 pull_strength = 100.0
 rope = NodePath("RopeRender")
 rope_anchor = NodePath("Anchor")
@@ -102,13 +102,14 @@ visible = false
 points = PackedVector2Array(0, 0, 40.23, 0)
 default_color = Color(0.384209, 0.24709, 0.102126, 1)
 
-[node name="YPlayer" type="RigidBody2D" parent="." node_paths=PackedStringArray("rope", "spring_joint", "pin_joint", "spring_target")]
+[node name="YPlayer" type="RigidBody2D" parent="." node_paths=PackedStringArray("rope", "spring_joint", "pin_joint", "spring_target", "custom_joint")]
 position = Vector2(142, -180)
 script = ExtResource("2_m4brd")
 rope = NodePath("../VerletRope")
 spring_joint = NodePath("../Target/ManRope/DampedSpringJoint2D")
 pin_joint = NodePath("../Target/ManRope/PinJoint2D")
 spring_target = NodePath("../Target")
+custom_joint = NodePath("CustomJoint")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="YPlayer"]
 scale = Vector2(0.16, 0.16)
@@ -123,8 +124,9 @@ shape = SubResource("CircleShape2D_d1lms")
 process_callback = 0
 position_smoothing_enabled = true
 
-[node name="CustomJoint" type="Node2D" parent="YPlayer"]
+[node name="CustomJoint" type="Node2D" parent="YPlayer" node_paths=PackedStringArray("anchor")]
 script = ExtResource("4_esm02")
+anchor = NodePath("../../Target")
 
 [node name="Target" type="StaticBody2D" parent="."]
 
