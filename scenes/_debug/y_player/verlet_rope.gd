@@ -26,6 +26,7 @@ func init_rope():
 		segments[i].prev_pos = segments[i].pos
 	segments[-1].pinned = true
 	rope.points = segments
+	segment_length *= 0.7
 	
 	
 func process_rope(delta: float):
@@ -45,7 +46,6 @@ func process_rope(delta: float):
 		for j in range(segments.size() - 1):
 			if j == 0:
 				segments[j].pos = player.global_position
-				# continue
 			var seg_a = segments[j]
 			var seg_b = segments[j + 1]
 			
@@ -78,8 +78,6 @@ func process_rope(delta: float):
 	# var rope_head = segments[0].pos
 	# var to_rope = rope_head - player.global_position
 	# player.apply_central_force(to_rope * pull_strength)
-	player.linear_velocity += (segments[0].pos - player.global_position) * 100
-	player.global_position = segments[0].pos
 
 	# player.apply_central_force(((segments[0].pos + global_position) - player.global_position) * pull_strength)
 	pass
