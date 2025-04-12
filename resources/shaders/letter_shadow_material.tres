@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dpa10fi3fpgl2"]
+
+[ext_resource type="Shader" uid="uid://ca34angiss3wb" path="res://resources/shaders/shadow.gdshader" id="1_0dara"]
+
+[resource]
+shader = ExtResource("1_0dara")
+shader_parameter/drop_shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_offset = Vector2(0.04, 0.04)
