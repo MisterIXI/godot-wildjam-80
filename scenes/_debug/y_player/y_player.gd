@@ -48,8 +48,9 @@ func _physics_process(_delta):
 			# spring_joint.node_a = rope_target.get_path()
 			# pin_joint.node_b = rope_target.get_path()
 			custom_joint.activate(result.position)
-			if is_grounded():
-				apply_central_impulse((result.position - global_position) * 2)
+			# #Jump on grounded with toilette paper
+			# if is_grounded():
+			# 	apply_central_impulse((result.position - global_position) * 2)
 			# print(result.position)
 	if Input.is_action_just_released("toilette_paper"):
 		rope.deactivate()
