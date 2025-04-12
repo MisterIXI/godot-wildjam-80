@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbb1ilvlcbldk"]
+
+[ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/Obstacles/fan_obstacle.gd" id="1_ncxi7"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_to0xh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2i32g"]
+size = Vector2(30, 350)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m4brd"]
+size = Vector2(350, 30)
+
+[node name="FanObstacle" type="AnimatableBody2D" groups=["MovingObstacle"]]
+script = ExtResource("1_ncxi7")
+rotation_speed = 40.0
+
+[node name="VSprite" type="Sprite2D" parent="."]
+scale = Vector2(30, 350)
+texture = SubResource("CanvasTexture_to0xh")
+
+[node name="HSprite" type="Sprite2D" parent="."]
+scale = Vector2(350, 30)
+texture = SubResource("CanvasTexture_to0xh")
+
+[node name="VShape" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_2i32g")
+
+[node name="HShape" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_m4brd")

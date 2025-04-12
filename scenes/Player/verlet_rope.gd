@@ -9,7 +9,6 @@ var segment_length : float = 0.0
 @export var rope: Line2D
 @export var rope_anchor: Node2D
 @export var rope_origin: Node2D
-var anchor : Vector2 = Vector2.ZERO
 var rope_end_pos : Vector2 = Vector2.ZERO
 @export var iteration_count : int = 10
 var segments : Array[VerletNode] = []
@@ -35,6 +34,7 @@ func init_rope():
 	
 	
 func process_rope(delta: float):
+	segments[-1].pos = rope_anchor.global_position
 	# go through all segments and apply velocity + gravity
 	for i in range(segments.size() - 1):
 		if segments[i].pinned:
@@ -74,13 +74,11 @@ func _physics_process(delta):
 		process_rope(delta)
 		
 func activate(new_anchor_pos: Vector2):
-	anchor = new_anchor_pos
 	rope_active = true
-	rope_anchor.global_position = new_anchor_pos
-	rope.set_deferred("visible", true)
+	rope.show()
 	init_rope()
 	var tween = create_tween()
-	tween.tween_property(segments[-1],"pos", anchor,0.1)
+	tween.tween_property(segments[-1],"pos", new_anchor_pos,0.1)
 
 func deactivate():
 	rope_active = false
@@ -88,4 +86,3 @@ func deactivate():
 	segments.clear()
 	rope.points = []
 	rope_anchor.global_position = global_position
-	pass
