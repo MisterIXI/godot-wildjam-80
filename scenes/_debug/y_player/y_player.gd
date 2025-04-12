@@ -1,9 +1,11 @@
 extends RigidBody2D
+class_name PlayerController
 
 @export var rope: VerletRope
 @export var rope_target: StaticBody2D
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
+@export var max_rope_distance : float = 300
 
 func _physics_process(_delta):
 	# on move_right and move_left, apply force to the player
@@ -22,7 +24,7 @@ func _physics_process(_delta):
 		var space_state = get_world_2d().direct_space_state
 		var query = PhysicsRayQueryParameters2D.create(
 			global_position,
-			global_position + mouse_dir * 300,
+			global_position + mouse_dir * max_rope_distance,
 		)
 		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
@@ -42,5 +44,4 @@ func _physics_process(_delta):
 
 func _on_body_entered(body:Node):
 	if body.is_in_group("Trampoline"):
-		print("test")
 		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
