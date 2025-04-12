@@ -26,6 +26,7 @@ func init_rope():
 		segments[i].prev_pos = segments[i].pos
 	segments[-1].pinned = true
 	rope.points = segments
+	segment_length *= 0.8
 	
 	
 func process_rope(delta: float):
