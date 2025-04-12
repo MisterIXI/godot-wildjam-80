@@ -1,0 +1,379 @@
+[gd_scene load_steps=47 format=3 uid="uid://cent0ph746c7e"]
+
+[ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
+[ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
+[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="2_7xw0p"]
+[ext_resource type="Texture2D" uid="uid://c5gl0smf8dn4e" path="res://assets/images/menu/letters/C.png" id="3_k1n7e"]
+[ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="4_wlmub"]
+[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="5_tb00c"]
+[ext_resource type="Texture2D" uid="uid://bdy2l14ad74v8" path="res://assets/images/menu/letters/F-3.png" id="6_3uqb3"]
+[ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="7_kgtp3"]
+[ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="8_p7lwn"]
+[ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="9_n8dmn"]
+[ext_resource type="Texture2D" uid="uid://crc5j1g3jwhnm" path="res://assets/images/menu/settings/master_volume.png" id="10_0o6ow"]
+[ext_resource type="Texture2D" uid="uid://oyj2gfndflx5" path="res://assets/images/menu/settings/music_volume.png" id="11_y1s3r"]
+[ext_resource type="Texture2D" uid="uid://dc78i4dt486kj" path="res://assets/images/menu/settings/sfx_volume.png" id="12_nayh4"]
+[ext_resource type="Texture2D" uid="uid://sultsn8rq1rq" path="res://assets/images/menu/settings/ambience_volume.png" id="13_dslyc"]
+[ext_resource type="Texture2D" uid="uid://bvai62w7u0ndb" path="res://assets/images/menu/settings/Control1.png" id="14_7607p"]
+[ext_resource type="Texture2D" uid="uid://245hlqr21bcy" path="res://assets/images/menu/settings/Control2.png" id="15_4flft"]
+
+[sub_resource type="Gradient" id="Gradient_mvg7e"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gi2af"]
+gradient = SubResource("Gradient_mvg7e")
+width = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gcfb0"]
+bg_color = Color(0.670039, 0.159829, 0, 1)
+expand_margin_top = 7.0
+expand_margin_right = 2.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egilb"]
+bg_color = Color(9.14484e-07, 0.52081, 0.563135, 1)
+expand_margin_top = 7.0
+expand_margin_right = 2.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vn7y8"]
+bg_color = Color(1, 0.790893, 0.756161, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="Theme" id="Theme_4ks52"]
+HSlider/icons/grabber = SubResource("GradientTexture1D_gi2af")
+HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_gi2af")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_gi2af")
+HSlider/icons/tick = SubResource("GradientTexture1D_gi2af")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_gcfb0")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_egilb")
+HSlider/styles/slider = SubResource("StyleBoxFlat_vn7y8")
+
+[sub_resource type="Gradient" id="Gradient_mf0bm"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_e4ml2"]
+gradient = SubResource("Gradient_mf0bm")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_wnd0h"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_jacii"]
+gradient = SubResource("Gradient_wnd0h")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_gi2af"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_gcfb0"]
+gradient = SubResource("Gradient_gi2af")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_egilb"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_vn7y8"]
+gradient = SubResource("Gradient_egilb")
+width = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ks52"]
+bg_color = Color(0, 0, 0, 1)
+expand_margin_top = 7.0
+expand_margin_right = 2.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyope"]
+bg_color = Color(9.14484e-07, 0.52081, 0.563135, 1)
+expand_margin_top = 7.0
+expand_margin_right = 2.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48ncn"]
+bg_color = Color(0.70352, 0.679338, 0.651433, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="Theme" id="Theme_oy6jt"]
+HSlider/icons/grabber = SubResource("GradientTexture1D_e4ml2")
+HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_jacii")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_gcfb0")
+HSlider/icons/tick = SubResource("GradientTexture1D_vn7y8")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_4ks52")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_xyope")
+HSlider/styles/slider = SubResource("StyleBoxFlat_48ncn")
+
+[sub_resource type="Gradient" id="Gradient_5pght"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wlgxr"]
+gradient = SubResource("Gradient_5pght")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_3fs4y"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_qe6y3"]
+gradient = SubResource("Gradient_3fs4y")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_wh0sc"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5mfpw"]
+gradient = SubResource("Gradient_wh0sc")
+width = 5
+
+[sub_resource type="Gradient" id="Gradient_3spj0"]
+offsets = PackedFloat32Array(0.0223214, 1)
+colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_pw3by"]
+gradient = SubResource("Gradient_3spj0")
+width = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adoja"]
+bg_color = Color(0.205117, 0.205117, 0.205117, 1)
+expand_margin_top = 7.0
+expand_margin_right = 2.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcghb"]
+bg_color = Color(9.14484e-07, 0.52081, 0.563135, 1)
+expand_margin_top = 7.0
+expand_margin_right = 2.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63mkk"]
+bg_color = Color(0.799482, 0.780656, 0.758969, 1)
+expand_margin_top = 7.0
+expand_margin_bottom = 7.0
+
+[sub_resource type="Theme" id="Theme_yyeuk"]
+HSlider/icons/grabber = SubResource("GradientTexture1D_wlgxr")
+HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_qe6y3")
+HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_5mfpw")
+HSlider/icons/tick = SubResource("GradientTexture1D_pw3by")
+HSlider/styles/grabber_area = SubResource("StyleBoxFlat_adoja")
+HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_mcghb")
+HSlider/styles/slider = SubResource("StyleBoxFlat_63mkk")
+
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("confirm_button", "master_volume_slider", "music_volume_slider", "sfx_volume_slider", "ambiences_volume_slider")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7xw0p")
+confirm_button = NodePath("ConfirmButton")
+master_volume_slider = NodePath("AudioContainer/MasterVolume/MasterSlider")
+music_volume_slider = NodePath("AudioContainer/MusicVolume/MusicSlider")
+sfx_volume_slider = NodePath("AudioContainer/SFXVolume/MusicSlider")
+ambiences_volume_slider = NodePath("AudioContainer/AmbienceVolume/MusicSlider")
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_d7ncu")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="Wallpaper"]
+anchors_preset = 0
+offset_left = 306.0
+offset_top = 176.0
+offset_right = 1007.0
+offset_bottom = 226.0
+
+[node name="ConfirmButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -246.0
+offset_top = -141.0
+offset_right = 246.0
+offset_bottom = -41.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="ConfirmButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -47.1225
+offset_right = 246.0
+offset_bottom = 47.1225
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="C" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("3_k1n7e")
+expand_mode = 3
+
+[node name="O" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("4_wlmub")
+expand_mode = 3
+
+[node name="N" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("5_tb00c")
+expand_mode = 3
+
+[node name="F" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("6_3uqb3")
+expand_mode = 3
+
+[node name="I" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("7_kgtp3")
+expand_mode = 3
+
+[node name="R" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("8_p7lwn")
+expand_mode = 3
+
+[node name="M" type="TextureRect" parent="ConfirmButton/LetterContainer"]
+material = ExtResource("2_7xw0p")
+layout_mode = 2
+texture = ExtResource("9_n8dmn")
+expand_mode = 3
+
+[node name="AudioContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -289.0
+offset_right = 360.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MasterVolume" type="TextureRect" parent="AudioContainer"]
+layout_mode = 2
+texture = ExtResource("10_0o6ow")
+
+[node name="MasterSlider" type="HSlider" parent="AudioContainer/MasterVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4ks52")
+max_value = 200.0
+value = 100.0
+
+[node name="MusicVolume" type="TextureRect" parent="AudioContainer"]
+layout_mode = 2
+texture = ExtResource("11_y1s3r")
+
+[node name="MusicSlider" type="HSlider" parent="AudioContainer/MusicVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oy6jt")
+max_value = 200.0
+value = 100.0
+
+[node name="SFXVolume" type="TextureRect" parent="AudioContainer"]
+layout_mode = 2
+texture = ExtResource("12_nayh4")
+
+[node name="MusicSlider" type="HSlider" parent="AudioContainer/SFXVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oy6jt")
+max_value = 200.0
+value = 100.0
+
+[node name="AmbienceVolume" type="TextureRect" parent="AudioContainer"]
+layout_mode = 2
+texture = ExtResource("13_dslyc")
+
+[node name="MusicSlider" type="HSlider" parent="AudioContainer/AmbienceVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_yyeuk")
+max_value = 200.0
+value = 100.0
+
+[node name="ControlsContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -429.0
+offset_top = -25.0
+offset_right = 429.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control1" type="TextureRect" parent="ControlsContainer"]
+layout_mode = 2
+texture = ExtResource("14_7607p")
+
+[node name="Control2" type="TextureRect" parent="ControlsContainer"]
+layout_mode = 2
+texture = ExtResource("15_4flft")
