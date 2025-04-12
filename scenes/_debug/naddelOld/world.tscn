@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://dlsoouwedjww5" path="res://scenes/_debug/robbi/ground.tscn" id="1_mqyc5"]
 [ext_resource type="PackedScene" uid="uid://cymm4no7b2ij2" path="res://scenes/_debug/robbi/_player.tscn" id="2_yudvw"]
 [ext_resource type="PackedScene" uid="uid://iakcpoo8as4v" path="res://scenes/_debug/robbi/wall_01.tscn" id="3_mq5tg"]
-[ext_resource type="Script" uid="uid://buwva0hia8job" path="res://scenes/_debug/naddel/_player.gd" id="3_yudvw"]
+[ext_resource type="Script" uid="uid://buwva0hia8job" path="res://scenes/_debug/naddelOld/_player.gd" id="3_yudvw"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gedfl"]
 friction = 0.7

@@ -12,11 +12,10 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("move_left", "move_right")
 	apply_central_force(Vector2.RIGHT * direction * speed)
+	SoundManager._flush_toilet()
 
 func _on_body_entered(body:Node):
 	if body.is_in_group("Trampoline"):
 		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
 
-func _ready() -> void:
-	SoundManager._play_background_music()
 	
