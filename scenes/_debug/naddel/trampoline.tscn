@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo7ds72obxh35"]
+
+[ext_resource type="Texture2D" uid="uid://ye24j2akgvq2" path="res://assets/images/primitive_objects/plattform_a_300_50.png" id="1_0icuh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bry8"]
+size = Vector2(291, 38)
+
+[node name="Trampoline" type="StaticBody2D" groups=["Trampoline"]]
+rotation = -0.497638
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(135.5, -9)
+shape = SubResource("RectangleShape2D_6bry8")
+
+[node name="Sprite2D" type="Sprite2D" parent="CollisionShape2D"]
+modulate = Color(0.0323066, 0.666266, 0.169058, 1)
+texture = ExtResource("1_0icuh")

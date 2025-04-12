@@ -4,8 +4,10 @@ extends RigidBody2D
 @export var rope_target: StaticBody2D
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
+var previousVelocity: float = 0.0
 
 func _physics_process(_delta):
+	previousVelocity = linear_velocity.length()
 	# on move_right and move_left, apply force to the player
 	if Input.is_action_pressed("move_right"):
 		apply_central_force(Vector2(1000, 0))
@@ -44,3 +46,9 @@ func _on_body_entered(body:Node):
 	if body.is_in_group("Trampoline"):
 		print("test")
 		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
+
+	if previousVelocity - linear_velocity.length() > 1000:
+		SoundManager._flush_toilet()
+
+func _ready() -> void:
+	SoundManager._play_background_music()
