@@ -13,6 +13,7 @@ var rope_end_pos : Vector2 = Vector2.ZERO
 @export var iteration_count : int = 10
 var segments : Array[VerletNode] = []
 @onready var player : RigidBody2D = get_parent() as RigidBody2D
+var rope_throw_tween : Tween
 func _ready():
 	init_rope()
 	pass
@@ -34,7 +35,8 @@ func init_rope():
 	
 	
 func process_rope(delta: float):
-	segments[-1].pos = rope_anchor.global_position
+	if not rope_throw_tween or not rope_throw_tween.is_running():
+		segments[-1].pos = rope_anchor.global_position
 	# go through all segments and apply velocity + gravity
 	for i in range(segments.size() - 1):
 		if segments[i].pinned:
@@ -66,8 +68,8 @@ func process_rope(delta: float):
 					seg_a.pos += segment_dir * segment_diff
 	# update render line
 	rope.points = []
-	for seg in segments:
-		rope.add_point(seg.pos)
+	for i in range(segments.size()):
+		rope.add_point(segments[segments.size() - 1 - i].pos)
 
 func _physics_process(delta):
 	if rope_active:
@@ -77,8 +79,8 @@ func activate(new_anchor_pos: Vector2):
 	rope_active = true
 	rope.show()
 	init_rope()
-	var tween = create_tween()
-	tween.tween_property(segments[-1],"pos", new_anchor_pos,0.1)
+	rope_throw_tween = create_tween()
+	rope_throw_tween.tween_property(segments[-1],"pos", new_anchor_pos,0.1)
 
 func deactivate():
 	rope_active = false
