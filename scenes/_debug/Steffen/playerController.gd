@@ -18,3 +18,4 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body:Node):
 	if body.is_in_group("Trampoline"):
 		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
+		
