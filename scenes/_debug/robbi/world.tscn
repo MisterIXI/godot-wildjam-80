@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cnmhb8spjgjfq"]
+
+[ext_resource type="PackedScene" uid="uid://dlsoouwedjww5" path="res://scenes/_debug/robbi/ground.tscn" id="1_1g6ae"]
+[ext_resource type="PackedScene" uid="uid://cymm4no7b2ij2" path="res://scenes/_debug/robbi/_player.tscn" id="1_faoyv"]
+[ext_resource type="PackedScene" uid="uid://iakcpoo8as4v" path="res://scenes/_debug/robbi/wall_01.tscn" id="2_gedfl"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gedfl"]
+friction = 0.19
+rough = true
+bounce = 0.6
+
+[node name="world" type="Node2D"]
+
+[node name="Ground" parent="." instance=ExtResource("1_1g6ae")]
+position = Vector2(625, 354)
+
+[node name="Player" parent="." instance=ExtResource("1_faoyv")]
+position = Vector2(607, 257)
+physics_material_override = SubResource("PhysicsMaterial_gedfl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(631, 310)
+zoom = Vector2(5.295, 5.295)
+
+[node name="Wall_01" parent="." instance=ExtResource("2_gedfl")]
+position = Vector2(639, 324)
+
+[node name="Wall_04" parent="." instance=ExtResource("2_gedfl")]
+position = Vector2(599, 272)
+
+[node name="Wall_05" parent="." instance=ExtResource("2_gedfl")]
+position = Vector2(645, 256)
+
+[node name="Wall_06" parent="." instance=ExtResource("2_gedfl")]
+position = Vector2(708, 246)
+
+[node name="Wall_02" parent="." instance=ExtResource("2_gedfl")]
+position = Vector2(673, 310)
+
+[node name="Wall_03" parent="." instance=ExtResource("2_gedfl")]
+position = Vector2(700, 333)
+rotation = 1.5708
