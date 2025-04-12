@@ -20,14 +20,14 @@ func _ready():
 
 func init_rope():
 	segments.clear()
-	var target_dir = rope_anchor.global_position - player.global_position
+	var target_dir = rope_anchor.global_position - rope_origin.global_position
 	var segment_count = round(target_dir.length() / target_length)
 	segment_length = target_dir.length() / segment_count
 	# animation shortening
 	# segment_length *= 0.1
 	for i in range(segment_count + 1):
 		segments.append(VerletNode.new())
-		segments[i].pos = player.global_position + (target_dir.normalized() * segment_length * 0.1) * i
+		segments[i].pos = rope_origin.global_position + (target_dir.normalized() * segment_length * 0.1) * i
 		segments[i].prev_pos = segments[i].pos
 	segments[-1].pinned = true
 	rope.points = segments
@@ -48,7 +48,7 @@ func process_rope(delta: float):
 	for i in range(iteration_count):
 		for j in range(segments.size() - 1):
 			if j == 0:
-				segments[j].pos = player.global_position
+				segments[j].pos = rope_origin.global_position
 			var seg_a = segments[j]
 			var seg_b = segments[j + 1]
 			

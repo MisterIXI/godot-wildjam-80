@@ -78,7 +78,7 @@ target_position = Vector2(0, 28.35)
 max_results = 4
 
 [node name="RopeOrigin" type="Node2D" parent="."]
-position = Vector2(14, -13)
+position = Vector2(20, -20)
 
 [node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin")]
 top_level = true

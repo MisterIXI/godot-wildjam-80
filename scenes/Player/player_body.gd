@@ -3,7 +3,6 @@ class_name PlayerController
 
 @export var rope: VerletRope
 @export var rope_target: Sprite2D
-@export var rope_origin: Node2D
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
 var previousVelocity: float = 0.0
