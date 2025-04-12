@@ -1,10 +1,10 @@
 extends RigidBody2D
 var _toilette_paper_scene  : PackedScene = preload("res://scenes/_debug/robbi/toilette_paper.tscn")
 const TOILETTE_PAPER_RANGE : float  =400.0
-const TOILETTE_PAPER_LENGTH_FACTOR : float = 0.1
-const TOILETTE_PAPER_STIFFNESS :float = 100.0
-const TOILETTE_DAMPING :float  = 1.0
-const TOILETTE_BOOST_POWER :float =4
+const TOILETTE_PAPER_LENGTH_FACTOR : float = 0.2
+const TOILETTE_PAPER_STIFFNESS :float = 50.0
+const TOILETTE_DAMPING :float  = 5.0
+const TOILETTE_BOOST_POWER :float =200
 
 var _paper_joint :  DampedSpringJoint2D =null
 var _line2d : Line2D = null
@@ -23,6 +23,7 @@ func _physics_process(_delta: float) -> void:
 	_handle_swing(_delta)
 	## if in midair - fall
 	## move and collide
+	
 
 func _input(event: InputEvent) -> void:
 	## A  - D
@@ -51,8 +52,10 @@ func _input(event: InputEvent) -> void:
 	# 		_remove_toilette_paper()
 func _handle_moving()->void:
 	apply_impulse(Vector2(-_input_direction, 0), global_position)
+
 func _boost_to_target()->void: 
-	add_constant_force((global_position.direction_to(_current_paper_instance.global_position)* TOILETTE_BOOST_POWER), global_position)
+	apply_central_impulse((global_position.direction_to(_current_paper_instance.global_position)* TOILETTE_BOOST_POWER))
+	
 func _handle_shoot()->void : 
 	var _from = global_position
 	var _to = get_global_mouse_position()
@@ -103,5 +106,6 @@ func _remove_toilette_paper()->void:
 func _handle_swing(_delta : float) -> void:
 	if _line2d:
 		_line2d.points = [global_position, _current_paper_instance.global_position]
+		
 		
 
