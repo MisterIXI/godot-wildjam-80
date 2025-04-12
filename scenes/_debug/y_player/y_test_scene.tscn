@@ -105,7 +105,7 @@ points = PackedVector2Array(0, 0, 41.42, 35.215)
 texture_mode = 1
 
 [node name="YPlayer" type="RigidBody2D" parent="." node_paths=PackedStringArray("rope", "rope_target", "custom_joint")]
-position = Vector2(142, -180)
+position = Vector2(-650, -927)
 script = ExtResource("2_m4brd")
 rope = NodePath("../VerletRope")
 rope_target = NodePath("../Target")
@@ -136,16 +136,6 @@ texture = ExtResource("4_cpx42")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Target"]
 shape = SubResource("CircleShape2D_esm02")
 disabled = true
-
-[node name="ManRope" type="Node2D" parent="Target"]
-
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="Target/ManRope"]
-
-[node name="PinJoint2D" type="PinJoint2D" parent="Target/ManRope"]
-node_a = NodePath("../../../YPlayer")
-bias = 0.9
-softness = 2.21
-angular_limit_upper = 2.03156
 
 [node name="Env" type="Node2D" parent="."]
 
@@ -263,7 +253,7 @@ scale = Vector2(150, 20)
 texture = SubResource("CanvasTexture_cprxv")
 
 [node name="StaticBody2D9" type="StaticBody2D" parent="Env"]
-position = Vector2(-701, -381)
+position = Vector2(-635, -400)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D9"]
 shape = SubResource("RectangleShape2D_3gxmj")
@@ -283,7 +273,7 @@ scale = Vector2(150, 20)
 texture = SubResource("CanvasTexture_cprxv")
 
 [node name="StaticBody2D11" type="StaticBody2D" parent="Env"]
-position = Vector2(-1419, -385)
+position = Vector2(-1492, -432)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D11"]
 shape = SubResource("RectangleShape2D_3gxmj")
@@ -299,6 +289,46 @@ position = Vector2(-1754, -426)
 shape = SubResource("RectangleShape2D_3gxmj")
 
 [node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D12"]
+scale = Vector2(150, 20)
+texture = SubResource("CanvasTexture_cprxv")
+
+[node name="StaticBody2D23" type="StaticBody2D" parent="Env"]
+position = Vector2(-633, -846)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D23"]
+shape = SubResource("RectangleShape2D_3gxmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D23"]
+scale = Vector2(150, 20)
+texture = SubResource("CanvasTexture_cprxv")
+
+[node name="StaticBody2D24" type="StaticBody2D" parent="Env"]
+position = Vector2(-1013, -860)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D24"]
+shape = SubResource("RectangleShape2D_3gxmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D24"]
+scale = Vector2(150, 20)
+texture = SubResource("CanvasTexture_cprxv")
+
+[node name="StaticBody2D25" type="StaticBody2D" parent="Env"]
+position = Vector2(-1351, -850)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D25"]
+shape = SubResource("RectangleShape2D_3gxmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D25"]
+scale = Vector2(150, 20)
+texture = SubResource("CanvasTexture_cprxv")
+
+[node name="StaticBody2D26" type="StaticBody2D" parent="Env"]
+position = Vector2(-1686, -891)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D26"]
+shape = SubResource("RectangleShape2D_3gxmj")
+
+[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D26"]
 scale = Vector2(150, 20)
 texture = SubResource("CanvasTexture_cprxv")
 
