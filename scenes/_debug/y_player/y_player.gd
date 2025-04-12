@@ -1,12 +1,10 @@
 extends RigidBody2D
 
 @export var rope: VerletRope
-@export var spring_joint: DampedSpringJoint2D
-@export var pin_joint: PinJoint2D
-@export var spring_target: StaticBody2D
+@export var rope_target: StaticBody2D
 @export var custom_joint: CustomJoint
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	# on move_right and move_left, apply force to the player
 	if Input.is_action_pressed("move_right"):
 		apply_central_force(Vector2(1000, 0))
@@ -30,10 +28,10 @@ func _physics_process(delta):
 		if result:
 			# get position of the hit point
 			rope.activate(result.position)
-			spring_target.global_position = result.position
-			# spring_joint.node_a = spring_target.get_path()
-			# pin_joint.node_b = spring_target.get_path()
-			custom_joint.activate()
+			rope_target.global_position = result.position
+			# spring_joint.node_a = rope_target.get_path()
+			# pin_joint.node_b = rope_target.get_path()
+			custom_joint.activate(result.position)
 			# print(result.position)
 	if Input.is_action_just_released("toilette_paper"):
 		rope.deactivate()
