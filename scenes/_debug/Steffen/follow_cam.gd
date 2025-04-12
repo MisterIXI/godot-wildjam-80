@@ -6,7 +6,7 @@ extends Camera2D
 var target_zoom: Vector2 = Vector2.ONE
 
 func _process(delta):
-	print("Zoom: " + str(zoom), " Target Zoom: " + str(target_zoom) + " Player Speed: " + str(player.linear_velocity.length()))
+	# print("Zoom: " + str(zoom), " Target Zoom: " + str(target_zoom) + " Player Speed: " + str(player.linear_velocity.length()))
 	var strength = min(1.0, max(0.0, player.linear_velocity.length() / 1500))
 
 	target_zoom = Vector2.ONE - Vector2.ONE * min(1.0, max(0.0, curve.sample(strength)))
