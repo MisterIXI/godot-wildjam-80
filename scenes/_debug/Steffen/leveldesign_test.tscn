@@ -1,5 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=23 format=3 uid="uid://1hg7rqnq1mmb"]
 
+[ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
 [ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="3_j6ebo"]
 [ext_resource type="PackedScene" uid="uid://bq5gint4u8mmc" path="res://scenes/_debug/Steffen/trampoline.tscn" id="7_4be4q"]
 
@@ -56,6 +57,8 @@ size = Vector2(154, 2983)
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
+center_of_mass_mode = 1
+debug_movement = true
 
 [node name="Env" type="Node2D" parent="."]
 
@@ -99,6 +102,17 @@ rotation = -1.56671
 shape = SubResource("RectangleShape2D_xwlt4")
 
 [node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D5"]
+scale = Vector2(52.0001, 108)
+texture = SubResource("CanvasTexture_74n1c")
+
+[node name="StaticBody2D31" type="StaticBody2D" parent="Env"]
+position = Vector2(-115, -202)
+rotation = -1.56671
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D31"]
+shape = SubResource("RectangleShape2D_xwlt4")
+
+[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D31"]
 scale = Vector2(52.0001, 108)
 texture = SubResource("CanvasTexture_74n1c")
 
@@ -478,3 +492,15 @@ rotation = 0.114398
 [node name="Trampoline2" parent="Env" instance=ExtResource("7_4be4q")]
 position = Vector2(2601, -155)
 rotation = -0.484659
+
+[node name="FanObstacle" parent="Env" instance=ExtResource("3_e0a08")]
+position = Vector2(-649, -143)
+rotation_speed = 300.0
+
+[node name="FanObstacle2" parent="Env" instance=ExtResource("3_e0a08")]
+position = Vector2(-411, -487)
+rotation_speed = -300.0
+
+[node name="FanObstacle3" parent="Env" instance=ExtResource("3_e0a08")]
+position = Vector2(-767, -772)
+rotation_speed = 300.0

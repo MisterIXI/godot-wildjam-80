@@ -46,6 +46,10 @@ folder_colors={
 "res://scenes/_debug/": "pink"
 }
 
+[global_group]
+
+MovingObstacle=""
+
 [importer_defaults]
 
 texture={

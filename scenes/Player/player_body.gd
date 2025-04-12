@@ -45,12 +45,9 @@ func _physics_process(_delta):
 		query.exclude = [self]
 		var result = space_state.intersect_ray(query)
 		if result:
-			# get position of the hit point
+			custom_joint.activate(result.position, result.collider)
 			rope.activate(result.position)
 			rope_target.global_position = result.position
-			# spring_joint.node_a = rope_target.get_path()
-			# pin_joint.node_b = rope_target.get_path()
-			custom_joint.activate(result.position)
 			rope_target.show()
 			toilette_paper_activated.emit()
 			# #Jump on grounded with toilette paper

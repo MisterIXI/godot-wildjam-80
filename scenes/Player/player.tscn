@@ -1,6 +1,7 @@
-[gd_scene load_steps=22 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=27 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://b34pfool0yx1p" path="res://assets/images/Player/Spritesheet.png" id="2_uxo23"]
 [ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/_debug/Steffen/follow_cam.gd" id="3_dl1wr"]
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
@@ -14,6 +15,27 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
 friction = 0.1
 bounce = 0.3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7tfl1"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jxtnq"]
+seamless = true
+noise = SubResource("FastNoiseLite_7tfl1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6q27"]
+shader = ExtResource("2_n7rn1")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 11.576
+shader_parameter/noise = SubResource("NoiseTexture2D_jxtnq")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.015
+shader_parameter/frame_time = 0.25
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n7rn1"]
 atlas = ExtResource("2_uxo23")
@@ -71,6 +93,9 @@ height = 33.8367
 radius = 6.23372
 height = 22.3146
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxo23"]
+size = Vector2(6.93968, 15.4897)
+
 [sub_resource type="Curve" id="Curve_7wess"]
 _data = [Vector2(0, 0), 0.0, -0.102211, 0, 0, Vector2(0.223404, 0), 0.0, 0.285454, 1, 0, Vector2(0.659575, 0.235955), 1.4624, 1.4624, 0, 0, Vector2(1, 0.449438), -0.203111, 0.0, 0, 0]
 point_count = 4
@@ -85,12 +110,13 @@ contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_hvfru")
 rope = NodePath("VerletRope")
-rope_target = NodePath("RopeTarget")
+rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
-position = Vector2(-13.5876, 10.4124)
+material = SubResource("ShaderMaterial_t6q27")
+position = Vector2(-2.58746, -2.58746)
 scale = Vector2(0.275049, 0.275049)
 sprite_frames = SubResource("SpriteFrames_t6q27")
 animation = &"throw"
@@ -98,16 +124,22 @@ autoplay = "default"
 script = ExtResource("3_uxo23")
 
 [node name="PlayerCollider1" type="CollisionShape2D" parent="."]
-position = Vector2(-25.5876, 12.4124)
+position = Vector2(-14.5875, -0.587456)
 rotation = -0.229376
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_3y6uy")
 
 [node name="PlayerCollider2" type="CollisionShape2D" parent="."]
-position = Vector2(-6.58755, 22.4124)
+position = Vector2(4.41259, 9.41254)
 rotation = -1.64299
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_55gqm")
+
+[node name="PlayerCollider3" type="CollisionShape2D" parent="."]
+position = Vector2(-5.22447, 37.969)
+rotation = -1.68293
+scale = Vector2(2.88, 2.88)
+shape = SubResource("RectangleShape2D_uxo23")
 
 [node name="FollowCam" type="Camera2D" parent="."]
 process_callback = 0
@@ -115,8 +147,20 @@ position_smoothing_enabled = true
 script = ExtResource("3_dl1wr")
 curve = SubResource("Curve_7wess")
 
-[node name="CustomJoint" type="Node2D" parent="."]
+[node name="CustomJoint" type="Node2D" parent="." node_paths=PackedStringArray("anchor", "anchor_indicator")]
+top_level = true
 script = ExtResource("4_wwtew")
+anchor = NodePath("Anchor")
+anchor_indicator = NodePath("Anchor/AnchorIndicator")
+
+[node name="Anchor" type="Node2D" parent="CustomJoint"]
+position = Vector2(41, -339)
+
+[node name="AnchorIndicator" type="Sprite2D" parent="CustomJoint/Anchor"]
+visible = false
+z_index = 51
+scale = Vector2(0.121204, 0.121204)
+texture = ExtResource("9_wwtew")
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
 visible = false
@@ -127,40 +171,35 @@ texture = ExtResource("5_uxo23")
 script = ExtResource("6_n7rn1")
 
 [node name="GroundShapeCheck" type="ShapeCast2D" parent="."]
-position = Vector2(-13.5876, 10.4124)
+visible = false
+position = Vector2(-33.5875, 21.4125)
 shape = SubResource("RectangleShape2D_434gd")
 target_position = Vector2(0, 28.35)
 max_results = 4
 
 [node name="RopeOrigin" type="Node2D" parent="."]
-position = Vector2(20, -11)
+position = Vector2(16, -18)
 
 [node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin")]
 top_level = true
 script = ExtResource("7_dl1wr")
 pull_strength = 100.0
 rope = NodePath("RopeRender")
-rope_anchor = NodePath("Anchor")
+rope_anchor = NodePath("../CustomJoint/Anchor")
 rope_origin = NodePath("../RopeOrigin")
 iteration_count = 50
 
-[node name="Anchor" type="Node2D" parent="VerletRope"]
-top_level = true
-position = Vector2(41, -339)
-
 [node name="RopeRender" type="Line2D" parent="VerletRope"]
 visible = false
+z_index = 50
 texture_repeat = 2
 material = ExtResource("8_wwtew")
 points = PackedVector2Array(0, 0, 41.42, 35.215)
 width = 20.0
 texture_mode = 1
 
-[node name="RopeTarget" type="Sprite2D" parent="."]
-visible = false
-top_level = true
-scale = Vector2(0.121204, 0.121204)
-texture = ExtResource("9_wwtew")
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-43, 41)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
