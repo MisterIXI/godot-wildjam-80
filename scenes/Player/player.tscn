@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=54 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
+[ext_resource type="Texture2D" uid="uid://be0u5vhm0vxny" path="res://assets/images/particle/dustclouds/dustclouds.png" id="5_wyey8"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
 [ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="7_n7rn1"]
@@ -85,6 +86,78 @@ animations = [{
 }],
 "loop": true,
 "name": &"throw",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve" id="Curve_1bwnf"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.259887, 0.432612), 0.0, 0.0, 0, 0, Vector2(0.542373, 0.387221), 0.0, 0.0, 0, 0, Vector2(0.813559, 0.096718), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 5
+
+[sub_resource type="Curve" id="Curve_tayva"]
+_data = [Vector2(0, 1), 0.0, -12.902, 0, 0, Vector2(0.282486, 0.459846), 0.0, 0.0, 0, 0, Vector2(0.442561, 0.300978), 0.0, 0.0, 0, 0, Vector2(0.770245, 0.273743), 0.0, 0.0, 0, 0, Vector2(0.894539, 0.128492), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 6
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8khf"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(0, 0, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aciub"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(2480, 0, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hk2ix"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(0, 1754, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43ckd"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(2480, 1754, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cctgl"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(0, 3508, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_an8q1"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(2480, 3508, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxkm2"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(0, 5262, 2480, 1754)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18ciy"]
+atlas = ExtResource("5_wyey8")
+region = Rect2(2480, 5262, 2480, 1754)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cg2hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8khf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aciub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hk2ix")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43ckd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cctgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_an8q1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxkm2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18ciy")
+}],
+"loop": true,
+"name": &"default",
 "speed": 5.0
 }]
 
@@ -204,6 +277,28 @@ sprite_frames = SubResource("SpriteFrames_t6q27")
 animation = &"throw"
 autoplay = "default"
 script = ExtResource("3_uxo23")
+
+[node name="DustcloudParticles" type="CPUParticles2D" parent="ToiletteAnimation"]
+visible = false
+position = Vector2(-1.49988, 180.286)
+amount = 30
+lifetime = 0.5
+explosiveness = 1.0
+local_coords = true
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 60.0
+scale_amount_min = 0.1
+scale_amount_max = 0.15
+split_scale = true
+scale_curve_x = SubResource("Curve_1bwnf")
+scale_curve_y = SubResource("Curve_tayva")
+color = Color(0.560784, 0.560784, 0.560784, 0.317647)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ToiletteAnimation"]
+position = Vector2(1161.93, 42.1287)
+sprite_frames = SubResource("SpriteFrames_cg2hl")
 
 [node name="LPlayerCollider1" type="CollisionShape2D" parent="."]
 z_index = 200
