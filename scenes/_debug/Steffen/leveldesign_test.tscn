@@ -1,4 +1,4 @@
-[gd_scene load_steps=52 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=53 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
 [ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
@@ -23,6 +23,7 @@
 [ext_resource type="PackedScene" uid="uid://cq42j031f7v1o" path="res://scenes/EnvironmentObjects/reclam.tscn" id="18_o7m6t"]
 [ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="19_1i5yh"]
 [ext_resource type="PackedScene" uid="uid://d1114jsogyu88" path="res://scenes/EnvironmentObjects/einfahrt.tscn" id="20_5t7de"]
+[ext_resource type="PackedScene" uid="uid://cjryabc4tjndu" path="res://scenes/EnvironmentObjects/gulli_2.tscn" id="24_qktsu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cprxv"]
 size = Vector2(1498, 20)
@@ -140,7 +141,7 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(6018, 24)
+position = Vector2(8659, -1527)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -740,3 +741,11 @@ rotation = 0.158747
 [node name="Einfahrt" parent="." instance=ExtResource("20_5t7de")]
 position = Vector2(10680, -1792)
 scale = Vector2(1.84371, 1.83125)
+
+[node name="Gulli2" parent="." instance=ExtResource("24_qktsu")]
+position = Vector2(7113, -2580)
+scale = Vector2(1, 1)
+
+[node name="gulli2" parent="." instance=ExtResource("9_0pdxe")]
+position = Vector2(7351, -2713)
+scale = Vector2(0.36, 0.36)
