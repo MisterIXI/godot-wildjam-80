@@ -86,14 +86,14 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3y6uy"]
 radius = 7.33754
-height = 33.8367
+height = 26.4589
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55gqm"]
 radius = 6.23372
 height = 22.3146
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxo23"]
-size = Vector2(6.93968, 15.4897)
+size = Vector2(8.88574, 16.5668)
 
 [sub_resource type="Curve" id="Curve_7wess"]
 _data = [Vector2(0, 0), 0.0, -0.102211, 0, 0, Vector2(0.223404, 0), 0.0, 0.285454, 1, 0, Vector2(0.659575, 0.235955), 1.4624, 1.4624, 0, 0, Vector2(1, 0.449438), -0.203111, 0.0, 0, 0]
@@ -135,6 +135,7 @@ custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
+z_index = 100
 material = SubResource("ShaderMaterial_t6q27")
 position = Vector2(-2.58746, -2.58746)
 scale = Vector2(0.275049, 0.275049)
@@ -144,20 +145,23 @@ autoplay = "default"
 script = ExtResource("3_uxo23")
 
 [node name="PlayerCollider1" type="CollisionShape2D" parent="."]
+z_index = 200
 position = Vector2(-14.5875, -0.587456)
 rotation = -0.229376
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_3y6uy")
 
 [node name="PlayerCollider2" type="CollisionShape2D" parent="."]
+z_index = 200
 position = Vector2(4.41259, 9.41254)
 rotation = -1.64299
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_55gqm")
 
 [node name="PlayerCollider3" type="CollisionShape2D" parent="."]
-position = Vector2(-5.22447, 37.969)
-rotation = -1.68293
+z_index = 200
+position = Vector2(-6, 31)
+rotation = -1.59329
 scale = Vector2(2.88, 2.88)
 shape = SubResource("RectangleShape2D_uxo23")
 

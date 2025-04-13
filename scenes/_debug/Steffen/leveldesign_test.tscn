@@ -57,7 +57,7 @@ size = Vector2(154, 2983)
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-center_of_mass_mode = 1
+position = Vector2(-40, 127)
 debug_movement = true
 
 [node name="Env" type="Node2D" parent="."]
