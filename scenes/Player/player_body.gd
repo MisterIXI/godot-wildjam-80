@@ -16,6 +16,9 @@ var previousVelocity: float = 0.0
 signal toilette_paper_activated
 signal toilette_paper_deactivated
 
+signal hopped_right
+signal hopped_left
+
 func is_grounded():
 	return ground_cast.is_colliding() or debug_movement
 
@@ -29,11 +32,13 @@ func _physics_process(_delta):
 			# if Vector2.RIGHT.dot(linear_velocity) < 100:
 			apply_central_impulse(Vector2(1,-1) * 100)
 			hop_cd_timer.start()
+			hopped_right.emit()
 			# 	apply_central_force(Vector2(500, 0))
 		elif Input.is_action_just_pressed("move_left"):
 			# if Vector2.LEFT.dot(linear_velocity) < 100:
 			apply_central_impulse(Vector2(-1,-1) * 100)
 			hop_cd_timer.start()
+			hopped_left.emit()
 			# 	apply_central_force(Vector2(-500, 0))
 	if debug_movement and Input.is_action_just_pressed("up"):
 		apply_impulse(Vector2.UP * 500)
