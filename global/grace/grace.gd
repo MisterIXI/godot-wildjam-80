@@ -17,12 +17,12 @@ var timer: float = 0
 signal scene_loaded
 
 func _ready():
-  if reset_audio_bus_on_start and not OS.get_name() == "Web":
+  if reset_audio_bus_on_start and Engine.is_editor_hint():
     reset_audio_bus()
   else:
     load_audio_bus()
 
-  if reset_scene_on_start and not OS.get_name() == "Web":
+  if reset_scene_on_start and Engine.is_editor_hint():
     reset_scene()
   else:
     load_scene()
@@ -70,7 +70,7 @@ func reset_audio_bus():
 
 #region Scene
 func load_scene():
-  if ignore_saved_scene and not OS.get_name() == "Web":
+  if ignore_saved_scene and Engine.is_editor_hint():
     return
 
   var config = ConfigFile.new()

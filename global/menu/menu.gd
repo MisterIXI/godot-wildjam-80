@@ -11,7 +11,7 @@ extends Node
 func _ready():
   pause_menu.hide()
   settings_menu.hide()
-  if disable_menu and not OS.get_name() == "Web":
+  if disable_menu and Engine.is_editor_hint():
     main_menu.hide()
   else:
     main_menu.show()
