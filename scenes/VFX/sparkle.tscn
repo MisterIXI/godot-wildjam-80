@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://cix64hjf82n1n"]
+[gd_scene load_steps=11 format=3 uid="uid://cix64hjf82n1n"]
 
+[ext_resource type="Script" uid="uid://dqo7af64auivy" path="res://scenes/VFX/sparkle.gd" id="1_7mdnh"]
 [ext_resource type="Texture2D" uid="uid://b7e7ypkliqfl2" path="res://assets/images/particle/star_partikel.png" id="1_mbfoy"]
 [ext_resource type="Texture2D" uid="uid://dvfv7fp8m2l5c" path="res://assets/images/particle/star1_partikel.png" id="1_v0nvw"]
 [ext_resource type="Texture2D" uid="uid://b2oyyp3kgmdh5" path="res://assets/images/particle/sparkle.png" id="2_mbfoy"]
@@ -26,13 +27,15 @@ colors = PackedColorArray(1, 0.883333, 0, 1, 1, 1, 1, 1)
 offsets = PackedFloat32Array(0, 0.303665, 0.306273, 0.590406, 0.595018, 0.807196, 0.810886, 1)
 colors = PackedColorArray(1, 0.107594, 0.777005, 1, 1, 1, 1, 1, 1, 1, 1, 1, 7.89344e-06, 0.743328, 0.939178, 1, 1, 0.866639, 0.358886, 1, 0.870376, 0.638503, 0.1194, 1, 1, 1, 1, 1, 0, 0.725972, 0.23056, 1)
 
-[node name="Node2D" type="Node2D"]
+[node name="Sparkle" type="Node2D"]
+top_level = true
+script = ExtResource("1_7mdnh")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
 z_as_relative = false
 amount = 3
 texture = ExtResource("1_mbfoy")
-preprocess = 1.0
 explosiveness = 0.95
 emission_shape = 1
 emission_sphere_radius = 128.0
@@ -41,8 +44,8 @@ initial_velocity_min = 300.0
 initial_velocity_max = 600.0
 angular_velocity_min = -203.71
 angular_velocity_max = 295.02
-scale_amount_min = 0.5
-scale_amount_max = 0.7
+scale_amount_min = 0.1
+scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_v0nvw")
 color = Color(0.483411, 1, 0.63849, 1)
 color_initial_ramp = SubResource("Gradient_7mdnh")
@@ -50,10 +53,10 @@ hue_variation_min = -1.0
 hue_variation_max = 1.0
 
 [node name="CPUParticles2D3" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
 z_as_relative = false
 amount = 3
 texture = ExtResource("1_v0nvw")
-preprocess = 1.0
 explosiveness = 0.95
 emission_shape = 1
 emission_sphere_radius = 128.0
@@ -62,8 +65,8 @@ initial_velocity_min = 300.0
 initial_velocity_max = 600.0
 angular_velocity_min = -203.71
 angular_velocity_max = 295.02
-scale_amount_min = 0.5
-scale_amount_max = 0.7
+scale_amount_min = 0.2
+scale_amount_max = 0.3
 scale_amount_curve = SubResource("Curve_v0nvw")
 color = Color(1, 0.634888, 0.579015, 1)
 color_initial_ramp = SubResource("Gradient_8exph")
@@ -71,10 +74,12 @@ hue_variation_min = -1.0
 hue_variation_max = 1.0
 
 [node name="CPUParticles2D2" type="CPUParticles2D" parent="."]
+unique_name_in_owner = true
 z_index = 1
 amount = 10
 texture = ExtResource("2_mbfoy")
-explosiveness = 0.73
+lifetime = 0.6
+explosiveness = 0.8
 randomness = 1.0
 lifetime_randomness = 0.5
 emission_shape = 3
@@ -86,8 +91,8 @@ orbit_velocity_min = -0.1
 orbit_velocity_max = 0.1
 radial_accel_min = -170.11
 radial_accel_max = 100.0
-scale_amount_min = 0.6
-scale_amount_max = 0.8
+scale_amount_min = 0.1
+scale_amount_max = 0.2
 scale_amount_curve = SubResource("Curve_7mdnh")
 color_ramp = SubResource("Gradient_g60mc")
 color_initial_ramp = SubResource("Gradient_0vtci")
