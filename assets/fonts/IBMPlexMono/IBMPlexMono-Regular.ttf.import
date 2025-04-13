@@ -2,13 +2,13 @@
 
 importer="font_data_dynamic"
 type="FontFile"
-uid="uid://dk481p6dirxf4"
-path="res://.godot/imported/BungeeSpice-Regular.ttf-bda812764b9538d1bd5c765b38f33d41.fontdata"
+uid="uid://3trygsfviabq"
+path="res://.godot/imported/IBMPlexMono-Regular.ttf-fb3b17466b1308bcc9b25bf4b4739c90.fontdata"
 
 [deps]
 
-source_file="res://assets/fonts/Bungee_Spice/BungeeSpice-Regular.ttf"
-dest_files=["res://.godot/imported/BungeeSpice-Regular.ttf-bda812764b9538d1bd5c765b38f33d41.fontdata"]
+source_file="res://assets/fonts/IBMPlexMono/IBMPlexMono-Regular.ttf"
+dest_files=["res://.godot/imported/IBMPlexMono-Regular.ttf-fb3b17466b1308bcc9b25bf4b4739c90.fontdata"]
 
 [params]
 
