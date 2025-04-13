@@ -327,7 +327,7 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(5600, -1525)
+position = Vector2(6029, 44)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -936,9 +936,11 @@ visible = false
 position = Vector2(4317, -3713)
 rotation = -0.432178
 scale = Vector2(0.439999, 0.439999)
+sync_to_physics = false
 
 [node name="Reclam" type="Sprite2D" parent="Env/reclamtitled"]
 material = SubResource("ShaderMaterial_137kd")
+position = Vector2(55.9265, 226.025)
 texture = ExtResource("22_k81dp")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/reclamtitled"]
@@ -955,6 +957,7 @@ autoplay = "moveObject"
 position = Vector2(5353, -1620)
 rotation = 0.00130769
 scale = Vector2(0.439999, 0.439999)
+sync_to_physics = false
 
 [node name="Reclam" type="Sprite2D" parent="Env/reclamvertical"]
 material = SubResource("ShaderMaterial_137kd")
