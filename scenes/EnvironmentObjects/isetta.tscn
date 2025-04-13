@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://7swphsmengui"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_rb2fg"]
+[ext_resource type="Texture2D" uid="uid://4340ovdkllhu" path="res://assets/images/photos/isetta.png" id="2_kf4it"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jfx6i"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r271i"]
+seamless = true
+noise = SubResource("FastNoiseLite_jfx6i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pard2"]
+shader = ExtResource("1_rb2fg")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_r271i")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="isetta" type="StaticBody2D"]
+
+[node name="Isetta" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pard2")
+texture = ExtResource("2_kf4it")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-130, -311, -130, -309.9, -159.2, -307, -168.3, -307, -222.1, -293, -226.1, -293, -231, -285.6, -231, -282.8, -248.9, -263, -250.5, -263, -259.5, -233, -260.6, -233, -270.7, -184, -272.7, -184, -270, -175, -270, -172, -282, -126.3, -282, -119.7, -290, -109, -291.4, -109, -295.4, -97, -296.9, -97, -299.9, -41, -301.3, -41, -299, -23.7, -299, -18.7, -289, 19, -289, 24.4, -283, 37.3, -283, 39.6, -268, 61.6, -268, 64.1, -248.6, 77, -214.1, 130, -213.4, 130, -208, 145.4, -208, 147.8, -192.4, 164.4, -195, 177.8, -195, 195, -194, 195, -194, 230.3, -190, 244, -190, 248.3, -180, 277.4, -180, 281.5, -158, 321.6, -158, 323.8, -147, 334.8, -147, 336, -133, 346.9, -133, 348.5, -123, 351.4, -123, 353, -104.7, 353, -98.7, 351, -95.3, 351, -87.3, 345, -84.9, 345, -76, 331.6, -76, 330, -65.6, 322.4, -32, 329.6, -32, 330.9, -4, 332, 16.2, 332, 49.4, 325, 53.3, 325, 108.4, 306, 111.4, 306, 208.3, 264, 211.5, 264, 275.6, 229, 277.6, 229, 328.6, 193, 331, 193, 344, 176, 345.5, 176, 348.5, 166, 350.2, 166, 348, 143, 348, 137.2, 335.9, 124, 332, 124, 336, 114.4, 336, 110.2, 332.8, 107, 331.7, 107, 327, 79.7, 327, 74.7, 315, 38.7, 315, 35.5, 297, 3.5, 297, 1.29999, 279, -19.9, 279, -28.2, 267.5, -34, 263.9, -45.4, 276.9, -60, 278.6, -60, 281.5, -72, 283.1, -72, 282, -91.1, 282, -95, 273, -102, 273, -103.6, 264, -105.7, 264, -106.9, 241, -108, 237, -108, 232, -115, 228, -127, 228, -130.4, 201.4, -187.8, 202, -190.8, 202, -193.8, 198.8, -197, 198, -197, 198, -202, 192.7, -206, 180, -235.3, 183, -238.2, 183, -243.9, 174.7, -251, 170.4, -251, 167, -259.5, 167, -261.8, 160, -268.8, 160, -270.2, 142, -280.2, 142, -281.5, 126, -286.5, 126, -287.6, 91.2, -295, 83.5, -295, 80, -297.1, 80, -298.6, 63, -302.6, 63, -303.9, -25, -308.9, -25, -310)

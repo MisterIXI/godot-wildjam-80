@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://one3lojhqxny"]
+[gd_scene load_steps=35 format=3 uid="uid://one3lojhqxny"]
 
 [ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="1_jonfs"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="2_pavb3"]
@@ -22,6 +22,18 @@
 [ext_resource type="PackedScene" uid="uid://4vv4vr83shif" path="res://scenes/EnvironmentObjects/yield.tscn" id="20_xobd8"]
 [ext_resource type="PackedScene" uid="uid://djwsv77l05fqn" path="res://scenes/EnvironmentObjects/zeitung.tscn" id="21_etjrw"]
 [ext_resource type="PackedScene" uid="uid://dkiepgksa1te6" path="res://scenes/EnvironmentObjects/zigaretten.tscn" id="22_llnb5"]
+[ext_resource type="PackedScene" uid="uid://51bai6yg040r" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="23_orjfd"]
+[ext_resource type="PackedScene" uid="uid://bif0uca6ftk1d" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="24_llnb5"]
+[ext_resource type="PackedScene" uid="uid://crglposwftdms" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="25_orjfd"]
+[ext_resource type="PackedScene" uid="uid://bwgxsmbpyh5nq" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="27_47o1m"]
+[ext_resource type="PackedScene" uid="uid://7swphsmengui" path="res://scenes/EnvironmentObjects/isetta.tscn" id="28_j3f70"]
+[ext_resource type="PackedScene" uid="uid://1j4exdyv0vk6" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="29_e4vwl"]
+[ext_resource type="PackedScene" uid="uid://cbs1kk2k7axw" path="res://scenes/EnvironmentObjects/redlight.tscn" id="30_b1mqd"]
+[ext_resource type="PackedScene" uid="uid://0jait75dgawh" path="res://scenes/EnvironmentObjects/reifen.tscn" id="31_ng125"]
+[ext_resource type="PackedScene" uid="uid://k7kvmdrmmmla" path="res://scenes/EnvironmentObjects/schild_2.tscn" id="32_c66a7"]
+[ext_resource type="PackedScene" uid="uid://brqky1wh7xwv8" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="32_l8oi2"]
+[ext_resource type="PackedScene" uid="uid://c7k088bw8pt83" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_01acu"]
+[ext_resource type="PackedScene" uid="uid://dpoa3ew1vnww6" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="34_oja15"]
 
 [node name="AssetSammlung" type="Node2D"]
 position = Vector2(527, -6)
@@ -91,3 +103,39 @@ position = Vector2(-1290, -651)
 
 [node name="zigaretten" parent="." instance=ExtResource("22_llnb5")]
 position = Vector2(-3581, -876)
+
+[node name="broetchen1" parent="." instance=ExtResource("23_orjfd")]
+position = Vector2(5327, -96)
+
+[node name="broetchen2" parent="." instance=ExtResource("24_llnb5")]
+position = Vector2(4257, 172)
+
+[node name="broetchen" parent="." instance=ExtResource("25_orjfd")]
+position = Vector2(6921, 214)
+
+[node name="fahrradstr" parent="." instance=ExtResource("27_47o1m")]
+position = Vector2(5576, -1798)
+
+[node name="isetta" parent="." instance=ExtResource("28_j3f70")]
+position = Vector2(6356, -1253)
+
+[node name="leberkaes" parent="." instance=ExtResource("29_e4vwl")]
+position = Vector2(5058, -687)
+
+[node name="redlight" parent="." instance=ExtResource("30_b1mqd")]
+position = Vector2(4163, -587)
+
+[node name="reifen" parent="." instance=ExtResource("31_ng125")]
+position = Vector2(6645, -506)
+
+[node name="schild1" parent="." instance=ExtResource("32_l8oi2")]
+position = Vector2(4889, 792)
+
+[node name="schild2" parent="." instance=ExtResource("32_c66a7")]
+position = Vector2(5980, 805)
+
+[node name="spielstr" parent="." instance=ExtResource("34_oja15")]
+position = Vector2(4661, -1482)
+
+[node name="yellowlight" parent="." instance=ExtResource("34_01acu")]
+position = Vector2(5744, -608)

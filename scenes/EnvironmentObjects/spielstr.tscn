@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpoa3ew1vnww6"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_qh5ub"]
+[ext_resource type="Texture2D" uid="uid://oi8oglrmevkg" path="res://assets/images/photos/spielstr.png" id="2_2rm1p"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7hjh3"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_sypte"]
+seamless = true
+noise = SubResource("FastNoiseLite_7hjh3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b41d3"]
+shader = ExtResource("1_qh5ub")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_sypte")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="spielstr" type="StaticBody2D"]
+
+[node name="Spielstr" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_b41d3")
+texture = ExtResource("2_2rm1p")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-338, -290.1, -338, -289, -341.8, -289, -351.8, -279, -353.3, -279, -360.3, -262, -361.9, -262, -373.9, -59, -375.1, -59, -374, -31.9, -374, -30.1, -387, 210.9, -387, 225.1, -386, 233.2, -386, 238.6, -381, 245.6, -381, 248.1, -366, 257.1, -366, 258.8, -311, 263.8, -311, 265, -218, 265.9, -218, 267, -50, 265, -30, 265, 98, 266.9, 98, 268, 375.4, 268, 382.3, 265, 385.8, 265, 399.9, 252, 401.4, 252, 406.4, 237, 408, 237, 410, 102, 411.1, 102, 409, 24.9, 409, 24, 410, 24, 410, -10.7, 414.3, -20, 416.8, -20, 410.4, -38, 410, -233.4, 406, -242.4, 406, -247, 388, -261, 388, -262.9, 170, -269, 133.2, -269, 114, -270.9, 114, -271.9)

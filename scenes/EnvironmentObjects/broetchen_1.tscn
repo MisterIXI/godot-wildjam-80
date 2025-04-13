@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://51bai6yg040r"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_ofimf"]
+[ext_resource type="Texture2D" uid="uid://crcxuychdio8c" path="res://assets/images/photos/broetchen1.png" id="2_xbj04"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bndnl"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eh78n"]
+seamless = true
+noise = SubResource("FastNoiseLite_bndnl")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k1k16"]
+shader = ExtResource("1_ofimf")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_eh78n")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="broetchen1" type="StaticBody2D"]
+
+[node name="Broetchen1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_k1k16")
+texture = ExtResource("2_xbj04")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-66, -300.2, -66, -299, -88.2, -299, -104.1, -295, -107.7, -295, -115.7, -289, -117.4, -289, -119, -284.3, -119, -278, -124, -274, -143, -270.7, -155.9, -272, -159.3, -272, -168, -279, -168, -280.5, -187, -286.5, -187, -288.2, -202.2, -287, -206.3, -287, -225.3, -281, -228.8, -281, -236.8, -273, -238.2, -273, -251, -250.5, -251, -248.9, -261, -239.9, -261, -239.1, -299.7, -213, -301.7, -213, -333.7, -186, -335.9, -186, -362.9, -155, -364.2, -155, -387.2, -111, -388.5, -111, -392.5, -96, -393.7, -96, -404, -41.2, -404, -34.8, -400, -19, -400, -14.3, -388, 1.59998, -388, 3.09998, -363, 19.1, -363, 20.7, -349.2, 23, -344.5, 23, -337.5, 27, -333.6, 27, -278.5, 57, -276.7, 57, -269, 63.8, -269, 65.1, -240.5, 82, -239, 82, -210, 118.6, -210, 120.3, -169.4, 138, -165.7, 138, -152.7, 148, -149.9, 148, -71, 238.7, -71, 240.9, -15.7, 288, -14, 288, 2, 309.6, 2, 312.1, 10, 317.1, 10, 319.3, 31.3, 316, 35.1, 316, 39.9, 308.6, 48.4, 307, 54.6, 307, 62.6, 302, 64.8, 302, 80, 287.9, 80, 287.1, 94.6, 278, 96.9, 278, 101.9, 272, 104.8, 272, 159.7, 223, 161.9, 223, 186, 196.8, 186, 195.2, 188.5, 194, 190.8, 194, 229, 156.8, 229, 155.9, 274.5, 124, 277.8, 124, 323.8, 82, 326, 82, 342, 61, 343.6, 61, 347.7, 41, 349.3, 41, 347, 25.7, 347, 20.6, 340, 4.59998, 340, -2.39999, 331, -22.4, 331, -25.6, 317, -48.6, 317, -50.7, 298, -73.7, 298, -75.9, 255.8, -116, 253, -122.5, 253, -124.9, 238, -137.9, 238, -139.2, 225.5, -146, 223.5, -146, 136.6, -207, 134.9, -207, 104, -239.9, 104, -241.4, 76.3, -251, 73.6, -251, 55, -263.2, 55, -264.5, 37.3, -270, 31.4, -270, -14.6, -287, -20.3, -287, -24, -290, -24, -292.4, -31.4, -291, -32.3, -291, -39, -296, -39, -297.8)

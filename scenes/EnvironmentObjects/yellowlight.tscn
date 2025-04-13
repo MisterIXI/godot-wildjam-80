@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7k088bw8pt83"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_yfncs"]
+[ext_resource type="Texture2D" uid="uid://q5ktlu4owk22" path="res://assets/images/photos/yellowlight.png" id="2_67t0w"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_auqnv"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7hwnc"]
+seamless = true
+noise = SubResource("FastNoiseLite_auqnv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_haw7m"]
+shader = ExtResource("1_yfncs")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_7hwnc")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="yellowlight" type="StaticBody2D"]
+
+[node name="Yellowlight" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_haw7m")
+texture = ExtResource("2_67t0w")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-15, -419.1, -15, -417.9, -33.2, -416, -40.3, -416, -72.1, -407, -75.5, -407, -102.5, -394, -104.6, -394, -125.6, -379, -127.8, -379, -161.8, -344, -163.1, -344, -180.1, -316, -181.3, -316, -195.2, -286, -196.3, -286, -197.4, -283.5, -195, -281.2, -195, -280.4, -204, -236.2, -204, -222, -212.5, -190, -213.8, -190, -217, -164.1, -217, -127.8, -211, -94.6, -211, -89.7, -205, -72.6, -205, -68.6, -185.3, -24, -184.5, -24, -180, -5, -180, 3, -187, 30.8, -187, 33.3, -241.2, 132, -242.9, 132, -248.9, 273, -251.2, 273, -244.2, 287, -244, 305.8, -237, 313.7, -237, 315.7, -231, 316.7, -231, 317.7, -64, 344.7, -64, 345.8, -14.1, 352, -7.29999, 352, 155, 377.7, 155, 379, 179, 379, 182, 375, 183.8, 375, 186, 357.1, 186, 349.8, 189.8, 346, 191.9, 346, 199, 254.1, 199, 241.3, 206, 197.2, 206, 193.7, 196.4, 165, 195, 149.9, 195, 148.2, 190.8, 144, 185, 125, 185, 121.6, 149, 41.6, 149, 32, 153, 17.3, 153, 14.4, 160, 2.5, 160, 0.599976, 177, -23, 178.3, -23, 193.3, -54, 194.4, -54, 205.4, -87, 206.7, -87, 209.7, -105, 210.8, -105, 213.9, -143, 215, -143, 215, -227.2, 208, -266.4, 208, -271.4, 198, -297.5, 198, -300.5, 181, -330.5, 181, -333.8, 152, -364.9, 152, -366, 136, -378, 136, -379.2, 101, -398.3, 101, -399.5, 69, -409.5, 69, -410.7, 41, -415.8, 41, -416.9)

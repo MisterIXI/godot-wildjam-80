@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://1j4exdyv0vk6"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_uj4le"]
+[ext_resource type="Texture2D" uid="uid://cj6sf1t3n316r" path="res://assets/images/photos/leberkaes.png" id="2_tlctv"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0vdcn"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_fewx0"]
+seamless = true
+noise = SubResource("FastNoiseLite_0vdcn")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xot2r"]
+shader = ExtResource("1_uj4le")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_fewx0")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="leberkaes" type="StaticBody2D"]
+
+[node name="Leberkaes" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_xot2r")
+texture = ExtResource("2_tlctv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-29, -336.1, -29, -334.8, -41.3, -333, -54.3, -333, -88.1, -324, -95.4, -324, -111.3, -317, -115.5, -317, -150.5, -300, -152.6, -300, -189.7, -275, -191.8, -275, -232.8, -235, -234, -235, -247, -217, -248.2, -217, -268.1, -182, -269.4, -182, -279.4, -155, -280.6, -155, -290.7, -107, -292, -107, -292, -93, -293.1, -93, -292, -66.9, -292, -46.8, -283, -5.60001, -283, -1.60001, -261, 55.4, -261, 58.6, -252, 72.6, -252, 74.7, -228, 103.6, -228, 105.9, -201, 131.8, -201, 133, -170, 156, -170, 157.2, -147, 169.2, -147, 170.3, -91, 193.4, -91, 194.6, -68, 199.6, -68, 200.7, -39, 204.7, -39, 205.9, 5, 208, 21.1, 208, 54.6, 204.8, 57.6, 206, 60.3, 206, 101.3, 193, 105.5, 193, 144.5, 174, 146.6, 174, 176.6, 154, 178.8, 154, 210.9, 124, 212, 124, 232, 99, 233.1, 99, 251.1, 72, 252.3, 72, 269.3, 36, 270.5, 36, 285.5, -16, 286.8, -16, 289.8, -50, 291, -50, 291, -78.2, 286, -109.3, 286, -116.3, 278, -140.3, 278, -145.5, 262, -178.5, 262, -181.6, 235, -220.6, 235, -222.8, 193, -264.8, 193, -266.1, 146, -296.2, 146, -297.3, 103, -315.3, 103, -316.6, 39, -330.7, 39, -331.9)

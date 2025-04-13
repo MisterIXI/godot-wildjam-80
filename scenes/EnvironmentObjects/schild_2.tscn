@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://k7kvmdrmmmla"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_s5srh"]
+[ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="2_078ve"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_nwnc6"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_esix6"]
+seamless = true
+noise = SubResource("FastNoiseLite_nwnc6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_155hr"]
+shader = ExtResource("1_s5srh")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_esix6")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="schild2" type="StaticBody2D"]
+
+[node name="Schild2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_155hr")
+texture = ExtResource("2_078ve")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-41, -348.1, -41, -346.9, -77.1, -345, -86.2, -345, -118.4, -338, -127.4, -338, -185.4, -315, -188.5, -315, -224.5, -294, -226.7, -294, -261.7, -267, -263.8, -267, -300.8, -230, -302, -230, -334, -186, -335.2, -186, -352.2, -152, -353.4, -152, -369.4, -108, -370.6, -108, -379.7, -65, -380.8, -65, -383.9, -28, -385.1, -28, -382, 29.1, -382, 37.2, -371, 83, -371, 87.4, -349, 141.5, -349, 144.6, -320, 191.6, -320, 193.8, -294, 221.8, -294, 223.9, -253, 260.8, -253, 262.1, -226, 280.1, -226, 281.2, -177, 306.2, -177, 307.4, -129, 323.4, -129, 324.7, -86, 331.7, -86, 333, -34, 334, -4.79999, 334, 61.4, 322, 66.4, 322, 84.4, 315, 87.5, 315, 127.5, 296, 129.6, 296, 158.6, 277, 160.7, 277, 193.7, 249, 195.9, 249, 219.8, 224, 224.2, 224, 230, 213.5, 235.3, 211, 237.7, 211, 239, 202.1, 239, 200.5, 259, 172, 260.2, 172, 268.2, 156, 269.3, 156, 288.3, 111, 289.6, 111, 303.5, 52, 304.9, 52, 307.9, 2, 309.2, 2, 304, -56, 304, -62.3, 296, -93, 296, -97.4, 285, -126.5, 285, -129.5, 267, -165.5, 267, -167.6, 253, -188.7, 253, -190.7, 221, -229.7, 221, -231.9, 187, -264, 187, -265, 165, -281.1, 165, -282.1, 126, -305.2, 126, -306.3, 105, -315.3, 105, -316.5, 43, -336.5, 43, -337.7, 5, -343.8, 5, -344.9)

@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bwgxsmbpyh5nq"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_y67s3"]
+[ext_resource type="Texture2D" uid="uid://clwfovbnqyymb" path="res://assets/images/photos/fahrradstr.png" id="2_qn4o5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fgfd2"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tjda2"]
+seamless = true
+noise = SubResource("FastNoiseLite_fgfd2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_task5"]
+shader = ExtResource("1_y67s3")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_tjda2")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="fahrradstr" type="StaticBody2D"]
+
+[node name="Fahrradstr" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_task5")
+texture = ExtResource("2_qn4o5")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(-302, -408, -302, -405, -304.7, -387, -306, -387, -310, -211, -310, -201.2, -318.8, -109, -319.9, -109, -325, -21.1, -325, -6.39999, -329, 15.8, -329, 101.8, -338.8, 198, -340.1, 198, -339, 226.1, -339, 235.6, -343.7, 261, -345, 261, -346, 311, -346, 327.7, -341, 333.7, -341, 335.9, -267, 340.8, -267, 342.1, -241.9, 341, -230.1, 341, -116, 346.9, -116, 348, -1, 349, 9.79999, 349, 67, 354.8, 67, 356, 133.9, 356, 220, 361.8, 220, 363, 277.6, 363, 287.5, 356, 289.8, 356, 293.8, 325, 295.1, 325, 294, 296.9, 294, 287.3, 296.8, 267, 297.9, 267, 300.9, 194, 302, 194, 301, 68, 301, 59.2, 303.8, 27, 304.9, 27, 309.9, -108, 311, -108, 310, -186, 310, -190.7, 313.8, -218, 315, -218, 316, -332, 317, -332, 317, -378.4, 311, -380.5, 311, -382, 196, -384, 185.2, -384, 144.1, -388, 103.2, -388, -32, -400.9, -32, -402, -94, -401, -103.9, -401, -156, -404.9, -156, -406)

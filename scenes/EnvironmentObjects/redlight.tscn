@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://cbs1kk2k7axw"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_r4dxl"]
+[ext_resource type="Texture2D" uid="uid://b7i5w7jyk5uvd" path="res://assets/images/photos/redlight.png" id="2_2dpli"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vhics"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5k0cs"]
+seamless = true
+noise = SubResource("FastNoiseLite_vhics")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukypy"]
+shader = ExtResource("1_r4dxl")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_5k0cs")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="redlight" type="StaticBody2D"]
+
+[node name="Redlight" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ukypy")
+texture = ExtResource("2_2dpli")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+visible = false
+polygon = PackedVector2Array(12, -270, 12, -268.9, -35.2, -265, -42.3, -265, -72.3, -255, -75.6, -255, -117.5, -230, -119.8, -230, -137.9, -213, -139.9, -213, -161.9, -188, -163.2, -188, -180.2, -155, -181.4, -155, -189, -132.3, -189, -129.6, -210.2, -90, -211.4, -90, -223.4, -55, -224.6, -55, -232.7, -17, -233.8, -17, -237.8, 24, -239, 24, -239, 106.1, -259.7, 124, -261.4, 124, -270.4, 149, -272.3, 149, -267, 189.3, -267, 196.4, -259.4, 216, -258.8, 216, -256, 236.3, -256, 243.8, -247, 252.8, -247, 254.8, -215, 258.7, -215, 260, -206.3, 260, -201.3, 256, -194.3, 256, -50, 275.7, -50, 276.8, 51, 287.8, 51, 289, 70.6, 289, 81.6, 282, 83.4, 282, 95.4, 250, 97, 250, 97, 208.7, 101.9, 203, 103.5, 203, 107.5, 189, 109.4, 189, 105, 164.6, 105, 161.2, 96.8, 153, 95.5, 153, 94, 147, 94, 142.7, 100, 135.7, 131.5, 120, 133.7, 120, 152.7, 105, 154.9, 105, 181.9, 76, 183.1, 76, 197.1, 54, 198.3, 54, 214.3, 17, 215.6, 17, 220.7, -8, 221.9, -8, 224.9, -54, 226.1, -54, 225, -82.1, 225, -91.2, 219, -121.4, 219, -125.4, 211, -145.5, 211, -148.5, 198, -172.7, 198, -174.7, 179, -198.7, 179, -200.9, 151, -227, 151, -228.2, 109, -251.3, 109, -252.5, 78.3, -262, 72.5, -262, 62, -268.2, 62, -270)
