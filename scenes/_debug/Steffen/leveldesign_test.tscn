@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=52 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
 [ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
@@ -9,9 +9,12 @@
 [ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="6_4wg66"]
 [ext_resource type="PackedScene" uid="uid://bq5gint4u8mmc" path="res://scenes/_debug/Steffen/trampoline.tscn" id="7_4be4q"]
 [ext_resource type="PackedScene" uid="uid://k6f2r7tmtvlb" path="res://scenes/EnvironmentObjects/gulli_3.tscn" id="7_74n1c"]
+[ext_resource type="PackedScene" uid="uid://bppojpxqxwl4k" path="res://scenes/EnvironmentObjects/leo.tscn" id="7_hcqwe"]
 [ext_resource type="PackedScene" uid="uid://qxr4i01dqg4m" path="res://scenes/EnvironmentObjects/gulli_4.tscn" id="8_7wess"]
+[ext_resource type="PackedScene" uid="uid://bsm4hc7ewy2bu" path="res://scenes/EnvironmentObjects/eye.tscn" id="8_qktsu"]
 [ext_resource type="PackedScene" uid="uid://cb8tooji1fm0o" path="res://scenes/EnvironmentObjects/gulli.tscn" id="9_0pdxe"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="10_0pdxe"]
+[ext_resource type="PackedScene" uid="uid://dkiepgksa1te6" path="res://scenes/EnvironmentObjects/zigaretten.tscn" id="10_k81dp"]
 [ext_resource type="Texture2D" uid="uid://cwu1wa6jl7lbn" path="res://assets/images/photos/breznak.png" id="11_ovmwo"]
 [ext_resource type="Texture2D" uid="uid://oyy2or6lqq7n" path="res://assets/images/photos/bild.png" id="12_3y6uy"]
 [ext_resource type="Texture2D" uid="uid://duy10k5w3q6a2" path="res://assets/images/photos/bild2.png" id="13_55gqm"]
@@ -622,6 +625,29 @@ scale = Vector2(0.38458, 0.38458)
 
 [node name="A" parent="Env" instance=ExtResource("6_4wg66")]
 position = Vector2(7283, -1511)
+
+[node name="leo" parent="Env" instance=ExtResource("7_hcqwe")]
+position = Vector2(7454, -930)
+rotation = -0.0420029
+scale = Vector2(0.667729, 0.667729)
+
+[node name="Eye" parent="Env" instance=ExtResource("8_qktsu")]
+position = Vector2(7774, -429)
+rotation = -0.593016
+scale = Vector2(0.36, 0.36)
+
+[node name="reclam" parent="Env" instance=ExtResource("18_o7m6t")]
+position = Vector2(9853, -2617)
+rotation = -1.12698
+
+[node name="zigaretten" parent="Env" instance=ExtResource("10_k81dp")]
+position = Vector2(9051, -2760)
+rotation = -0.958182
+
+[node name="yield" parent="Env" instance=ExtResource("5_j6ebo")]
+position = Vector2(8052, -2701)
+rotation = 1.60813
+scale = Vector2(1.82735, 1.82735)
 
 [node name="platform" parent="." instance=ExtResource("2_d4148")]
 position = Vector2(6650, 118)
