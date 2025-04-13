@@ -146,7 +146,7 @@ script = ExtResource("3_uxo23")
 
 [node name="PlayerCollider1" type="CollisionShape2D" parent="."]
 z_index = 200
-position = Vector2(-14.5875, -0.587456)
+position = Vector2(-18, -9)
 rotation = -0.229376
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_3y6uy")
