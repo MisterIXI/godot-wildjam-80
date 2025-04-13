@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=86 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
 [ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://djwsv77l05fqn" path="res://scenes/EnvironmentObjects/zeitung.tscn" id="16_dklac"]
 [ext_resource type="PackedScene" uid="uid://dbi7dabob2xr5" path="res://scenes/EnvironmentObjects/schild.tscn" id="17_434gd"]
 [ext_resource type="PackedScene" uid="uid://cq42j031f7v1o" path="res://scenes/EnvironmentObjects/reclam.tscn" id="18_o7m6t"]
-[ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="19_1i5yh"]
 [ext_resource type="PackedScene" uid="uid://d1114jsogyu88" path="res://scenes/EnvironmentObjects/einfahrt.tscn" id="20_5t7de"]
 [ext_resource type="Texture2D" uid="uid://bedtum68bed4r" path="res://assets/images/photos/reclam.png" id="22_k81dp"]
 [ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="26_j2mqq"]
@@ -33,6 +32,13 @@
 [ext_resource type="PackedScene" uid="uid://crglposwftdms" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="32_kvor3"]
 [ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="32_lv4xw"]
 [ext_resource type="PackedScene" uid="uid://dpoa3ew1vnww6" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="33_kvor3"]
+[ext_resource type="PackedScene" uid="uid://c7k088bw8pt83" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_ae2dv"]
+[ext_resource type="PackedScene" uid="uid://0jait75dgawh" path="res://scenes/EnvironmentObjects/reifen.tscn" id="35_0wrp4"]
+[ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="35_ae2dv"]
+[ext_resource type="PackedScene" uid="uid://7swphsmengui" path="res://scenes/EnvironmentObjects/isetta.tscn" id="35_kr8qw"]
+[ext_resource type="PackedScene" uid="uid://brqky1wh7xwv8" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_1srk6"]
+[ext_resource type="PackedScene" uid="uid://cbs1kk2k7axw" path="res://scenes/EnvironmentObjects/redlight.tscn" id="36_ae2dv"]
+[ext_resource type="PackedScene" uid="uid://1j4exdyv0vk6" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="36_rj8kj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cprxv"]
 size = Vector2(1498, 20)
@@ -350,10 +356,31 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8rkkq"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_51hpo"]
+seamless = true
+noise = SubResource("FastNoiseLite_8rkkq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7ccy"]
+shader = ExtResource("10_0pdxe")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.650215, 0.545754, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_51hpo")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(6167, 3)
+position = Vector2(8495, -5079)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -1004,10 +1031,6 @@ libraries = {
 }
 autoplay = "moveObject"
 
-[node name="Blume2" parent="Env" instance=ExtResource("19_1i5yh")]
-position = Vector2(10453, -525)
-rotation = 0.158747
-
 [node name="Einfahrt" parent="Env" instance=ExtResource("20_5t7de")]
 position = Vector2(10674, -1792)
 scale = Vector2(1.84371, 1.83125)
@@ -1112,8 +1135,129 @@ visible = false
 polygon = PackedVector2Array(-41, -348.1, -41, -346.9, -77.1, -345, -86.2, -345, -118.4, -338, -127.4, -338, -185.4, -315, -188.5, -315, -224.5, -294, -226.7, -294, -261.7, -267, -263.8, -267, -300.8, -230, -302, -230, -334, -186, -335.2, -186, -352.2, -152, -353.4, -152, -369.4, -108, -370.6, -108, -379.7, -65, -380.8, -65, -383.9, -28, -385.1, -28, -382, 29.1, -382, 37.2, -371, 83, -371, 87.4, -349, 141.5, -349, 144.6, -320, 191.6, -320, 193.8, -294, 221.8, -294, 223.9, -253, 260.8, -253, 262.1, -226, 280.1, -226, 281.2, -177, 306.2, -177, 307.4, -129, 323.4, -129, 324.7, -86, 331.7, -86, 333, -34, 334, -4.79999, 334, 61.4, 322, 66.4, 322, 84.4, 315, 87.5, 315, 127.5, 296, 129.6, 296, 158.6, 277, 160.7, 277, 193.7, 249, 195.9, 249, 219.8, 224, 224.2, 224, 230, 213.5, 235.3, 211, 237.7, 211, 239, 202.1, 239, 200.5, 259, 172, 260.2, 172, 268.2, 156, 269.3, 156, 288.3, 111, 289.6, 111, 303.5, 52, 304.9, 52, 307.9, 2, 309.2, 2, 304, -56, 304, -62.3, 296, -93, 296, -97.4, 285, -126.5, 285, -129.5, 267, -165.5, 267, -167.6, 253, -188.7, 253, -190.7, 221, -229.7, 221, -231.9, 187, -264, 187, -265, 165, -281.1, 165, -282.1, 126, -305.2, 126, -306.3, 105, -315.3, 105, -316.5, 43, -336.5, 43, -337.7, 5, -343.8, 5, -344.9)
 
 [node name="spielstr" parent="Env" instance=ExtResource("33_kvor3")]
-position = Vector2(10351, -5238)
+position = Vector2(10340, -4965)
 rotation = 0.387761
-scale = Vector2(2.68, 2.68)
+scale = Vector2(2.43279, 2.43279)
+
+[node name="pole4" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(11535, -4236)
+rotation = -0.0725476
+scale = Vector2(-0.699918, -0.699918)
+script = ExtResource("27_aosff")
+rotation_speed = -160.0
+metadata/_edit_group_ = true
+
+[node name="Pole" type="Sprite2D" parent="Env/pole4"]
+material = SubResource("ShaderMaterial_g7ccy")
+texture = ExtResource("35_ae2dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole4"]
+polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
+
+[node name="pole5" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(11968, -4724)
+rotation = -1.63668
+scale = Vector2(-0.426009, -0.426009)
+script = ExtResource("27_aosff")
+rotation_speed = -160.0
+metadata/_edit_group_ = true
+
+[node name="Pole" type="Sprite2D" parent="Env/pole5"]
+material = SubResource("ShaderMaterial_g7ccy")
+texture = ExtResource("35_ae2dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole5"]
+polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
+
+[node name="pole6" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(12010, -5400)
+rotation = -0.0725148
+scale = Vector2(-0.699918, -0.699918)
+script = ExtResource("27_aosff")
+rotation_speed = -160.0
+metadata/_edit_group_ = true
+
+[node name="Pole" type="Sprite2D" parent="Env/pole6"]
+material = SubResource("ShaderMaterial_g7ccy")
+texture = ExtResource("35_ae2dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole6"]
+polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
+
+[node name="yield3" parent="Env" instance=ExtResource("5_j6ebo")]
+position = Vector2(12519, -4112)
+rotation = 1.13129
+
+[node name="reifen" parent="Env" instance=ExtResource("35_0wrp4")]
+position = Vector2(13126, -5284)
+
+[node name="isetta" parent="Env" instance=ExtResource("35_kr8qw")]
+position = Vector2(12757, -6194)
+rotation = -0.381527
+scale = Vector2(1.92406, 1.92406)
+
+[node name="StaticBody2D33" parent="Env" instance=ExtResource("2_d4148")]
+position = Vector2(9027, -5965)
+
+[node name="StaticBody2D35" parent="Env" instance=ExtResource("2_d4148")]
+position = Vector2(8270, -6617)
+rotation = -1.57686
+scale = Vector2(0.879521, 1)
+
+[node name="leberkaes" parent="Env" instance=ExtResource("36_rj8kj")]
+position = Vector2(11996, -6371)
+
+[node name="zeitung5" parent="Env" instance=ExtResource("16_dklac")]
+position = Vector2(8309, -4088)
+rotation = 0.664903
+
+[node name="schild1" parent="." instance=ExtResource("36_1srk6")]
+position = Vector2(10120, -2844)
+rotation = -0.550847
+scale = Vector2(1.08623, 1.08623)
+
+[node name="zeitung" parent="." instance=ExtResource("16_dklac")]
+position = Vector2(10605, -3281)
+rotation = 0.188228
+scale = Vector2(1.76468, 1.76468)
+
+[node name="redlight" parent="." instance=ExtResource("36_ae2dv")]
+position = Vector2(11269, -3607)
+rotation = 0.842537
+
+[node name="StaticBody2D" parent="." instance=ExtResource("2_d4148")]
+position = Vector2(11823, -3070)
+rotation = 1.47641
+
+[node name="StaticBody2D5" parent="." instance=ExtResource("2_d4148")]
+position = Vector2(11962, -1603)
+rotation = 1.47641
+
+[node name="StaticBody2D2" parent="." instance=ExtResource("2_d4148")]
+position = Vector2(11605, -2791)
+rotation = 1.47641
+
+[node name="StaticBody2D3" parent="." instance=ExtResource("2_d4148")]
+position = Vector2(11270, -1605)
+rotation = 2.07439
+
+[node name="StaticBody2D4" parent="." instance=ExtResource("2_d4148")]
+position = Vector2(11518, -1406)
+rotation = 2.18856
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("2_d4148")]
+position = Vector2(11054, -787)
+rotation = 2.75345
+
+[node name="yellowlight" parent="." instance=ExtResource("34_ae2dv")]
+position = Vector2(10515, -106)
+
+[node name="schild2" parent="." instance=ExtResource("36_1srk6")]
+position = Vector2(10242, 111)
+rotation = 1.1554
+
+[node name="spielstr" parent="." instance=ExtResource("33_kvor3")]
+position = Vector2(10421, -1111)
+scale = Vector2(0.84, 0.84)
 
 [editable path="Env/schild"]
