@@ -141,7 +141,7 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(8659, -1527)
+position = Vector2(6162, 25)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -628,8 +628,8 @@ scale = Vector2(0.38458, 0.38458)
 position = Vector2(7283, -1511)
 
 [node name="leo" parent="Env" instance=ExtResource("7_hcqwe")]
-position = Vector2(7454, -930)
-rotation = -0.0420029
+position = Vector2(7445, -932)
+rotation = -0.192524
 scale = Vector2(0.667729, 0.667729)
 
 [node name="Eye" parent="Env" instance=ExtResource("8_qktsu")]
@@ -749,3 +749,13 @@ scale = Vector2(1, 1)
 [node name="gulli2" parent="." instance=ExtResource("9_0pdxe")]
 position = Vector2(7351, -2713)
 scale = Vector2(0.36, 0.36)
+
+[node name="pole" parent="." instance=ExtResource("5_55gqm")]
+position = Vector2(8043, -327)
+rotation = 1.51901
+scale = Vector2(0.438672, 0.438672)
+
+[node name="zeitung4" parent="." instance=ExtResource("16_dklac")]
+position = Vector2(7540, -583)
+rotation = 1.01995
+scale = Vector2(0.538897, 0.538897)
