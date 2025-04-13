@@ -38,4 +38,14 @@ func _physics_process(_delta):
 		if overshoot > 0:
 			# print("Too far: " + str(overshoot))
 			player.linear_velocity += rope_dir * overshoot * 13
-
+	if is_active:
+		# apply angular velocity if not hanging from hand
+		if player.rotation_degrees < -55:
+			player.apply_torque(8000)
+		elif player.rotation_degrees > -35:
+			player.apply_torque(-8000)
+	else:
+		if player.rotation_degrees < -20:
+			player.apply_torque(5000)
+		elif player.rotation_degrees > 20:
+			player.apply_torque(-5000)

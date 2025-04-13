@@ -9,7 +9,7 @@ func _ready() -> void:
 
   if OS.get_name() == "HTML5":
     disabled = true
-  else:
+  elif not disabled:
     disabled = false
   
   disabledTextureRect.visible = disabled
