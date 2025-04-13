@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=47 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -6,19 +6,15 @@
 [ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/Player/follow_cam.gd" id="3_dl1wr"]
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
-[ext_resource type="Texture2D" uid="uid://b56v7l3st41pr" path="res://assets/images/particle/dustclouds/dustclouds/1.PNG" id="5_1bwnf"]
+[ext_resource type="Script" uid="uid://c5n4yw6dca0lq" path="res://scenes/Player/dust_cloud_particle_system.gd" id="5_tayva"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
-[ext_resource type="Texture2D" uid="uid://c70ibyrpfdd85" path="res://assets/images/particle/dustclouds/dustclouds/3.PNG" id="6_43ckd"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
-[ext_resource type="Texture2D" uid="uid://dw0mrggcwicr0" path="res://assets/images/particle/dustclouds/dustclouds/4.PNG" id="7_cctgl"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
 [ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="7_n7rn1"]
 [ext_resource type="PackedScene" uid="uid://cix64hjf82n1n" path="res://scenes/VFX/sparkle.tscn" id="8_7tfl1"]
 [ext_resource type="Texture2D" uid="uid://cgwaudgdfmeaa" path="res://assets/images/particle/dustclouds/dustclouds/5.PNG" id="8_an8q1"]
 [ext_resource type="Texture2D" uid="uid://djk0rp2b2rkru" path="res://assets/images/particle/dustclouds/dustclouds/6.PNG" id="9_hxkm2"]
-[ext_resource type="Texture2D" uid="uid://lmikk1ju038j" path="res://assets/images/particle/dustclouds/dustclouds/7.PNG" id="10_18ciy"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="10_t6q27"]
-[ext_resource type="Texture2D" uid="uid://tbhm8m2x6m1k" path="res://assets/images/particle/dustclouds/dustclouds/8.PNG" id="11_cg2hl"]
 [ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
@@ -95,13 +91,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="Curve" id="Curve_1bwnf"]
-_data = [Vector2(0, 0.606742), 0.0, 0.0, 0, 0, Vector2(0.363636, 0.393258), -1.81273, -1.81273, 0, 0, Vector2(0.636364, 0.337079), 0.0, 0.0, 0, 0, Vector2(0.838384, 0.191011), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 5
+[sub_resource type="Curve" id="Curve_x8khf"]
+_data = [Vector2(0, 0), 0.0, 1.01966, 0, 0, Vector2(1, 0), -0.273211, 0.0, 0, 0]
+point_count = 2
 
-[sub_resource type="Curve" id="Curve_tayva"]
-_data = [Vector2(0, 0.47191), 0.0, -1.23595, 0, 0, Vector2(0.292929, 0.337079), 0.0, 0.0, 0, 0, Vector2(0.530303, 0.235955), 0.568013, 0.568013, 0, 0, Vector2(0.722222, 0.280899), 0.0, 0.0, 0, 0, Vector2(0.894539, 0.128492), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 6
+[sub_resource type="Gradient" id="Gradient_aciub"]
+offsets = PackedFloat32Array(0, 0.982558)
+colors = PackedColorArray(0.48, 0.48, 0.48, 1, 0.91, 0.91, 0.91, 1)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3y6uy"]
 radius = 7.33754
@@ -198,7 +194,7 @@ shader_parameter/frame_time = 0.25
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
 size = Vector2(60, 50)
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer") groups=["player"]]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "dust_cloud_system") groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
@@ -209,6 +205,7 @@ rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
 hop_cd_timer = NodePath("HopCD")
+dust_cloud_system = NodePath("DustCloudParticleSystem")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
 z_index = 1000
@@ -220,20 +217,22 @@ animation = &"throw"
 autoplay = "default"
 script = ExtResource("3_uxo23")
 
-[node name="DustCloudParticleSystem" type="Node2D" parent="."]
+[node name="DustCloudParticleSystem" type="Node2D" parent="." node_paths=PackedStringArray("particles")]
+top_level = true
+script = ExtResource("5_tayva")
+particles = [NodePath("DustcloudParticles"), NodePath("DustcloudParticles2")]
 
 [node name="DustcloudParticles" type="CPUParticles2D" parent="DustCloudParticleSystem"]
 z_index = 2000
-position = Vector2(-4, 49)
 scale = Vector2(0.275049, 0.275049)
 emitting = false
-amount = 5
-texture = ExtResource("5_1bwnf")
+amount = 4
+texture = ExtResource("8_an8q1")
+lifetime = 0.75
 one_shot = true
-explosiveness = 1.0
-local_coords = true
+explosiveness = 0.86
 emission_shape = 1
-emission_sphere_radius = 68.49
+emission_sphere_radius = 60.0
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 10.0
@@ -242,106 +241,22 @@ angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 angle_min = -180.0
 angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
+scale_amount_min = 0.03
+scale_amount_max = 0.08
+scale_amount_curve = SubResource("Curve_x8khf")
+color_initial_ramp = SubResource("Gradient_aciub")
 
 [node name="DustcloudParticles2" type="CPUParticles2D" parent="DustCloudParticleSystem"]
 z_index = 2000
-position = Vector2(-4, 49)
 scale = Vector2(0.275049, 0.275049)
 emitting = false
-amount = 5
-texture = ExtResource("6_43ckd")
-one_shot = true
-explosiveness = 1.0
-local_coords = true
-emission_shape = 1
-emission_sphere_radius = 68.49
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 100.0
-angular_velocity_min = -180.0
-angular_velocity_max = 180.0
-angle_min = -180.0
-angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
-
-[node name="DustcloudParticles3" type="CPUParticles2D" parent="DustCloudParticleSystem"]
-z_index = 2000
-position = Vector2(-4, 49)
-scale = Vector2(0.275049, 0.275049)
-emitting = false
-amount = 5
-texture = ExtResource("7_cctgl")
-one_shot = true
-explosiveness = 1.0
-local_coords = true
-emission_shape = 1
-emission_sphere_radius = 68.49
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 100.0
-angular_velocity_min = -180.0
-angular_velocity_max = 180.0
-angle_min = -180.0
-angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
-
-[node name="DustcloudParticles4" type="CPUParticles2D" parent="DustCloudParticleSystem"]
-z_index = 2000
-position = Vector2(-4, 49)
-scale = Vector2(0.275049, 0.275049)
-emitting = false
-amount = 5
-texture = ExtResource("8_an8q1")
-one_shot = true
-explosiveness = 1.0
-local_coords = true
-emission_shape = 1
-emission_sphere_radius = 68.49
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 100.0
-angular_velocity_min = -180.0
-angular_velocity_max = 180.0
-angle_min = -180.0
-angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
-
-[node name="DustcloudParticles5" type="CPUParticles2D" parent="DustCloudParticleSystem"]
-z_index = 2000
-position = Vector2(-4, 49)
-scale = Vector2(0.275049, 0.275049)
-emitting = false
-amount = 5
+amount = 4
 texture = ExtResource("9_hxkm2")
+lifetime = 0.75
 one_shot = true
-explosiveness = 1.0
-local_coords = true
+explosiveness = 0.86
 emission_shape = 1
-emission_sphere_radius = 68.49
+emission_sphere_radius = 60.0
 spread = 180.0
 gravity = Vector2(0, 0)
 initial_velocity_min = 10.0
@@ -350,66 +265,10 @@ angular_velocity_min = -180.0
 angular_velocity_max = 180.0
 angle_min = -180.0
 angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
-
-[node name="DustcloudParticles6" type="CPUParticles2D" parent="DustCloudParticleSystem"]
-z_index = 2000
-position = Vector2(-4, 49)
-scale = Vector2(0.275049, 0.275049)
-emitting = false
-amount = 5
-texture = ExtResource("10_18ciy")
-one_shot = true
-explosiveness = 1.0
-local_coords = true
-emission_shape = 1
-emission_sphere_radius = 68.49
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 100.0
-angular_velocity_min = -180.0
-angular_velocity_max = 180.0
-angle_min = -180.0
-angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
-
-[node name="DustcloudParticles7" type="CPUParticles2D" parent="DustCloudParticleSystem"]
-z_index = 2000
-position = Vector2(-4, 49)
-scale = Vector2(0.275049, 0.275049)
-emitting = false
-amount = 5
-texture = ExtResource("11_cg2hl")
-one_shot = true
-explosiveness = 1.0
-local_coords = true
-emission_shape = 1
-emission_sphere_radius = 68.49
-spread = 180.0
-gravity = Vector2(0, 0)
-initial_velocity_min = 10.0
-initial_velocity_max = 100.0
-angular_velocity_min = -180.0
-angular_velocity_max = 180.0
-angle_min = -180.0
-angle_max = 180.0
-scale_amount_min = 0.05
-scale_amount_max = 0.1
-split_scale = true
-scale_curve_x = SubResource("Curve_1bwnf")
-scale_curve_y = SubResource("Curve_tayva")
-color = Color(0.560784, 0.560784, 0.560784, 0.458824)
+scale_amount_min = 0.03
+scale_amount_max = 0.08
+scale_amount_curve = SubResource("Curve_x8khf")
+color_initial_ramp = SubResource("Gradient_aciub")
 
 [node name="LPlayerCollider1" type="CollisionShape2D" parent="."]
 z_index = 200
@@ -462,6 +321,8 @@ process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("3_dl1wr")
 curve = SubResource("Curve_7wess")
+
+[node name="CamerashakeCD" type="Timer" parent="FollowCam"]
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
 visible = false
@@ -573,6 +434,7 @@ anchor_point_left = NodePath("../AnchorPointLeft")
 anchor_point_right = NodePath("../AnchorPointRight")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="hard_impact" from="." to="FollowCam" method="_on_hard_impact"]
 [connection signal="hopped_left" from="." to="CharacterFlipper" method="on_flip_left"]
 [connection signal="hopped_right" from="." to="CharacterFlipper" method="on_flip_right"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
