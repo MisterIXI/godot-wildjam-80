@@ -1,16 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://bqihfmd6cswst"]
+[gd_scene load_steps=6 format=3 uid="uid://bqihfmd6cswst"]
 
 [ext_resource type="Script" uid="uid://dr6hefbi3ioga" path="res://global/menu/menu.gd" id="1_adrvt"]
 [ext_resource type="PackedScene" uid="uid://4aa2lrydyhgf" path="res://global/menu/main_menu/main_menu.tscn" id="1_sjb18"]
 [ext_resource type="PackedScene" uid="uid://bcvvh7wycn3bm" path="res://global/menu/pause_menu/pause_menu.tscn" id="2_c2i1n"]
 [ext_resource type="PackedScene" uid="uid://cent0ph746c7e" path="res://global/menu/settings_menu/settings_menu.tscn" id="3_c2i1n"]
+[ext_resource type="PackedScene" uid="uid://bteygbql26mqp" path="res://global/menu/leaderboard_menu/leaderboard_menu.tscn" id="5_71gem"]
 
-[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu")]
+[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu")]
 process_mode = 3
 script = ExtResource("1_adrvt")
 main_menu = NodePath("MainMenu")
 pause_menu = NodePath("PauseMenu")
 settings_menu = NodePath("SettingsMenu")
+leaderboard_menu = NodePath("LeaderboardMenu")
 
 [node name="MainMenu" parent="." instance=ExtResource("1_sjb18")]
 mouse_filter = 1
@@ -22,5 +24,8 @@ mouse_filter = 1
 [node name="SettingsMenu" parent="." instance=ExtResource("3_c2i1n")]
 visible = false
 mouse_filter = 1
+
+[node name="LeaderboardMenu" parent="." instance=ExtResource("5_71gem")]
+visible = false
 
 [editable path="PauseMenu"]

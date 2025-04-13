@@ -19,12 +19,18 @@ func _ready():
 
 func _on_visibility_changed():
   if _parent.visible:
-    for item in anything_else:
-      item.visible = false
+    start_animation()
 
-    wallpaper.material.set("shader_parameter/height", -1)
-    _parent.get_parent().move_child(_parent, -1)
-    _animate = true
+
+func start_animation():
+  for item in anything_else:
+    item.visible = false
+
+  wallpaper.material.set("shader_parameter/height", -1)
+  _parent.get_parent().move_child(_parent, -1)
+  _animate = true
+
+  #TODO Naddel: Play menu transition in sound
 
 
 func _process(delta: float) -> void:

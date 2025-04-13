@@ -25,6 +25,8 @@ func start_animation():
     item.visible = false
   _animate = true
 
+  #TODO Naddel: Play menu transition out sound
+
 
 func _process(delta: float) -> void:
   if _animate:

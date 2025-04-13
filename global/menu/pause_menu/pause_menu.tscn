@@ -57,11 +57,11 @@ expand_mode = 1
 [node name="ResumeButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 353.0
-offset_top = 68.5
-offset_right = 927.0
-offset_bottom = 168.5
-pivot_offset = Vector2(287, 50)
+offset_left = 391.0
+offset_top = 69.0
+offset_right = 889.0
+offset_bottom = 169.0
+pivot_offset = Vector2(249, 50)
 focus_mode = 0
 text = "
 "
@@ -197,11 +197,11 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 [node name="ResetButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 353.0
-offset_top = 390.5
-offset_right = 927.0
-offset_bottom = 490.5
-pivot_offset = Vector2(287, 50)
+offset_left = 455.0
+offset_top = 391.0
+offset_right = 825.0
+offset_bottom = 491.0
+pivot_offset = Vector2(185, 50)
 focus_mode = 0
 text = "
 "
@@ -253,11 +253,11 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 [node name="MenuButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 353.0
-offset_top = 551.5
-offset_right = 927.0
-offset_bottom = 651.5
-pivot_offset = Vector2(287, 50)
+offset_left = 469.0
+offset_top = 552.0
+offset_right = 811.0
+offset_bottom = 652.0
+pivot_offset = Vector2(171, 50)
 focus_mode = 0
 text = "
 "
