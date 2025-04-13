@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://4jb4ne20keau"]
+[gd_scene load_steps=2 format=3 uid="uid://4jb4ne20keau"]
+
+[ext_resource type="Script" uid="uid://bma65ylku7xq5" path="res://scenes/managers/highscore_manager.gd" id="1_teem4"]
 
 [node name="highscore_manager" type="Node"]
+script = ExtResource("1_teem4")

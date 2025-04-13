@@ -6,7 +6,7 @@ var is_active: bool = false
 var length: float = 0.0
 @export var anchor: Node2D = null
 @export var anchor_indicator: Node2D = null
-@export var sparkle: Node2D = null
+@export var sparkle: SparkleEmitter = null
 
 func activate(target_pos: Vector2, target_body: Node2D):
 	if target_body.is_in_group("MovingObstacle"):
@@ -16,7 +16,7 @@ func activate(target_pos: Vector2, target_body: Node2D):
 		target_body.add_child(anchor_indicator)
 	anchor_indicator.global_position = target_pos
 	anchor_indicator.show()
-	sparkle.emit()
+	sparkle.emit_at(target_pos)
 	anchor.global_position = target_pos
 	is_active = true
 	length = (anchor.global_position - player.global_position).length() #- 30
