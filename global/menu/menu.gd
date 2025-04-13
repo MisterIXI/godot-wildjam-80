@@ -5,6 +5,7 @@ extends Node
 @export var main_menu : MainMenu
 @export var pause_menu : PauseMenu
 @export var settings_menu : SettingsMenu
+@export var leaderboard_menu : LeaderboardMenu
 
 
 func _ready():
@@ -18,6 +19,7 @@ func _ready():
   
   main_menu.visibility_changed.connect(_on_mm_visibility_changed)
   main_menu.play_button.pressed.connect(_on_mm_play)
+  main_menu.leaderboard_button.pressed.connect(_on_mm_leaderboard)
   main_menu.settings_button.pressed.connect(_on_mm_settings)
 
   pause_menu.visibility_changed.connect(_on_pm_visibility_changed)
@@ -49,6 +51,10 @@ func _on_mm_settings() -> void:
   # main_menu.hide()
   settings_menu.show()
   settings_menu.last_menu = main_menu
+
+
+func _on_mm_leaderboard() -> void:
+  leaderboard_menu.show()
 
 
 ## pause menu

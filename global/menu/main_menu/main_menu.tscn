@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=3 uid="uid://4aa2lrydyhgf"]
+[gd_scene load_steps=37 format=3 uid="uid://4aa2lrydyhgf"]
 
 [ext_resource type="Script" uid="uid://bns3wf0omgidn" path="res://global/menu/main_menu/main_menu.gd" id="1_kbhnn"]
 [ext_resource type="Texture2D" uid="uid://boxausdy83fgc" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-4.jpg" id="1_s0oey"]
@@ -14,20 +14,30 @@
 [ext_resource type="Texture2D" uid="uid://cmgyyh5118c0s" path="res://assets/images/menu/letters/T.png" id="9_muncv"]
 [ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="10_cp0kx"]
 [ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="10_e4xug"]
+[ext_resource type="Texture2D" uid="uid://djtjbdmx8r6mj" path="res://assets/images/menu/letters/L-2.png" id="11_70j52"]
 [ext_resource type="Texture2D" uid="uid://do5m8aot4mglm" path="res://assets/images/menu/letters/I-3.png" id="11_gub5j"]
+[ext_resource type="Texture2D" uid="uid://dj2vflkp5cnk7" path="res://assets/images/menu/letters/E-4.png" id="12_e6vpv"]
 [ext_resource type="Texture2D" uid="uid://uad80226meta" path="res://assets/images/menu/letters/N-2.png" id="12_rfres"]
+[ext_resource type="Texture2D" uid="uid://bn2ivdajmbjs6" path="res://assets/images/menu/letters/A.png" id="13_awrfj"]
 [ext_resource type="Texture2D" uid="uid://dhosfmnkcfadm" path="res://assets/images/menu/letters/G.png" id="13_uwjg4"]
+[ext_resource type="Texture2D" uid="uid://bt8ecyo1gm5j0" path="res://assets/images/menu/letters/D.png" id="14_aqxry"]
 [ext_resource type="Texture2D" uid="uid://brylobm4q8ujk" path="res://assets/images/menu/letters/Q-2.png" id="14_mr20i"]
 [ext_resource type="Script" uid="uid://b0ldfx8ewcjhc" path="res://global/menu/main_menu/utils/quit_button.gd" id="14_sjqqk"]
 [ext_resource type="Texture2D" uid="uid://cu2r1iabk3fyv" path="res://assets/images/menu/letters/U-3.png" id="15_gpwv1"]
 [ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="16_7o47f"]
+[ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="16_kgjff"]
 [ext_resource type="Texture2D" uid="uid://dm30tbpwnihj1" path="res://assets/images/menu/letters/T-2.png" id="17_3rt7s"]
+[ext_resource type="Texture2D" uid="uid://vv3kbuj3i2y1" path="res://assets/images/menu/letters/B-2.png" id="17_d75bd"]
+[ext_resource type="Texture2D" uid="uid://cg2rur3ei04i8" path="res://assets/images/menu/letters/O-3.png" id="18_7wahe"]
 [ext_resource type="Texture2D" uid="uid://cr1vj8l6l7h55" path="res://assets/images/menu/disabled_button.png" id="18_7wnyk"]
+[ext_resource type="Texture2D" uid="uid://b0r1lags3xn0u" path="res://assets/images/menu/letters/A-4.png" id="19_hx2qb"]
+[ext_resource type="Texture2D" uid="uid://dpp10njagcbw" path="res://assets/images/menu/letters/R-3.png" id="20_mjews"]
+[ext_resource type="Texture2D" uid="uid://bxm7083svhf2n" path="res://assets/images/menu/letters/D-2.png" id="21_0o1kj"]
 [ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="22_6riyg"]
 [ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="23_70ii0"]
 [ext_resource type="Script" uid="uid://bpcmfk0tpjacc" path="res://components/transition/untransition.gd" id="24_dpyif"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button", "wallpaper")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button", "leaderboard_button", "wallpaper")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -38,6 +48,7 @@ grow_vertical = 2
 script = ExtResource("1_kbhnn")
 play_button = NodePath("PlayButton")
 settings_button = NodePath("SettingsButton")
+leaderboard_button = NodePath("LeaderboardButton")
 wallpaper = NodePath("Wallpaper")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
@@ -53,12 +64,14 @@ expand_mode = 1
 
 [node name="PlayButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 1
-offset_left = 353.0
-offset_top = 130.0
-offset_right = 927.0
-offset_bottom = 230.0
-pivot_offset = Vector2(287, 50)
+layout_mode = 2
+offset_left = 477.0
+offset_top = 63.0
+offset_right = 803.0
+offset_bottom = 163.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(163, 50)
 focus_mode = 0
 text = "
 "
@@ -105,14 +118,110 @@ expand_mode = 3
 script = ExtResource("10_cp0kx")
 metadata/_custom_type_script = "uid://iryt2xkha5ve"
 
+[node name="LeaderboardButton" type="Button" parent="."]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+offset_left = 213.0
+offset_top = 228.0
+offset_right = 1067.0
+offset_bottom = 328.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(427, 50)
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="LeaderboardButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="L" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("11_70j52")
+expand_mode = 3
+
+[node name="E" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("12_e6vpv")
+expand_mode = 3
+
+[node name="A" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("13_awrfj")
+expand_mode = 3
+
+[node name="D" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("14_aqxry")
+expand_mode = 3
+
+[node name="E2" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("8_ijtol")
+expand_mode = 3
+
+[node name="R" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("16_kgjff")
+expand_mode = 3
+
+[node name="B" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("17_d75bd")
+expand_mode = 3
+
+[node name="O" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("18_7wahe")
+expand_mode = 3
+
+[node name="A2" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("19_hx2qb")
+expand_mode = 3
+
+[node name="R2" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("20_mjews")
+expand_mode = 3
+
+[node name="D2" type="TextureRect" parent="LeaderboardButton/LetterContainer"]
+material = ExtResource("2_sjqqk")
+layout_mode = 2
+texture = ExtResource("21_0o1kj")
+expand_mode = 3
+
+[node name="ButtonHover" type="Node" parent="LeaderboardButton"]
+script = ExtResource("10_cp0kx")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
 [node name="SettingsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 353.0
-offset_top = 310.0
-offset_right = 927.0
-offset_bottom = 410.0
-pivot_offset = Vector2(287, 50)
+offset_left = 358.0
+offset_top = 392.5
+offset_right = 922.0
+offset_bottom = 492.5
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(282, 50)
 focus_mode = 0
 text = "
 "
@@ -182,11 +291,13 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 [node name="QuitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
-offset_left = 353.0
-offset_top = 490.0
-offset_right = 927.0
-offset_bottom = 590.0
-pivot_offset = Vector2(287, 50)
+offset_left = 499.0
+offset_top = 558.0
+offset_right = 781.0
+offset_bottom = 658.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(141, 50)
 focus_mode = 0
 text = "
 "
@@ -253,12 +364,12 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("23_70ii0")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton")]
+anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../LeaderboardButton")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
 
 [node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
 script = ExtResource("24_dpyif")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton")]
+anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton"), NodePath("../LeaderboardButton")]
 _activator = [NodePath("../PlayButton")]
 metadata/_custom_type_script = "uid://bpcmfk0tpjacc"

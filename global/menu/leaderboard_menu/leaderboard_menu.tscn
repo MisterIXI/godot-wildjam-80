@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://bteygbql26mqp"]
+
+[ext_resource type="Script" uid="uid://bdisf5t6jdgkn" path="res://global/menu/leaderboard_menu/leaderboard_menu.gd" id="1_h5ar4"]
+[ext_resource type="Texture2D" uid="uid://coqucqh1og5xv" path="res://assets/images/menu/wallpaper/retro-vintage-circle-background-4.jpg" id="2_4kfob"]
+[ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="2_s2djq"]
+
+[node name="LeaderboardMenu" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h5ar4")
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4kfob")
+expand_mode = 4
+
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper")]
+script = ExtResource("2_s2djq")
+wallpaper = NodePath("../Wallpaper")
+metadata/_custom_type_script = "uid://duya6nqidc6d5"
