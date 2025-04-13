@@ -4,3 +4,4 @@
 
 [node name="Grace" type="Node"]
 script = ExtResource("1_5f355")
+default_player_gloabal_position = Vector2(6076, 48)

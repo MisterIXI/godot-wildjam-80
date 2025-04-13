@@ -26,7 +26,7 @@ func _select_button():
     return
   if tween:
     tween.kill()
-  tween = get_tree().create_tween()
+  tween = create_tween()
   tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
   tween.set_trans(Tween.TRANS_LINEAR)
   tween.set_ease(Tween.EASE_IN_OUT)
@@ -41,7 +41,7 @@ func _deselect_button():
     return
   if tween:
     tween.kill()
-  tween = get_tree().create_tween()
+  tween = create_tween()
   tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
   tween.set_trans(Tween.TRANS_LINEAR)
   tween.set_ease(Tween.EASE_IN_OUT)

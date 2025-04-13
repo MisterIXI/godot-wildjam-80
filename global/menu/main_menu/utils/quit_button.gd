@@ -19,3 +19,4 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
   get_tree().quit()
+  Grace.save_scene()

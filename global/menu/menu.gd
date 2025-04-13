@@ -80,7 +80,7 @@ func _on_pm_settings() -> void:
 
 func _on_pm_reset() -> void:
   get_tree().reload_current_scene()
-  print_rich("[color=MAGENTA]Menu >> [color=ORANGE]Current scene has been reloaded.")
+  Grace.reset_scene()
   _on_pm_resume()
   #TODO: reset savestate
 

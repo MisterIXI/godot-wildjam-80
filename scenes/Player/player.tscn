@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://b34pfool0yx1p" path="res://assets/images/Player/Spritesheet.png" id="2_uxo23"]
-[ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/Player/follow_cam.gd" id="3_dl1wr"]
+[ext_resource type="Script" path="res://scenes/Player/follow_cam.gd" id="3_dl1wr"]
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
@@ -183,7 +183,7 @@ shader_parameter/frame_time = 0.25
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
 size = Vector2(60, 50)
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer")]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer") groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
