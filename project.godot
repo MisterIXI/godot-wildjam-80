@@ -52,6 +52,7 @@ folder_colors={
 
 MovingObstacle=""
 player=""
+player_camera=""
 
 [importer_defaults]
 

@@ -1,4 +1,5 @@
 extends Camera2D
+class_name PlayerCamera
 
 @onready var player: RigidBody2D = get_parent() as RigidBody2D
 @export var curve: Curve
@@ -20,3 +21,11 @@ func _process(delta):
 		else:
 			# on zoom out
 			zoom = zoom.move_toward(target_zoom, zoom.distance_to(target_zoom) * 1.5 * delta)
+
+
+func reset():
+	target_zoom = Vector2.ONE
+	zoom = Vector2.ONE
+	position = Vector2.ZERO
+	position_smoothing_enabled = false
+	set_deferred("position_smoothing_enabled", true)
