@@ -3,23 +3,23 @@
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_xq34u"]
 [ext_resource type="Texture2D" uid="uid://bsph02fymd65p" path="res://assets/images/photos/gulli.png" id="2_gsy3m"]
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_haw7m"]
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_xq34u"]
 frequency = 0.0043
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vo73r"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gsy3m"]
 seamless = true
-noise = SubResource("FastNoiseLite_haw7m")
+noise = SubResource("FastNoiseLite_xq34u")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4amee"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ss0v4"]
 shader = ExtResource("1_xq34u")
 shader_parameter/uv_scale = 1.0
-shader_parameter/line_color = Color(0, 1, 0, 1)
+shader_parameter/line_color = Color(0.849447, 0.815529, 0.842947, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
 shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_vo73r")
+shader_parameter/noise = SubResource("NoiseTexture2D_gsy3m")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
@@ -27,7 +27,7 @@ shader_parameter/frame_time = 0.25
 [node name="gulli" type="StaticBody2D"]
 
 [node name="Gulli" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_4amee")
+material = SubResource("ShaderMaterial_ss0v4")
 texture = ExtResource("2_gsy3m")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
