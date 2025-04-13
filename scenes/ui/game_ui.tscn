@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bln2dmxvo8fwj"]
+[gd_scene load_steps=7 format=3 uid="uid://bln2dmxvo8fwj"]
 
 [ext_resource type="Script" uid="uid://oqnqvlhfwqkd" path="res://scenes/ui/game_ui.gd" id="1_bma8u"]
 [ext_resource type="Script" uid="uid://cgut3llrhbygb" path="res://scenes/ui/hud.gd" id="1_xjfbv"]
 [ext_resource type="Script" uid="uid://4dg7hyeim2ri" path="res://scenes/ui/highscore_menu.gd" id="2_ru5ln"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="2_xjfbv"]
+[ext_resource type="PackedScene" uid="uid://1tfrfruvfq7g" path="res://scenes/ui/highscore_entry.tscn" id="3_v1bdg"]
 [ext_resource type="Texture2D" uid="uid://dxbpbbl6ti2m5" path="res://assets/images/test/pause_vignette.png" id="4_fct72"]
 
 [node name="Game_UI" type="CanvasLayer"]
@@ -41,6 +42,21 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
+
+[node name="highscore_entry" parent="Menu/Highscore_menu/VBoxContainer" instance=ExtResource("3_v1bdg")]
+layout_mode = 2
+
+[node name="value_rank" parent="Menu/Highscore_menu/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="0"]
+text = "Rank"
+
+[node name="value_collectables" parent="Menu/Highscore_menu/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="5"]
+text = "x1"
+
+[node name="value_time" parent="Menu/Highscore_menu/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="7"]
+text = "Time"
+
+[node name="value_date" parent="Menu/Highscore_menu/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="9"]
+text = "Date"
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
@@ -159,3 +175,5 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 55
 text = "PAUSED"
 horizontal_alignment = 1
+
+[editable path="Menu/Highscore_menu/VBoxContainer/highscore_entry"]

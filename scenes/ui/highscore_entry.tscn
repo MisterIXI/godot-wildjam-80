@@ -23,18 +23,26 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="value_rank" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(120, 25)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "Rang 01"
+clip_text = true
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="value_playername" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 25)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "PlayerName"
+clip_text = true
 
 [node name="VSeparator2" type="VSeparator" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(32, 32)
@@ -43,12 +51,30 @@ texture = ExtResource("2_ivtto")
 expand_mode = 1
 
 [node name="value_collectables" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 25)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "x6"
+clip_text = true
 
 [node name="VSeparator3" type="VSeparator" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
+theme_override_constants/separation = 12
 
 [node name="value_time" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(250, 25)
 layout_mode = 2
+theme_override_font_sizes/font_size = 25
 text = "00h:00m:00s:00ms"
+clip_text = true
+
+[node name="VSeparator4" type="VSeparator" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="value_date" type="Label" parent="MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(300, 25)
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "00y:00m:00d - 12:00 am"
+clip_text = true

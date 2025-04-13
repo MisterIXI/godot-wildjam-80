@@ -14,6 +14,7 @@ bounce = 0.31
 [node name="world" type="Node2D"]
 
 [node name="highscore_manager" parent="." instance=ExtResource("5_y4uks")]
+process_mode = 3
 
 [node name="game_manager" parent="." instance=ExtResource("6_8qrnd")]
 
@@ -48,3 +49,4 @@ position = Vector2(1688, -61)
 rotation = 1.5708
 
 [node name="Game_UI" parent="." instance=ExtResource("4_6f2ag")]
+process_mode = 3
