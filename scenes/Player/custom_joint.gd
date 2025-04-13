@@ -2,6 +2,7 @@ extends Node2D
 class_name CustomJoint
 
 @onready var player: RigidBody2D = get_parent() as RigidBody2D
+@onready var indicator_scale: Vector2 = anchor_indicator.scale
 var is_active: bool = false
 var length: float = 0.0
 @export var anchor: Node2D = null
@@ -20,6 +21,7 @@ func activate(target_pos: Vector2, target_body: Node2D):
 	anchor.global_position = target_pos
 	is_active = true
 	length = (anchor.global_position - player.global_position).length() #- 30
+	anchor_indicator.global_scale = indicator_scale
 
 func deactivate():
 	anchor.get_parent().remove_child(anchor)
@@ -28,6 +30,7 @@ func deactivate():
 	add_child(anchor_indicator)
 	is_active = false
 	anchor_indicator.hide()
+	anchor_indicator.global_scale = indicator_scale
 
 func _physics_process(_delta):
 	var dist = (anchor.global_position - player.global_position).length()
