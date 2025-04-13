@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cbb1ilvlcbldk"]
 
-[ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/Obstacles/fan_obstacle.gd" id="1_ncxi7"]
+[ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="1_ncxi7"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_to0xh"]
 
