@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=94 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
 [ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
@@ -26,19 +26,24 @@
 [ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="26_j2mqq"]
 [ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="27_aosff"]
 [ext_resource type="Texture2D" uid="uid://bjy23a0cbs854" path="res://assets/images/photos/gulli4.png" id="27_av465"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="29_0qtus"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="30_6pish"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="31_lv4xw"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="32_kvor3"]
+[ext_resource type="PackedScene" uid="uid://bwgxsmbpyh5nq" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="29_0qtus"]
+[ext_resource type="PackedScene" uid="uid://51bai6yg040r" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="30_6pish"]
+[ext_resource type="PackedScene" uid="uid://bif0uca6ftk1d" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="31_lv4xw"]
+[ext_resource type="PackedScene" uid="uid://crglposwftdms" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="32_kvor3"]
 [ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="32_lv4xw"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="33_kvor3"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_ae2dv"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/reifen.tscn" id="35_0wrp4"]
+[ext_resource type="PackedScene" uid="uid://dpoa3ew1vnww6" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="33_kvor3"]
+[ext_resource type="PackedScene" uid="uid://c7k088bw8pt83" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_ae2dv"]
+[ext_resource type="PackedScene" uid="uid://0jait75dgawh" path="res://scenes/EnvironmentObjects/reifen.tscn" id="35_0wrp4"]
 [ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="35_ae2dv"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/isetta.tscn" id="35_kr8qw"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_1srk6"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/redlight.tscn" id="36_ae2dv"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="36_rj8kj"]
+[ext_resource type="PackedScene" uid="uid://7swphsmengui" path="res://scenes/EnvironmentObjects/isetta.tscn" id="35_kr8qw"]
+[ext_resource type="PackedScene" uid="uid://brqky1wh7xwv8" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_1srk6"]
+[ext_resource type="PackedScene" uid="uid://cbs1kk2k7axw" path="res://scenes/EnvironmentObjects/redlight.tscn" id="36_ae2dv"]
+[ext_resource type="PackedScene" uid="uid://1j4exdyv0vk6" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="36_rj8kj"]
+[ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="40_rj8kj"]
+[ext_resource type="PackedScene" uid="uid://ba30px4pqwxrq" path="res://scenes/EnvironmentObjects/blume_1.tscn" id="41_86g1v"]
+[ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="42_bdk5x"]
+[ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="43_bdk5x"]
+[ext_resource type="Texture2D" uid="uid://dwtbv0645sp7l" path="res://assets/images/photos/gulli3.png" id="44_du3fb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cprxv"]
 size = Vector2(1498, 20)
@@ -377,10 +382,31 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_51hpo"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_g7ccy"]
+seamless = true
+noise = SubResource("FastNoiseLite_51hpo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbl2x"]
+shader = ExtResource("10_0pdxe")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.513726, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_g7ccy")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(6292, 25)
+position = Vector2(6076, 48)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -850,6 +876,18 @@ rotation = 0.424969
 position = Vector2(8116, -4207)
 rotation = -0.0134494
 
+[node name="Trampoline18" parent="Env" instance=ExtResource("4_oc67x")]
+position = Vector2(4942, -5573)
+rotation = -0.141573
+
+[node name="Trampoline19" parent="Env" instance=ExtResource("4_oc67x")]
+position = Vector2(4482, -6053)
+rotation = 0.45503
+
+[node name="Trampoline20" parent="Env" instance=ExtResource("4_oc67x")]
+position = Vector2(5021, -6201)
+rotation = -0.506
+
 [node name="Trampoline14" parent="Env" instance=ExtResource("4_oc67x")]
 position = Vector2(10034, -46.9997)
 rotation = -0.38337
@@ -919,6 +957,21 @@ scale = Vector2(1.24001, 1)
 
 [node name="platform2" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(5091, -1705)
+rotation = 1.15262
+scale = Vector2(2.66923, 1)
+
+[node name="platform4" parent="Env" instance=ExtResource("2_d4148")]
+position = Vector2(3989, -4816)
+rotation = 1.15262
+scale = Vector2(1.84477, 1)
+
+[node name="platform6" parent="Env" instance=ExtResource("2_d4148")]
+position = Vector2(3266, -6462)
+rotation = 0.700269
+scale = Vector2(0.810977, 1)
+
+[node name="platform5" parent="Env" instance=ExtResource("2_d4148")]
+position = Vector2(3507, -5267)
 rotation = 1.15262
 scale = Vector2(2.66923, 1)
 
@@ -1170,9 +1223,9 @@ texture = ExtResource("35_ae2dv")
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
 
 [node name="pole6" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
-position = Vector2(12010, -5400)
+position = Vector2(12000, -5407)
 rotation = -0.0725148
-scale = Vector2(-0.699918, -0.699918)
+scale = Vector2(-0.553993, -0.553993)
 script = ExtResource("27_aosff")
 rotation_speed = -160.0
 metadata/_edit_group_ = true
@@ -1196,14 +1249,6 @@ position = Vector2(12757, -6194)
 rotation = -0.381527
 scale = Vector2(1.92406, 1.92406)
 
-[node name="StaticBody2D33" parent="Env" instance=ExtResource("2_d4148")]
-position = Vector2(9027, -5965)
-
-[node name="StaticBody2D35" parent="Env" instance=ExtResource("2_d4148")]
-position = Vector2(8270, -6617)
-rotation = -1.57686
-scale = Vector2(0.879521, 1)
-
 [node name="leberkaes" parent="Env" instance=ExtResource("36_rj8kj")]
 position = Vector2(11996, -6371)
 
@@ -1211,53 +1256,119 @@ position = Vector2(11996, -6371)
 position = Vector2(8309, -4088)
 rotation = 0.664903
 
-[node name="schild1" parent="." instance=ExtResource("36_1srk6")]
+[node name="schild1" parent="Env" instance=ExtResource("36_1srk6")]
 position = Vector2(10120, -2844)
 rotation = -0.550847
 scale = Vector2(1.08623, 1.08623)
 
-[node name="zeitung" parent="." instance=ExtResource("16_dklac")]
+[node name="zeitung6" parent="Env" instance=ExtResource("16_dklac")]
 position = Vector2(10605, -3281)
 rotation = 0.188228
 scale = Vector2(1.76468, 1.76468)
 
-[node name="redlight" parent="." instance=ExtResource("36_ae2dv")]
+[node name="redlight" parent="Env" instance=ExtResource("36_ae2dv")]
 position = Vector2(11269, -3607)
 rotation = 0.842537
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D33" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11823, -3070)
 rotation = 1.47641
+scale = Vector2(1, 1)
 
-[node name="StaticBody2D5" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D35" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11962, -1603)
 rotation = 1.47641
+scale = Vector2(1, 1)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D36" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11605, -2791)
 rotation = 1.47641
+scale = Vector2(1, 1)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D37" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11270, -1605)
 rotation = 2.07439
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D38" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11518, -1406)
 rotation = 2.18856
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D39" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11054, -787)
 rotation = 2.75345
 
-[node name="yellowlight" parent="." instance=ExtResource("34_ae2dv")]
+[node name="yellowlight" parent="Env" instance=ExtResource("34_ae2dv")]
 position = Vector2(10515, -106)
 
-[node name="schild2" parent="." instance=ExtResource("36_1srk6")]
+[node name="schild3" parent="Env" instance=ExtResource("36_1srk6")]
 position = Vector2(10242, 111)
 rotation = 1.1554
 
-[node name="spielstr" parent="." instance=ExtResource("33_kvor3")]
+[node name="spielstr2" parent="Env" instance=ExtResource("33_kvor3")]
 position = Vector2(10421, -1111)
 scale = Vector2(0.84, 0.84)
+
+[node name="Bild3" parent="Env" instance=ExtResource("40_rj8kj")]
+position = Vector2(9261, -6688)
+scale = Vector2(2.03895, 2.03895)
+
+[node name="Einfahrt2" parent="Env" instance=ExtResource("20_5t7de")]
+position = Vector2(8292, -6352)
+
+[node name="schild4" parent="Env" instance=ExtResource("36_1srk6")]
+position = Vector2(7734, -6480)
+
+[node name="reclam2" parent="Env" instance=ExtResource("18_o7m6t")]
+position = Vector2(7209, -6554)
+
+[node name="gulli8" parent="Env" instance=ExtResource("7_74n1c")]
+position = Vector2(6637, -6339)
+
+[node name="Blume1" parent="Env" instance=ExtResource("41_86g1v")]
+position = Vector2(6027, -6357)
+
+[node name="Frankfurt" parent="Env" instance=ExtResource("42_bdk5x")]
+position = Vector2(5434, -6263)
+
+[node name="schild5" parent="Env" instance=ExtResource("17_434gd")]
+position = Vector2(8261, -6365)
+
+[node name="Blume2" parent="Env" instance=ExtResource("43_bdk5x")]
+position = Vector2(7245, -6272)
+
+[node name="zeitung7" parent="Env" instance=ExtResource("16_dklac")]
+position = Vector2(6421, -6050)
+rotation = -1.6909
+
+[node name="yellowlight2" parent="Env" instance=ExtResource("34_ae2dv")]
+position = Vector2(3837, -6036)
+rotation = 0.987689
+
+[node name="gulli10" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(3668, -6817)
+rotation = 0.0182014
+scale = Vector2(1, 1)
+script = ExtResource("27_aosff")
+rotation_speed = 100.0
+metadata/_edit_group_ = true
+
+[node name="Gulli3" type="Sprite2D" parent="Env/gulli10"]
+material = SubResource("ShaderMaterial_rbl2x")
+texture = ExtResource("44_du3fb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli10"]
+polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
+
+[node name="pole7" parent="Env" instance=ExtResource("5_55gqm")]
+position = Vector2(4153, -7753)
+rotation = -0.0928394
+
+[node name="pole8" parent="Env" instance=ExtResource("5_55gqm")]
+position = Vector2(4554, -7790)
+rotation = -0.0928394
+
+[node name="pole9" parent="Env" instance=ExtResource("5_55gqm")]
+position = Vector2(5003, -7832)
+rotation = -0.0928394
 
 [editable path="Env/schild"]
