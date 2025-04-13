@@ -1,9 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctxq212eewvab"]
+[gd_scene load_steps=8 format=3 uid="uid://ctxq212eewvab"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_guia5"]
 [ext_resource type="Texture2D" uid="uid://8afwn1s1ax5x" path="res://assets/images/test/dog1.png" id="2_1ma5c"]
-[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="3_1ma5c"]
-[ext_resource type="Texture2D" uid="uid://ctabqg7sdsdb8" path="res://assets/images/test/bg1.png" id="4_guia5"]
+[ext_resource type="PackedScene" uid="uid://bcaikbn0r3ujj" path="res://scenes/VFX/bg.tscn" id="3_yfcbo"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_om18c"]
 
@@ -42,9 +41,5 @@ material = SubResource("ShaderMaterial_4yr8f")
 position = Vector2(609, 234)
 texture = ExtResource("2_1ma5c")
 
-[node name="Bg1" type="Sprite2D" parent="."]
-texture_repeat = 2
-material = ExtResource("3_1ma5c")
-position = Vector2(164, 232)
-scale = Vector2(1.43359, 1.43359)
-texture = ExtResource("4_guia5")
+[node name="Bg" parent="." instance=ExtResource("3_yfcbo")]
+position = Vector2(487, 166)
