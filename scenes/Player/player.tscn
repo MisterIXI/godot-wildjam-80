@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=42 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
 [ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="7_n7rn1"]
 [ext_resource type="PackedScene" uid="uid://cix64hjf82n1n" path="res://scenes/VFX/sparkle.tscn" id="8_7tfl1"]
+[ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="10_t6q27"]
 [ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
@@ -102,6 +103,62 @@ size = Vector2(8.88574, 16.5668)
 _data = [Vector2(0, 0), 0.0, -0.102211, 0, 0, Vector2(0.223404, 0), 0.0, 0.285454, 1, 0, Vector2(0.659575, 0.235955), 1.4624, 1.4624, 0, 0, Vector2(1, 0.449438), -0.203111, 0.0, 0, 0]
 point_count = 4
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uxo23"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n7rn1"]
+seamless = true
+noise = SubResource("FastNoiseLite_uxo23")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tfl1"]
+shader = ExtResource("2_n7rn1")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 29.775
+shader_parameter/noise = SubResource("NoiseTexture2D_n7rn1")
+shader_parameter/noise_speed = 5.41
+shader_parameter/distortion_str = 0.05
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lc41v"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gaubk"]
+seamless = true
+noise = SubResource("FastNoiseLite_lc41v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ttrp"]
+shader = ExtResource("2_n7rn1")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 19.572
+shader_parameter/noise = SubResource("NoiseTexture2D_gaubk")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.05
+shader_parameter/frame_time = 0.2
+
+[sub_resource type="Curve" id="Curve_lhrto"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vip2i"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -10), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4s802"]
+_data = [Vector2(0, 1), 0.0, -0.121407, 0, 0, Vector2(0.413462, 0.47191), -2.25361, -2.25361, 0, 0, Vector2(1, 0), -0.0922531, 0.0, 0, 0]
+point_count = 3
+
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_jxtnq"]
 frequency = 0.0043
 
@@ -126,34 +183,13 @@ shader_parameter/frame_time = 0.25
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
 size = Vector2(60, 50)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_uxo23"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n7rn1"]
-seamless = true
-noise = SubResource("FastNoiseLite_uxo23")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tfl1"]
-shader = ExtResource("2_n7rn1")
-shader_parameter/uv_scale = 1.0
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
-shader_parameter/draw_line = true
-shader_parameter/line_thickness = 29.775
-shader_parameter/noise = SubResource("NoiseTexture2D_n7rn1")
-shader_parameter/noise_speed = 5.41
-shader_parameter/distortion_str = 0.05
-shader_parameter/frame_time = 0.25
-
 [node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer")]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_hvfru")
-rope = NodePath("VerletRope")
+rope = NodePath("RopeVisuals/VerletRope")
 rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
@@ -220,12 +256,77 @@ position_smoothing_enabled = true
 script = ExtResource("3_dl1wr")
 curve = SubResource("Curve_7wess")
 
+[node name="TargetIndicator" type="Sprite2D" parent="."]
+visible = false
+z_index = 1680
+position = Vector2(149, 6.00002)
+scale = Vector2(0.340013, 0.340013)
+texture = ExtResource("5_uxo23")
+script = ExtResource("6_n7rn1")
+
+[node name="RopeVisuals" type="Node2D" parent="."]
+top_level = true
+
+[node name="VerletRope" type="Node2D" parent="RopeVisuals" node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin", "tearing_particle")]
+top_level = true
+script = ExtResource("7_dl1wr")
+pull_strength = 100.0
+rope = NodePath("RopeRender")
+rope_anchor = NodePath("../../CustomJoint/Anchor")
+rope_origin = NodePath("../../RopeOrigin")
+iteration_count = 50
+tearing_particle = NodePath("TearingParticles")
+
+[node name="RopeRender" type="Line2D" parent="RopeVisuals/VerletRope"]
+visible = false
+z_index = 1004
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7tfl1")
+points = PackedVector2Array(0, 0, 100, 0, 200, 50)
+width = 30.0
+texture = ExtResource("12_7tfl1")
+texture_mode = 1
+
+[node name="TearingParticles" type="CPUParticles2D" parent="RopeVisuals/VerletRope"]
+z_index = 1020
+material = SubResource("ShaderMaterial_2ttrp")
+emitting = false
+amount = 6
+texture = ExtResource("10_t6q27")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+emission_shape = 4
+emission_points = PackedVector2Array(0, 0, 100, 0, 200, 50)
+emission_colors = PackedColorArray()
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+linear_accel_max = 5.0
+linear_accel_curve = SubResource("Curve_lhrto")
+angle_min = -10.0
+angle_max = 10.0
+angle_curve = SubResource("Curve_vip2i")
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_4s802")
+
+[node name="Sparkle" parent="RopeVisuals" instance=ExtResource("8_7tfl1")]
+visible = false
+scale = Vector2(0.25, 0.25)
+
+[node name="RopeTearing" type="Node2D" parent="RopeVisuals"]
+
 [node name="CustomJoint" type="Node2D" parent="." node_paths=PackedStringArray("anchor", "anchor_indicator", "sparkle")]
 top_level = true
 script = ExtResource("4_wwtew")
 anchor = NodePath("Anchor")
 anchor_indicator = NodePath("Anchor/AnchorIndicator")
-sparkle = NodePath("Anchor/Sparkle")
+sparkle = NodePath("../RopeVisuals/Sparkle")
 
 [node name="Anchor" type="Node2D" parent="CustomJoint"]
 position = Vector2(41, -339)
@@ -236,17 +337,6 @@ z_index = 1005
 material = SubResource("ShaderMaterial_wyey8")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_n7rn1")
-
-[node name="Sparkle" parent="CustomJoint/Anchor" instance=ExtResource("8_7tfl1")]
-scale = Vector2(0.5, 0.5)
-
-[node name="TargetIndicator" type="Sprite2D" parent="."]
-visible = false
-z_index = 1680
-position = Vector2(149, 6.00002)
-scale = Vector2(0.340013, 0.340013)
-texture = ExtResource("5_uxo23")
-script = ExtResource("6_n7rn1")
 
 [node name="GroundShapeCheck" type="ShapeCast2D" parent="."]
 shape = SubResource("RectangleShape2D_434gd")
@@ -261,28 +351,6 @@ position = Vector2(-19, -20)
 
 [node name="AnchorPointRight" type="Node2D" parent="."]
 position = Vector2(19, -20)
-
-[node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin")]
-top_level = true
-script = ExtResource("7_dl1wr")
-pull_strength = 100.0
-rope = NodePath("RopeRender")
-rope_anchor = NodePath("../CustomJoint/Anchor")
-rope_origin = NodePath("../RopeOrigin")
-iteration_count = 50
-
-[node name="RopeRender" type="Line2D" parent="VerletRope"]
-visible = false
-z_index = 1004
-texture_repeat = 2
-material = SubResource("ShaderMaterial_7tfl1")
-points = PackedVector2Array(0, 0, 41.42, 35.215)
-width = 30.0
-texture = ExtResource("12_7tfl1")
-texture_mode = 1
-
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(-43, 41)
 
 [node name="HopCD" type="Timer" parent="."]
 wait_time = 0.3

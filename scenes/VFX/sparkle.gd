@@ -13,6 +13,7 @@ func _ready() -> void:
 
 func emit_at(target_pos: Vector2):
 	global_position = target_pos
+	show()
 	cpu_particles_2d.emitting = true
 	cpu_particles_2d_2.emitting = true
 	cpu_particles_2d_3.emitting = true
