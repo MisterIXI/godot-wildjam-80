@@ -37,13 +37,13 @@ func _on_mm_visibility_changed() -> void:
     # pause_menu.hide()
     # settings_menu.hide()
     if not get_tree().paused:
-      print_rich("[color=MAGENTA]Game tree has been paused. Origin: " + str(get_path()))
+      print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been paused.")
     get_tree().paused = true
 
 func _on_mm_play() -> void:
   # main_menu.hide()
   if get_tree().paused:
-    print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
+    print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been resumed.")
   get_tree().paused = false
 
 
@@ -63,13 +63,13 @@ func _on_pm_visibility_changed() -> void:
     # main_menu.hide()
     # settings_menu.hide()
     if not get_tree().paused:
-      print_rich("[color=MAGENTA]Game tree has been paused. Origin: " + str(get_path()))
+      print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been paused.")
     get_tree().paused = true
 
 func _on_pm_resume() -> void:
   # pause_menu.hide()
   if get_tree().paused:
-    print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
+    print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been resumed.")
   get_tree().paused = false
 
 
@@ -80,7 +80,7 @@ func _on_pm_settings() -> void:
 
 func _on_pm_reset() -> void:
   get_tree().reload_current_scene()
-  print_rich("[color=ORANGE]Current scene has been reloaded. Origin: " + str(get_path()))
+  print_rich("[color=MAGENTA]Menu >> [color=ORANGE]Current scene has been reloaded.")
   _on_pm_resume()
   #TODO: reset savestate
 
@@ -106,7 +106,7 @@ func _input(event: InputEvent) -> void:
             child.start_animation()
             break
         if get_tree().paused:
-          print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
+          print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been resumed.")
         get_tree().paused = false
       else:
         pause_menu.show()

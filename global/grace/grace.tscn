@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvcd65uuyc767"]
+
+[ext_resource type="Script" uid="uid://btxnrjd3uxwcc" path="res://global/grace/grace.gd" id="1_5f355"]
+
+[node name="Grace" type="Node"]
+script = ExtResource("1_5f355")

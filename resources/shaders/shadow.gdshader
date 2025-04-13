@@ -29,23 +29,23 @@ vec4 mixcolor(vec4 colA, vec4 colB)  {
 	return vec4((colA.rgb + colB.a * (colB.rgb - colA.rgb)), colA.a + colB.a);
 }
 void fragment()  {
-	
+
 	//posterize time
 	float rounded_time = round(TIME/ frame_time) * frame_time;
-	
-	
-	
+
+
+
 	float max_offset = abs(shadow_offset.x);
 	if (abs(shadow_offset.y) > abs(shadow_offset.x)) {
 		max_offset = abs(shadow_offset.y);
 	}
 	uv = UV * float(float(1) + float(2) * max_offset) - vec2(max_offset);
-	
+
 	vec2 noise_uv = UV * vec2(1.0) + 3.0 * rounded_time;
 	float noise_tex = texture(noise, noise_uv).r;
 	vec2 distorted_uv = uv + noise_tex * distortion_str;
-	
-	
+
+
 	vec4 original_color = sample_texture(TEXTURE, distorted_uv)  * color_tint;
 	original_color = mix(original_color,vec4(original_color.rgb,alpha),original_color.a);
 	vec4 shadow_color = vec4(drop_shadow_color.rgb, sample_texture(TEXTURE, distorted_uv - shadow_offset).a * drop_shadow_color.a);
