@@ -1256,114 +1256,118 @@ position = Vector2(11996, -6371)
 position = Vector2(8309, -4088)
 rotation = 0.664903
 
-[node name="schild1" parent="." instance=ExtResource("36_1srk6")]
+[node name="schild1" parent="Env" instance=ExtResource("36_1srk6")]
 position = Vector2(10120, -2844)
 rotation = -0.550847
 scale = Vector2(1.08623, 1.08623)
 
-[node name="zeitung" parent="." instance=ExtResource("16_dklac")]
+[node name="zeitung6" parent="Env" instance=ExtResource("16_dklac")]
 position = Vector2(10605, -3281)
 rotation = 0.188228
 scale = Vector2(1.76468, 1.76468)
 
-[node name="redlight" parent="." instance=ExtResource("36_ae2dv")]
+[node name="redlight" parent="Env" instance=ExtResource("36_ae2dv")]
 position = Vector2(11269, -3607)
 rotation = 0.842537
 
-[node name="StaticBody2D" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D33" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11823, -3070)
 rotation = 1.47641
+scale = Vector2(1, 1)
 
-[node name="StaticBody2D5" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D35" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11962, -1603)
 rotation = 1.47641
+scale = Vector2(1, 1)
 
-[node name="StaticBody2D2" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D36" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11605, -2791)
 rotation = 1.47641
+scale = Vector2(1, 1)
 
-[node name="StaticBody2D3" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D37" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11270, -1605)
 rotation = 2.07439
 
-[node name="StaticBody2D4" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D38" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11518, -1406)
 rotation = 2.18856
 
-[node name="StaticBody2D6" parent="." instance=ExtResource("2_d4148")]
+[node name="StaticBody2D39" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(11054, -787)
 rotation = 2.75345
 
-[node name="yellowlight" parent="." instance=ExtResource("34_ae2dv")]
+[node name="yellowlight" parent="Env" instance=ExtResource("34_ae2dv")]
 position = Vector2(10515, -106)
 
-[node name="schild2" parent="." instance=ExtResource("36_1srk6")]
+[node name="schild3" parent="Env" instance=ExtResource("36_1srk6")]
 position = Vector2(10242, 111)
 rotation = 1.1554
 
-[node name="spielstr" parent="." instance=ExtResource("33_kvor3")]
+[node name="spielstr2" parent="Env" instance=ExtResource("33_kvor3")]
 position = Vector2(10421, -1111)
 scale = Vector2(0.84, 0.84)
 
-[node name="Bild2" parent="." instance=ExtResource("40_rj8kj")]
+[node name="Bild3" parent="Env" instance=ExtResource("40_rj8kj")]
 position = Vector2(9261, -6688)
 scale = Vector2(2.03895, 2.03895)
 
-[node name="Einfahrt" parent="." instance=ExtResource("20_5t7de")]
+[node name="Einfahrt2" parent="Env" instance=ExtResource("20_5t7de")]
 position = Vector2(8292, -6352)
 
-[node name="schild3" parent="." instance=ExtResource("36_1srk6")]
+[node name="schild4" parent="Env" instance=ExtResource("36_1srk6")]
 position = Vector2(7734, -6480)
 
-[node name="reclam" parent="." instance=ExtResource("18_o7m6t")]
+[node name="reclam2" parent="Env" instance=ExtResource("18_o7m6t")]
 position = Vector2(7209, -6554)
 
-[node name="gulli3" parent="." instance=ExtResource("7_74n1c")]
+[node name="gulli8" parent="Env" instance=ExtResource("7_74n1c")]
 position = Vector2(6637, -6339)
 
-[node name="Blume1" parent="." instance=ExtResource("41_86g1v")]
+[node name="Blume1" parent="Env" instance=ExtResource("41_86g1v")]
 position = Vector2(6027, -6357)
 
-[node name="Frankfurt" parent="." instance=ExtResource("42_bdk5x")]
+[node name="Frankfurt" parent="Env" instance=ExtResource("42_bdk5x")]
 position = Vector2(5434, -6263)
 
-[node name="schild" parent="." instance=ExtResource("17_434gd")]
+[node name="schild5" parent="Env" instance=ExtResource("17_434gd")]
 position = Vector2(8261, -6365)
 
-[node name="Blume2" parent="." instance=ExtResource("43_bdk5x")]
+[node name="Blume2" parent="Env" instance=ExtResource("43_bdk5x")]
 position = Vector2(7245, -6272)
 
-[node name="zeitung2" parent="." instance=ExtResource("16_dklac")]
+[node name="zeitung7" parent="Env" instance=ExtResource("16_dklac")]
 position = Vector2(6421, -6050)
 rotation = -1.6909
 
-[node name="yellowlight2" parent="." instance=ExtResource("34_ae2dv")]
+[node name="yellowlight2" parent="Env" instance=ExtResource("34_ae2dv")]
 position = Vector2(3837, -6036)
 rotation = 0.987689
 
-[node name="gulli4" type="AnimatableBody2D" parent="." groups=["MovingObstacle"]]
+[node name="gulli10" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(3668, -6817)
 rotation = 0.0182014
+scale = Vector2(1, 1)
 script = ExtResource("27_aosff")
 rotation_speed = 100.0
 metadata/_edit_group_ = true
 
-[node name="Gulli3" type="Sprite2D" parent="gulli4"]
+[node name="Gulli3" type="Sprite2D" parent="Env/gulli10"]
 material = SubResource("ShaderMaterial_rbl2x")
 texture = ExtResource("44_du3fb")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="gulli4"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli10"]
 polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
 
-[node name="pole" parent="." instance=ExtResource("5_55gqm")]
+[node name="pole7" parent="Env" instance=ExtResource("5_55gqm")]
 position = Vector2(4153, -7753)
 rotation = -0.0928394
 
-[node name="pole2" parent="." instance=ExtResource("5_55gqm")]
+[node name="pole8" parent="Env" instance=ExtResource("5_55gqm")]
 position = Vector2(4554, -7790)
 rotation = -0.0928394
 
-[node name="pole3" parent="." instance=ExtResource("5_55gqm")]
+[node name="pole9" parent="Env" instance=ExtResource("5_55gqm")]
 position = Vector2(5003, -7832)
 rotation = -0.0928394
 
