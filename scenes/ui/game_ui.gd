@@ -24,6 +24,8 @@ func on_start_game_paused()->void:
     _control_pause.show()
 
 ###################### BASE PRIVATE FUNCTIONS
+func _ready():
+    ReferenceManager.game_ui_node = self
 func _disable_all_menues()->void:
     _control_game_over.hide()
     _control_game_win.hide()
