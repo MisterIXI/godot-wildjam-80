@@ -1,4 +1,4 @@
-[gd_scene load_steps=90 format=3 uid="uid://one3lojhqxny"]
+[gd_scene load_steps=102 format=3 uid="uid://one3lojhqxny"]
 
 [ext_resource type="Texture2D" uid="uid://c1hhfarqgnawy" path="res://assets/images/photos/a.png" id="1_pavb3"]
 [ext_resource type="Texture2D" uid="uid://duy10k5w3q6a2" path="res://assets/images/photos/bild2.png" id="2_137kd"]
@@ -23,6 +23,18 @@
 [ext_resource type="Texture2D" uid="uid://ocdi8war2icy" path="res://assets/images/photos/yield.png" id="21_l8oi2"]
 [ext_resource type="Texture2D" uid="uid://cxq1r8kngjm3t" path="res://assets/images/photos/zeitung.png" id="22_hp6yy"]
 [ext_resource type="Texture2D" uid="uid://bcck1t7cjwbm8" path="res://assets/images/photos/zigarettenschachtel.png" id="24_morhp"]
+[ext_resource type="Texture2D" uid="uid://crcxuychdio8c" path="res://assets/images/photos/broetchen1.png" id="24_orjfd"]
+[ext_resource type="Texture2D" uid="uid://8un0mpfc4suv" path="res://assets/images/photos/broetchen2.png" id="25_c66a7"]
+[ext_resource type="Texture2D" uid="uid://dxglhx5dwgcqh" path="res://assets/images/photos/broetchen.png" id="26_01acu"]
+[ext_resource type="Texture2D" uid="uid://clwfovbnqyymb" path="res://assets/images/photos/fahrradstr.png" id="27_cgf43"]
+[ext_resource type="Texture2D" uid="uid://4340ovdkllhu" path="res://assets/images/photos/isetta.png" id="28_47o1m"]
+[ext_resource type="Texture2D" uid="uid://cj6sf1t3n316r" path="res://assets/images/photos/leberkaes.png" id="29_j3f70"]
+[ext_resource type="Texture2D" uid="uid://b7i5w7jyk5uvd" path="res://assets/images/photos/redlight.png" id="30_e4vwl"]
+[ext_resource type="Texture2D" uid="uid://4pvv7hfdf7b6" path="res://assets/images/photos/reifen.png" id="31_b1mqd"]
+[ext_resource type="Texture2D" uid="uid://cbisiawol715r" path="res://assets/images/photos/schild1.png" id="32_ng125"]
+[ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="33_l8oi2"]
+[ext_resource type="Texture2D" uid="uid://oi8oglrmevkg" path="res://assets/images/photos/spielstr.png" id="34_hp6yy"]
+[ext_resource type="Texture2D" uid="uid://q5ktlu4owk22" path="res://assets/images/photos/yellowlight.png" id="35_oja15"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b3ptk"]
 frequency = 0.0043
@@ -608,3 +620,51 @@ position = Vector2(-3581, -876)
 texture = ExtResource("24_morhp")
 region_rect = Rect2(2000, 2000, 2000, 2000)
 region_filter_clip_enabled = true
+
+[node name="Broetchen1" type="Sprite2D" parent="."]
+position = Vector2(5327, -96)
+texture = ExtResource("24_orjfd")
+
+[node name="Broetchen2" type="Sprite2D" parent="."]
+position = Vector2(4345, 193)
+texture = ExtResource("25_c66a7")
+
+[node name="Broetchen" type="Sprite2D" parent="."]
+position = Vector2(6921, 214)
+texture = ExtResource("26_01acu")
+
+[node name="Fahrradstr" type="Sprite2D" parent="."]
+position = Vector2(5576, -1798)
+texture = ExtResource("27_cgf43")
+
+[node name="Isetta" type="Sprite2D" parent="."]
+position = Vector2(6356, -1253)
+texture = ExtResource("28_47o1m")
+
+[node name="Leberkaes" type="Sprite2D" parent="."]
+position = Vector2(5058, -687)
+texture = ExtResource("29_j3f70")
+
+[node name="Redlight" type="Sprite2D" parent="."]
+position = Vector2(4163, -587)
+texture = ExtResource("30_e4vwl")
+
+[node name="Reifen" type="Sprite2D" parent="."]
+position = Vector2(6645, -506)
+texture = ExtResource("31_b1mqd")
+
+[node name="Schild1" type="Sprite2D" parent="."]
+position = Vector2(4889, 792)
+texture = ExtResource("32_ng125")
+
+[node name="Schild2" type="Sprite2D" parent="."]
+position = Vector2(5980, 805)
+texture = ExtResource("33_l8oi2")
+
+[node name="Spielstr" type="Sprite2D" parent="."]
+position = Vector2(4661, -1482)
+texture = ExtResource("34_hp6yy")
+
+[node name="Yellowlight" type="Sprite2D" parent="."]
+position = Vector2(5744, -608)
+texture = ExtResource("35_oja15")
