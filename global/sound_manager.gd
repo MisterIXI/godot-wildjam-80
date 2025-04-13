@@ -10,6 +10,8 @@ extends Node2D
 @onready var paper2_sfx = $Paper2SFX
 @onready var paper3_sfx = $Paper3SFX
 
+@onready var click_sfx = $ClickSFX
+
 @onready var background_music = $BackgroundMusic
 
 @onready var flushSounds = [flush1_sfx,flush2_sfx,flush3_sfx,flush4_sfx,flush5_sfx]
@@ -33,3 +35,6 @@ func _play_background_music()->void:
 
 func _stop_background_music()->void: 
     background_music.stop()      
+
+func _make_click_sound()->void: 
+    click_sfx.play()      

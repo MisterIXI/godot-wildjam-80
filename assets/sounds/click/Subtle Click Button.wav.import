@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://15wr4k0wu23t"
+path="res://.godot/imported/Subtle Click Button.wav-ca9e1da1b373fe780f7492fe65c87982.sample"
+
+[deps]
+
+source_file="res://assets/sounds/click/Subtle Click Button.wav"
+dest_files=["res://.godot/imported/Subtle Click Button.wav-ca9e1da1b373fe780f7492fe65c87982.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

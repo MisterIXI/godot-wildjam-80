@@ -29,6 +29,7 @@ func _on_music_volume_changed(value: float) -> void:
 
 func _on_sfx_volume_changed(value: float) -> void:
   AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), clampf( linear_to_db(value / 100), -40, 6))
+  SoundManager._make_click_sound()
   #TODO: Play SFX click sound on change
 
 func _on_ambiences_volume_changed(value: float) -> void:

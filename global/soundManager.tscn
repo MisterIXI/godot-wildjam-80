@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://c7wknm5ayngnq"]
+[gd_scene load_steps=12 format=3 uid="uid://c7wknm5ayngnq"]
 
 [ext_resource type="Script" uid="uid://bdn21ql48ca72" path="res://global/sound_manager.gd" id="1_iverf"]
 [ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="2_oxd4v"]
+[ext_resource type="AudioStream" uid="uid://15wr4k0wu23t" path="res://assets/sounds/click/Subtle Click Button.wav" id="3_bsfa0"]
 [ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="3_hd8wm"]
 [ext_resource type="AudioStream" uid="uid://d06iolyj5enmq" path="res://assets/sounds/toilet/music/Halloween Procession.mp3" id="3_wikjs"]
 [ext_resource type="AudioStream" uid="uid://djjsq53q0rsxx" path="res://assets/sounds/toilet/flush/Toilet Flush 3.wav" id="4_wikjs"]
@@ -12,6 +13,7 @@
 [ext_resource type="AudioStream" uid="uid://byg2hxogcjlr2" path="res://assets/sounds/toilet/paper/toiletpaper3.wav" id="9_n55ec"]
 
 [node name="SoundManager" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_iverf")
 
 [node name="Flush1SFX" type="AudioStreamPlayer" parent="."]
@@ -20,10 +22,17 @@ volume_db = -10.0
 pitch_scale = 2.0
 bus = &"SFX"
 
+[node name="ClickSFX" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_bsfa0")
+volume_db = -10.0
+pitch_scale = 2.0
+bus = &"SFX"
+
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_wikjs")
 volume_db = -10.0
 bus = &"Music"
+parameters/looping = true
 
 [node name="Flush2SFX" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_hd8wm")
