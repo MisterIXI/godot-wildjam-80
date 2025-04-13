@@ -1,5 +1,6 @@
-[gd_scene load_steps=94 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=95 format=3 uid="uid://1hg7rqnq1mmb"]
 
+[ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
 [ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
 [ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="3_j6ebo"]
@@ -404,6 +405,10 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [node name="YTest" type="Node2D"]
+
+[node name="Bg" parent="." instance=ExtResource("1_wk6ws")]
+position = Vector2(8978, -8566)
+scale = Vector2(12.79, 12.79)
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
 position = Vector2(6167, -2)

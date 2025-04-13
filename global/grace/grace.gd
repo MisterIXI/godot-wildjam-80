@@ -138,7 +138,7 @@ func _notification(what: int) -> void:
     save_scene()
 
 func _process(delta: float) -> void:
-  if not interval_saving_on_web and OS.get_name() == "Web":
+  if not interval_saving_on_web or not OS.get_name() == "Web":
     return
 
   timer += delta
