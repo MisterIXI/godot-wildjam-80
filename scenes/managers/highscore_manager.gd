@@ -14,16 +14,16 @@ var leaderboard_http = HTTPRequest.new()
 var submit_score_http = HTTPRequest.new()
 var set_name_http = HTTPRequest.new()
 var get_name_http = HTTPRequest.new()
-var player_session_exists = false
 
 func _ready() -> void:
 	ReferenceManager.highscore_node = self
 	_authentication_request()
 #_change_player_name("robbi")
-	_upload_score(score,"5")
+	#_upload_score(score,"5")
 # 		_get_leaderboards()
 func _authentication_request():
 	# Check if a player session exists
+	var player_session_exists = false
 	var player_identifier : String
 	var file = FileAccess.open("user://LootLocker.data", FileAccess.READ)
 	if file != null:
@@ -56,7 +56,7 @@ func _authentication_request():
 	# Print what we're sending, for debugging purposes:
 	print(data)
 
-func _on_authentication_request_completed(result, response_code, headers, body):
+func _on_authentication_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
@@ -90,7 +90,7 @@ func _get_leaderboards():
 	# Send request
 	leaderboard_http.request(url, headers, HTTPClient.METHOD_GET, "")
 
-func _on_leaderboard_request_completed(result, response_code, headers, body):
+func _on_leaderboard_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
@@ -113,17 +113,19 @@ func _on_leaderboard_request_completed(result, response_code, headers, body):
 	leaderboard_request_completed.emit()
 
 
-func _upload_score(score :int, _metadata : String):
+func _upload_score(_score :int, _metadata : String):
 	# data verifier  is boss down && new score is higher >
-	var data = {"score": str(score), "metadata": _metadata}
+	var data = {"score": str(_score), "metadata": _metadata}
 	var headers = ["Content-Type: application/json", "x-session-token:" + session_token]
 	submit_score_http = HTTPRequest.new()
 	add_child(submit_score_http)
 	submit_score_http.request_completed.connect(_on_upload_score_request_completed)
+	# sed request
 	submit_score_http.request("https://api.lootlocker.io/game/leaderboards/"+leaderboard_key+"/submit",headers,HTTPClient.METHOD_POST, JSON.stringify(data))
+	# print what we`re sending, for debugging purposes
 	print(data)
 
-func _on_upload_score_request_completed(result, response_code, header, body):
+func _on_upload_score_request_completed(_result, _response_code, _header, body):
 	# new json
 	var json = JSON.new()
 	# json parse body get string
@@ -147,7 +149,7 @@ func _change_player_name(player_name :String):
 	# Send request
 	set_name_http.request(url, headers, HTTPClient.METHOD_PATCH, JSON.stringify(data))
 	
-func _on_player_set_name_request_completed(result, response_code, headers, body):
+func _on_player_set_name_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
@@ -168,7 +170,7 @@ func _get_player_name():
 	# Send request
 	get_name_http.request(url, headers, HTTPClient.METHOD_GET, "")
 
-func _on_player_get_name_request_completed(result, response_code, headers, body):
+func _on_player_get_name_request_completed(_result, _response_code, _headers, body):
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	
