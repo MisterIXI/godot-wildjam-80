@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=49 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
 [ext_resource type="PackedScene" uid="uid://cbb1ilvlcbldk" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.tscn" id="3_e0a08"]
@@ -18,6 +18,8 @@
 [ext_resource type="PackedScene" uid="uid://djwsv77l05fqn" path="res://scenes/EnvironmentObjects/zeitung.tscn" id="16_dklac"]
 [ext_resource type="PackedScene" uid="uid://dbi7dabob2xr5" path="res://scenes/EnvironmentObjects/schild.tscn" id="17_434gd"]
 [ext_resource type="PackedScene" uid="uid://cq42j031f7v1o" path="res://scenes/EnvironmentObjects/reclam.tscn" id="18_o7m6t"]
+[ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="19_1i5yh"]
+[ext_resource type="PackedScene" uid="uid://d1114jsogyu88" path="res://scenes/EnvironmentObjects/einfahrt.tscn" id="20_5t7de"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cprxv"]
 size = Vector2(1498, 20)
@@ -135,7 +137,7 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(9031, -1561)
+position = Vector2(6018, 24)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -594,7 +596,7 @@ position = Vector2(8053, -1345)
 rotation_speed = 120.0
 
 [node name="FanObstacle6" parent="Env" instance=ExtResource("3_e0a08")]
-position = Vector2(9840, -1621)
+position = Vector2(9694, -1659)
 rotation_speed = -200.0
 
 [node name="Trampoline13" parent="Env" instance=ExtResource("4_oc67x")]
@@ -704,3 +706,11 @@ scale = Vector2(0.48, 0.48)
 position = Vector2(5295, -1573)
 rotation = -0.437683
 scale = Vector2(0.439999, 0.439999)
+
+[node name="Blume2" parent="." instance=ExtResource("19_1i5yh")]
+position = Vector2(10459, -525)
+rotation = 0.158747
+
+[node name="Einfahrt" parent="." instance=ExtResource("20_5t7de")]
+position = Vector2(10680, -1792)
+scale = Vector2(1.84371, 1.83125)
