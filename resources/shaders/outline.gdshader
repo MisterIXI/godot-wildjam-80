@@ -51,6 +51,7 @@ void fragment() {
 
 	vec4 outline_color = mix(line_color,color, color.a);
 	float alpha = ((outline + inline) * float(draw_line)) + color.a;
+	alpha = smoothstep(0.75,0.9, alpha);
 
 	vec4 final_color = vec4(outline_color.r, outline_color.g, outline_color.b, alpha);
 	vec4 drop_shadow = vec4(shadow_color.r, shadow_color.g, shadow_color.b, alpha);

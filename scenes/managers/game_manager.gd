@@ -1,7 +1,7 @@
 extends Node
 class_name Game_Manager
 
-var _level_01_scene : PackedScene =  preload("res://scenes/_game/main.tscn")
+var _level_01_scene : PackedScene#=  preload("res://scenes/_game/main.tscn")
 func _ready() -> void:
     ReferenceManager.game_manager  =self
 enum GAMESTATE {
