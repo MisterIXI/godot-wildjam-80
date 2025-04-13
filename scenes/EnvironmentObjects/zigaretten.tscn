@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dkiepgksa1te6"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_hyhao"]
+[ext_resource type="Texture2D" uid="uid://bcck1t7cjwbm8" path="res://assets/images/photos/zigarettenschachtel.png" id="2_ic2hm"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_73yom"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qepi8"]
+seamless = true
+noise = SubResource("FastNoiseLite_73yom")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b3ptk"]
+shader = ExtResource("1_hyhao")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_qepi8")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="zigaretten" type="StaticBody2D"]
+
+[node name="Zigarettenschachtel" type="Sprite2D" parent="."]
+texture_repeat = 1
+material = SubResource("ShaderMaterial_b3ptk")
+texture = ExtResource("2_ic2hm")
+region_rect = Rect2(2000, 2000, 2000, 2000)
+region_filter_clip_enabled = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-21, -336, -21, -334.1, -92.5, -290, -94.8, -290, -113, -273.9, -113, -273.3, -131.5, -264, -133.7, -264, -168, -239, -168, -238.3, -193.4, -227, -195.5, -227, -268.6, -187, -270.6, -187, -294.6, -172, -297.2, -172, -301.2, -164, -303, -164, -303, -155.4, -291.1, -137, -290.3, -137, -277, -109.6, -277, -105.5, -254, -63.4, -254, -61.1, -244.8, -53, -244.1, -53, -228, -28.4, -230, -25.7, -230, -21.2, -225.8, -17, -223.4, -17, -222, -13.6, -222, -11.1, -213.7, -4, -212.3, -4, -187, 42.6, -187, 45.8, -179.8, 53, -178.1, 53, -172.1, 63, -171.1, 63, -117.1, 147, -117, 152.4, -110, 168.3, -110, 172.5, -95, 201.5, -95, 203.6, -64.1, 253, -63.4, 253, -58, 267.4, -58, 270.6, -44.1, 292, -43.4, 292, -32, 323.4, -32, 326.1, -22, 332.1, -22, 334.4, -1.70001, 331, 6.59998, 331, 44.6, 306, 51.8, 306, 56, 301.8, 56, 299.1, 105.5, 270, 108.7, 270, 124.8, 257, 129.8, 257, 137, 249.8, 137, 249.1, 164.6, 231, 166.7, 231, 222.7, 188, 224.8, 188, 236, 176.8, 236, 176, 257, 161, 257, 160.2, 267.5, 155, 269.8, 155, 290.8, 135, 292.3, 135, 301.3, 116, 303.3, 116, 302, 106.7, 302, 104.4, 276, 67.4, 276, 65.2, 258.9, 46, 258, 46, 208, -20, 207.1, -20, 165, -86.7, 165, -90, 153.7, -99, 153.1, -99, 146, -111.5, 146, -113.8, 135.9, -125, 135.1, -125, 115.1, -156, 114.4, -156, 111, -164.5, 111, -167.1, 103.6, -172, 99, -179.5, 99, -181.9, 91.7, -188, 91.1, -188, 79, -205.7, 79, -208.1, 66.6, -216, 53.5, -242.5, 54, -243.7, 54, -248.7, 45, -259.7, 45, -263.9, 36.7, -271, 36, -271, 22, -289.7, 22, -293.1, 8.5, -301, -8, -326.7, -8, -328.8, -13, -333.8, -13, -336)

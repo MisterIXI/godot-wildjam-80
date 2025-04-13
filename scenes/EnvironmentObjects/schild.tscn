@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dbi7dabob2xr5"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_5v51o"]
+[ext_resource type="Texture2D" uid="uid://dd4ul3lu45lm2" path="res://assets/images/photos/schild.png" id="2_13uet"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_b1mqd"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ng125"]
+seamless = true
+noise = SubResource("FastNoiseLite_b1mqd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l8oi2"]
+shader = ExtResource("1_5v51o")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0, 0.602857, 0.358812, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_ng125")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="schild" type="StaticBody2D"]
+
+[node name="Schild" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_l8oi2")
+texture = ExtResource("2_13uet")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(248, -201.1, 248, -199.9, 42, -187.9, 42, -187, 35, -187, 30, -193.7, 30, -195.5, 18.3, -199, 10.6, -199, 3.70001, -196, 0.900024, -196, -6, -185.6, -6, -185, -10, -185, -10, -183.9, -198.1, -174, -215.5, -174, -225.5, -169, -227.9, -169, -236.9, -158, -238.7, -158, -239.7, -151, -241.6, -151, -238, -137, -238, -134.5, -22.2, 286, -25, 401, -25, 402.7, -12, 419.6, -12, 421.3, 0.599976, 427, 7.20001, 427, 15.1, 425, 25.2, 425, 31.3, 414, 32.8, 414, 35, 391.1, 35, 384.9, 32.8, 367, 32, 367, 32, 313.2, 35, 277.1, 35, 274.6, 44, 262, 45.3, 262, 54, 243.4, 54, 240.6, 65.1, 224, 66.4, 224, 71, 212.4, 71, 210.4, 127, 111.5, 127, 109.4, 215.1, -42, 216.3, -42, 220, -50.6, 220, -53.6, 283.1, -165, 284.4, -165, 286, -169.7, 286, -181.7, 277, -192.7, 277, -194.4, 267, -198.4, 267, -199.9)

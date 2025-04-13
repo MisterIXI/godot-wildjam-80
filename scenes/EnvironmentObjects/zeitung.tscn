@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://djwsv77l05fqn"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_0caes"]
+[ext_resource type="Texture2D" uid="uid://cxq1r8kngjm3t" path="res://assets/images/photos/zeitung.png" id="2_4i01n"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_137kd"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_73yom"]
+seamless = true
+noise = SubResource("FastNoiseLite_137kd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qepi8"]
+shader = ExtResource("1_0caes")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0, 0.423529, 0.576471, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_73yom")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="zeitung" type="StaticBody2D"]
+
+[node name="Zeitung" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_qepi8")
+texture = ExtResource("2_4i01n")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(129, -251, 129, -249.8, 124.7, -249, 116.8, -249, 112, -240.5, 112, -239.1, 106.4, -235, 104.2, -235, 46, -181.9, 46, -181.3, 35.7, -177, 32.3, -177, 6.29999, -155, 3.29999, -155, -67, -94.9, -67, -94.1, -74.7, -89, -76.7, -89, -146.9, -30, -149.8, -30, -158.7, -22, -160.7, -22, -210.7, 19, -213, 19, -221, 30, -223, 30, -223, 40.5, -210, 63.4, -210, 65.8, -174, 103.8, -174, 105.9, -138, 138.9, -138, 140.1, -125, 148, -125, 149.4, -115, 153.3, -115, 155, -103.9, 155, -101.9, 152, -100.2, 152, 73, -19.2, 73, -20.9, 76.5, -23, 78.9, -23, 99.8, -46, 101.8, -46, 149, -93.2, 149, -95.2, 188.7, -131, 191, -131, 205, -149, 206.7, -149, 209.7, -165, 211.6, -165, 208, -179, 208, -185.4, 200, -202.5, 200, -204.7, 192, -214.7, 192, -216.9, 179, -229, 179, -230.1, 163, -240.2, 163, -241.4, 143, -249.4, 143, -251)

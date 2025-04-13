@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkjieb8en8qgi"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_0f01c"]
+[ext_resource type="Texture2D" uid="uid://b42dl2vc08sko" path="res://assets/images/photos/kafka.png" id="2_q4swc"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_c66a7"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_01acu"]
+seamless = true
+noise = SubResource("FastNoiseLite_c66a7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cgf43"]
+shader = ExtResource("1_0f01c")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 0.301961, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_01acu")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="kafka" type="StaticBody2D"]
+scale = Vector2(2.39551, 2.39551)
+
+[node name="Kafka" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_cgf43")
+texture = ExtResource("2_q4swc")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(5, -418.2, 5, -416.5, -1.39999, -414, -9.5, -414, -43.6, -395.5, -68, -400.7, -68, -402.4, -92.4, -398, -95.6, -398, -114.7, -384.3, -119.9, -385, -124.7, -385, -139, -374, -143.9, -374, -165.9, -349, -167.2, -349, -176, -332.5, -176, -330.8, -186.9, -318, -188.4, -318, -192.4, -307, -193.7, -307, -200.7, -262, -201.8, -262, -205, -226.1, -205, -210.9, -200, -166.8, -200, -151.7, -194, -131, -194, -128, -212.1, -127, -214.9, -127, -224.9, -115, -226.8, -115, -229.8, -92, -232.4, -92, -226, -80.6, -226, -69.3, -219.9, -62, -218.7, -55, -219, -51.2, -219, -42.7, -210.5, -10, -210, 14, -198.6, 22, -186.7, 22, -182, 53.3, -182, 65.7, -178.3, 70.7, -179.8, 84, -181, 84, -181, 168.4, -184, 173.4, -184, 174.9, -189.6, 179, -192, 179, -191, 238, -191, 240.7, -150, 247.7, -150, 248.9, -127, 249.9, -127, 251, -31, 249, -10.9, 249, 99.3, 234, 105.3, 234, 134.3, 225, 138.6, 225, 154.6, 215, 157, 215, 157, 182, 147.7, 175, 142.4, 162, 141.7, 162, 138, 138.7, 138, 127.7, 128.5, 95, 127.9, 95, 127, 69.9, 127, 62.6, 122.3, 52, 122, 21.6, 125.4, 21, 129.3, 21, 134.8, 7.70001, 140.3, 7, 152.9, 7, 162, -3.20001, 162, -4.5, 164.1, -5, 168, -5, 171, -9, 172.5, -9, 177, -23.7, 177, -26.3, 183.9, -34, 185.7, -34, 190, -59.8, 190, -64.5, 196.2, -76, 197.5, -76, 203.5, -98, 204.7, -98, 209, -126.9, 209, -133.4, 198, -160.6, 198, -162.5, 171.3, -170, 171, -211.2, 163, -256.4, 163, -261.4, 156, -277.4, 156, -281.7, 144, -297, 143.3, -297, 139, -306.4, 139, -309.6, 105, -363.7, 105, -365.9, 79, -390, 79, -391.4, 36.4, -408, 33.7, -408, 26, -414, 26, -415.8)

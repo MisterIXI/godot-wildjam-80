@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1114jsogyu88"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_7ubcf"]
+[ext_resource type="Texture2D" uid="uid://disqpf0tf78u4" path="res://assets/images/photos/einfahrt.png" id="2_beyco"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_qepi8"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b3ptk"]
+seamless = true
+noise = SubResource("FastNoiseLite_qepi8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b670h"]
+shader = ExtResource("1_7ubcf")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0, 0.630363, 0.53785, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_b3ptk")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="Einfahrt" type="StaticBody2D"]
+
+[node name="Einfahrt" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_b670h")
+texture = ExtResource("2_beyco")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-282, -233.4, -282, -231.5, -290.3, -229, -293.1, -229, -300.1, -218, -301.9, -218, -315.9, 198, -317.4, 198, -315, 211.4, -315, 215.1, -306, 221.1, -306, 222.6, -296, 224.6, -296, 226, -251, 225, -230.3, 225, -177, 232.7, -177, 234, -130, 234.9, -130, 236.8, -120.3, 233.4, -116, 234.5, -116, 236.1, -43.9, 234, -17.4, 234, 11, 239.6, 11, 240.9, 115, 244.9, 115, 246.1, 156.1, 244, 157.8, 244, 216, 249.8, 216, 251.1, 234.1, 250, 238.8, 250, 243.8, 245, 245.4, 245, 248.4, 237, 249.7, 237, 252.7, 219, 254.3, 219, 251, 195.7, 251, 191.1, 269.9, -186, 271, -186, 271, -197.6, 264, -207.6, 264, -209.8, 232, -213.8, 232, -215, 55, -217, 54.1, -217, -11, -220.9, -11, -222, -76.9, -222, -241, -230, -262.7, -230)
