@@ -406,7 +406,7 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(8890, -4655)
+position = Vector2(8922, -4646)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
