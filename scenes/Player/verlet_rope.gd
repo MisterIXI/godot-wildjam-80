@@ -13,6 +13,8 @@ var rope_end_pos : Vector2 = Vector2.ZERO
 @export var iteration_count : int = 10
 var segments : Array[VerletNode] = []
 @onready var player : RigidBody2D = get_parent() as RigidBody2D
+@export var tearing_particle : CPUParticles2D
+
 var rope_throw_tween : Tween
 func _ready():
 	init_rope()
@@ -83,6 +85,13 @@ func activate(new_anchor_pos: Vector2):
 	rope_throw_tween.tween_property(segments[-1],"pos", new_anchor_pos,0.1)
 
 func deactivate():
+	if segments.size() > 0:
+		tearing_particle.global_position = rope.global_position
+		# animate tearing particle
+		@warning_ignore("integer_division")
+		tearing_particle.amount = segments.size() / 3
+		tearing_particle.emission_points = PackedVector2Array(rope.points)
+		tearing_particle.emitting = true
 	rope_active = false
 	rope.set_deferred("visible", false)
 	segments.clear()
