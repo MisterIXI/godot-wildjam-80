@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://4aa2lrydyhgf"]
+[gd_scene load_steps=27 format=3 uid="uid://4aa2lrydyhgf"]
 
 [ext_resource type="Script" uid="uid://bns3wf0omgidn" path="res://global/menu/main_menu/main_menu.gd" id="1_kbhnn"]
 [ext_resource type="Texture2D" uid="uid://boxausdy83fgc" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-4.jpg" id="1_s0oey"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://yap44aaft0fp" path="res://assets/images/menu/letters/E-6.png" id="8_ijtol"]
 [ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="9_dbp4l"]
 [ext_resource type="Texture2D" uid="uid://cmgyyh5118c0s" path="res://assets/images/menu/letters/T.png" id="9_muncv"]
+[ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="10_cp0kx"]
 [ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="10_e4xug"]
 [ext_resource type="Texture2D" uid="uid://do5m8aot4mglm" path="res://assets/images/menu/letters/I-3.png" id="11_gub5j"]
 [ext_resource type="Texture2D" uid="uid://uad80226meta" path="res://assets/images/menu/letters/N-2.png" id="12_rfres"]
@@ -26,7 +27,7 @@
 [ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="23_70ii0"]
 [ext_resource type="Script" uid="uid://bpcmfk0tpjacc" path="res://components/transition/untransition.gd" id="24_dpyif"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button", "button_container", "wallpaper")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("play_button", "settings_button", "wallpaper")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -35,9 +36,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kbhnn")
-play_button = NodePath("ButtonContainer/PlayButton")
-settings_button = NodePath("ButtonContainer/SettingsButton")
-button_container = NodePath("ButtonContainer")
+play_button = NodePath("PlayButton")
+settings_button = NodePath("SettingsButton")
 wallpaper = NodePath("Wallpaper")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
@@ -51,31 +51,20 @@ grow_vertical = 2
 texture = ExtResource("1_s0oey")
 expand_mode = 1
 
-[node name="ButtonContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -287.0
-offset_top = -230.0
-offset_right = 287.0
-offset_bottom = 230.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 80
-alignment = 1
-
-[node name="PlayButton" type="Button" parent="ButtonContainer"]
+[node name="PlayButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
+layout_mode = 1
+offset_left = 353.0
+offset_top = 130.0
+offset_right = 927.0
+offset_bottom = 230.0
+pivot_offset = Vector2(287, 50)
 focus_mode = 0
 text = "
 "
 flat = true
 
-[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/PlayButton"]
+[node name="LetterContainer" type="HBoxContainer" parent="PlayButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -84,43 +73,52 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="P" type="TextureRect" parent="ButtonContainer/PlayButton/LetterContainer"]
+[node name="P" type="TextureRect" parent="PlayButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("3_kbhnn")
 expand_mode = 3
 
-[node name="OnVisible2dShaderAlpha" type="Node" parent="ButtonContainer/PlayButton/LetterContainer/P"]
+[node name="OnVisible2dShaderAlpha" type="Node" parent="PlayButton/LetterContainer/P"]
 script = ExtResource("9_dbp4l")
 metadata/_custom_type_script = "uid://b56jfdihlxedt"
 
-[node name="L" type="TextureRect" parent="ButtonContainer/PlayButton/LetterContainer"]
+[node name="L" type="TextureRect" parent="PlayButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("4_ited1")
 expand_mode = 3
 
-[node name="A" type="TextureRect" parent="ButtonContainer/PlayButton/LetterContainer"]
+[node name="A" type="TextureRect" parent="PlayButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("5_sglpx")
 expand_mode = 3
 
-[node name="Y" type="TextureRect" parent="ButtonContainer/PlayButton/LetterContainer"]
+[node name="Y" type="TextureRect" parent="PlayButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("6_bloog")
 expand_mode = 3
 
-[node name="SettingsButton" type="Button" parent="ButtonContainer"]
+[node name="ButtonHover" type="Node" parent="PlayButton"]
+script = ExtResource("10_cp0kx")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
+[node name="SettingsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+offset_left = 353.0
+offset_top = 310.0
+offset_right = 927.0
+offset_bottom = 410.0
+pivot_offset = Vector2(287, 50)
 focus_mode = 0
 text = "
 "
 flat = true
 
-[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/SettingsButton"]
+[node name="LetterContainer" type="HBoxContainer" parent="SettingsButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -129,64 +127,73 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="S" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="S" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("7_typ24")
 expand_mode = 3
 
-[node name="E" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="E" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("8_ijtol")
 expand_mode = 3
 
-[node name="T" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="T" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("9_muncv")
 expand_mode = 3
 
-[node name="T2" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="T2" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("10_e4xug")
 expand_mode = 3
 
-[node name="I" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="I" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("11_gub5j")
 expand_mode = 3
 
-[node name="N" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="N" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("12_rfres")
 expand_mode = 3
 
-[node name="G" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="G" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("13_uwjg4")
 expand_mode = 3
 
-[node name="S2" type="TextureRect" parent="ButtonContainer/SettingsButton/LetterContainer"]
+[node name="S2" type="TextureRect" parent="SettingsButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("7_typ24")
 expand_mode = 3
 
-[node name="QuitButton" type="Button" parent="ButtonContainer"]
+[node name="ButtonHover" type="Node" parent="SettingsButton"]
+script = ExtResource("10_cp0kx")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
+[node name="QuitButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
+offset_left = 353.0
+offset_top = 490.0
+offset_right = 927.0
+offset_bottom = 590.0
+pivot_offset = Vector2(287, 50)
 focus_mode = 0
 text = "
 "
 flat = true
 script = ExtResource("14_sjqqk")
 
-[node name="LetterContainer" type="HBoxContainer" parent="ButtonContainer/QuitButton"]
+[node name="LetterContainer" type="HBoxContainer" parent="QuitButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -195,58 +202,63 @@ grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="Q" type="TextureRect" parent="ButtonContainer/QuitButton/LetterContainer"]
+[node name="Q" type="TextureRect" parent="QuitButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("14_mr20i")
 expand_mode = 3
 
-[node name="U" type="TextureRect" parent="ButtonContainer/QuitButton/LetterContainer"]
+[node name="U" type="TextureRect" parent="QuitButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("15_gpwv1")
 expand_mode = 3
 
-[node name="I" type="TextureRect" parent="ButtonContainer/QuitButton/LetterContainer"]
+[node name="I" type="TextureRect" parent="QuitButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("16_7o47f")
 expand_mode = 3
 
-[node name="T" type="TextureRect" parent="ButtonContainer/QuitButton/LetterContainer"]
+[node name="T" type="TextureRect" parent="QuitButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("17_3rt7s")
 expand_mode = 3
 
-[node name="TextureRect" type="TextureRect" parent="ButtonContainer/QuitButton"]
+[node name="TextureRect" type="TextureRect" parent="QuitButton"]
 visible = false
+material = ExtResource("2_sjqqk")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 97.0
-offset_top = -22.0
-offset_right = -94.0
-offset_bottom = 23.0
+offset_left = 100.0
+offset_top = -20.0
+offset_right = -91.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("18_7wnyk")
 expand_mode = 3
 
-[node name="OnVisible2dModulate" type="Node" parent="ButtonContainer/QuitButton/TextureRect"]
+[node name="OnVisible2dModulate" type="Node" parent="QuitButton/TextureRect"]
 script = ExtResource("22_6riyg")
 metadata/_custom_type_script = "uid://wj7pnwgxam2o"
+
+[node name="ButtonHover" type="Node" parent="QuitButton"]
+script = ExtResource("10_cp0kx")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
 
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("23_70ii0")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../ButtonContainer")]
+anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
 
 [node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
 script = ExtResource("24_dpyif")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../ButtonContainer")]
-_activator = [NodePath("../ButtonContainer/PlayButton")]
+anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton")]
+_activator = [NodePath("../PlayButton")]
 metadata/_custom_type_script = "uid://bpcmfk0tpjacc"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cent0ph746c7e"]
+[gd_scene load_steps=48 format=3 uid="uid://cent0ph746c7e"]
 
 [ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="9_n8dmn"]
 [ext_resource type="Texture2D" uid="uid://crc5j1g3jwhnm" path="res://assets/images/menu/settings/master_volume.png" id="10_0o6ow"]
 [ext_resource type="Texture2D" uid="uid://oyj2gfndflx5" path="res://assets/images/menu/settings/music_volume.png" id="11_y1s3r"]
+[ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="12_3uqb3"]
 [ext_resource type="Texture2D" uid="uid://dc78i4dt486kj" path="res://assets/images/menu/settings/sfx_volume.png" id="12_nayh4"]
 [ext_resource type="Texture2D" uid="uid://sultsn8rq1rq" path="res://assets/images/menu/settings/ambience_volume.png" id="13_dslyc"]
 [ext_resource type="Texture2D" uid="uid://bvai62w7u0ndb" path="res://assets/images/menu/settings/Control1.png" id="14_7607p"]
@@ -199,6 +200,7 @@ offset_right = 246.0
 offset_bottom = -41.0
 grow_horizontal = 2
 grow_vertical = 0
+pivot_offset = Vector2(246, 50)
 focus_mode = 0
 text = "
 "
@@ -264,6 +266,10 @@ material = ExtResource("2_7xw0p")
 layout_mode = 2
 texture = ExtResource("9_n8dmn")
 expand_mode = 3
+
+[node name="ButtonHover" type="Node" parent="Settings/ConfirmButton"]
+script = ExtResource("12_3uqb3")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
 
 [node name="AudioContainer" type="VBoxContainer" parent="Settings"]
 layout_mode = 1
