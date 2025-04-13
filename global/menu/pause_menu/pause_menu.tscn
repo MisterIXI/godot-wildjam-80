@@ -310,5 +310,5 @@ metadata/_custom_type_script = "uid://duya6nqidc6d5"
 script = ExtResource("29_sftex")
 wallpaper = NodePath("../Wallpaper")
 anything_else = [NodePath("../ResumeButton"), NodePath("../SettingsButton"), NodePath("../ResetButton"), NodePath("../MenuButton")]
-_activator = [NodePath("../ResetButton"), NodePath("../ResumeButton")]
+_activator = [NodePath("../ResumeButton")]
 metadata/_custom_type_script = "uid://bpcmfk0tpjacc"

@@ -7,7 +7,7 @@ func _ready() -> void:
       disabledTextureRect = child
       break
 
-  if OS.get_name() == "HTML5":
+  if OS.get_name() == "Web":
     disabled = true
   elif not disabled:
     disabled = false
