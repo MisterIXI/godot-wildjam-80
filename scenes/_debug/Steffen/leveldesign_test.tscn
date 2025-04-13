@@ -744,7 +744,6 @@ scale = Vector2(1.84371, 1.83125)
 
 [node name="Gulli2" parent="." instance=ExtResource("24_qktsu")]
 position = Vector2(7113, -2580)
-scale = Vector2(1, 1)
 
 [node name="gulli2" parent="." instance=ExtResource("9_0pdxe")]
 position = Vector2(7351, -2713)
