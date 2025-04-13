@@ -406,7 +406,7 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(6163, -6)
+position = Vector2(6167, -2)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -944,16 +944,6 @@ z_index = 65
 position = Vector2(8052, -2701)
 rotation = 1.60813
 scale = Vector2(1.82735, 1.82735)
-
-[node name="StaticBody2D32" parent="Env" instance=ExtResource("2_d4148")]
-position = Vector2(5875, -2887)
-rotation = -1.77301
-scale = Vector2(0.874414, 1)
-
-[node name="StaticBody2D34" parent="Env" instance=ExtResource("2_d4148")]
-position = Vector2(6364, -3031)
-rotation = -1.59667
-scale = Vector2(0.715955, 1)
 
 [node name="platform" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(6644, 118)
