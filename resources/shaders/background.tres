@@ -1,6 +1,6 @@
 [gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://bn7r2vh5q4iau"]
 
-[ext_resource type="Shader" path="res://resources/shaders/background.gdshader" id="1_ffbts"]
+[ext_resource type="Shader" uid="uid://dyqa01nk48a5t" path="res://resources/shaders/background.gdshader" id="1_ffbts"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
 frequency = 0.0229
@@ -14,6 +14,7 @@ shader = ExtResource("1_ffbts")
 shader_parameter/uv_scale = 10.0
 shader_parameter/color_1 = Color(0.89, 0.6675, 0.6675, 1)
 shader_parameter/color_2 = Color(0.414, 0.9, 0.9, 1)
+shader_parameter/color_tint = Color(0.84875, 0.8245, 0.97, 1)
 shader_parameter/uv_scroll = Vector2(-0.01, -0.01)
 shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
 shader_parameter/noise_speed = 18.275

@@ -3,6 +3,7 @@ shader_type canvas_item;
 uniform float uv_scale = 1.0;
 uniform vec4 color_1: source_color = vec4(0.5,0.5,0.5,1);
 uniform vec4 color_2: source_color = vec4(1);
+uniform vec4 color_tint: source_color = vec4(1);
 uniform vec2 uv_scroll = vec2(1,1);
 uniform sampler2D noise: repeat_enable;
 uniform float noise_speed = 1.0;
@@ -27,5 +28,5 @@ void fragment() {
 
 vec4 final_color = mix(color_1, color_2, mask);
 
-	COLOR = final_color;
+	COLOR = final_color * color_tint;
 }
