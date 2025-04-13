@@ -24,21 +24,21 @@ func _process(delta):
 			# on zoom out
 			zoom = zoom.move_toward(target_zoom, zoom.distance_to(target_zoom) * 0.5 * delta)
 		else:
-			# on zoom out
+			# on zoom in
 			zoom = zoom.move_toward(target_zoom, zoom.distance_to(target_zoom) * 1.5 * delta)
 
-	if constant_shake == 0.0:
-		offset = Vector2.ZERO
-	else:
+		var speed_shake = max(0.0, 0.8 - zoom.x) * 2 * 10
+		print("zoom: " , zoom , " speed_shake: ", speed_shake)
 		var shake = Vector2(
-			(randf_range(-1.0, 1.0) * camera_shake_mult * constant_shake),
-			(randf_range(-1.0, 1.0) * camera_shake_mult * constant_shake)
+			(randf_range(-1.0, 1.0) * camera_shake_mult * (constant_shake + speed_shake)),
+			(randf_range(-1.0, 1.0) * camera_shake_mult * (constant_shake + speed_shake))
 		)
 		offset += shake
 		# clamp offset to max shake
 		offset.x = clamp(offset.x, -camera_shake_max, camera_shake_max)
 		offset.y = clamp(offset.y, -camera_shake_max, camera_shake_max)
-
+		if constant_shake + speed_shake == 0.0:
+			offset = Vector2.ZERO
 func _on_hard_impact():
 	print("hard impact")
 	if shake_tween:
