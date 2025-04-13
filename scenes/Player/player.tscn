@@ -1,14 +1,15 @@
-[gd_scene load_steps=29 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=30 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://b34pfool0yx1p" path="res://assets/images/Player/Spritesheet.png" id="2_uxo23"]
-[ext_resource type="Script" path="res://scenes/_debug/Steffen/follow_cam.gd" id="3_dl1wr"]
+[ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/_debug/Steffen/follow_cam.gd" id="3_dl1wr"]
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
+[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
@@ -145,26 +146,50 @@ animation = &"throw"
 autoplay = "default"
 script = ExtResource("3_uxo23")
 
-[node name="PlayerCollider1" type="CollisionShape2D" parent="."]
+[node name="LPlayerCollider1" type="CollisionShape2D" parent="."]
 z_index = 200
 position = Vector2(-18, -9)
 rotation = -0.229376
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_3y6uy")
 
-[node name="PlayerCollider2" type="CollisionShape2D" parent="."]
+[node name="LPlayerCollider2" type="CollisionShape2D" parent="."]
 z_index = 200
 position = Vector2(4.41259, 9.41254)
 rotation = -1.64299
 scale = Vector2(2.88, 2.88)
 shape = SubResource("CapsuleShape2D_55gqm")
 
-[node name="PlayerCollider3" type="CollisionShape2D" parent="."]
+[node name="LPlayerCollider3" type="CollisionShape2D" parent="."]
 z_index = 200
 position = Vector2(-6, 31)
 rotation = -1.59329
 scale = Vector2(2.88, 2.88)
 shape = SubResource("RectangleShape2D_uxo23")
+
+[node name="RPlayerCollider1" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(18, -9)
+rotation = 0.228638
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_3y6uy")
+disabled = true
+
+[node name="RPlayerCollider2" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(-4.413, 9.413)
+rotation = 1.64235
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_55gqm")
+disabled = true
+
+[node name="RPlayerCollider3" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(6, 31)
+rotation = 1.59349
+scale = Vector2(2.88, 2.88)
+shape = SubResource("RectangleShape2D_uxo23")
+disabled = true
 
 [node name="FollowCam" type="Camera2D" parent="."]
 process_callback = 0
@@ -202,6 +227,12 @@ max_results = 4
 [node name="RopeOrigin" type="Node2D" parent="."]
 position = Vector2(19, -20)
 
+[node name="AnchorPointLeft" type="Node2D" parent="."]
+position = Vector2(-19, -20)
+
+[node name="AnchorPointRight" type="Node2D" parent="."]
+position = Vector2(19, -20)
+
 [node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin")]
 top_level = true
 script = ExtResource("7_dl1wr")
@@ -228,6 +259,17 @@ position = Vector2(-43, 41)
 wait_time = 0.3
 one_shot = true
 
+[node name="CharacterFlipper" type="Node" parent="." node_paths=PackedStringArray("player_sprite", "left_colliders", "right_colliders", "anchor_node", "anchor_point_left", "anchor_point_right")]
+script = ExtResource("11_n7rn1")
+player_sprite = NodePath("../ToiletteAnimation")
+left_colliders = [NodePath("../LPlayerCollider1"), NodePath("../LPlayerCollider2"), NodePath("../LPlayerCollider3")]
+right_colliders = [NodePath("../RPlayerCollider1"), NodePath("../RPlayerCollider2"), NodePath("../RPlayerCollider3")]
+anchor_node = NodePath("../RopeOrigin")
+anchor_point_left = NodePath("../AnchorPointLeft")
+anchor_point_right = NodePath("../AnchorPointRight")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="hopped_left" from="." to="CharacterFlipper" method="on_flip_left"]
+[connection signal="hopped_right" from="." to="CharacterFlipper" method="on_flip_right"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
 [connection signal="toilette_paper_deactivated" from="." to="ToiletteAnimation" method="_on_end_throw"]
