@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://wk1ri00vrqw1"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_medfn"]
+[ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="2_5wog6"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lc41v"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gaubk"]
+seamless = true
+noise = SubResource("FastNoiseLite_lc41v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ttrp"]
+shader = ExtResource("1_medfn")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 19.572
+shader_parameter/noise = SubResource("NoiseTexture2D_gaubk")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.05
+shader_parameter/frame_time = 0.2
+
+[sub_resource type="Curve" id="Curve_lhrto"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vip2i"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -10), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4s802"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.40553, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.235955), -0.643415, 0.0, 0, 0]
+point_count = 3
+
+[node name="kackpappe_particle" type="CPUParticles2D"]
+material = SubResource("ShaderMaterial_2ttrp")
+amount = 1
+texture = ExtResource("2_5wog6")
+lifetime = 1.1
+direction = Vector2(0, 1)
+spread = 90.0
+initial_velocity_max = 20.0
+angular_velocity_min = -20.0
+angular_velocity_max = 20.0
+linear_accel_max = 5.0
+linear_accel_curve = SubResource("Curve_lhrto")
+angle_min = -10.0
+angle_max = 10.0
+angle_curve = SubResource("Curve_vip2i")
+scale_amount_min = 0.8
+scale_amount_curve = SubResource("Curve_4s802")
