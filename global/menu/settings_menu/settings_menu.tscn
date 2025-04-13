@@ -1,10 +1,11 @@
-[gd_scene load_steps=46 format=3 uid="uid://cent0ph746c7e"]
+[gd_scene load_steps=47 format=3 uid="uid://cent0ph746c7e"]
 
 [ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
 [ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="2_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://c5gl0smf8dn4e" path="res://assets/images/menu/letters/C.png" id="3_k1n7e"]
 [ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="4_wlmub"]
+[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="5_3uqb3"]
 [ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="5_tb00c"]
 [ext_resource type="Texture2D" uid="uid://bdy2l14ad74v8" path="res://assets/images/menu/letters/F-3.png" id="6_3uqb3"]
 [ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="7_kgtp3"]
@@ -224,6 +225,10 @@ layout_mode = 2
 texture = ExtResource("3_k1n7e")
 expand_mode = 3
 
+[node name="OnVisible2dShaderAlpha" type="Node" parent="Settings/ConfirmButton/LetterContainer/C"]
+script = ExtResource("5_3uqb3")
+metadata/_custom_type_script = "uid://b56jfdihlxedt"
+
 [node name="O" type="TextureRect" parent="Settings/ConfirmButton/LetterContainer"]
 material = ExtResource("2_7xw0p")
 layout_mode = 2
@@ -366,7 +371,6 @@ texture = ExtResource("15_4flft")
 
 [node name="OnVisible2dModulate" type="Node" parent="Settings"]
 script = ExtResource("17_k1n7e")
-animation_duration = 0.5
 metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]

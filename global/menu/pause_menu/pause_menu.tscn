@@ -1,9 +1,10 @@
-[gd_scene load_steps=30 format=3 uid="uid://bcvvh7wycn3bm"]
+[gd_scene load_steps=31 format=3 uid="uid://bcvvh7wycn3bm"]
 
 [ext_resource type="Script" uid="uid://b68yg4n075qm0" path="res://global/menu/pause_menu/pause_menu.gd" id="1_3h16x"]
 [ext_resource type="Texture2D" uid="uid://ddtrshylvoe7y" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-5.jpg" id="1_dsqdt"]
 [ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="2_3h16x"]
 [ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="4_82mwn"]
+[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="5_ge160"]
 [ext_resource type="Texture2D" uid="uid://dj2vflkp5cnk7" path="res://assets/images/menu/letters/E-4.png" id="5_lld63"]
 [ext_resource type="Texture2D" uid="uid://d2pey511utwc1" path="res://assets/images/menu/letters/S-2.png" id="6_jb7ot"]
 [ext_resource type="Texture2D" uid="uid://cu2r1iabk3fyv" path="res://assets/images/menu/letters/U-3.png" id="7_ge160"]
@@ -92,6 +93,10 @@ material = ExtResource("2_3h16x")
 layout_mode = 2
 texture = ExtResource("4_82mwn")
 expand_mode = 3
+
+[node name="OnVisible2dShaderAlpha" type="Node" parent="ButtonContainer/ResumeButton/LetterContainer/R"]
+script = ExtResource("5_ge160")
+metadata/_custom_type_script = "uid://b56jfdihlxedt"
 
 [node name="E" type="TextureRect" parent="ButtonContainer/ResumeButton/LetterContainer"]
 material = ExtResource("2_3h16x")
@@ -293,7 +298,6 @@ expand_mode = 3
 
 [node name="OnVisible2dModulate" type="Node" parent="ButtonContainer"]
 script = ExtResource("27_lld63")
-animation_duration = 0.5
 metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]

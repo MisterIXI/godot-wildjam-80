@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://4aa2lrydyhgf"]
+[gd_scene load_steps=26 format=3 uid="uid://4aa2lrydyhgf"]
 
 [ext_resource type="Script" uid="uid://bns3wf0omgidn" path="res://global/menu/main_menu/main_menu.gd" id="1_kbhnn"]
 [ext_resource type="Texture2D" uid="uid://boxausdy83fgc" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-4.jpg" id="1_s0oey"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://crhm1gbotkxs3" path="res://assets/images/menu/letters/Y-3.png" id="6_bloog"]
 [ext_resource type="Texture2D" uid="uid://b3s6ihkuu57a5" path="res://assets/images/menu/letters/S.png" id="7_typ24"]
 [ext_resource type="Texture2D" uid="uid://yap44aaft0fp" path="res://assets/images/menu/letters/E-6.png" id="8_ijtol"]
+[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="9_dbp4l"]
 [ext_resource type="Texture2D" uid="uid://cmgyyh5118c0s" path="res://assets/images/menu/letters/T.png" id="9_muncv"]
 [ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="10_e4xug"]
 [ext_resource type="Texture2D" uid="uid://do5m8aot4mglm" path="res://assets/images/menu/letters/I-3.png" id="11_gub5j"]
@@ -88,6 +89,10 @@ material = ExtResource("2_sjqqk")
 layout_mode = 2
 texture = ExtResource("3_kbhnn")
 expand_mode = 3
+
+[node name="OnVisible2dShaderAlpha" type="Node" parent="ButtonContainer/PlayButton/LetterContainer/P"]
+script = ExtResource("9_dbp4l")
+metadata/_custom_type_script = "uid://b56jfdihlxedt"
 
 [node name="L" type="TextureRect" parent="ButtonContainer/PlayButton/LetterContainer"]
 material = ExtResource("2_sjqqk")
@@ -229,9 +234,8 @@ grow_vertical = 2
 texture = ExtResource("18_7wnyk")
 expand_mode = 3
 
-[node name="OnVisible2dModulate" type="Node" parent="ButtonContainer"]
+[node name="OnVisible2dModulate" type="Node" parent="ButtonContainer/QuitButton/TextureRect"]
 script = ExtResource("22_6riyg")
-animation_duration = 0.5
 metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
