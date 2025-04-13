@@ -10,6 +10,13 @@ func _ready() -> void:
         ReferenceManager.highscore_node.leaderboard_request_completed.connect(_wait_for_finished)
     else:
         ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+
         _wait_for_finished()
 
 func on_activate():

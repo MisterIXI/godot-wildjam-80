@@ -1,0 +1,84 @@
+[gd_scene load_steps=7 format=3 uid="uid://b4nwq2o70i1sp"]
+
+[ext_resource type="Script" uid="uid://4dg7hyeim2ri" path="res://scenes/ui/highscore_menu.gd" id="1_ml1x6"]
+[ext_resource type="FontVariation" uid="uid://dx8m4ay02ebms" path="res://resources/font/IBMPlexMono.tres" id="2_k27c8"]
+[ext_resource type="PackedScene" uid="uid://1tfrfruvfq7g" path="res://scenes/ui/highscore_entry.tscn" id="2_n1skn"]
+[ext_resource type="Texture2D" uid="uid://c5d6h17kdoeqq" path="res://assets/images/menu/leaderboard/bg.png" id="2_ol4y4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7i3tj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ol4y4"]
+
+[node name="Highscore_menu" type="Panel"]
+custom_minimum_size = Vector2(700, 550)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("StyleBoxEmpty_7i3tj")
+script = ExtResource("1_ml1x6")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ol4y4")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -553.0
+offset_top = -22.5
+offset_right = 553.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_k27c8")
+theme_override_font_sizes/font_size = 52
+text = "- Leaderboard -"
+horizontal_alignment = 1
+
+[node name="highscore_entry" parent="VBoxContainer" instance=ExtResource("2_n1skn")]
+layout_mode = 2
+
+[node name="value_rank" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="0"]
+text = "Rank"
+
+[node name="VSeparator" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="1"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
+
+[node name="VSeparator2" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="3"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
+
+[node name="value_collectables" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="5"]
+text = "x1"
+
+[node name="VSeparator3" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="6"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
+
+[node name="value_time" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="7"]
+text = "Time"
+
+[node name="VSeparator4" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="8"]
+theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
+
+[node name="value_date" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="9"]
+text = "Date"
+
+[editable path="VBoxContainer/highscore_entry"]

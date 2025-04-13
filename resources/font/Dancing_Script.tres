@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://ctb64twv4gtgi"]
+
+[ext_resource type="FontFile" uid="uid://dbj1sebprfnyx" path="res://assets/fonts/Dancing_Script/static/DancingScript-Medium.ttf" id="1_eklqy"]
+
+[resource]
+base_font = ExtResource("1_eklqy")
