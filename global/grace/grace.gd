@@ -12,12 +12,12 @@ var _audio_bus_path = "user://audio_bus.cfg"
 var _scene_path = "user://scene.cfg"
 
 func _ready():
-  if reset_audio_bus_on_start:
+  if reset_audio_bus_on_start and not OS.get_name() == "HTML5":
     reset_audio_bus()
   else:
     load_audio_bus()
 
-  if reset_scene_on_start:
+  if reset_scene_on_start and not OS.get_name() == "HTML5":
     reset_scene()
   else:
     load_scene()
@@ -66,7 +66,7 @@ func reset_audio_bus():
 
 #region Scene
 func load_scene():
-  if ignore_saved_scene:
+  if ignore_saved_scene and not OS.get_name() == "HTML5":
     return
 
   var config = ConfigFile.new()
