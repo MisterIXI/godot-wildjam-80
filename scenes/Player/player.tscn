@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=35 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -9,9 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
-[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="7_n7rn1"]
 [ext_resource type="PackedScene" uid="uid://cix64hjf82n1n" path="res://scenes/VFX/sparkle.tscn" id="8_7tfl1"]
+[ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
@@ -160,7 +160,7 @@ ground_cast = NodePath("GroundShapeCheck")
 hop_cd_timer = NodePath("HopCD")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
-z_index = 100
+z_index = 1000
 material = SubResource("ShaderMaterial_t6q27")
 position = Vector2(-2.58746, -2.58746)
 scale = Vector2(0.275049, 0.275049)
@@ -232,12 +232,13 @@ position = Vector2(41, -339)
 
 [node name="AnchorIndicator" type="Sprite2D" parent="CustomJoint/Anchor"]
 visible = false
-z_index = 53
+z_index = 1005
 material = SubResource("ShaderMaterial_wyey8")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_n7rn1")
 
 [node name="Sparkle" parent="CustomJoint/Anchor" instance=ExtResource("8_7tfl1")]
+scale = Vector2(0.5, 0.5)
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
 visible = false
@@ -272,7 +273,7 @@ iteration_count = 50
 
 [node name="RopeRender" type="Line2D" parent="VerletRope"]
 visible = false
-z_index = 101
+z_index = 1004
 texture_repeat = 2
 material = SubResource("ShaderMaterial_7tfl1")
 points = PackedVector2Array(0, 0, 41.42, 35.215)
