@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c8icl1fjlnwck"]
+
+[ext_resource type="FontFile" uid="uid://dcw40lp7n4wgw" path="res://assets/fonts/Edu_AU_VIC_WA_NT_Arrows/static/EduAUVICWANTArrows-Regular.ttf" id="1_ehh3v"]
+
+[resource]
+base_font = ExtResource("1_ehh3v")

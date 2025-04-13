@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://dquxfu4ft3yos"]
+
+[ext_resource type="FontFile" uid="uid://c475iv5ngli83" path="res://assets/fonts/Playwrite_MX_Guides/PlaywriteMXGuides-Regular.ttf" id="1_aw4jj"]
+
+[resource]
+base_font = ExtResource("1_aw4jj")

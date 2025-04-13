@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://chb5fk54588hb"]
+
+[ext_resource type="FontFile" uid="uid://81g2ve5nqfdy" path="res://assets/fonts/Barriecito/Barriecito-Regular.ttf" id="1_vvldl"]
+
+[resource]
+base_font = ExtResource("1_vvldl")

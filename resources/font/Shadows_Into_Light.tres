@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://bkcrkaqq6xb3q"]
+
+[ext_resource type="FontFile" uid="uid://cl5l37tgndsvq" path="res://assets/fonts/Shadows_Into_Light/ShadowsIntoLight-Regular.ttf" id="1_tdq50"]
+
+[resource]
+base_font = ExtResource("1_tdq50")
