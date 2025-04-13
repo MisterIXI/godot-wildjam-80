@@ -123,7 +123,7 @@ shader_parameter/noise_speed = 5.41
 shader_parameter/distortion_str = 0.05
 shader_parameter/frame_time = 0.25
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast")]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer")]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
@@ -133,6 +133,7 @@ rope = NodePath("VerletRope")
 rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
+hop_cd_timer = NodePath("HopCD")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
 z_index = 100
@@ -194,8 +195,6 @@ texture = ExtResource("5_uxo23")
 script = ExtResource("6_n7rn1")
 
 [node name="GroundShapeCheck" type="ShapeCast2D" parent="."]
-visible = false
-position = Vector2(-33.5875, 21.4125)
 shape = SubResource("RectangleShape2D_434gd")
 target_position = Vector2(0, 28.35)
 max_results = 4
@@ -214,7 +213,7 @@ iteration_count = 50
 
 [node name="RopeRender" type="Line2D" parent="VerletRope"]
 visible = false
-z_index = 50
+z_index = 101
 texture_repeat = 2
 material = SubResource("ShaderMaterial_7tfl1")
 points = PackedVector2Array(0, 0, 41.42, 35.215)
@@ -224,6 +223,10 @@ texture_mode = 1
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-43, 41)
+
+[node name="HopCD" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]

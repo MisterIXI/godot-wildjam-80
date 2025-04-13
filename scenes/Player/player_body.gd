@@ -11,6 +11,8 @@ var previousVelocity: float = 0.0
 @export var ground_cast: ShapeCast2D
 @export var debug_movement: bool = false
 
+@export var hop_cd_timer: Timer
+
 signal toilette_paper_activated
 signal toilette_paper_deactivated
 
@@ -21,14 +23,18 @@ func _physics_process(_delta):
 	previousVelocity = linear_velocity.length()
 	# rotate ground ray
 	ground_cast.rotation_degrees = 360 - rotation_degrees
-	if is_grounded():
+	if is_grounded() and hop_cd_timer.time_left == 0:
 	# on move_right and move_left, apply force to the player
-		if Input.is_action_pressed("move_right"):
-			if Vector2.RIGHT.dot(linear_velocity) < 100:
-				apply_central_force(Vector2(500, 0))
-		elif Input.is_action_pressed("move_left"):
-			if Vector2.LEFT.dot(linear_velocity) < 100:
-				apply_central_force(Vector2(-500, 0))
+		if Input.is_action_just_pressed("move_right"):
+			# if Vector2.RIGHT.dot(linear_velocity) < 100:
+			apply_central_impulse(Vector2(1,-1) * 100)
+			hop_cd_timer.start()
+			# 	apply_central_force(Vector2(500, 0))
+		elif Input.is_action_just_pressed("move_left"):
+			# if Vector2.LEFT.dot(linear_velocity) < 100:
+			apply_central_impulse(Vector2(-1,-1) * 100)
+			hop_cd_timer.start()
+			# 	apply_central_force(Vector2(-500, 0))
 	if debug_movement and Input.is_action_just_pressed("up"):
 		apply_impulse(Vector2.UP * 500)
 	# on jump, apply force to the player

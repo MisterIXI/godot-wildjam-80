@@ -58,7 +58,7 @@ size = Vector2(154, 2983)
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
 position = Vector2(-40, 127)
-debug_movement = true
+max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
 
@@ -74,6 +74,7 @@ texture = SubResource("CanvasTexture_cprxv")
 
 [node name="StaticBody2D3" type="StaticBody2D" parent="Env"]
 position = Vector2(1548, 185)
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D3"]
 position = Vector2(130.5, 0)
@@ -97,6 +98,7 @@ texture = SubResource("CanvasTexture_74n1c")
 [node name="StaticBody2D5" type="StaticBody2D" parent="Env"]
 position = Vector2(1161, -346)
 rotation = -1.56671
+metadata/_edit_group_ = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D5"]
 shape = SubResource("RectangleShape2D_xwlt4")
