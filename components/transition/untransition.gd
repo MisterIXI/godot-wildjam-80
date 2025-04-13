@@ -11,6 +11,7 @@ signal animation_finished
 var _animate = false
 var _parent
 
+var _transition_sibling : Transition
 
 func _ready():
   _parent = get_parent()
@@ -19,8 +20,15 @@ func _ready():
     button.pressed.connect(start_animation)
   animation_finished.connect(_on_animation_finished)
 
+  for child in _parent.get_children():
+    if child is Transition:
+      _transition_sibling = child
+      break
+
 
 func start_animation():
+  _transition_sibling.stop_transition()
+
   for item in anything_else:
     item.visible = false
   _animate = true

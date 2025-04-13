@@ -50,3 +50,7 @@ func _on_animation_finished():
 
   for item in anything_else:
     item.visible = true
+
+
+func stop_transition():
+  _animate = false

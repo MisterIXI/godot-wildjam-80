@@ -364,12 +364,12 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("23_70ii0")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton")]
+anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../LeaderboardButton")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
 
 [node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
 script = ExtResource("24_dpyif")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton")]
+anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton"), NodePath("../LeaderboardButton")]
 _activator = [NodePath("../PlayButton")]
 metadata/_custom_type_script = "uid://bpcmfk0tpjacc"
