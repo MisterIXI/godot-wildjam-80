@@ -7,7 +7,7 @@ extends Node
 @export var ignore_saved_scene : bool = false
 @export var reset_scene_on_start : bool = false
 @export var default_player_gloabal_position : Vector2
-@export var interval_saving_on_web : bool = true
+@export var interval_saving : bool = true
 @export var saving_interval : float = 1
 
 var _audio_bus_path = "user://audio_bus.cfg"
@@ -137,7 +137,7 @@ func _notification(what: int) -> void:
     save_scene()
 
 func _process(delta: float) -> void:
-  if not interval_saving_on_web or not OS.get_name() == "Web":
+  if not interval_saving or not OS.get_name() == "Web":
     return
 
   timer += delta
