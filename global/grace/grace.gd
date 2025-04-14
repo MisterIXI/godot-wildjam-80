@@ -70,7 +70,8 @@ func reset_audio_bus():
 
 #region Scene
 func load_scene():
-  if ignore_saved_scene and Engine.is_editor_hint():
+# TODO: Add real engine check here
+  if ignore_saved_scene: # and Engine.is_editor_hint():
     return
 
   var config = ConfigFile.new()
