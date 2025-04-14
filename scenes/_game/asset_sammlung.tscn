@@ -1,4 +1,4 @@
-[gd_scene load_steps=96 format=3 uid="uid://one3lojhqxny"]
+[gd_scene load_steps=101 format=3 uid="uid://one3lojhqxny"]
 
 [ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="1_jonfs"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="2_pavb3"]
@@ -50,6 +50,11 @@
 [ext_resource type="Texture2D" uid="uid://c1cjdl41yqdeh" path="res://assets/images/arrows/arrow5.png" id="48_haw7m"]
 [ext_resource type="Texture2D" uid="uid://ty8p7dmalgw5" path="res://assets/images/arrows/arrow6.png" id="49_vo73r"]
 [ext_resource type="Texture2D" uid="uid://d2041hdl1t4ep" path="res://assets/images/arrows/arrow7.png" id="50_4amee"]
+[ext_resource type="Texture2D" uid="uid://cqfawhyt0vljw" path="res://assets/images/env/gaensebluemchen.png" id="51_haw7m"]
+[ext_resource type="Texture2D" uid="uid://co31rppo3fc3q" path="res://assets/images/env/shuriken.png" id="52_vo73r"]
+[ext_resource type="Texture2D" uid="uid://b0wvqx4k0m616" path="res://assets/images/env/sunflower.png" id="53_4amee"]
+[ext_resource type="Texture2D" uid="uid://cxp8kt84t8nb8" path="res://assets/images/env/windmill.png" id="54_ii8xg"]
+[ext_resource type="Texture2D" uid="uid://b6mxltafly5b1" path="res://assets/images/env/flower.png" id="55_auvsv"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ii8xg"]
 frequency = 0.0043
@@ -545,3 +550,23 @@ texture = ExtResource("49_vo73r")
 material = SubResource("ShaderMaterial_0nmc3")
 position = Vector2(5141, -3982)
 texture = ExtResource("50_4amee")
+
+[node name="Gaensebluemchen" type="Sprite2D" parent="."]
+position = Vector2(-294, -4177)
+texture = ExtResource("51_haw7m")
+
+[node name="Shuriken" type="Sprite2D" parent="."]
+position = Vector2(-2689, -3765)
+texture = ExtResource("52_vo73r")
+
+[node name="Sunflower" type="Sprite2D" parent="."]
+position = Vector2(-559, -3227)
+texture = ExtResource("53_4amee")
+
+[node name="Windmill" type="Sprite2D" parent="."]
+position = Vector2(-1805, -3693)
+texture = ExtResource("54_ii8xg")
+
+[node name="Flower" type="Sprite2D" parent="."]
+position = Vector2(-1177, -4259)
+texture = ExtResource("55_auvsv")
