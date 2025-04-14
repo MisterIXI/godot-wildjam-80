@@ -41,16 +41,13 @@ func _on_check_box_toggled(_toggled_on:bool) -> void:
     isNaddelModeOn = true
     # change to circus music
     SoundManager._change_to_naddel_music()
-    # add timer ui element
-
-    # change play style with ripping paper
+    #TODO: naddel add timer ui element
 
   elif !_toggled_on: 
     isNaddelModeOn = false
     # change to background music 
     SoundManager._change_to_background_music()
-    # remove timer ui element 
-    # change play style
+    #TODO: naddel remove timer ui element 
 
 
 func _is_naddel_mode_on(): 
