@@ -5,7 +5,6 @@ class_name DustCloudParticleSystem
 
 
 func emit_at(target_pos: Vector2):
-	print("emitting at ", target_pos)
 	# duplicate self at position and emit particles
 	var dup = self.duplicate()
 	get_parent().add_child(dup)
