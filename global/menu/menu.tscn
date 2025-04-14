@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bteygbql26mqp" path="res://global/menu/leaderboard_menu/leaderboard_menu.tscn" id="5_71gem"]
 [ext_resource type="PackedScene" uid="uid://daycv1awn5ygk" path="res://scenes/ui/hud.tscn" id="6_peatc"]
 
-[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu")]
+[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu", "hud_menu")]
 process_mode = 3
 script = ExtResource("1_adrvt")
 main_menu = NodePath("MainMenu")
 pause_menu = NodePath("PauseMenu")
 settings_menu = NodePath("SettingsMenu")
 leaderboard_menu = NodePath("LeaderboardMenu")
+hud_menu = NodePath("HUD")
 
 [node name="HUD" parent="." instance=ExtResource("6_peatc")]
 
