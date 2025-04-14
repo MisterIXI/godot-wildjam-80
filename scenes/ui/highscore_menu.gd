@@ -1,6 +1,6 @@
 extends Panel
 
-@onready var vbox_container : VBoxContainer = $VBoxContainer
+@onready var vbox_container : VBoxContainer = $ScrollContainer/VBoxContainer
 var highscore_entry : PackedScene =preload("res://scenes/ui/highscore_entry.tscn")
 
 var highscore_list :Array[PanelContainer]
@@ -9,6 +9,14 @@ func _ready() -> void:
     if !ReferenceManager.highscore_node.DEBUG_MODE:
         ReferenceManager.highscore_node.leaderboard_request_completed.connect(_wait_for_finished)
     else:
+        ReferenceManager.highscore_node.set_new_highscore("oli",1,32)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
+        ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
         ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
         ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)
         ReferenceManager.highscore_node.set_new_highscore("robbi",5,3)

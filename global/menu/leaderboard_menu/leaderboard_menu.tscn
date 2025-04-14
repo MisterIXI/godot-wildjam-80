@@ -1,13 +1,20 @@
-[gd_scene load_steps=7 format=3 uid="uid://bteygbql26mqp"]
+[gd_scene load_steps=14 format=3 uid="uid://bteygbql26mqp"]
 
 [ext_resource type="Script" uid="uid://bdisf5t6jdgkn" path="res://global/menu/leaderboard_menu/leaderboard_menu.gd" id="1_h5ar4"]
 [ext_resource type="Texture2D" uid="uid://coqucqh1og5xv" path="res://assets/images/menu/wallpaper/retro-vintage-circle-background-4.jpg" id="2_4kfob"]
 [ext_resource type="PackedScene" uid="uid://4jb4ne20keau" path="res://scenes/managers/highscore_manager.tscn" id="2_lmh2u"]
 [ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="2_s2djq"]
 [ext_resource type="PackedScene" uid="uid://b4nwq2o70i1sp" path="res://scenes/ui/highscore_menu.tscn" id="4_4kfob"]
+[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="5_k6ho7"]
 [ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="6_hbrpu"]
+[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="7_whlca"]
+[ext_resource type="Texture2D" uid="uid://vv3kbuj3i2y1" path="res://assets/images/menu/letters/B-2.png" id="8_k6ho7"]
+[ext_resource type="Texture2D" uid="uid://bn2ivdajmbjs6" path="res://assets/images/menu/letters/A.png" id="9_lfi71"]
+[ext_resource type="Texture2D" uid="uid://0ukda07hg1dq" path="res://assets/images/menu/letters/C-2.png" id="10_cm5h7"]
+[ext_resource type="Texture2D" uid="uid://dbdu63lc1er8b" path="res://assets/images/menu/letters/K.png" id="11_kcpfj"]
+[ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="12_t1jaj"]
 
-[node name="LeaderboardMenu" type="Control"]
+[node name="LeaderboardMenu" type="Control" node_paths=PackedStringArray("back_button", "highscore_menu")]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -16,8 +23,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h5ar4")
-
-[node name="highscore_manager" parent="." instance=ExtResource("2_lmh2u")]
+back_button = NodePath("MenuButton")
+highscore_menu = NodePath("Highscore_menu")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 layout_mode = 1
@@ -29,15 +36,77 @@ grow_vertical = 2
 texture = ExtResource("2_4kfob")
 expand_mode = 4
 
-[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
-script = ExtResource("2_s2djq")
-wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../Highscore_menu")]
-metadata/_custom_type_script = "uid://duya6nqidc6d5"
-
 [node name="Highscore_menu" parent="." instance=ExtResource("4_4kfob")]
 layout_mode = 1
+
+[node name="highscore_manager" parent="Highscore_menu" instance=ExtResource("2_lmh2u")]
 
 [node name="OnVisible2dModulate" type="Node" parent="Highscore_menu"]
 script = ExtResource("6_hbrpu")
 metadata/_custom_type_script = "uid://wj7pnwgxam2o"
+
+[node name="MenuButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 179.49
+offset_bottom = 72.0
+rotation = -0.132645
+pivot_offset = Vector2(79.245, 27.5)
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="MenuButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -79.245
+offset_top = -25.5
+offset_right = 86.755
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="B" type="TextureRect" parent="MenuButton/LetterContainer"]
+material = ExtResource("7_whlca")
+layout_mode = 2
+texture = ExtResource("8_k6ho7")
+expand_mode = 3
+
+[node name="OnVisible2dShaderAlpha" type="Node" parent="MenuButton/LetterContainer/B"]
+script = ExtResource("5_k6ho7")
+metadata/_custom_type_script = "uid://b56jfdihlxedt"
+
+[node name="A" type="TextureRect" parent="MenuButton/LetterContainer"]
+material = ExtResource("7_whlca")
+layout_mode = 2
+texture = ExtResource("9_lfi71")
+expand_mode = 3
+
+[node name="C" type="TextureRect" parent="MenuButton/LetterContainer"]
+material = ExtResource("7_whlca")
+layout_mode = 2
+texture = ExtResource("10_cm5h7")
+expand_mode = 3
+
+[node name="K" type="TextureRect" parent="MenuButton/LetterContainer"]
+material = ExtResource("7_whlca")
+layout_mode = 2
+texture = ExtResource("11_kcpfj")
+expand_mode = 3
+
+[node name="ButtonHover" type="Node" parent="MenuButton"]
+script = ExtResource("12_t1jaj")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
+script = ExtResource("2_s2djq")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../Highscore_menu"), NodePath("../MenuButton")]
+metadata/_custom_type_script = "uid://duya6nqidc6d5"

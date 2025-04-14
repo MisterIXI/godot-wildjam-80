@@ -30,6 +30,8 @@ func _ready():
 
   settings_menu.confirm_button.pressed.connect(_on_sm_confirm)
 
+  leaderboard_menu.back_button.pressed.connect(_on_lm_back)
+
 
 ## Main menu
 func _on_mm_visibility_changed() -> void:
@@ -86,10 +88,15 @@ func _on_sm_confirm() -> void:
   settings_menu.last_menu.show()
 
 
+## Leaderboard menu
+func _on_lm_back() -> void:
+  main_menu.show()
+
+
 ## General
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("pause"):
-    if not main_menu.visible and not settings_menu.visible:
+    if not main_menu.visible and not settings_menu.visible and not leaderboard_menu.visible:
       if pause_menu.visible:
         for child in pause_menu.get_children():
           if child is Untransition:
@@ -102,3 +109,5 @@ func _input(event: InputEvent) -> void:
         pause_menu.show()
     elif settings_menu.visible:
       settings_menu.last_menu.show()
+    elif leaderboard_menu.visible:
+      main_menu.show()

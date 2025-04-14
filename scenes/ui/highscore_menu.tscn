@@ -29,56 +29,60 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_ol4y4")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -553.0
-offset_top = -22.5
-offset_right = 553.0
-offset_bottom = 22.5
+offset_left = -555.0
+offset_top = -258.0
+offset_right = 565.0
+offset_bottom = 283.0
 grow_horizontal = 2
 grow_vertical = 2
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
 alignment = 1
 
-[node name="PanelContainer" type="PanelContainer" parent="VBoxContainer"]
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/PanelContainer"]
+[node name="Label" type="Label" parent="ScrollContainer/VBoxContainer/PanelContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_k27c8")
 theme_override_font_sizes/font_size = 52
 text = "- Leaderboard -"
 horizontal_alignment = 1
 
-[node name="highscore_entry" parent="VBoxContainer" instance=ExtResource("2_n1skn")]
+[node name="highscore_entry" parent="ScrollContainer/VBoxContainer" instance=ExtResource("2_n1skn")]
 layout_mode = 2
 
-[node name="value_rank" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="0"]
+[node name="value_rank" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="0"]
 text = "Rank"
 
-[node name="VSeparator" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="1"]
+[node name="VSeparator" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="1"]
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
 
-[node name="VSeparator2" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="3"]
+[node name="VSeparator2" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="3"]
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
 
-[node name="value_collectables" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="5"]
+[node name="value_collectables" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="5"]
 text = "x1"
 
-[node name="VSeparator3" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="6"]
+[node name="VSeparator3" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="6"]
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
 
-[node name="value_time" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="7"]
+[node name="value_time" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="7"]
 text = "Time"
 
-[node name="VSeparator4" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="8"]
+[node name="VSeparator4" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="8"]
 theme_override_styles/separator = SubResource("StyleBoxEmpty_ol4y4")
 
-[node name="value_date" parent="VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="9"]
+[node name="value_date" parent="ScrollContainer/VBoxContainer/highscore_entry/MarginContainer/HBoxContainer" index="9"]
 text = "Date"
 
-[editable path="VBoxContainer/highscore_entry"]
+[editable path="ScrollContainer/VBoxContainer/highscore_entry"]

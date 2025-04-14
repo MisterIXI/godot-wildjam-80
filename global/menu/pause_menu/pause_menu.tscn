@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://bcvvh7wycn3bm"]
+[gd_scene load_steps=32 format=3 uid="uid://bcvvh7wycn3bm"]
 
 [ext_resource type="Script" uid="uid://b68yg4n075qm0" path="res://global/menu/pause_menu/pause_menu.gd" id="1_3h16x"]
 [ext_resource type="Texture2D" uid="uid://ddtrshylvoe7y" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-5.jpg" id="1_dsqdt"]
@@ -29,6 +29,14 @@
 [ext_resource type="Texture2D" uid="uid://lhevu7k1gpvt" path="res://assets/images/menu/letters/U-2.png" id="22_ruvp3"]
 [ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="28_jb7ot"]
 [ext_resource type="Script" uid="uid://bpcmfk0tpjacc" path="res://components/transition/untransition.gd" id="29_sftex"]
+[ext_resource type="FontFile" uid="uid://d3w10pqgnrc6n" path="res://assets/fonts/Comic_Neue/ComicNeue-Bold.ttf" id="30_ge160"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o45e1"]
+font = ExtResource("30_ge160")
+font_size = 18
+font_color = Color(0.784233, 0.608026, 0.937188, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [node name="PauseMenu" type="Control" node_paths=PackedStringArray("resume_button", "settings_button", "reset_button", "menu_button")]
 process_mode = 3
@@ -300,15 +308,28 @@ expand_mode = 3
 script = ExtResource("11_ge160")
 metadata/_custom_type_script = "uid://iryt2xkha5ve"
 
+[node name="Label2" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -270.0
+offset_bottom = 37.0
+grow_horizontal = 0
+text = "This game saves automatically!"
+label_settings = SubResource("LabelSettings_o45e1")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("28_jb7ot")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../ResumeButton"), NodePath("../SettingsButton"), NodePath("../ResetButton"), NodePath("../MenuButton")]
+anything_else = [NodePath("../ResumeButton"), NodePath("../SettingsButton"), NodePath("../ResetButton"), NodePath("../MenuButton"), NodePath("../Label2")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
 
 [node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
 script = ExtResource("29_sftex")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../ResumeButton"), NodePath("../SettingsButton"), NodePath("../ResetButton"), NodePath("../MenuButton")]
+anything_else = [NodePath("../ResumeButton"), NodePath("../SettingsButton"), NodePath("../ResetButton"), NodePath("../MenuButton"), NodePath("../Label2")]
 _activator = [NodePath("../ResumeButton")]
 metadata/_custom_type_script = "uid://bpcmfk0tpjacc"
