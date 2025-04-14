@@ -1,3 +1,380 @@
-[gd_scene format=3 uid="uid://cy0whrgfyoaku"]
+[gd_scene load_steps=30 format=3 uid="uid://cy0whrgfyoaku"]
+
+[ext_resource type="PackedScene" uid="uid://bo7ds72obxh35" path="res://scenes/EnvironmentObjects/Obstacles/trampoline.tscn" id="1_75675"]
+[ext_resource type="PackedScene" uid="uid://4jb4ne20keau" path="res://scenes/managers/highscore_manager.tscn" id="1_aqtn5"]
+[ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="1_l8lib"]
+[ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="1_lo6wr"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_66isk"]
+[ext_resource type="PackedScene" uid="uid://u8nsu7nwitmw" path="res://scenes/managers/game_manager.tscn" id="2_211vs"]
+[ext_resource type="PackedScene" uid="uid://ds2kjpvu182y0" path="res://scenes/EnvironmentObjects/pole.tscn" id="3_43cuh"]
+[ext_resource type="Texture2D" uid="uid://yaf2gpybvuke" path="res://assets/images/bath/background.png" id="3_l8lib"]
+[ext_resource type="Texture2D" uid="uid://bukqg3r7v8k4w" path="res://assets/images/bath/bathtub.png" id="4_nnpbe"]
+[ext_resource type="Texture2D" uid="uid://bi5micb4eyc0t" path="res://assets/images/bath/board.png" id="5_75675"]
+[ext_resource type="Texture2D" uid="uid://c8f67asdl6hcn" path="res://assets/images/bath/mirror.png" id="6_43cuh"]
+[ext_resource type="Texture2D" uid="uid://c47a2rxyfvunw" path="res://assets/images/bath/toilet_bg.png" id="7_vm84y"]
+[ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="8_66isk"]
+[ext_resource type="Script" uid="uid://cfefmqqmra80r" path="res://scenes/_game/end_scene/win_area.gd" id="12_5uh6b"]
+[ext_resource type="FontFile" uid="uid://ckbchbyf4el7h" path="res://assets/fonts/Slabo_13px/Slabo13px-Regular.ttf" id="12_43cuh"]
+[ext_resource type="Script" uid="uid://c84a71ywbb5v0" path="res://scenes/_game/end_scene/respawn_area.gd" id="13_vm84y"]
+[ext_resource type="PackedScene" uid="uid://cn1seejpqc5o4" path="res://scenes/_game/end_scene/name_input.tscn" id="15_8aagw"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_llnb5"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orjfd"]
+seamless = true
+noise = SubResource("FastNoiseLite_llnb5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c66a7"]
+shader = ExtResource("2_66isk")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 0.67058, 0.655483, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_orjfd")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqtn5"]
+size = Vector2(376.471, 334.118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_211vs"]
+size = Vector2(300, 432.941)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aagw"]
+size = Vector2(300, 404.706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uh6b"]
+size = Vector2(547, 555)
+
+[sub_resource type="Curve" id="Curve_nnpbe"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995781, 52.809), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_75675"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.991561, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_43cuh"]
+offsets = PackedFloat32Array(0, 0.218009, 0.42654, 0.592417, 0.701422, 0.805687, 0.919431, 1)
+colors = PackedColorArray(0.862745, 0.309804, 0.223529, 1, 0.968627, 0.717647, 0.235294, 1, 0, 0.788235, 0.713726, 1, 0.435294, 0.2, 0.247059, 0.501961, 0.952941, 0.894118, 0.764706, 0.631373, 0.94902, 0.419608, 0.435294, 0.690196, 0.435294, 0.764706, 0.67451, 0.729412, 1, 0.529412, 0.0196078, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_l8lib"]
+radius = 99.8268
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eupc4"]
+size = Vector2(30000, 200)
 
 [node name="end_scene" type="Node2D"]
+
+[node name="highscore_manager" parent="." instance=ExtResource("1_aqtn5")]
+
+[node name="game_manager" parent="." instance=ExtResource("2_211vs")]
+
+[node name="Env" type="Node2D" parent="."]
+
+[node name="Trampoline" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-2850, 38)
+rotation = 0.110551
+
+[node name="Trampoline2" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-3122, -134)
+rotation = 0.571163
+scale = Vector2(1, 1)
+
+[node name="Trampoline3" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-3376, -312)
+rotation = 0.603056
+
+[node name="Trampoline4" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-3599, -534)
+rotation = 0.80613
+
+[node name="Trampoline5" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(2590, 69)
+rotation = -0.0601995
+
+[node name="Trampoline6" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(2923, 38)
+rotation = -0.213456
+
+[node name="Trampoline7" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(3240, -47.0001)
+rotation = -0.331124
+
+[node name="Trampoline8" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(3554, -166)
+rotation = -0.514591
+
+[node name="Trampoline9" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(3071, -2244)
+rotation = 0.400141
+
+[node name="Trampoline10" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(1979, -2566)
+rotation = -0.345997
+
+[node name="Trampoline11" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(1553, -2581)
+rotation = -2.78806
+
+[node name="Trampoline12" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-1701, -2548)
+rotation = -0.345997
+
+[node name="Trampoline13" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-2127, -2563)
+rotation = -2.78806
+
+[node name="Trampoline14" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(-2078, -5006)
+rotation = -2.78806
+
+[node name="StaticBody2D2" parent="Env" instance=ExtResource("1_l8lib")]
+position = Vector2(3, -4957)
+
+[node name="Trampoline15" parent="Env" instance=ExtResource("1_75675")]
+position = Vector2(2384, -4711)
+rotation = -2.78806
+
+[node name="pole" parent="Env" instance=ExtResource("3_43cuh")]
+position = Vector2(-1416, -518)
+
+[node name="pole5" parent="Env" instance=ExtResource("3_43cuh")]
+position = Vector2(-3.99997, -384)
+scale = Vector2(0.425, 0.425)
+
+[node name="pole6" parent="Env" instance=ExtResource("3_43cuh")]
+position = Vector2(-3.99997, -384)
+scale = Vector2(0.425, 0.425)
+
+[node name="pole3" parent="Env" instance=ExtResource("3_43cuh")]
+position = Vector2(-1801, -3786)
+
+[node name="pole2" parent="Env" instance=ExtResource("3_43cuh")]
+position = Vector2(1709, -451)
+
+[node name="pole4" parent="Env" instance=ExtResource("3_43cuh")]
+position = Vector2(1911, -3710)
+
+[node name="StaticBody2D" parent="Env" instance=ExtResource("1_l8lib")]
+position = Vector2(-13, 74)
+scale = Vector2(3.434, 3.434)
+
+[node name="bathtub" type="StaticBody2D" parent="Env"]
+position = Vector2(-226, -69)
+scale = Vector2(0.425, 0.425)
+
+[node name="Bild" type="Sprite2D" parent="Env/bathtub"]
+material = SubResource("ShaderMaterial_c66a7")
+texture = ExtResource("4_nnpbe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/bathtub"]
+position = Vector2(30.5882, 94.1177)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_aqtn5")
+disabled = true
+
+[node name="board" type="StaticBody2D" parent="Env"]
+position = Vector2(294, 195)
+scale = Vector2(0.425, 0.425)
+
+[node name="Bild" type="Sprite2D" parent="Env/board"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(-94.1176, -623.529)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("5_75675")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/board"]
+position = Vector2(-130, -595.294)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_211vs")
+disabled = true
+
+[node name="mirror2" type="StaticBody2D" parent="Env"]
+position = Vector2(277, -120)
+scale = Vector2(0.315, 0.315)
+
+[node name="Bild" type="Sprite2D" parent="Env/mirror2"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(-96.4707, -578.823)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("6_43cuh")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/mirror2"]
+position = Vector2(-130, -562.353)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="Mirror" type="StaticBody2D" parent="Env"]
+position = Vector2(-262, -77)
+scale = Vector2(0.315, 0.315)
+
+[node name="Bild" type="Sprite2D" parent="Env/Mirror"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(-96.4707, -578.823)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("6_43cuh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/Mirror"]
+position = Vector2(-130, -562.353)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="shadow" type="StaticBody2D" parent="Env"]
+position = Vector2(-210, -49)
+scale = Vector2(0.365, 0.365)
+
+[node name="Bild" type="Sprite2D" parent="Env/shadow"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(581.176, 91.7647)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("7_vm84y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/shadow"]
+position = Vector2(-130, -562.353)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="PlayerBody" parent="." instance=ExtResource("1_lo6wr")]
+position = Vector2(-512, -21)
+collision_layer = 7
+
+[node name="bg" type="StaticBody2D" parent="."]
+position = Vector2(0, -467)
+scale = Vector2(2, 2)
+
+[node name="Bild" type="Sprite2D" parent="bg"]
+material = SubResource("ShaderMaterial_c66a7")
+texture = ExtResource("3_l8lib")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bg"]
+position = Vector2(-4.5, -7.5)
+shape = SubResource("RectangleShape2D_5uh6b")
+disabled = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(3, -44)
+scale = Vector2(0.425, 0.425)
+amount = 25
+texture = ExtResource("8_66isk")
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -5)
+spread = 180.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 33.46
+initial_velocity_max = 1000.0
+damping_curve = SubResource("Curve_nnpbe")
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_75675")
+color_initial_ramp = SubResource("Gradient_43cuh")
+hue_variation_max = 1.0
+
+[node name="CPUParticles2D_secret" type="CPUParticles2D" parent="."]
+position = Vector2(3, -5016)
+scale = Vector2(0.425, 0.425)
+amount = 25
+texture = ExtResource("8_66isk")
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -5)
+spread = 180.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 33.46
+initial_velocity_max = 1000.0
+damping_curve = SubResource("Curve_nnpbe")
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_75675")
+color_initial_ramp = SubResource("Gradient_43cuh")
+hue_variation_max = 1.0
+
+[node name="Win_Area" type="Area2D" parent="." node_paths=PackedStringArray("other_exit")]
+position = Vector2(15, -23)
+scale = Vector2(0.425, 0.425)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("12_5uh6b")
+other_exit = NodePath("../Win_Area_secret")
+set_name_input = ExtResource("15_8aagw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area"]
+shape = SubResource("CircleShape2D_l8lib")
+
+[node name="Win_Area_secret" type="Area2D" parent="." node_paths=PackedStringArray("other_exit")]
+position = Vector2(1, -5015)
+scale = Vector2(0.425, 0.425)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("12_5uh6b")
+other_exit = NodePath("../Win_Area")
+set_name_input = ExtResource("15_8aagw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area_secret"]
+shape = SubResource("CircleShape2D_l8lib")
+
+[node name="shadow2" type="StaticBody2D" parent="."]
+position = Vector2(-203, -5058)
+scale = Vector2(0.365, 0.365)
+
+[node name="Bild" type="Sprite2D" parent="shadow2"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(581.176, 91.7647)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("7_vm84y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shadow2"]
+position = Vector2(-130, -562.353)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label_secret" type="Label" parent="CanvasLayer"]
+offset_left = -110.0
+offset_top = -5164.0
+offset_right = 127.0
+offset_bottom = -5114.0
+theme_override_fonts/font = ExtResource("12_43cuh")
+theme_override_font_sizes/font_size = 40
+text = "Secret found"
+horizontal_alignment = 1
+
+[node name="Label_thanks" type="Label" parent="CanvasLayer"]
+offset_left = -169.0
+offset_top = -223.0
+offset_right = 186.0
+offset_bottom = -173.0
+theme_override_fonts/font = ExtResource("12_43cuh")
+theme_override_font_sizes/font_size = 40
+text = "Thanks for playing"
+horizontal_alignment = 1
+
+[node name="Respawn_area" type="Area2D" parent="." node_paths=PackedStringArray("_player")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("13_vm84y")
+_player = NodePath("../PlayerBody")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Respawn_area"]
+position = Vector2(0, 423)
+shape = SubResource("RectangleShape2D_eupc4")
+
+[connection signal="body_entered" from="Respawn_area" to="Respawn_area" method="on_body_entered"]
