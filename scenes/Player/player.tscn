@@ -194,18 +194,20 @@ shader_parameter/frame_time = 0.25
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
 size = Vector2(60, 50)
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "dust_cloud_system", "naddel_ripping_timer") groups=["player"]]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_hvfru")
+hard_impact_threshold = 1300.0
 rope = NodePath("RopeVisuals/VerletRope")
 rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
 hop_cd_timer = NodePath("HopCD")
 naddel_ripping_timer = NodePath("NaddelModeRipTimer")
+impact_cd_timer = NodePath("ImpactCD")
 dust_cloud_system = NodePath("DustCloudParticleSystem")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
@@ -459,6 +461,10 @@ right_colliders = [NodePath("../RPlayerCollider1"), NodePath("../RPlayerCollider
 anchor_node = NodePath("../RopeOrigin")
 anchor_point_left = NodePath("../AnchorPointLeft")
 anchor_point_right = NodePath("../AnchorPointRight")
+
+[node name="ImpactCD" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hard_impact" from="." to="FollowCam" method="_on_hard_impact"]

@@ -1,12 +1,10 @@
 extends RigidBody2D
 class_name PlayerController
-
+@export var hard_impact_threshold: float = 2000
 @export var rope: VerletRope
 @export var rope_target: Sprite2D
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
-var previousVelocity: float = 0.0
-var prevprevVelocity: float = 0.0
 
 @export var max_rope_distance : float = 300
 @export var ground_cast: ShapeCast2D
@@ -14,8 +12,11 @@ var prevprevVelocity: float = 0.0
 
 @export var hop_cd_timer: Timer
 @export var naddel_ripping_timer: Timer
+@export var impact_cd_timer: Timer
 
 @export var dust_cloud_system: DustCloudParticleSystem
+@export var velocity_buffer_size: int = 5
+var velocity_buffer: Array[float] = []
 signal toilette_paper_activated
 signal toilette_paper_deactivated
 
@@ -28,8 +29,9 @@ func is_grounded():
 	return ground_cast.is_colliding() or debug_movement
 
 func _physics_process(_delta):
-	prevprevVelocity = previousVelocity
-	previousVelocity = linear_velocity.length()
+	velocity_buffer.append(linear_velocity.length())
+	if velocity_buffer.size() > velocity_buffer_size:
+		velocity_buffer.pop_front()
 	# rotate ground ray
 	ground_cast.rotation_degrees = 360 - rotation_degrees
 	if is_grounded() and hop_cd_timer.time_left == 0:
@@ -86,17 +88,17 @@ func _physics_process(_delta):
 		custom_joint.deactivate()
 
 func _integrate_forces(state):
-	if state.get_contact_count() >= 1 and abs(state.linear_velocity.length() - prevprevVelocity) > 800:
+	var impact_force = abs(state.linear_velocity.length() - velocity_buffer.max())
+	if impact_cd_timer.time_left == 0 and state.get_contact_count() >= 1 and impact_force > hard_impact_threshold:
 		dust_cloud_system.emit_at(state.get_contact_local_position(0))
 		hard_impact.emit()
+		SoundManager._flush_toilet()
+		impact_cd_timer.start()
+		# print("IMPACT: ", impact_force, " | data: ", velocity_buffer, " ", state.linear_velocity.length())
 
 func _on_body_entered(body:Node):
-
 	if body.is_in_group("Trampoline"):
 		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
-
-	if previousVelocity - linear_velocity.length() > 1000:
-		SoundManager._flush_toilet()
 
 func _ready() -> void:
 	SoundManager._play_background_music()
