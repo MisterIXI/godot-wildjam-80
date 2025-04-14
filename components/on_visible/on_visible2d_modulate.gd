@@ -11,7 +11,7 @@ extends OnVisible2d
 func _on_visibility_changed():
 	if parent.visible:
 		parent.modulate.a = 0
-		var tween = get_tree().create_tween()
+		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_QUINT)
 		tween.set_ease(Tween.EASE_IN)
 		tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
@@ -20,7 +20,7 @@ func _on_visibility_changed():
 		if hide_when_finished:
 			await tween.finished
 			tween.kill()
-			tween = get_tree().create_tween()
+			tween = create_tween()
 			tween.set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 			tween.tween_property(parent, "modulate:a", 0, animation_duration)
 			await tween.finished

@@ -5,7 +5,7 @@
 [resource]
 shader = ExtResource("1_r1aup")
 shader_parameter/TransparentDot = true
-shader_parameter/AspectRatio = 1.375
+shader_parameter/AspectRatio = 1.4
 shader_parameter/Dots = 10.0
 shader_parameter/_min = 0.0
 shader_parameter/_max = 1.0

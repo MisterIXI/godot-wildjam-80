@@ -7,7 +7,7 @@ func _ready() -> void:
       disabledTextureRect = child
       break
 
-  if OS.get_name() == "HTML5":
+  if OS.get_name() == "Web":
     disabled = true
   elif not disabled:
     disabled = false
@@ -19,3 +19,4 @@ func _ready() -> void:
 
 func _on_pressed() -> void:
   get_tree().quit()
+  Grace.save_scene()

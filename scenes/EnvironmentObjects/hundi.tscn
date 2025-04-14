@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb60f7pufgkvc"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_3dpah"]
+[ext_resource type="Texture2D" uid="uid://blywoyv0tq7kf" path="res://assets/images/photos/hundi.png" id="2_u6l70"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ni00m"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_bgk6h"]
+seamless = true
+noise = SubResource("FastNoiseLite_ni00m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vdwf"]
+shader = ExtResource("1_3dpah")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_bgk6h")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="Hundi" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_7vdwf")
+texture = ExtResource("2_u6l70")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(122, 113.4, 122, 104.8, 154, 39, 157.2, 39, 164.2, -24, 167.5, -24, 150.4, -120.7, 156, -173.6, 156, -179.8, 135.9, -222, 143, -243.8, 143, -266.2, 86, -325.4, 86, -330.3, 48, -333.8, 48, -331.8, -22.3, -329, -25.6, -329, -88.8, -302, -94.7, -302, -127, -122.7, -127, -118.5, -199.5, 75, -203.9, 75, -195, 159.8, -195, 166.2, -147.7, 187, -127.4, 208.7, -148.3, 228, -169.9, 233, -177.9, 233, -187.9, 265.1, -216.5, 277, -221.3, 277, -225.4, 286.9, -212, 300.3, -212, 306, -138, 306, -113, 319.6, -113, 324.3, -72.8, 323, -67, 323, -47.3, 296.3, 2.09998, 268, 10, 268, 0, 181, 0, 177.6, 11, 149, 31.3, 155.5, 53, 246, 53, 251.7, 82, 261.7, 82, 268.1, 124.3, 254, 134.7, 254, 115, 186.7)

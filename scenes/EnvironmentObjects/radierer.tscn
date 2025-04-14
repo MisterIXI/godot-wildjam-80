@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkwxktyxjbisq"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_y0bjc"]
+[ext_resource type="Texture2D" uid="uid://c6sxitlxyd6gw" path="res://assets/images/photos/radierer.png" id="2_nkif2"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x1wpk"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u5vne"]
+seamless = true
+noise = SubResource("FastNoiseLite_x1wpk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pdtln"]
+shader = ExtResource("1_y0bjc")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_u5vne")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="Radierer" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_pdtln")
+texture = ExtResource("2_nkif2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-238, -126, -238, -124.2, -296.3, -115, -300.6, -115, -372.6, -37, -375.4, -37, -413.4, 86, -416.5, 86, -415, 105.5, -415, 110.1, -395, 124, -395, 128, 269, 124, 278.5, 124, 308.4, 119, 313.6, 119, 362.7, 90, 365.2, 90, 410.2, 52, 412.6, 52, 428.6, 22, 433.5, 22, 410, -81.9, 410, -85.9, 395, -107, 395, -109.9, 375, -119, 375, -122)

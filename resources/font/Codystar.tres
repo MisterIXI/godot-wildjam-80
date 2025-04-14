@@ -1,0 +1,6 @@
+[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://d4b3qbvpb1nyf"]
+
+[ext_resource type="FontFile" uid="uid://p82tf22tkumy" path="res://assets/fonts/Codystar/Codystar-Regular.ttf" id="1_wvqgb"]
+
+[resource]
+base_font = ExtResource("1_wvqgb")

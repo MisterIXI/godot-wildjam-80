@@ -11,7 +11,7 @@ extends Node
 func _ready():
   pause_menu.hide()
   settings_menu.hide()
-  if disable_menu and not OS.get_name() == "HTML5":
+  if disable_menu and Engine.is_editor_hint():
     main_menu.hide()
   else:
     main_menu.show()
@@ -34,21 +34,17 @@ func _ready():
 ## Main menu
 func _on_mm_visibility_changed() -> void:
   if main_menu.visible:
-    # pause_menu.hide()
-    # settings_menu.hide()
     if not get_tree().paused:
-      print_rich("[color=MAGENTA]Game tree has been paused. Origin: " + str(get_path()))
-    get_tree().paused = true
+      get_tree().paused = true
+      print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been paused.")
 
 func _on_mm_play() -> void:
-  # main_menu.hide()
   if get_tree().paused:
-    print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
-  get_tree().paused = false
+    get_tree().paused = false
+    print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been resumed.")
 
 
 func _on_mm_settings() -> void:
-  # main_menu.hide()
   settings_menu.show()
   settings_menu.last_menu = main_menu
 
@@ -60,38 +56,33 @@ func _on_mm_leaderboard() -> void:
 ## pause menu
 func _on_pm_visibility_changed() -> void:
   if pause_menu.visible:
-    # main_menu.hide()
-    # settings_menu.hide()
     if not get_tree().paused:
-      print_rich("[color=MAGENTA]Game tree has been paused. Origin: " + str(get_path()))
-    get_tree().paused = true
+      get_tree().paused = true
+      print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been paused.")
 
 func _on_pm_resume() -> void:
-  # pause_menu.hide()
   if get_tree().paused:
-    print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
-  get_tree().paused = false
+    get_tree().paused = false
+    print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been resumed.")
 
 
 func _on_pm_settings() -> void:
-  # pause_menu.hide()
   settings_menu.show()
   settings_menu.last_menu = pause_menu
 
 func _on_pm_reset() -> void:
   get_tree().reload_current_scene()
-  print_rich("[color=ORANGE]Current scene has been reloaded. Origin: " + str(get_path()))
-  _on_pm_resume()
-  #TODO: reset savestate
+  Grace.reset_scene()
+  await Grace.scene_loaded
+  pause_menu.resume_button.pressed.emit()
+
 
 func _on_pm_menu() -> void:
-  # pause_menu.hide()
   main_menu.show()
 
 
 ## Settings menu
 func _on_sm_confirm() -> void:
-  # settings_menu.hide()
   settings_menu.last_menu.show()
 
 
@@ -100,16 +91,14 @@ func _input(event: InputEvent) -> void:
   if event.is_action_pressed("pause"):
     if not main_menu.visible and not settings_menu.visible:
       if pause_menu.visible:
-        # pause_menu.hide()
         for child in pause_menu.get_children():
           if child is Untransition:
             child.start_animation()
             break
         if get_tree().paused:
-          print_rich("[color=CYAN]Game tree has been resumed. Origin: " + str(get_path()))
+          print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been resumed.")
         get_tree().paused = false
       else:
         pause_menu.show()
     elif settings_menu.visible:
-      # settings_menu.hide()
       settings_menu.last_menu.show()

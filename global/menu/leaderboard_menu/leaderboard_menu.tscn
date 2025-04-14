@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bteygbql26mqp"]
+[gd_scene load_steps=7 format=3 uid="uid://bteygbql26mqp"]
 
 [ext_resource type="Script" uid="uid://bdisf5t6jdgkn" path="res://global/menu/leaderboard_menu/leaderboard_menu.gd" id="1_h5ar4"]
 [ext_resource type="Texture2D" uid="uid://coqucqh1og5xv" path="res://assets/images/menu/wallpaper/retro-vintage-circle-background-4.jpg" id="2_4kfob"]
+[ext_resource type="PackedScene" uid="uid://4jb4ne20keau" path="res://scenes/managers/highscore_manager.tscn" id="2_lmh2u"]
 [ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="2_s2djq"]
+[ext_resource type="PackedScene" uid="uid://b4nwq2o70i1sp" path="res://scenes/ui/highscore_menu.tscn" id="4_4kfob"]
+[ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="6_hbrpu"]
 
 [node name="LeaderboardMenu" type="Control"]
 clip_contents = true
@@ -14,6 +17,8 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h5ar4")
 
+[node name="highscore_manager" parent="." instance=ExtResource("2_lmh2u")]
+
 [node name="Wallpaper" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -24,7 +29,15 @@ grow_vertical = 2
 texture = ExtResource("2_4kfob")
 expand_mode = 4
 
-[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper")]
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("2_s2djq")
 wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../Highscore_menu")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
+
+[node name="Highscore_menu" parent="." instance=ExtResource("4_4kfob")]
+layout_mode = 1
+
+[node name="OnVisible2dModulate" type="Node" parent="Highscore_menu"]
+script = ExtResource("6_hbrpu")
+metadata/_custom_type_script = "uid://wj7pnwgxam2o"

@@ -6,6 +6,7 @@ class_name PlayerController
 @export var custom_joint: CustomJoint
 @export var jumpForce : float = 100
 var previousVelocity: float = 0.0
+var prevprevVelocity: float = 0.0
 
 @export var max_rope_distance : float = 300
 @export var ground_cast: ShapeCast2D
@@ -14,16 +15,20 @@ var previousVelocity: float = 0.0
 @export var hop_cd_timer: Timer
 @export var naddel_ripping_timer: Timer
 
+@export var dust_cloud_system: DustCloudParticleSystem
 signal toilette_paper_activated
 signal toilette_paper_deactivated
 
 signal hopped_right
 signal hopped_left
 
+signal hard_impact
+
 func is_grounded():
 	return ground_cast.is_colliding() or debug_movement
 
 func _physics_process(_delta):
+	prevprevVelocity = previousVelocity
 	previousVelocity = linear_velocity.length()
 	# rotate ground ray
 	ground_cast.rotation_degrees = 360 - rotation_degrees
@@ -34,10 +39,13 @@ func _physics_process(_delta):
 			apply_central_impulse(Vector2(1,-1) * 100)
 			hop_cd_timer.start()
 			hopped_right.emit()
+			dust_cloud_system.emit_at(global_position + Vector2.DOWN * 40)
 			# 	apply_central_force(Vector2(500, 0))
 		elif Input.is_action_just_pressed("move_left"):
 			# if Vector2.LEFT.dot(linear_velocity) < 100:
 			apply_central_impulse(Vector2(-1,-1) * 100)
+			dust_cloud_system.emit_at(global_position + Vector2.DOWN * 40)
+
 			hop_cd_timer.start()
 			hopped_left.emit()
 			# 	apply_central_force(Vector2(-500, 0))
@@ -77,7 +85,13 @@ func _physics_process(_delta):
 		# pin_joint.node_b = ""
 		custom_joint.deactivate()
 
+func _integrate_forces(state):
+	if state.get_contact_count() >= 1 and abs(state.linear_velocity.length() - prevprevVelocity) > 800:
+		dust_cloud_system.emit_at(state.get_contact_local_position(0))
+		hard_impact.emit()
+
 func _on_body_entered(body:Node):
+
 	if body.is_in_group("Trampoline"):
 		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
 

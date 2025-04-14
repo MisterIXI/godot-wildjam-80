@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://u8qq6esgpedx"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_aqt5h"]
+[ext_resource type="Texture2D" uid="uid://blqaih548qsyb" path="res://assets/images/photos/taschenmesser.png" id="2_ripga"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2uvn0"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vnp3x"]
+seamless = true
+noise = SubResource("FastNoiseLite_2uvn0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3boap"]
+shader = ExtResource("1_aqt5h")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_vnp3x")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="taschenmesser" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Taschenmesser" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_3boap")
+texture = ExtResource("2_ripga")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-251, -340.7, -251, -337.2, -277.2, -327, -281, -327, -301, -300, -303.6, -300, -308, -283.8, -308, -262.1, -296, -223.2, -296, -219.8, 28, 166.2, 28, 168.6, 154, 235.5, 154, 238.5, 205.7, 243, 213.8, 243, 249.8, 220, 252.7, 220, 272.6, 180, 270.7, 141.8, 263, 121.9, 251.5, 104, -168, -306.6, -168, -308.3, -205, -332.3, -205, -335.3)
