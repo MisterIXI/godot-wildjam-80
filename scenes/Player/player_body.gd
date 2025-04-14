@@ -16,6 +16,7 @@ class_name PlayerController
 
 @export var dust_cloud_system: DustCloudParticleSystem
 @export var velocity_buffer_size: int = 5
+
 var velocity_buffer: Array[float] = []
 signal toilette_paper_activated
 signal toilette_paper_deactivated

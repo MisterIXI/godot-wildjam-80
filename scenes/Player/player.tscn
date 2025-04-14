@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=53 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -15,8 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://cgwaudgdfmeaa" path="res://assets/images/particle/dustclouds/dustclouds/5.PNG" id="8_an8q1"]
 [ext_resource type="Texture2D" uid="uid://djk0rp2b2rkru" path="res://assets/images/particle/dustclouds/dustclouds/6.PNG" id="9_hxkm2"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="10_t6q27"]
-[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
+[ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
+[ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
 friction = 0.1
@@ -110,9 +111,19 @@ height = 22.3146
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uxo23"]
 size = Vector2(8.88574, 16.5668)
 
-[sub_resource type="Curve" id="Curve_7wess"]
-_data = [Vector2(0, 0), 0.0, -0.102211, 0, 0, Vector2(0.223404, 0), 0.0, 0.285454, 1, 0, Vector2(0.659575, 0.235955), 1.4624, 1.4624, 0, 0, Vector2(1, 0.449438), -0.203111, 0.0, 0, 0]
-point_count = 4
+[sub_resource type="Curve" id="Curve_aciub"]
+_limits = [0.5, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.468493, 1), 0.0, 0.0, 0, 0, Vector2(0.99999, 0.5), -0.929817, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_hk2ix"]
+_data = [Vector2(0.0794521, 0), 0.0, 0.724395, 0, 0, Vector2(1, 0.735546), 1.25548, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_43ckd"]
+_limits = [0.0, 20.0, 0.0, 1.0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.619178, 0), 0.0, 0.0, 0, 0, Vector2(1, 13.1799), 96.5258, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_uxo23"]
 frequency = 0.0043
@@ -194,6 +205,25 @@ shader_parameter/frame_time = 0.25
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
 size = Vector2(60, 50)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x8khf"]
+noise_type = 3
+frequency = 0.2462
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aciub"]
+seamless = true
+noise = SubResource("FastNoiseLite_x8khf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aciub"]
+shader = ExtResource("18_x8khf")
+shader_parameter/noise = SubResource("NoiseTexture2D_aciub")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 2.0
+shader_parameter/line_density = 0.0
+shader_parameter/line_faloff = 0.07
+shader_parameter/mask_size = 0.22
+shader_parameter/mask_edge = 1.0
+shader_parameter/animation_speed = 12.59
+
 [node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
@@ -205,6 +235,7 @@ rope = NodePath("RopeVisuals/VerletRope")
 rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
+debug_movement = true
 hop_cd_timer = NodePath("HopCD")
 naddel_ripping_timer = NodePath("NaddelModeRipTimer")
 impact_cd_timer = NodePath("ImpactCD")
@@ -318,12 +349,15 @@ scale = Vector2(2.88, 2.88)
 shape = SubResource("RectangleShape2D_uxo23")
 disabled = true
 
-[node name="FollowCam" type="Camera2D" parent="." groups=["player_camera"]]
+[node name="FollowCam" type="Camera2D" parent="." node_paths=PackedStringArray("speedline_rect") groups=["player_camera"]]
 process_mode = 3
 process_callback = 0
 position_smoothing_enabled = true
 script = ExtResource("3_dl1wr")
-curve = SubResource("Curve_7wess")
+zoom_curve = SubResource("Curve_aciub")
+speedline_curve = SubResource("Curve_hk2ix")
+speedshake_curve = SubResource("Curve_43ckd")
+speedline_rect = NodePath("../CanvasLayer/ColorRect")
 
 [node name="CamerashakeCD" type="Timer" parent="FollowCam"]
 
@@ -465,6 +499,17 @@ anchor_point_right = NodePath("../AnchorPointRight")
 [node name="ImpactCD" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_aciub")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hard_impact" from="." to="FollowCam" method="_on_hard_impact"]
