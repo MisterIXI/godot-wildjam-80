@@ -86,12 +86,13 @@ func activate(new_anchor_pos: Vector2):
 
 func deactivate():
 	if segments.size() > 0:
-		tearing_particle.global_position = rope.global_position
-		# animate tearing particle
-		@warning_ignore("integer_division")
-		tearing_particle.amount = segments.size() / 3
-		tearing_particle.emission_points = PackedVector2Array(rope.points)
-		tearing_particle.emitting = true
+		var particle_count = floor(segments.size() / 3.0)
+		if particle_count > 0:
+			tearing_particle.global_position = rope.global_position
+			# animate tearing particle
+			tearing_particle.amount = particle_count
+			tearing_particle.emission_points = PackedVector2Array(rope.points)
+			tearing_particle.emitting = true
 	rope_active = false
 	rope.set_deferred("visible", false)
 	segments.clear()
