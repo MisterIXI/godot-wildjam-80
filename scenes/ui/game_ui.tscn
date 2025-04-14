@@ -20,6 +20,12 @@ grow_vertical = 2
 [node name="Highscore_menu" parent="Menu" instance=ExtResource("2_ru5ln")]
 layout_mode = 0
 anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 700.0
+offset_bottom = 550.0
+grow_horizontal = 1
+grow_vertical = 1
 
 [node name="HUD" type="Control" parent="."]
 layout_mode = 3
