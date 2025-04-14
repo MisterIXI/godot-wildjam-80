@@ -1,4 +1,4 @@
-[gd_scene load_steps=95 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=77 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
@@ -8,7 +8,6 @@
 [ext_resource type="PackedScene" uid="uid://ds2kjpvu182y0" path="res://scenes/EnvironmentObjects/pole.tscn" id="5_55gqm"]
 [ext_resource type="PackedScene" uid="uid://4vv4vr83shif" path="res://scenes/EnvironmentObjects/yield.tscn" id="5_j6ebo"]
 [ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="6_4wg66"]
-[ext_resource type="PackedScene" uid="uid://bq5gint4u8mmc" path="res://scenes/_debug/Steffen/trampoline.tscn" id="7_4be4q"]
 [ext_resource type="PackedScene" uid="uid://k6f2r7tmtvlb" path="res://scenes/EnvironmentObjects/gulli_3.tscn" id="7_74n1c"]
 [ext_resource type="PackedScene" uid="uid://bppojpxqxwl4k" path="res://scenes/EnvironmentObjects/leo.tscn" id="7_hcqwe"]
 [ext_resource type="PackedScene" uid="uid://qxr4i01dqg4m" path="res://scenes/EnvironmentObjects/gulli_4.tscn" id="8_7wess"]
@@ -45,56 +44,8 @@
 [ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="42_bdk5x"]
 [ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="43_bdk5x"]
 [ext_resource type="Texture2D" uid="uid://dwtbv0645sp7l" path="res://assets/images/photos/gulli3.png" id="44_du3fb"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cprxv"]
-size = Vector2(1498, 20)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_cprxv"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4be4q"]
-size = Vector2(1761, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwlt4"]
-size = Vector2(51, 108)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_74n1c"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_0pdxe"]
-size = Vector2(51, 1053.97)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_ovmwo"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_55gqm"]
-size = Vector2(51, 937)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_3y6uy"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ovmwo"]
-size = Vector2(51, 589.542)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
-size = Vector2(60, 50)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_55gqm"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dklac"]
-size = Vector2(51, 2476.96)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3y6uy"]
-size = Vector2(51, 625.99)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4wg66"]
-size = Vector2(51, 2123.45)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_dklac"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7wess"]
-size = Vector2(440.592, 638.958)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_74n1c"]
-size = Vector2(154, 2983)
-
-[sub_resource type="CanvasTexture" id="CanvasTexture_7wess"]
+[ext_resource type="PackedScene" uid="uid://eabnrkt448ts" path="res://scenes/EnvironmentObjects/breznak.tscn" id="45_5lumb"]
+[ext_resource type="PackedScene" uid="uid://bkjieb8en8qgi" path="res://scenes/EnvironmentObjects/kafka.tscn" id="46_n7uqk"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3y6uy"]
 frequency = 0.0043
@@ -407,462 +358,22 @@ shader_parameter/frame_time = 0.25
 [node name="YTest" type="Node2D"]
 
 [node name="Bg" parent="." instance=ExtResource("1_wk6ws")]
+visible = false
 position = Vector2(8978, -8566)
 scale = Vector2(12.79, 12.79)
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(6167, -2)
+position = Vector2(2597, -20)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Env"]
-position = Vector2(-252, 187)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D"]
-shape = SubResource("RectangleShape2D_cprxv")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D"]
-scale = Vector2(1500, 20)
-texture = SubResource("CanvasTexture_cprxv")
-
-[node name="StaticBody2D3" type="StaticBody2D" parent="Env"]
-position = Vector2(1548, 185)
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D3"]
-position = Vector2(130.5, 0)
-shape = SubResource("RectangleShape2D_4be4q")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D3"]
-position = Vector2(175.5, 0)
-scale = Vector2(1851, 20)
-texture = SubResource("CanvasTexture_cprxv")
-
-[node name="StaticBody2D4" type="StaticBody2D" parent="Env"]
-position = Vector2(824, 248)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D4"]
-shape = SubResource("RectangleShape2D_xwlt4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D4"]
-scale = Vector2(52.0001, 108)
-texture = SubResource("CanvasTexture_74n1c")
-
-[node name="StaticBody2D5" type="StaticBody2D" parent="Env"]
-position = Vector2(1161, -346)
-rotation = -1.56671
-metadata/_edit_group_ = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D5"]
-shape = SubResource("RectangleShape2D_xwlt4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D5"]
-scale = Vector2(52.0001, 108)
-texture = SubResource("CanvasTexture_74n1c")
-
-[node name="StaticBody2D31" type="StaticBody2D" parent="Env"]
-position = Vector2(-115, -202)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D31"]
-shape = SubResource("RectangleShape2D_xwlt4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D31"]
-scale = Vector2(52.0001, 108)
-texture = SubResource("CanvasTexture_74n1c")
-
-[node name="StaticBody2D6" type="StaticBody2D" parent="Env"]
-position = Vector2(1502, -355)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D6"]
-shape = SubResource("RectangleShape2D_xwlt4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D6"]
-scale = Vector2(52.0001, 108)
-texture = SubResource("CanvasTexture_74n1c")
-
-[node name="StaticBody2D7" type="StaticBody2D" parent="Env"]
-position = Vector2(1783, -354)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D7"]
-shape = SubResource("RectangleShape2D_xwlt4")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D7"]
-scale = Vector2(52.0001, 108)
-texture = SubResource("CanvasTexture_74n1c")
-
-[node name="StaticBody2D9" type="StaticBody2D" parent="Env"]
-position = Vector2(1743, -751)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D9"]
-position = Vector2(0, 467.524)
-shape = SubResource("RectangleShape2D_0pdxe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D9"]
-position = Vector2(0, 469.354)
-scale = Vector2(52.0001, 1046.71)
-texture = SubResource("CanvasTexture_ovmwo")
-
-[node name="StaticBody2D11" type="StaticBody2D" parent="Env"]
-position = Vector2(3070, -674)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D11"]
-position = Vector2(0, 467.524)
-shape = SubResource("RectangleShape2D_0pdxe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D11"]
-position = Vector2(0, 469.354)
-scale = Vector2(52.0001, 1046.71)
-texture = SubResource("CanvasTexture_ovmwo")
-
-[node name="StaticBody2D25" type="StaticBody2D" parent="Env"]
-position = Vector2(2880, 291)
-rotation = -3.15346
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D25"]
-position = Vector2(0, 467.524)
-shape = SubResource("RectangleShape2D_0pdxe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D25"]
-position = Vector2(0, 469.354)
-scale = Vector2(52.0001, 1046.71)
-texture = SubResource("CanvasTexture_ovmwo")
-
-[node name="StaticBody2D13" type="StaticBody2D" parent="Env"]
-position = Vector2(2736, -962)
-rotation = -3.14159
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D13"]
-position = Vector2(-0.00170898, 418.5)
-shape = SubResource("RectangleShape2D_55gqm")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D13"]
-position = Vector2(0, 416.001)
-scale = Vector2(52.0001, 940.002)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D14" type="StaticBody2D" parent="Env"]
-position = Vector2(2185, -1822)
-rotation = -1.56644
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D14"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D14"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D20" type="StaticBody2D" parent="Env"]
-position = Vector2(-35, -980)
-rotation = -1.56644
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D20"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D20"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D24" type="StaticBody2D" parent="Env"]
-position = Vector2(2417, -2765)
-rotation = -1.56644
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D24"]
-position = Vector2(-0.00170898, 616.537)
-shape = SubResource("RectangleShape2D_434gd")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D24"]
-position = Vector2(0, 629.837)
-scale = Vector2(52.0001, 1367.67)
-texture = SubResource("CanvasTexture_55gqm")
-
-[node name="StaticBody2D26" type="StaticBody2D" parent="Env"]
-position = Vector2(1095, -2753)
-rotation = -1.56644
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D26"]
-position = Vector2(-0.00219727, 1179.02)
-shape = SubResource("RectangleShape2D_dklac")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D26"]
-position = Vector2(0, 1179.19)
-scale = Vector2(52.0001, 2466.38)
-texture = SubResource("CanvasTexture_55gqm")
-
-[node name="StaticBody2D27" type="StaticBody2D" parent="Env"]
-position = Vector2(537, -2759)
-rotation = -1.56644
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D27"]
-position = Vector2(-0.00170898, 626.862)
-shape = SubResource("RectangleShape2D_3y6uy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D27"]
-position = Vector2(0, 629.837)
-scale = Vector2(52.0001, 1367.67)
-texture = SubResource("CanvasTexture_55gqm")
-
-[node name="StaticBody2D28" type="StaticBody2D" parent="Env"]
-position = Vector2(-124, -2755)
-rotation = -1.56644
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D28"]
-shape = SubResource("RectangleShape2D_3y6uy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D28"]
-scale = Vector2(52.0001, 627.111)
-texture = SubResource("CanvasTexture_55gqm")
-
-[node name="StaticBody2D29" type="StaticBody2D" parent="Env"]
-position = Vector2(371, -3294)
-rotation = -7.84025
-scale = Vector2(0.639479, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D29"]
-shape = SubResource("RectangleShape2D_3y6uy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D29"]
-scale = Vector2(52.0001, 627.111)
-texture = SubResource("CanvasTexture_55gqm")
-
-[node name="StaticBody2D30" type="StaticBody2D" parent="Env"]
-position = Vector2(371, -3294)
-rotation = -9.4215
-scale = Vector2(0.639479, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D30"]
-shape = SubResource("RectangleShape2D_3y6uy")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D30"]
-scale = Vector2(52.0001, 627.111)
-texture = SubResource("CanvasTexture_55gqm")
-
-[node name="StaticBody2D15" type="StaticBody2D" parent="Env"]
-position = Vector2(1864, -1876)
-rotation = -3.12672
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D15"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D15"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D21" type="StaticBody2D" parent="Env"]
-position = Vector2(694, -1793)
-rotation = -2.04284
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D21"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D21"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D22" type="StaticBody2D" parent="Env"]
-position = Vector2(1214, -2058)
-rotation = -2.04284
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D22"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D22"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D23" type="StaticBody2D" parent="Env"]
-position = Vector2(1727, -2320)
-rotation = -2.04284
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D23"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D23"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D16" type="StaticBody2D" parent="Env"]
-position = Vector2(1548, -1720)
-rotation = -3.12672
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D16"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D16"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D17" type="StaticBody2D" parent="Env"]
-position = Vector2(1251, -1562)
-rotation = -3.12672
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D17"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D17"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D18" type="StaticBody2D" parent="Env"]
-position = Vector2(977, -1400)
-rotation = -3.12672
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D18"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D18"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D19" type="StaticBody2D" parent="Env"]
-position = Vector2(661, -1256)
-rotation = -3.12672
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D19"]
-position = Vector2(-0.000732422, 235.311)
-shape = SubResource("RectangleShape2D_ovmwo")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D19"]
-position = Vector2(0, 237.733)
-scale = Vector2(52.0001, 583.465)
-texture = SubResource("CanvasTexture_3y6uy")
-
-[node name="StaticBody2D12" type="StaticBody2D" parent="Env"]
-position = Vector2(3492, -739)
-rotation = -3.14212
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D12"]
-position = Vector2(0, 1002.26)
-shape = SubResource("RectangleShape2D_4wg66")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D12"]
-position = Vector2(0, 1005.61)
-scale = Vector2(52.0001, 2119.21)
-texture = SubResource("CanvasTexture_dklac")
-
-[node name="StaticBody2D10" type="StaticBody2D" parent="Env"]
-position = Vector2(701, -755)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D10"]
-position = Vector2(-0.0507243, 477.004)
-shape = SubResource("RectangleShape2D_0pdxe")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D10"]
-position = Vector2(0, 469.354)
-scale = Vector2(52.0001, 1046.71)
-texture = SubResource("CanvasTexture_ovmwo")
-
-[node name="StaticBody2D8" type="StaticBody2D" parent="Env"]
-position = Vector2(1976, 236)
-rotation = -1.56671
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D8"]
-position = Vector2(194.796, 265.477)
-shape = SubResource("RectangleShape2D_7wess")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D8"]
-position = Vector2(193.804, 267.042)
-scale = Vector2(439.609, 642.084)
-texture = SubResource("CanvasTexture_74n1c")
-
-[node name="StaticBody2D2" type="StaticBody2D" parent="Env"]
-position = Vector2(-1081, -106)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/StaticBody2D2"]
-position = Vector2(0, -1186.5)
-shape = SubResource("RectangleShape2D_74n1c")
-
-[node name="Sprite2D" type="Sprite2D" parent="Env/StaticBody2D2"]
-position = Vector2(0, -1186.5)
-scale = Vector2(154, 2983)
-texture = SubResource("CanvasTexture_7wess")
-
-[node name="Trampoline" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(517, 214)
-rotation = 0.305868
-
-[node name="Trampoline4" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(2748, -740)
-rotation = 0.228796
-
-[node name="Trampoline6" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(2733, -1210)
-rotation = 0.228796
-
-[node name="Trampoline7" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(2748, -1807)
-rotation = -0.185203
-
-[node name="Trampoline5" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(3218, -856)
-rotation = -0.391347
-
-[node name="Trampoline8" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(3253, -1447)
-rotation = -0.391347
-
-[node name="Trampoline3" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(248, -446)
-rotation = 0.114398
-
-[node name="Trampoline9" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(-348, -1004)
-rotation = 0.114398
-
-[node name="Trampoline10" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(29, -1353)
-rotation = 0.114398
-
-[node name="Trampoline11" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(376, -1601)
-rotation = 0.114398
-
-[node name="Trampoline12" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(-877, -2534)
-rotation = 0.114398
-
-[node name="Trampoline2" parent="Env" instance=ExtResource("7_4be4q")]
-position = Vector2(2601, -155)
-rotation = -0.484659
-
-[node name="FanObstacle" parent="Env" instance=ExtResource("3_e0a08")]
-position = Vector2(-649, -143)
-rotation_speed = 300.0
-
-[node name="FanObstacle2" parent="Env" instance=ExtResource("3_e0a08")]
-position = Vector2(-411, -487)
-rotation_speed = -300.0
-
-[node name="FanObstacle3" parent="Env" instance=ExtResource("3_e0a08")]
-position = Vector2(-767, -772)
-rotation_speed = 300.0
-
 [node name="FanObstacle4" parent="Env" instance=ExtResource("3_e0a08")]
-position = Vector2(6886, -287)
+position = Vector2(8875, -1787)
+rotation_speed = 100.0
+
+[node name="FanObstacle7" parent="Env" instance=ExtResource("3_e0a08")]
+position = Vector2(5019, -7302)
 rotation_speed = 100.0
 
 [node name="FanObstacle5" parent="Env" instance=ExtResource("3_e0a08")]
@@ -951,15 +462,15 @@ rotation = 1.60813
 scale = Vector2(1.82735, 1.82735)
 
 [node name="platform" parent="Env" instance=ExtResource("2_d4148")]
-position = Vector2(6644, 118)
-scale = Vector2(1.24001, 1)
+position = Vector2(4504, 118)
+scale = Vector2(4.09733, 1.53468)
 
 [node name="platform3" parent="Env" instance=ExtResource("2_d4148")]
 position = Vector2(8766, 234)
 scale = Vector2(1.24001, 1)
 
 [node name="platform2" parent="Env" instance=ExtResource("2_d4148")]
-position = Vector2(5091, -1705)
+position = Vector2(4821, -2313)
 rotation = 1.15262
 scale = Vector2(2.66923, 1)
 
@@ -979,7 +490,7 @@ rotation = 1.15262
 scale = Vector2(2.66923, 1)
 
 [node name="yield2" parent="Env" instance=ExtResource("5_j6ebo")]
-position = Vector2(7215, -97.9998)
+position = Vector2(9204, -1598)
 scale = Vector2(0.436059, 0.660824)
 
 [node name="gulli3" parent="Env" instance=ExtResource("7_74n1c")]
@@ -1136,12 +647,176 @@ position = Vector2(5513, -3948)
 scale = Vector2(0.320005, 0.320005)
 script = ExtResource("27_aosff")
 rotation_speed = 120.0
+metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli7"]
 material = SubResource("ShaderMaterial_auqnv")
 texture = ExtResource("27_av465")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli7"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli15" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(4492, 18)
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli15"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli15"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli16" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(4352, -104)
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli16"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli16"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli17" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(4194, -223)
+rotation = 0.0106203
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli17"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli17"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli18" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(4046, -322)
+rotation = 0.0106203
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli18"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli18"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli19" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(3905, -441)
+rotation = 0.0106203
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli19"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli19"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli20" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(3757, -551)
+rotation = 0.255304
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli20"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli20"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli21" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(3600, -667)
+rotation = 0.255304
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli21"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli21"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli22" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(3399, -683)
+rotation = 0.255304
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli22"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli22"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli23" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(3198, -680)
+rotation = 0.255304
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli23"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli23"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli24" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(2997, -680)
+rotation = 1.02958
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli24"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli24"]
+polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
+
+[node name="gulli25" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(2793, -677)
+rotation = 1.02958
+scale = Vector2(0.320005, 0.320005)
+script = ExtResource("27_aosff")
+rotation_speed = 120.0
+metadata/_edit_group_ = true
+
+[node name="Gulli4" type="Sprite2D" parent="Env/gulli25"]
+material = SubResource("ShaderMaterial_auqnv")
+texture = ExtResource("27_av465")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli25"]
 polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
 
 [node name="gulli9" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
@@ -1209,6 +884,51 @@ material = SubResource("ShaderMaterial_g7ccy")
 texture = ExtResource("35_ae2dv")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole4"]
+polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
+
+[node name="pole7" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(6182, -173)
+rotation = -0.0725476
+scale = Vector2(-0.699918, -0.699918)
+script = ExtResource("27_aosff")
+rotation_speed = 80.0
+metadata/_edit_group_ = true
+
+[node name="Pole" type="Sprite2D" parent="Env/pole7"]
+material = SubResource("ShaderMaterial_g7ccy")
+texture = ExtResource("35_ae2dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole7"]
+polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
+
+[node name="pole8" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(6619, -182)
+rotation = -1.64523
+scale = Vector2(-0.699918, -0.699918)
+script = ExtResource("27_aosff")
+rotation_speed = 80.0
+metadata/_edit_group_ = true
+
+[node name="Pole" type="Sprite2D" parent="Env/pole8"]
+material = SubResource("ShaderMaterial_g7ccy")
+texture = ExtResource("35_ae2dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole8"]
+polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
+
+[node name="pole9" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
+position = Vector2(7073, -193)
+rotation = -0.0725476
+scale = Vector2(-0.699918, -0.699918)
+script = ExtResource("27_aosff")
+rotation_speed = 80.0
+metadata/_edit_group_ = true
+
+[node name="Pole" type="Sprite2D" parent="Env/pole9"]
+material = SubResource("ShaderMaterial_g7ccy")
+texture = ExtResource("35_ae2dv")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole9"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
 
 [node name="pole5" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
@@ -1359,20 +1079,69 @@ texture = ExtResource("44_du3fb")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli10"]
 polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
 
-[node name="pole7" parent="Env" instance=ExtResource("5_55gqm")]
-position = Vector2(4153, -7753)
-rotation = -0.0928394
+[node name="schild6" parent="Env" instance=ExtResource("36_1srk6")]
+position = Vector2(3563, 339)
+rotation = 1.58073
 
-[node name="pole8" parent="Env" instance=ExtResource("5_55gqm")]
-position = Vector2(4554, -7790)
-rotation = -0.0928394
-
-[node name="pole9" parent="Env" instance=ExtResource("5_55gqm")]
-position = Vector2(5003, -7832)
-rotation = -0.0928394
+[node name="broetchen3" parent="Env" instance=ExtResource("31_lv4xw")]
+position = Vector2(2902, 330)
+rotation = -0.453677
 
 [node name="fahrradstr" parent="." instance=ExtResource("29_0qtus")]
 position = Vector2(9147, -5789)
 scale = Vector2(0.164018, 0.164018)
+
+[node name="yield" parent="." instance=ExtResource("5_j6ebo")]
+position = Vector2(4433, -6111)
+rotation = -1.1227
+scale = Vector2(1.12558, 1.12558)
+
+[node name="pole" parent="." instance=ExtResource("5_55gqm")]
+position = Vector2(5088, -5587)
+rotation = 1.34005
+scale = Vector2(0.410134, 0.410134)
+
+[node name="pole2" parent="." instance=ExtResource("5_55gqm")]
+position = Vector2(5168, -6272)
+rotation = 0.944747
+scale = Vector2(0.410134, 0.410134)
+
+[node name="Eye" parent="." instance=ExtResource("8_qktsu")]
+position = Vector2(4350, 390)
+rotation = -1.57753
+
+[node name="Breznak" parent="." instance=ExtResource("45_5lumb")]
+position = Vector2(4984, 390)
+rotation = 1.8022
+
+[node name="fahrradstr2" parent="." instance=ExtResource("29_0qtus")]
+position = Vector2(5465, -571)
+rotation = -0.460771
+scale = Vector2(0.42652, 0.42652)
+
+[node name="zigaretten" parent="." instance=ExtResource("10_k81dp")]
+position = Vector2(5223, -929)
+rotation = 0.174647
+
+[node name="spielstr" parent="." instance=ExtResource("33_kvor3")]
+position = Vector2(4823, -1315)
+rotation = -0.417041
+
+[node name="redlight" parent="." instance=ExtResource("36_ae2dv")]
+position = Vector2(1676, -153)
+rotation = -0.11697
+
+[node name="spielstr2" parent="." instance=ExtResource("33_kvor3")]
+position = Vector2(2181, 386)
+rotation = -0.0151652
+
+[node name="Frankfurt" parent="." instance=ExtResource("42_bdk5x")]
+position = Vector2(1984, -680)
+rotation = -0.470399
+
+[node name="kafka" parent="." instance=ExtResource("46_n7uqk")]
+position = Vector2(5314, -471)
+rotation = 0.0305523
+scale = Vector2(0.431853, 0.431853)
 
 [editable path="Env/schild"]
