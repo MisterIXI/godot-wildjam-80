@@ -6,7 +6,7 @@ extends Node
 @export var pause_menu : PauseMenu
 @export var settings_menu : SettingsMenu
 @export var leaderboard_menu : LeaderboardMenu
-
+@export var hud_menu : HUDmenu
 
 func _ready():
   pause_menu.hide()

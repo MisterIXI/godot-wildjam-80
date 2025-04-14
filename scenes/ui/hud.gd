@@ -1,8 +1,12 @@
 extends Control
-
+class_name HUDmenu
 @onready var _timer_label : Label = $MarginContainer/PanelContainer/HBoxContainer/time_value
+@onready var _collectable_label : Label = $MarginContainer/PanelContainer/HBoxContainer/collectable_value
 var _time_starts : float = 0
-var _collectables : int  = 0
+var _collectables : int  = 0 :
+    set(value) : 
+        _collectable_label.text =str(value)
+
 func _ready() -> void:
     _time_starts  = Time.get_ticks_msec()
     ReferenceManager.hud  =self
@@ -10,7 +14,6 @@ func _process(_delta: float) -> void:
     _update_timer()
 func _update_timer()->void:
     _timer_label.text = _format(Time.get_ticks_msec()-_time_starts)
-
 # get timer_score from hud
 func get_timer_score() -> int:
     return int(Time.get_ticks_msec()-_time_starts)

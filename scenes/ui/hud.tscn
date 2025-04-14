@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://daycv1awn5ygk"]
+
+[ext_resource type="Script" uid="uid://cgut3llrhbygb" path="res://scenes/ui/hud.gd" id="1_hqnrr"]
+[ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="2_bo48s"]
+[ext_resource type="FontVariation" uid="uid://dx8m4ay02ebms" path="res://resources/font/IBMPlexMono.tres" id="3_bo48s"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqnrr"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hqnrr")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -325.0
+offset_bottom = 114.0
+grow_horizontal = 0
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hqnrr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("2_bo48s")
+expand_mode = 1
+
+[node name="collectable_value" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bo48s")
+text = "x5 "
+horizontal_alignment = 2
+
+[node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bo48s")
+theme_override_font_sizes/font_size = 22
+text = "Time:"
+
+[node name="time_value" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(160, 23)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_bo48s")
+theme_override_font_sizes/font_size = 22
+text = "00h:00m:00s:00ms"
+horizontal_alignment = 2
+autowrap_mode = 2

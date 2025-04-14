@@ -4,6 +4,5 @@
 
 [node name="Grace" type="Node"]
 script = ExtResource("1_5f355")
-ignore_saved_scene = true
 reset_scene_on_start = true
 default_player_gloabal_position = Vector2(6076, 48)
