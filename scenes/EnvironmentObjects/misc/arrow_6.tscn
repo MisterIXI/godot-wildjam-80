@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://c11q60jv54e0h"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_eobth"]
+[ext_resource type="Texture2D" uid="uid://ty8p7dmalgw5" path="res://assets/images/arrows/arrow6.png" id="2_v14c7"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gpcj6"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_o514j"]
+seamless = true
+noise = SubResource("FastNoiseLite_gpcj6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e6mwd"]
+shader = ExtResource("1_eobth")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.998391, 0.740035, 0, 1)
+shader_parameter/color_tint = Color(0.618011, 0.257665, 0, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 7.589
+shader_parameter/noise = SubResource("NoiseTexture2D_o514j")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[node name="Arrow6" type="Sprite2D"]
+material = SubResource("ShaderMaterial_e6mwd")
+texture = ExtResource("2_v14c7")

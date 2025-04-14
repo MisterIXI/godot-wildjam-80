@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://dmrlpd5rmfaan"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_qfwej"]
+[ext_resource type="Texture2D" uid="uid://dn2nmeekhaf7x" path="res://assets/images/photos/blattschuessel.png" id="2_obhja"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sxpdh"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_22fwu"]
+seamless = true
+noise = SubResource("FastNoiseLite_sxpdh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nylcs"]
+shader = ExtResource("1_qfwej")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_22fwu")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rtq6r"]
+radius = 410.312
+
+[node name="Blattschuessel" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nylcs")
+texture = ExtResource("2_obhja")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_rtq6r")

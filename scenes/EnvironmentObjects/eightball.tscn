@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://1y4iqx8jvmf5"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_5kx2r"]
+[ext_resource type="Texture2D" uid="uid://c6jqeajrmslw2" path="res://assets/images/photos/eightball.png" id="2_at83x"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_51l36"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q6pwm"]
+seamless = true
+noise = SubResource("FastNoiseLite_51l36")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lwkc6"]
+shader = ExtResource("1_5kx2r")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_q6pwm")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2ops5"]
+radius = 265.002
+
+[node name="eightball" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Eightball" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_lwkc6")
+texture = ExtResource("2_at83x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(13.595, 19.29)
+shape = SubResource("CircleShape2D_2ops5")

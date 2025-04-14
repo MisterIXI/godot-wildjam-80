@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cgwaudgdfmeaa" path="res://assets/images/particle/dustclouds/dustclouds/5.PNG" id="8_an8q1"]
 [ext_resource type="Texture2D" uid="uid://djk0rp2b2rkru" path="res://assets/images/particle/dustclouds/dustclouds/6.PNG" id="9_hxkm2"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="10_t6q27"]
-[ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
+[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
