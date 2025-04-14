@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8rf78mcrew5o"
+path="res://.godot/imported/That Is The Jazz.mp3-5d64eff73c0f5187dc3cadf82ef0e989.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/music/That Is The Jazz.mp3"
+dest_files=["res://.godot/imported/That Is The Jazz.mp3-5d64eff73c0f5187dc3cadf82ef0e989.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

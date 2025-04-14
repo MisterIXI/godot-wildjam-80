@@ -56,5 +56,4 @@ func _check_cursor_inside() -> void:
 
 
 func _on_button_pressed():
-  #TODO Naddel: Play button click sound
-  pass
+  SoundManager._make_click_sound()

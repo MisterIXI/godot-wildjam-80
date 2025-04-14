@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cent0ph746c7e"]
+[gd_scene load_steps=37 format=3 uid="uid://cent0ph746c7e"]
 
 [ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
@@ -101,59 +101,7 @@ HSlider/styles/grabber_area = SubResource("StyleBoxFlat_4ks52")
 HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_4ks52")
 HSlider/styles/slider = SubResource("StyleBoxFlat_48ncn")
 
-[sub_resource type="Gradient" id="Gradient_5pght"]
-offsets = PackedFloat32Array(0.0223214, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_wlgxr"]
-gradient = SubResource("Gradient_5pght")
-width = 5
-
-[sub_resource type="Gradient" id="Gradient_3fs4y"]
-offsets = PackedFloat32Array(0.0223214, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_qe6y3"]
-gradient = SubResource("Gradient_3fs4y")
-width = 5
-
-[sub_resource type="Gradient" id="Gradient_wh0sc"]
-offsets = PackedFloat32Array(0.0223214, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_5mfpw"]
-gradient = SubResource("Gradient_wh0sc")
-width = 5
-
-[sub_resource type="Gradient" id="Gradient_3spj0"]
-offsets = PackedFloat32Array(0.0223214, 1)
-colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 0)
-
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_pw3by"]
-gradient = SubResource("Gradient_3spj0")
-width = 5
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_adoja"]
-bg_color = Color(0.205117, 0.205117, 0.205117, 1)
-expand_margin_top = 7.0
-expand_margin_right = 2.0
-expand_margin_bottom = 7.0
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_63mkk"]
-bg_color = Color(0.799482, 0.780656, 0.758969, 1)
-expand_margin_top = 7.0
-expand_margin_bottom = 7.0
-
-[sub_resource type="Theme" id="Theme_yyeuk"]
-HSlider/icons/grabber = SubResource("GradientTexture1D_wlgxr")
-HSlider/icons/grabber_disabled = SubResource("GradientTexture1D_qe6y3")
-HSlider/icons/grabber_highlight = SubResource("GradientTexture1D_5mfpw")
-HSlider/icons/tick = SubResource("GradientTexture1D_pw3by")
-HSlider/styles/grabber_area = SubResource("StyleBoxFlat_adoja")
-HSlider/styles/grabber_area_highlight = SubResource("StyleBoxFlat_adoja")
-HSlider/styles/slider = SubResource("StyleBoxFlat_63mkk")
-
-[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("confirm_button", "master_volume_slider", "music_volume_slider", "sfx_volume_slider", "ambiences_volume_slider")]
+[node name="SettingsMenu" type="Control" node_paths=PackedStringArray("confirm_button", "master_volume_slider", "music_volume_slider", "sfx_volume_slider")]
 process_mode = 3
 layout_mode = 3
 anchors_preset = 15
@@ -166,7 +114,6 @@ confirm_button = NodePath("Settings/ConfirmButton")
 master_volume_slider = NodePath("Settings/AudioContainer/MasterVolume/MasterSlider")
 music_volume_slider = NodePath("Settings/AudioContainer/MusicVolume/MusicSlider")
 sfx_volume_slider = NodePath("Settings/AudioContainer/SFXVolume/MusicSlider")
-ambiences_volume_slider = NodePath("Settings/AudioContainer/AmbienceVolume/MusicSlider")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 layout_mode = 1
@@ -336,22 +283,25 @@ theme = SubResource("Theme_oy6jt")
 max_value = 200.0
 value = 100.0
 
-[node name="AmbienceVolume" type="TextureRect" parent="Settings/AudioContainer"]
+[node name="NaddelMode" type="TextureRect" parent="Settings/AudioContainer"]
 layout_mode = 2
 texture = ExtResource("13_dslyc")
 
-[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/AmbienceVolume"]
+[node name="CheckBox" type="CheckBox" parent="Settings/AudioContainer/NaddelMode"]
+modulate = Color(0.803922, 0, 0, 1)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 330.0
-offset_right = -27.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_yyeuk")
-max_value = 200.0
-value = 100.0
+anchors_preset = -1
+anchor_left = 0.487
+anchor_top = 0.479
+anchor_right = 0.487
+anchor_bottom = 0.529
+offset_left = -26.64
+offset_top = -24.74
+offset_right = -2.64001
+offset_bottom = -3.74
+scale = Vector2(2.05298, 2.06019)
+focus_mode = 0
+metadata/scene_tree_color = Color(0.15, 0.15, 0.15, 0.35)
 
 [node name="ControlsContainer" type="HBoxContainer" parent="Settings"]
 layout_mode = 1
@@ -384,3 +334,5 @@ script = ExtResource("18_wlmub")
 wallpaper = NodePath("../Wallpaper")
 anything_else = [NodePath("../Settings")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
+
+[connection signal="toggled" from="Settings/AudioContainer/NaddelMode/CheckBox" to="." method="_on_check_box_toggled"]

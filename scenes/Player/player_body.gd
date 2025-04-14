@@ -12,6 +12,7 @@ var previousVelocity: float = 0.0
 @export var debug_movement: bool = false
 
 @export var hop_cd_timer: Timer
+@export var naddel_ripping_timer: Timer
 
 signal toilette_paper_activated
 signal toilette_paper_deactivated
@@ -57,6 +58,8 @@ func _physics_process(_delta):
 		var result = space_state.intersect_ray(query)
 		if result:
 			custom_joint.activate(result.position, result.collider)
+			if Menu.settings_menu._is_naddel_mode_on():
+				naddel_ripping_timer.start()
 			rope.activate(result.position)
 			rope_target.global_position = result.position
 			rope_target.show()
@@ -83,3 +86,9 @@ func _on_body_entered(body:Node):
 
 func _ready() -> void:
 	SoundManager._play_background_music()
+	
+func _on_naddel_mode_rip_timer_timeout() -> void:
+	if Menu.settings_menu._is_naddel_mode_on():
+		rope.deactivate()
+		rope_target.hide()
+		custom_joint.deactivate()	

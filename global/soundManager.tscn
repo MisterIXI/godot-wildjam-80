@@ -1,12 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://c7wknm5ayngnq"]
+[gd_scene load_steps=13 format=3 uid="uid://c7wknm5ayngnq"]
 
 [ext_resource type="Script" uid="uid://bdn21ql48ca72" path="res://global/sound_manager.gd" id="1_iverf"]
 [ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="2_oxd4v"]
 [ext_resource type="AudioStream" uid="uid://15wr4k0wu23t" path="res://assets/sounds/click/Subtle Click Button.wav" id="3_bsfa0"]
 [ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="3_hd8wm"]
-[ext_resource type="AudioStream" uid="uid://d06iolyj5enmq" path="res://assets/sounds/toilet/music/Halloween Procession.mp3" id="3_wikjs"]
 [ext_resource type="AudioStream" uid="uid://djjsq53q0rsxx" path="res://assets/sounds/toilet/flush/Toilet Flush 3.wav" id="4_wikjs"]
 [ext_resource type="AudioStream" uid="uid://du328dml2c3be" path="res://assets/sounds/toilet/flush/Toilet Flush 4.wav" id="5_bsfa0"]
+[ext_resource type="AudioStream" uid="uid://b8rf78mcrew5o" path="res://assets/sounds/music/That Is The Jazz.mp3" id="5_iut0o"]
+[ext_resource type="AudioStream" uid="uid://d06iolyj5enmq" path="res://assets/sounds/music/Halloween Procession.mp3" id="5_ng2d6"]
 [ext_resource type="AudioStream" uid="uid://3jpqblqwr1qt" path="res://assets/sounds/toilet/flush/Toilet Flush 5.wav" id="6_iut0o"]
 [ext_resource type="AudioStream" uid="uid://by8fnk6axth6w" path="res://assets/sounds/toilet/paper/toiletpaper1.wav" id="7_ng2d6"]
 [ext_resource type="AudioStream" uid="uid://bjiy52opjvvd6" path="res://assets/sounds/toilet/paper/toiletpaper2.wav" id="8_83gsj"]
@@ -29,7 +30,13 @@ pitch_scale = 2.0
 bus = &"SFX"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_wikjs")
+stream = ExtResource("5_iut0o")
+volume_db = -10.0
+bus = &"Music"
+parameters/looping = true
+
+[node name="NaddelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ng2d6")
 volume_db = -10.0
 bus = &"Music"
 parameters/looping = true

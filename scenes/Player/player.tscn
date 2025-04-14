@@ -3,13 +3,13 @@
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://b34pfool0yx1p" path="res://assets/images/Player/Spritesheet.png" id="2_uxo23"]
-[ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/_debug/Steffen/follow_cam.gd" id="3_dl1wr"]
+[ext_resource type="Script" path="res://scenes/_debug/Steffen/follow_cam.gd" id="3_dl1wr"]
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="5_uxo23"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
-[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
+[ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
@@ -124,7 +124,7 @@ shader_parameter/noise_speed = 5.41
 shader_parameter/distortion_str = 0.05
 shader_parameter/frame_time = 0.25
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer")]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "naddel_ripping_timer")]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
@@ -135,6 +135,7 @@ rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
 hop_cd_timer = NodePath("HopCD")
+naddel_ripping_timer = NodePath("NaddelModeRipTimer")
 
 [node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
 z_index = 100
@@ -255,6 +256,10 @@ texture_mode = 1
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-43, 41)
 
+[node name="NaddelModeRipTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
 [node name="HopCD" type="Timer" parent="."]
 wait_time = 0.3
 one_shot = true
@@ -273,3 +278,4 @@ anchor_point_right = NodePath("../AnchorPointRight")
 [connection signal="hopped_right" from="." to="CharacterFlipper" method="on_flip_right"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
 [connection signal="toilette_paper_deactivated" from="." to="ToiletteAnimation" method="_on_end_throw"]
+[connection signal="timeout" from="NaddelModeRipTimer" to="." method="_on_naddel_mode_rip_timer_timeout"]
