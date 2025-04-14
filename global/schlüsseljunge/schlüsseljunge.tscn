@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://8ec0ftok00sq"]
+
+[ext_resource type="Script" uid="uid://c60qb1wgn10lx" path="res://global/schlüsseljunge/schlüsseljunge.gd" id="1_d8pbt"]
+
+[node name="Schlüsseljunge" type="Node"]
+script = ExtResource("1_d8pbt")

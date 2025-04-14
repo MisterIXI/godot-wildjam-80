@@ -17,12 +17,12 @@ var timer: float = 0
 signal scene_loaded
 
 func _ready():
-  if reset_audio_bus_on_start and Engine.is_editor_hint():
+  if reset_audio_bus_on_start and not OS.get_name() == "Web":
     reset_audio_bus()
   else:
     load_audio_bus()
 
-  if reset_scene_on_start and Engine.is_editor_hint():
+  if reset_scene_on_start and not OS.get_name() == "Web":
     reset_scene()
   else:
     load_scene()
@@ -70,13 +70,12 @@ func reset_audio_bus():
 
 #region Scene
 func load_scene():
-# TODO: Add real engine check here
-  if ignore_saved_scene: # and Engine.is_editor_hint():
+  if ignore_saved_scene and not OS.get_name() == "Web":
     return
 
   var config = ConfigFile.new()
 
-  var err = config.load(_scene_path)
+  var err = config.load_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
   if err != OK:
     print_rich("[color=CYAN]Grace >> [color=RED]Scene file not found!")
     reset_scene()
@@ -89,7 +88,7 @@ func load_scene():
 
   if config.has_section_key("player", "global_rotation"):
     player.global_rotation = config.get_value("player", "global_rotation")
-  
+
   var camera : PlayerCamera = get_tree().get_first_node_in_group("player_camera")
   camera.reset()
 
@@ -105,7 +104,7 @@ func save_scene():
   config.set_value("player", "global_rotation", get_tree().get_first_node_in_group("player").global_rotation)
   #TODO: New values like timer and tosses here #2
 
-  var err = config.save(_scene_path)
+  var err = config.save_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
   if err != OK:
     print_rich("[color=CYAN]Grace >> [color=RED]Failed to save scene to file!")
     return
@@ -131,7 +130,6 @@ func reset_scene():
   await get_tree().create_timer(0.5).timeout
   save_scene()
   scene_loaded.emit()
-
 
 
 func _notification(what: int) -> void:
