@@ -552,7 +552,7 @@ position = Vector2(5141, -3982)
 texture = ExtResource("50_4amee")
 
 [node name="Gaensebluemchen" type="Sprite2D" parent="."]
-position = Vector2(-294, -4177)
+position = Vector2(186, -4252)
 texture = ExtResource("51_haw7m")
 
 [node name="Shuriken" type="Sprite2D" parent="."]
@@ -560,7 +560,7 @@ position = Vector2(-2689, -3765)
 texture = ExtResource("52_vo73r")
 
 [node name="Sunflower" type="Sprite2D" parent="."]
-position = Vector2(-559, -3227)
+position = Vector2(210, -3432)
 texture = ExtResource("53_4amee")
 
 [node name="Windmill" type="Sprite2D" parent="."]
