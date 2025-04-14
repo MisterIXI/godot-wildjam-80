@@ -21,10 +21,6 @@ func _ready():
   sfx_volume_slider.value_changed.connect(_on_sfx_volume_changed)
   _load_audio_bus_values()
 
-  master_volume_slider.value_changed.connect(_on_master_volume_changed)
-  music_volume_slider.value_changed.connect(_on_music_volume_changed)
-  sfx_volume_slider.value_changed.connect(_on_sfx_volume_changed)
-
   visibility_changed.connect(_on_visibility_changed)
 
 
