@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=85 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
@@ -53,6 +53,7 @@
 [ext_resource type="PackedScene" uid="uid://dgnn4whbw7d7k" path="res://scenes/EnvironmentObjects/misc/arrow_2.tscn" id="51_gbabd"]
 [ext_resource type="PackedScene" uid="uid://drh7w1kw1envp" path="res://scenes/EnvironmentObjects/misc/arrow_5.tscn" id="52_j5nw4"]
 [ext_resource type="PackedScene" uid="uid://bn8ts77vewg4e" path="res://scenes/EnvironmentObjects/misc/arrow_7.tscn" id="53_eap4r"]
+[ext_resource type="PackedScene" uid="uid://bb60f7pufgkvc" path="res://scenes/EnvironmentObjects/hundi.tscn" id="54_gbabd"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3y6uy"]
 frequency = 0.0043
@@ -666,7 +667,7 @@ polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -
 position = Vector2(7297, 33)
 scale = Vector2(0.320005, 0.320005)
 script = ExtResource("27_aosff")
-rotation_speed = 120.0
+rotation_speed = -120.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli15"]
@@ -695,7 +696,7 @@ position = Vector2(7000, -208)
 rotation = 0.0106203
 scale = Vector2(0.320005, 0.320005)
 script = ExtResource("27_aosff")
-rotation_speed = 120.0
+rotation_speed = -120.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli17"]
@@ -725,7 +726,7 @@ position = Vector2(6711, -426)
 rotation = 0.0106203
 scale = Vector2(0.320005, 0.320005)
 script = ExtResource("27_aosff")
-rotation_speed = 120.0
+rotation_speed = -120.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli19"]
@@ -755,7 +756,7 @@ position = Vector2(6343, -442)
 rotation = 0.255304
 scale = Vector2(0.320005, 0.320005)
 script = ExtResource("27_aosff")
-rotation_speed = 120.0
+rotation_speed = -120.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli22"]
@@ -785,7 +786,7 @@ position = Vector2(5941, -439)
 rotation = 1.02958
 scale = Vector2(0.320005, 0.320005)
 script = ExtResource("27_aosff")
-rotation_speed = 120.0
+rotation_speed = -120.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli24"]
@@ -1078,6 +1079,9 @@ rotation = 1.58073
 position = Vector2(2902, 330)
 rotation = -0.453677
 
+[node name="Bild4" parent="Env" instance=ExtResource("46_5lumb")]
+position = Vector2(7860, 595)
+
 [node name="fahrradstr" parent="." instance=ExtResource("29_0qtus")]
 position = Vector2(9147, -5789)
 scale = Vector2(0.164018, 0.164018)
@@ -1240,6 +1244,7 @@ rotation = 0.668879
 scale = Vector2(1.40241, 1.40241)
 
 [node name="Arrow3" parent="." instance=ExtResource("47_n7uqk")]
+modulate = Color(0.388235, 0.364706, 0.247059, 1)
 position = Vector2(2844, -11)
 rotation = 0.868603
 
@@ -1366,5 +1371,10 @@ scale = Vector2(1, -1)
 [node name="Arrow31" parent="." instance=ExtResource("48_n845g")]
 position = Vector2(4141, -6534)
 rotation = 0.208125
+
+[node name="Hundi" parent="." instance=ExtResource("54_gbabd")]
+position = Vector2(5730, -1262)
+rotation = 0.250175
+scale = Vector2(0.522704, 0.522704)
 
 [editable path="Env/schild"]
