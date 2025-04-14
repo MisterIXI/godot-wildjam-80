@@ -92,7 +92,11 @@ func load_scene():
   var camera : PlayerCamera = get_tree().get_first_node_in_group("player_camera")
   camera.reset()
 
-  #TODO: New values like timer and tosses here #1
+  if config.has_section_key("session", "seconds"):
+    Session.current_run_seconds = config.get_value("session", "seconds")
+
+  if config.has_section_key("session", "collectables"):
+    Session.set_collectables(config.get_value("session", "collectables"))
 
   print_rich("[color=CYAN]Grace >> [color=WHITE]Scene successfully loaded from file.")
 
@@ -102,7 +106,8 @@ func save_scene():
 
   config.set_value("player", "global_position", get_tree().get_first_node_in_group("player").global_position)
   config.set_value("player", "global_rotation", get_tree().get_first_node_in_group("player").global_rotation)
-  #TODO: New values like timer and tosses here #2
+  config.set_value("session", "seconds", Session.current_run_seconds)
+  config.set_value("session", "collectables", Session.collectables)
 
   var err = config.save_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
   if err != OK:
@@ -125,7 +130,8 @@ func reset_scene():
   if camera:
     camera.reset()
 
-  #TODO: New values like timer and tosses here #3
+  Session.reset()
+
   print_rich("[color=CYAN]Grace >> [color=WHITE]Scene reset to default values.")
   await get_tree().create_timer(0.5).timeout
   save_scene()

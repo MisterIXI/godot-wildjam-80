@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 
 func _on_animation_finished():
   for child in _parent.get_parent().get_children():
-    if child != _parent:
+    if child != _parent and child is not HUDmenu:
       child.hide()
 
   for item in anything_else:
