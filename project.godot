@@ -21,6 +21,7 @@ buses/default_bus_layout="uid://d1p4mrrl1ay2f"
 
 [autoload]
 
+"Schlüsseljunge"="*res://global/schlüsseljunge/schlüsseljunge.tscn"
 Menu="*res://global/menu/menu.tscn"
 SoundManager="*res://global/soundManager.tscn"
 ReferenceManager="*res://scenes/managers/reference_manager.tscn"
