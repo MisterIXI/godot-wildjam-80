@@ -1,0 +1,131 @@
+[gd_scene load_steps=16 format=3 uid="uid://cn1seejpqc5o4"]
+
+[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="1_lcgkv"]
+[ext_resource type="Script" uid="uid://c0nf7onadwaui" path="res://scenes/_game/end_scene/name_input.gd" id="1_ms0xx"]
+[ext_resource type="Texture2D" uid="uid://c5gl0smf8dn4e" path="res://assets/images/menu/letters/C.png" id="2_68jny"]
+[ext_resource type="Texture2D" uid="uid://bll36ne5b77mp" path="res://assets/images/menu/wallpaper/spiral-retro-background-3.jpg" id="2_tmhfe"]
+[ext_resource type="FontVariation" uid="uid://c5oytoyxdwaxk" path="res://resources/font/Slabo_13px.tres" id="3_cckeb"]
+[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="3_t10nk"]
+[ext_resource type="FontFile" uid="uid://3trygsfviabq" path="res://assets/fonts/IBMPlexMono/IBMPlexMono-Regular.ttf" id="3_tmhfe"]
+[ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="4_ms0xx"]
+[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="5_cckeb"]
+[ext_resource type="Texture2D" uid="uid://bdy2l14ad74v8" path="res://assets/images/menu/letters/F-3.png" id="6_tmhfe"]
+[ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="7_iffkk"]
+[ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="8_svc1g"]
+[ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="9_7wcv4"]
+[ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="10_crwdi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_iffkk"]
+texture = ExtResource("2_tmhfe")
+
+[node name="CanvasLayer" type="CanvasLayer" node_paths=PackedStringArray("_text_input")]
+script = ExtResource("1_ms0xx")
+_text_input = NodePath("PanelContainer/VBoxContainer/TextEdit")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(530, 310)
+offset_left = -12.0
+offset_top = -14.0
+offset_right = 518.0
+offset_bottom = 296.0
+color = Color(0.952941, 0.894118, 0.764706, 1)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_iffkk")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.468334, 0.37847, 0.220834, 1)
+theme_override_fonts/font = ExtResource("3_cckeb")
+theme_override_font_sizes/font_size = 48
+text = "Highscore"
+horizontal_alignment = 1
+
+[node name="TextEdit" type="TextEdit" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(400, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_tmhfe")
+placeholder_text = "Please enter your name"
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 65
+
+[node name="ConfirmButton" type="Button" parent="PanelContainer/VBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="PanelContainer/VBoxContainer/ConfirmButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -47.1225
+offset_right = 246.0
+offset_bottom = 47.1225
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="C" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("2_68jny")
+expand_mode = 3
+
+[node name="OnVisible2dShaderAlpha" type="Node" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer/C"]
+script = ExtResource("3_t10nk")
+
+[node name="O" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("4_ms0xx")
+expand_mode = 3
+
+[node name="N" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("5_cckeb")
+expand_mode = 3
+
+[node name="F" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("6_tmhfe")
+expand_mode = 3
+
+[node name="I" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("7_iffkk")
+expand_mode = 3
+
+[node name="R" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("8_svc1g")
+expand_mode = 3
+
+[node name="M" type="TextureRect" parent="PanelContainer/VBoxContainer/ConfirmButton/LetterContainer"]
+material = ExtResource("1_lcgkv")
+layout_mode = 2
+texture = ExtResource("9_7wcv4")
+expand_mode = 3
+
+[node name="ButtonHover" type="Node" parent="PanelContainer/VBoxContainer/ConfirmButton"]
+script = ExtResource("10_crwdi")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/ConfirmButton" to="." method="on_button_pressed"]

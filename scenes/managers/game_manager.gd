@@ -1,7 +1,8 @@
 extends Node
 class_name Game_Manager
 
-var _level_01_scene : PackedScene#=  preload("res://scenes/_game/main.tscn")
+var _level_01_scene : PackedScene =  preload("res://scenes/_debug/Steffen/leveldesign_test.tscn")
+var _level_001_highscore_menu : PackedScene  =preload("res://scenes/ui/highscore_menu.tscn")
 func _ready() -> void:
     ReferenceManager.game_manager  =self
 enum GAMESTATE {
@@ -13,6 +14,7 @@ enum GAMESTATE {
 }
 var current_game_state : GAMESTATE
 var current_scene : int  = 0
+
 func change_gamestate(_new_game_state : GAMESTATE) ->void:
    match _new_game_state:
     GAMESTATE.MENU:
@@ -45,7 +47,9 @@ func change_gamestate(_new_game_state : GAMESTATE) ->void:
 func change_level(_newlevel : int) -> void:
     current_scene = _newlevel
     match _newlevel:
-        01:
-           get_tree().change_scene_to_packed(_level_01_scene) 
+        1:
+           get_tree().change_scene_to_packed(_level_01_scene)
+        0:
+            get_tree().change_scene_to_packed(_level_001_highscore_menu)
         _:
             push_error("didnt get any cool new level to switch")
