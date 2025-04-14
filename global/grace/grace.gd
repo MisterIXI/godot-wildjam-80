@@ -76,8 +76,8 @@ func load_scene():
   var config = ConfigFile.new()
 
   var err = config.load_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
-  if err != OK:
-    print_rich("[color=CYAN]Grace >> [color=RED]Scene file not found!")
+  if err != OK or Schlüsseljunge.grace_key == "None":
+    print_rich("[color=CYAN]Grace >> [color=RED]Scene file not found or key is invalid!")
     reset_scene()
     return
 
