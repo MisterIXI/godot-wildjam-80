@@ -1,4 +1,4 @@
-[gd_scene load_steps=138 format=3 uid="uid://c0u0waca2mg3y"]
+[gd_scene load_steps=198 format=3 uid="uid://c0u0waca2mg3y"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_qb0qr"]
 [ext_resource type="Texture2D" uid="uid://c1hhfarqgnawy" path="res://assets/images/photos/a.png" id="2_1n4y6"]
@@ -35,6 +35,21 @@
 [ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="33_2edpu"]
 [ext_resource type="Texture2D" uid="uid://oi8oglrmevkg" path="res://assets/images/photos/spielstr.png" id="34_2l2hv"]
 [ext_resource type="Texture2D" uid="uid://q5ktlu4owk22" path="res://assets/images/photos/yellowlight.png" id="35_spnsa"]
+[ext_resource type="Texture2D" uid="uid://v443jr2sfq2a" path="res://assets/images/env/daniel.png" id="36_qxigr"]
+[ext_resource type="Texture2D" uid="uid://dhihbxjmhyp6t" path="res://assets/images/env/yooo_perlin.png" id="37_n1xlk"]
+[ext_resource type="Texture2D" uid="uid://blywoyv0tq7kf" path="res://assets/images/photos/hundi.png" id="38_5k0cs"]
+[ext_resource type="Texture2D" uid="uid://dn2nmeekhaf7x" path="res://assets/images/photos/blattschuessel.png" id="39_dri7o"]
+[ext_resource type="Texture2D" uid="uid://c6sxitlxyd6gw" path="res://assets/images/photos/radierer.png" id="40_l223l"]
+[ext_resource type="Texture2D" uid="uid://blqaih548qsyb" path="res://assets/images/photos/taschenmesser.png" id="41_6gtyi"]
+[ext_resource type="Texture2D" uid="uid://c6t0onyuuhemg" path="res://assets/images/photos/cigret.png" id="42_ihspl"]
+[ext_resource type="Texture2D" uid="uid://c6jqeajrmslw2" path="res://assets/images/photos/eightball.png" id="43_577yb"]
+[ext_resource type="Texture2D" uid="uid://cqyibh2mh6160" path="res://assets/images/arrows/arrow1.png" id="44_esix6"]
+[ext_resource type="Texture2D" uid="uid://dv1xvca0uc1ka" path="res://assets/images/arrows/arrow2.png" id="45_mckf8"]
+[ext_resource type="Texture2D" uid="uid://dq6yvx0povvgl" path="res://assets/images/arrows/arrow3.png" id="46_nhnb1"]
+[ext_resource type="Texture2D" uid="uid://dtbsqut05od4p" path="res://assets/images/arrows/arrow4.png" id="47_sypte"]
+[ext_resource type="Texture2D" uid="uid://c1cjdl41yqdeh" path="res://assets/images/arrows/arrow5.png" id="48_wgh8u"]
+[ext_resource type="Texture2D" uid="uid://ty8p7dmalgw5" path="res://assets/images/arrows/arrow6.png" id="49_23aix"]
+[ext_resource type="Texture2D" uid="uid://d2041hdl1t4ep" path="res://assets/images/arrows/arrow7.png" id="50_7hwnc"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_b3ptk"]
 frequency = 0.0043
@@ -752,6 +767,321 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_otk48"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tdwca"]
+seamless = true
+noise = SubResource("FastNoiseLite_otk48")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2edpu"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_tdwca")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_2l2hv"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_spnsa"]
+seamless = true
+noise = SubResource("FastNoiseLite_2l2hv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5vesq"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_spnsa")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wp6l8"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mvj8t"]
+seamless = true
+noise = SubResource("FastNoiseLite_wp6l8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_svu20"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_mvj8t")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ukyif"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_xuidg"]
+seamless = true
+noise = SubResource("FastNoiseLite_ukyif")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_386k7"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_xuidg")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0pyaf"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jtju0"]
+seamless = true
+noise = SubResource("FastNoiseLite_0pyaf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmk24"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_jtju0")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5f2or"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_lggig"]
+seamless = true
+noise = SubResource("FastNoiseLite_5f2or")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c0y35"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_lggig")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_14tx2"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_mryqj"]
+seamless = true
+noise = SubResource("FastNoiseLite_14tx2")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtg7h"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_mryqj")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_sahab"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_0rlw3"]
+seamless = true
+noise = SubResource("FastNoiseLite_sahab")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ufi4l"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_0rlw3")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_n2a0y"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qweks"]
+seamless = true
+noise = SubResource("FastNoiseLite_n2a0y")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1v5tw"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0.0622252, 0.631935, 0.764967, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = false
+shader_parameter/line_thickness = 0.0
+shader_parameter/noise = SubResource("NoiseTexture2D_qweks")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wfdde"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_um0t8"]
+seamless = true
+noise = SubResource("FastNoiseLite_wfdde")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t7vdt"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.240303, 0.550845, 1.54018e-06, 1)
+shader_parameter/color_tint = Color(0.727748, 2.29102e-05, 0.525341, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 12.605
+shader_parameter/noise = SubResource("NoiseTexture2D_um0t8")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_58omr"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_osrty"]
+seamless = true
+noise = SubResource("FastNoiseLite_58omr")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_52w62"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0.761026, 0.634567, 0, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 5.019
+shader_parameter/noise = SubResource("NoiseTexture2D_osrty")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_a0lnc"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_glwhn"]
+seamless = true
+noise = SubResource("FastNoiseLite_a0lnc")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1p8p"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.14794, 0.673304, 1, 1)
+shader_parameter/color_tint = Color(1, 0.36, 0.36, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 9.896
+shader_parameter/noise = SubResource("NoiseTexture2D_glwhn")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_cy22i"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_yt6j0"]
+seamless = true
+noise = SubResource("FastNoiseLite_cy22i")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nqkp2"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 8.101
+shader_parameter/noise = SubResource("NoiseTexture2D_yt6j0")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_etu16"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_p25un"]
+seamless = true
+noise = SubResource("FastNoiseLite_etu16")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_062rt"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0.618011, 0.257665, 0, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 7.589
+shader_parameter/noise = SubResource("NoiseTexture2D_p25un")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_l1pd5"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ocu76"]
+seamless = true
+noise = SubResource("FastNoiseLite_l1pd5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ux66"]
+shader = ExtResource("1_qb0qr")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0, 0.702744, 0.398731, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 6.05
+shader_parameter/noise = SubResource("NoiseTexture2D_ocu76")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [node name="AssetSammlung" type="Node2D"]
 position = Vector2(527, -6)
 
@@ -772,7 +1102,7 @@ texture = ExtResource("4_nidpm")
 
 [node name="Blume1" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_47o1m")
-position = Vector2(401, 271)
+position = Vector2(275, 258)
 texture = ExtResource("5_l1py3")
 
 [node name="Blume2" type="Sprite2D" parent="."]
@@ -920,7 +1250,7 @@ texture = ExtResource("32_tdwca")
 
 [node name="Schild2" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_mckf8")
-position = Vector2(5980, 805)
+position = Vector2(6163, 874)
 texture = ExtResource("33_2edpu")
 
 [node name="Spielstr" type="Sprite2D" parent="."]
@@ -932,3 +1262,78 @@ texture = ExtResource("34_2l2hv")
 material = SubResource("ShaderMaterial_otk48")
 position = Vector2(5744, -608)
 texture = ExtResource("35_spnsa")
+
+[node name="Daniel" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_2edpu")
+position = Vector2(2486, -3626)
+texture = ExtResource("36_qxigr")
+
+[node name="YoooPerlin" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_5vesq")
+position = Vector2(3134, -4393)
+texture = ExtResource("37_n1xlk")
+
+[node name="Hundi" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_svu20")
+position = Vector2(4201, -3699)
+texture = ExtResource("38_5k0cs")
+
+[node name="Blattschuessel" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_386k7")
+position = Vector2(3746, -2883)
+texture = ExtResource("39_dri7o")
+
+[node name="Radierer" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_bmk24")
+position = Vector2(3459, -3724)
+texture = ExtResource("40_l223l")
+
+[node name="Taschenmesser" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_c0y35")
+position = Vector2(4536, -2865)
+texture = ExtResource("41_6gtyi")
+
+[node name="Cigret" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_dtg7h")
+position = Vector2(3070, -3056)
+texture = ExtResource("42_ihspl")
+
+[node name="Eightball" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ufi4l")
+position = Vector2(4603, -4270)
+texture = ExtResource("43_577yb")
+
+[node name="Arrow1" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_1v5tw")
+position = Vector2(4918, -3621)
+texture = ExtResource("44_esix6")
+
+[node name="Arrow2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_t7vdt")
+position = Vector2(5118, -3526)
+texture = ExtResource("45_mckf8")
+
+[node name="Arrow3" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_52w62")
+position = Vector2(5285, -3789)
+texture = ExtResource("46_nhnb1")
+
+[node name="Arrow4" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_u1p8p")
+position = Vector2(5384, -4041)
+texture = ExtResource("47_sypte")
+
+[node name="Arrow5" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_nqkp2")
+position = Vector2(4922, -3835)
+texture = ExtResource("48_wgh8u")
+
+[node name="Arrow6" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_062rt")
+position = Vector2(5535, -3924)
+texture = ExtResource("49_23aix")
+
+[node name="Arrow7" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_0ux66")
+position = Vector2(5141, -3982)
+texture = ExtResource("50_7hwnc")

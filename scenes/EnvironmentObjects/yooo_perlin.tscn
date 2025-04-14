@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dh0d0fcqlb7nc"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_mkonn"]
+[ext_resource type="Texture2D" uid="uid://dhihbxjmhyp6t" path="res://assets/images/env/yooo_perlin.png" id="2_ufuhp"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_p80xa"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_y20dm"]
+seamless = true
+noise = SubResource("FastNoiseLite_p80xa")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6y8k3"]
+shader = ExtResource("1_mkonn")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_y20dm")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7p1u"]
+size = Vector2(785, 581)
+
+[node name="YoooPerlin" type="StaticBody2D"]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6y8k3")
+texture = ExtResource("2_ufuhp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -23.5)
+shape = SubResource("RectangleShape2D_s7p1u")

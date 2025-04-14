@@ -2,7 +2,7 @@
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_guia5"]
 [ext_resource type="Texture2D" uid="uid://8afwn1s1ax5x" path="res://assets/images/test/dog1.png" id="2_1ma5c"]
-[ext_resource type="PackedScene" uid="uid://bcaikbn0r3ujj" path="res://scenes/VFX/bg.tscn" id="3_yfcbo"]
+[ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="3_yfcbo"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_om18c"]
 
