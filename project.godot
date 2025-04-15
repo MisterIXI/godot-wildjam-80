@@ -33,6 +33,8 @@ Session="*res://global/session/session.tscn"
 window/size/viewport_width=1280
 window/size/viewport_height=720
 window/stretch/mode="canvas_items"
+mouse_cursor/custom_image="uid://c20qupsfoyv8y"
+mouse_cursor/custom_image_hotspot=Vector2(12, 12)
 
 [editor_plugins]
 

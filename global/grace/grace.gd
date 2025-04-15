@@ -138,12 +138,8 @@ func reset_scene():
   scene_loaded.emit()
 
 
-func _notification(what: int) -> void:
-  if what == NOTIFICATION_WM_CLOSE_REQUEST or what == NOTIFICATION_APPLICATION_FOCUS_OUT or what == NOTIFICATION_EXIT_TREE or what == NOTIFICATION_CRASH:
-    save_scene()
-
 func _process(delta: float) -> void:
-  if interval_saving == false or OS.get_name() != "Web":
+  if interval_saving == false:
     return
 
   timer += delta
