@@ -379,7 +379,7 @@ position = Vector2(8978, -8566)
 scale = Vector2(12.79, 12.79)
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(4813, 50)
+position = Vector2(4814, 46)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -1035,7 +1035,7 @@ position = Vector2(9068, 507)
 rotation = -0.0443976
 
 [node name="zeitung8" parent="Env" instance=ExtResource("16_dklac")]
-position = Vector2(8454, 373)
+position = Vector2(8458, 365)
 rotation = 0.684279
 
 [node name="schild7" parent="Env" instance=ExtResource("36_1srk6")]
@@ -1106,8 +1106,8 @@ position = Vector2(6502, 418)
 rotation = 1.57516
 
 [node name="zeitung9" parent="Env" instance=ExtResource("16_dklac")]
-position = Vector2(5755, 309)
-rotation = 0.668879
+position = Vector2(5742, 294)
+rotation = 0.698752
 scale = Vector2(1.40241, 1.40241)
 
 [node name="Arrow1" parent="Env" instance=ExtResource("48_sh5yn")]
@@ -1344,7 +1344,8 @@ position = Vector2(10653, -9149)
 rotation = 1.51348
 
 [node name="Blattschuessel" parent="." instance=ExtResource("55_7skp6")]
-position = Vector2(10122, -9680)
+position = Vector2(10114, -9688)
+rotation = 0.126838
 
 [node name="Arrow2" parent="." instance=ExtResource("51_gbabd")]
 position = Vector2(9321, -10575)
@@ -1446,17 +1447,21 @@ rotation = 0.0733934
 position = Vector2(8611, -13818)
 rotation = 0.152138
 
+[node name="Arrow25" parent="." instance=ExtResource("51_gbabd")]
+position = Vector2(8286, -14374)
+rotation = 0.223133
+
 [node name="Arrow17" parent="." instance=ExtResource("51_gbabd")]
 position = Vector2(8913, -13185)
 rotation = 0.213915
 
 [node name="gaensebluemchen" parent="." instance=ExtResource("63_dyy75")]
-position = Vector2(8255, -13176)
+position = Vector2(8293, -13169)
 scale = Vector2(0.63133, 0.63133)
 rotation_speed = 100.0
 
 [node name="gaensebluemchen2" parent="." instance=ExtResource("63_dyy75")]
-position = Vector2(9317, -13541)
+position = Vector2(9286, -13562)
 scale = Vector2(0.720105, 0.720105)
 rotation_speed = -100.0
 
@@ -1567,5 +1572,9 @@ rotation = -1.56497
 [node name="fahrradstr" parent="." instance=ExtResource("29_0qtus")]
 position = Vector2(7313, -17693)
 rotation = 0.58305
+
+[node name="pole2" parent="." instance=ExtResource("5_55gqm")]
+position = Vector2(8675, -11339)
+rotation = 0.181127
 
 [editable path="Env/schild"]
