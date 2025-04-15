@@ -17,7 +17,7 @@ var shake_until: float = 0.0
 func _process(delta):
 	# print("Zoom: " + str(zoom), " Target Zoom: " + str(target_zoom) + " Player Speed: " + str(player.linear_velocity.length()))
 	var strength = min(1.0, max(0.0, (player.linear_velocity.length()) / 2000))
-	print("Speed: " + str(player.linear_velocity.length()), " Strength: " + str(strength))
+	#print("Speed: " + str(player.linear_velocity.length()), " Strength: " + str(strength))
 	if strength > current_strength:
 		# when faster --> zoom out
 		current_strength = move_toward(current_strength, strength, delta * 0.5)

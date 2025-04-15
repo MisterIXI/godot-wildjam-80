@@ -23,8 +23,13 @@ func _ready() -> void:
 # set new highscore (Name, Speedrun_Time, Collectables)
 func set_new_highscore(_name, _score : int, _collectables : int) -> void:
 	if !DEBUG_MODE:
+		# IF DEBUG_MODE  = FALSE
+		print("Debug Highscore: New Highscore %s&- %s&- %s" % [_name,_score, _collectables])
+		highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), str(Time.get_date_string_from_system())))
 		_send_score(_name,_score,_collectables)
 	else:
+		# if DEBUG_MODE  = True
+		print("Highscore: New Highscore %s&- %s&- %s" % [_name,_score, _collectables])
 		highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), str(Time.get_date_string_from_system())))
 #######################################################################################
 func _on_score_request_completed(_result, _response_code, _header, _body) -> void:
