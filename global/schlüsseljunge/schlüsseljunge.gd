@@ -12,9 +12,8 @@ func _ready():
     return
   
   var file = FileAccess.open(path, FileAccess.READ)
-  grace_key = file.get_as_text().split("\n")[0]
-  game_API_key = file.get_as_text().split("\n")[1]
-  leaderboard_key = file.get_as_text().split("\n")[2]
-
+  grace_key = file.get_as_text().split("\n")[0].strip_edges()
+  game_API_key = file.get_as_text().split("\n")[1].strip_edges()
+  leaderboard_key = file.get_as_text().split("\n")[2].strip_edges()
   print_rich("[color=Yellow]Schlüsseljunge >> [color=WHITE]Yippeeee ich habe den Schlüssel gefunden!")
   file.close()
