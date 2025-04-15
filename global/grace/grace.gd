@@ -139,7 +139,7 @@ func reset_scene():
 
 
 func _process(delta: float) -> void:
-  if interval_saving == false:
+  if interval_saving == false or get_tree().paused or get_tree().get_first_node_in_group("player") == null:
     return
 
   timer += delta
