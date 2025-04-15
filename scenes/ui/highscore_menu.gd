@@ -33,6 +33,7 @@ func _wait_for_finished():
         _i +=1
 
 func _format(_value : float)->String:
+    #TODO Robert: simmt das hier noch?
     var mseconds : float = fmod(_value,100)
     var seconds: float = fmod(_value/1000, 60.0)
     var minutes : int = int((_value / 60000)) %60

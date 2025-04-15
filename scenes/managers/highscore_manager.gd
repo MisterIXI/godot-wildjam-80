@@ -15,10 +15,13 @@ func _ready() -> void:
 
 # set new highscore (Name, Speedrun_Time, Collectables)
 func set_new_highscore(_name, _score : int, _collectables : int) -> void:
-		# IF DEBUG_MODE  = FALSE
-		print("Debug Highscore: New Highscore %s&- %s&- %s" % [_name,_score, _collectables])
-		highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), str(Time.get_date_string_from_system())))
-		_send_score(_name,_score,_collectables)
+	if Schlüsseljunge.leaderboard_key == "None" or Schlüsseljunge.game_API_key == "None":
+		return
+
+	# IF DEBUG_MODE  = FALSE
+	print("Debug Highscore: New Highscore %s&- %s&- %s" % [_name,_score, _collectables])
+	highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), str(Time.get_date_string_from_system())))
+	_send_score(_name,_score,_collectables)
 
 #######################################################################################
 func _on_score_request_completed(_result, _response_code, _header, _body) -> void:
@@ -45,6 +48,9 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body) 
 	leaderboard_request_completed.emit()
 
 func _send_score(_name: String, _score :int, _collectables : int):
+	if Schlüsseljunge.leaderboard_key == "None" or Schlüsseljunge.game_API_key == "None":
+		return
+
 	var _signature  =  (_name + str(_score) +str(_collectables) + Schlüsseljunge.game_API_key).sha256_text()
 	print(_signature)
 	var form_data = "name=%s&score=%s&collectables=%s&signature=%s" % [
@@ -58,6 +64,9 @@ func _send_score(_name: String, _score :int, _collectables : int):
 	send_request.request(Schlüsseljunge.leaderboard_key, headers, HTTPClient.METHOD_POST, form_data)
 
 func get_leaderboard() -> void :
+	if Schlüsseljunge.leaderboard_key == "None" or Schlüsseljunge.game_API_key == "None":
+		return
+
 	leaderboard_request = HTTPRequest.new()
 	add_child(leaderboard_request)
 	leaderboard_request.request_completed.connect(_on_leaderboard_request_completed)# maybe later
