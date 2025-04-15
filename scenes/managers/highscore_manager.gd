@@ -9,7 +9,7 @@ var headers = ["Content-Type: application/x-www-form-urlencoded"]
 func _ready() -> void:
 	highscore_table.clear()
 	ReferenceManager.highscore_node = self
-	set_new_highscore("robbi",5, 22)
+	# set_new_highscore("robbi",5, 22)
 	get_leaderboard()
 ############## GLOBAL SET HIGHSCORE FUNCTION ##############
 
