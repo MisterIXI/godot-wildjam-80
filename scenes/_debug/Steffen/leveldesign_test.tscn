@@ -1,4 +1,4 @@
-[gd_scene load_steps=94 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=97 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
@@ -25,19 +25,19 @@
 [ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="26_j2mqq"]
 [ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="27_aosff"]
 [ext_resource type="Texture2D" uid="uid://bjy23a0cbs854" path="res://assets/images/photos/gulli4.png" id="27_av465"]
-[ext_resource type="PackedScene" uid="uid://bwgxsmbpyh5nq" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="29_0qtus"]
-[ext_resource type="PackedScene" uid="uid://51bai6yg040r" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="30_6pish"]
-[ext_resource type="PackedScene" uid="uid://bif0uca6ftk1d" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="31_lv4xw"]
-[ext_resource type="PackedScene" uid="uid://crglposwftdms" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="32_kvor3"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="29_0qtus"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="30_6pish"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="31_lv4xw"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="32_kvor3"]
 [ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="32_lv4xw"]
-[ext_resource type="PackedScene" uid="uid://dpoa3ew1vnww6" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="33_kvor3"]
-[ext_resource type="PackedScene" uid="uid://c7k088bw8pt83" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_ae2dv"]
-[ext_resource type="PackedScene" uid="uid://0jait75dgawh" path="res://scenes/EnvironmentObjects/reifen.tscn" id="35_0wrp4"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="33_kvor3"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_ae2dv"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/reifen.tscn" id="35_0wrp4"]
 [ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="35_ae2dv"]
-[ext_resource type="PackedScene" uid="uid://7swphsmengui" path="res://scenes/EnvironmentObjects/isetta.tscn" id="35_kr8qw"]
-[ext_resource type="PackedScene" uid="uid://brqky1wh7xwv8" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_1srk6"]
-[ext_resource type="PackedScene" uid="uid://cbs1kk2k7axw" path="res://scenes/EnvironmentObjects/redlight.tscn" id="36_ae2dv"]
-[ext_resource type="PackedScene" uid="uid://1j4exdyv0vk6" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="36_rj8kj"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/isetta.tscn" id="35_kr8qw"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_1srk6"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/redlight.tscn" id="36_ae2dv"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="36_rj8kj"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="40_rj8kj"]
 [ext_resource type="PackedScene" uid="uid://ba30px4pqwxrq" path="res://scenes/EnvironmentObjects/blume_1.tscn" id="41_86g1v"]
 [ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="42_bdk5x"]
@@ -368,6 +368,27 @@ shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_g7ccy")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dyy75"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_4x7f5"]
+seamless = true
+noise = SubResource("FastNoiseLite_dyy75")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w641k"]
+shader = ExtResource("10_0pdxe")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 0.59518, 0.344287, 1)
+shader_parameter/color_tint = Color(4.81307e-07, 0.636991, 0.745919, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 9.17
+shader_parameter/noise = SubResource("NoiseTexture2D_4x7f5")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
@@ -1111,122 +1132,152 @@ rotation = 0.698752
 scale = Vector2(1.40241, 1.40241)
 
 [node name="Arrow1" parent="Env" instance=ExtResource("48_sh5yn")]
+z_index = -1
 position = Vector2(5540, -588)
 rotation = -1.84894
 scale = Vector2(1, -1)
 
 [node name="Arrow4" parent="Env" instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(7838, 72.9999)
 rotation = -0.0434922
 scale = Vector2(0.59815, 0.59815)
 
 [node name="Arrow2" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(8428, -167)
 rotation = 2.27202
 
 [node name="Arrow5" parent="Env" instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(9222, -138)
 rotation = 1.09082
 scale = Vector2(0.525406, 0.518179)
 
 [node name="Arrow7" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(5684, -26.9999)
 rotation = 2.30302
 
 [node name="Arrow8" parent="Env" instance=ExtResource("47_n7uqk")]
+z_index = -1
 position = Vector2(10045, -302)
 rotation = -1.30386
 
 [node name="Arrow9" parent="Env" instance=ExtResource("48_n845g")]
+z_index = -1
 position = Vector2(8377, -580)
 rotation = 0.046531
 
 [node name="Arrow10" parent="Env" instance=ExtResource("53_eap4r")]
+z_index = -1
 position = Vector2(9513, -1964)
 rotation = -1.72014
 
 [node name="Arrow11" parent="Env" instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(7677, -2180)
 rotation = -2.78669
 
 [node name="Arrow12" parent="Env" instance=ExtResource("47_n7uqk")]
+z_index = -1
 position = Vector2(8652, -2260)
 rotation = -2.24094
 
 [node name="Arrow13" parent="Env" instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(6406, -1826)
 rotation = -2.89675
 
 [node name="Arrow14" parent="Env" instance=ExtResource("53_eap4r")]
+z_index = -1
 position = Vector2(5598, -1604)
 rotation = -1.51486
 
 [node name="Arrow15" parent="Env" instance=ExtResource("47_n7uqk")]
+z_index = -1
 position = Vector2(5091, -3848)
 rotation = 0.292838
 
 [node name="Arrow16" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(5817, -4252)
 rotation = 2.07623
 
 [node name="Arrow17" parent="Env" instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(6811, -4234)
 rotation = 0.556144
 
 [node name="Arrow18" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(7620, -4358)
 rotation = 2.20888
 
 [node name="Arrow19" parent="Env" instance=ExtResource("48_sh5yn")]
+z_index = -1
 position = Vector2(8198, -4424)
 rotation = -0.268803
 
 [node name="Arrow20" parent="Env" instance=ExtResource("53_eap4r")]
+z_index = -1
 position = Vector2(8416, -5176)
 rotation = 1.40937
 
 [node name="Arrow21" parent="Env" instance=ExtResource("47_n7uqk")]
+z_index = -1
 position = Vector2(9352, -4520)
 rotation = 1.33229
 
 [node name="Arrow22" parent="Env" instance=ExtResource("48_sh5yn")]
+z_index = -1
 position = Vector2(11033, -3928)
 rotation = 0.520953
 
 [node name="Arrow23" parent="Env" instance=ExtResource("53_eap4r")]
+z_index = -1
 position = Vector2(11744, -5575)
 rotation = -1.68802
 
 [node name="Arrow24" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(9656, -6081)
 rotation = -0.882951
 
 [node name="Arrow25" parent="Env" instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(8794, -5971)
 rotation = -2.62423
 
 [node name="Arrow26" parent="Env" instance=ExtResource("48_n845g")]
+z_index = -1
 position = Vector2(7846, -5910)
 rotation = 0.880397
 
 [node name="Arrow27" parent="Env" instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(6904, -5744)
 rotation = -2.28832
 
 [node name="Arrow28" parent="Env" instance=ExtResource("47_n7uqk")]
+z_index = -1
 position = Vector2(5998, -5813)
 rotation = -2.08993
 
 [node name="Arrow29" parent="Env" instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(5231, -5839)
 rotation = 3.13228
 
 [node name="Arrow30" parent="Env" instance=ExtResource("48_sh5yn")]
-position = Vector2(4717, -6247)
-rotation = -1.55522
+z_index = -1
+material = SubResource("ShaderMaterial_w641k")
+position = Vector2(4732, -6227)
+rotation = -1.46713
 scale = Vector2(1, -1)
 
 [node name="Arrow31" parent="Env" instance=ExtResource("48_n845g")]
+z_index = -1
 position = Vector2(4273, -6324)
 rotation = 0.350144
 
@@ -1239,18 +1290,22 @@ scale = Vector2(0.522704, 0.522704)
 position = Vector2(4437, -753)
 
 [node name="Arrow32" parent="Env" instance=ExtResource("47_n7uqk")]
+z_index = -1
 position = Vector2(10014, -8874)
 rotation = 0.404128
 
 [node name="Arrow33" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(11084, -9549)
 rotation = 0.0571862
 
 [node name="Arrow34" parent="Env" instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(10761, -9901)
 rotation = -0.167273
 
 [node name="Arrow35" parent="Env" instance=ExtResource("48_n845g")]
+z_index = -1
 position = Vector2(10246, -10259)
 
 [node name="Bild9" parent="Env" instance=ExtResource("40_rj8kj")]
@@ -1273,38 +1328,47 @@ position = Vector2(9856, -10437)
 rotation = 1.49731
 
 [node name="Arrow4" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(4313, -7079)
 rotation = 0.305056
 
 [node name="Arrow5" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(4670, -7239)
 rotation = 0.564581
 
 [node name="Arrow6" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(4996, -7278)
 rotation = 0.728676
 
 [node name="Arrow7" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(6123.54, -7795.27)
 rotation = 0.305056
 
 [node name="Arrow8" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(6496.53, -7936.27)
 rotation = 0.564581
 
 [node name="Arrow9" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(6881.53, -7997.27)
 rotation = 0.728676
 
 [node name="Arrow10" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(8024.54, -8346.27)
 rotation = 0.305056
 
 [node name="Arrow11" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(8397.53, -8487.27)
 rotation = 0.564581
 
 [node name="Arrow12" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(8782.53, -8548.27)
 rotation = 0.728676
 
@@ -1340,6 +1404,7 @@ position = Vector2(9793, -9497)
 rotation = -0.354217
 
 [node name="Arrow13" parent="." instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(10653, -9149)
 rotation = 1.51348
 
@@ -1348,10 +1413,12 @@ position = Vector2(10114, -9688)
 rotation = 0.126838
 
 [node name="Arrow2" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(9321, -10575)
 rotation = 2.30733
 
 [node name="Arrow14" parent="." instance=ExtResource("53_eap4r")]
+z_index = -1
 position = Vector2(8585, -10261)
 
 [node name="flower" parent="." instance=ExtResource("58_kxfsc")]
@@ -1396,6 +1463,7 @@ scale = Vector2(0.312892, 0.312892)
 rotation_speed = -120.0
 
 [node name="Arrow15" parent="." instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(10044, -11222)
 rotation = -1.13688
 
@@ -1436,22 +1504,27 @@ position = Vector2(8400, -12417)
 rotation = -0.659518
 
 [node name="Arrow3" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(9590, -12293)
 rotation = -0.00161343
 
 [node name="Arrow18" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(9263, -12692)
 rotation = 0.0733934
 
 [node name="Arrow16" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(8611, -13818)
 rotation = 0.152138
 
 [node name="Arrow25" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(8286, -14374)
 rotation = 0.223133
 
 [node name="Arrow17" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(8913, -13185)
 rotation = 0.213915
 
@@ -1482,6 +1555,7 @@ scale = Vector2(1.74282, 1.74282)
 position = Vector2(7610, -14351)
 
 [node name="Arrow19" parent="." instance=ExtResource("48_n845g")]
+z_index = -1
 position = Vector2(7924, -14899)
 
 [node name="Bild2" parent="." instance=ExtResource("40_rj8kj")]
@@ -1534,22 +1608,27 @@ position = Vector2(6757, -17280)
 rotation = -0.555881
 
 [node name="Arrow20" parent="." instance=ExtResource("52_j5nw4")]
+z_index = -1
 position = Vector2(7468, -15476)
 rotation = -1.28761
 
 [node name="Arrow21" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(7089, -16547)
 rotation = -0.364341
 
 [node name="Arrow22" parent="." instance=ExtResource("51_gbabd")]
+z_index = -1
 position = Vector2(7479, -17037)
 rotation = 3.10577
 
 [node name="Arrow23" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(7084, -14774)
 rotation = 0.32223
 
 [node name="Arrow24" parent="." instance=ExtResource("50_eap4r")]
+z_index = -1
 position = Vector2(6388, -15816)
 rotation = -0.0980117
 

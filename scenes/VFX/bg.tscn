@@ -195,6 +195,7 @@ _data = {
 }
 
 [node name="Bg" type="Sprite2D"]
+z_index = -2
 texture_repeat = 2
 material = ExtResource("1_ms5th")
 texture = ExtResource("2_jqvi5")
