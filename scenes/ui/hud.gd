@@ -17,14 +17,15 @@ func get_collectable_score() -> int:
     return _collectables
 
 #get format 00h:00m:00s
-func _format(_value : float)->String:
-    var _string :String
-    var seconds: float = _value
-    var minutes : int = int((_value / 60000)) %60
-    var hours :int = int(_value /3600000)
+func _format(_value : float) -> String:
+    var seconds: int = int(_value) % 60
+    var minutes: int = int(_value / 60) % 60
+    var hours: int = int(_value / 3600)
+
+    var _string: String
     if hours > 0:
-        _string = "%02dh:%02dm:%02ds" % [hours,minutes,seconds]
-        return _string
-    
-    _string = "%02dm:%02ds" % [minutes,seconds]
+        _string = "%02dh:%02dm:%02ds" % [hours, minutes, seconds]
+    else:
+        _string = "%02dm:%02ds" % [minutes, seconds]
+        
     return _string
