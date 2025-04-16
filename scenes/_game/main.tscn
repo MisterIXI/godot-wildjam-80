@@ -2047,7 +2047,7 @@ position = Vector2(4925, -15944)
 rotation = 3.64126
 
 [node name="Cigret12" parent="ShadowGroup/End" instance=ExtResource("56_bgmey")]
-position = Vector2(5645, -15552)
+position = Vector2(5645, -15551)
 rotation = 3.64126
 
 [node name="Bg" parent="." instance=ExtResource("1_puc63")]
@@ -2408,3 +2408,5 @@ uid = 523562344
 [editable path="ShadowGroup/Env/schild"]
 [editable path="ShadowGroup/End/yield5"]
 [editable path="ShadowGroup/End/Cigret8"]
+[editable path="ShadowGroup/End/Cigret11"]
+[editable path="ShadowGroup/End/Cigret12"]
