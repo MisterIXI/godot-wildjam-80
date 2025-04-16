@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://cucfsuybxu4eu"]
+[gd_scene load_steps=155 format=3 uid="uid://cucfsuybxu4eu"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_puc63"]
 [ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="2_hnw1m"]
@@ -72,6 +72,10 @@
 [ext_resource type="Script" uid="uid://cr82wba3404if" path="res://scenes/woldboundss/world_bounderies.gd" id="70_hnw1m"]
 [ext_resource type="PackedScene" uid="uid://bn8ts77vewg4e" path="res://scenes/EnvironmentObjects/misc/arrow_7.tscn" id="70_ro8g5"]
 [ext_resource type="PackedScene" uid="uid://bh36khiteekr2" path="res://scenes/end_scene/bathroom.tscn" id="72_mvwki"]
+[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="73_pd8rw"]
+[ext_resource type="Texture2D" uid="uid://crx3a1gxckxqs" path="res://assets/images/env/eye.png" id="75_kprro"]
+[ext_resource type="Texture2D" uid="uid://dmrwwq4uwxetw" path="res://assets/images/env/yeh_flower.png" id="76_dom4v"]
+[ext_resource type="Texture2D" uid="uid://c1nuxh5vrt8dj" path="res://assets/images/env/godot_wildjam_white.png" id="77_jvvaj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puc63"]
 size = Vector2(58697, 6649)
@@ -795,6 +799,27 @@ shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
+seamless = true
+noise = SubResource("FastNoiseLite_k2e0m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkmml"]
+shader = ExtResource("15_ca5qb")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0.941176, 0.384314, 0.294118, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
@@ -2232,5 +2257,120 @@ position = Vector2(8405, -13992)
 rotation = -1.59625
 scale = Vector2(1, 4.52815)
 metadata/_edit_lock_ = true
+
+[node name="pole19" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(11379, -14667)
+rotation = -2.4937
+
+[node name="pole20" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(11651, -15749)
+rotation = -3.13449
+
+[node name="pole21" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(11358, -16887)
+rotation = -3.78116
+
+[node name="pole22" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(10447, -17603)
+rotation = -4.29294
+
+[node name="pole23" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(9175, -18009)
+rotation = -4.8046
+
+[node name="pole24" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(7853, -17577)
+rotation = -5.39547
+
+[node name="eightball" parent="End" instance=ExtResource("51_0h46h")]
+position = Vector2(10589, -16163)
+
+[node name="Sprite2D3" type="Sprite2D" parent="End/eightball"]
+material = ExtResource("73_pd8rw")
+position = Vector2(-66, -107)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("75_kprro")
+
+[node name="broetchen1" parent="End" instance=ExtResource("27_c2jfu")]
+position = Vector2(8076, -16317)
+
+[node name="Sprite2D2" type="Sprite2D" parent="End/broetchen1"]
+material = ExtResource("73_pd8rw")
+position = Vector2(21, 122)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("76_dom4v")
+
+[node name="gulli" parent="End" instance=ExtResource("14_xe00i")]
+position = Vector2(8294, -14558)
+
+[node name="Sprite2D4" type="Sprite2D" parent="End/gulli"]
+material = SubResource("ShaderMaterial_xkmml")
+position = Vector2(-8, -29)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("77_jvvaj")
+
+[node name="pole25" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(7171, -16399)
+rotation = -3.16683
+
+[node name="Trampoline" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10387, -14017)
+
+[node name="Trampoline4" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(7196, -15839)
+rotation = 0.936605
+scale = Vector2(2, 2)
+
+[node name="Trampoline5" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(7502, -17307)
+rotation = 2.09744
+scale = Vector2(2, 2)
+
+[node name="Trampoline6" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(8717, -17992)
+rotation = 2.75365
+scale = Vector2(2, 2)
+
+[node name="Trampoline7" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10067, -17796)
+rotation = 3.54242
+scale = Vector2(2, 2)
+
+[node name="Trampoline8" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(11170, -17109)
+rotation = 3.74678
+scale = Vector2(2, 2)
+
+[node name="Trampoline9" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(11650, -16023)
+rotation = 4.43878
+scale = Vector2(2, 2)
+
+[node name="Trampoline10" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(11522, -14927)
+rotation = 4.83782
+scale = Vector2(2, 2)
+
+[node name="Windmill" parent="End" instance=ExtResource("58_0cfh7")]
+position = Vector2(9309, -16379)
+rotation = -0.497638
+rotation_speed = 444.0
+
+[node name="Trampoline2" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10656, -14168)
+scale = Vector2(1.125, 1.125)
+
+[node name="gaensebluemchen" parent="End" instance=ExtResource("62_76b8n")]
+position = Vector2(10379, -15066)
+rotation = -0.497638
+rotation_speed = 200.0
+
+[node name="gaensebluemchen2" parent="End" instance=ExtResource("62_76b8n")]
+position = Vector2(8449, -15478)
+rotation = -0.497638
+rotation_speed = 300.0
+
+[node name="Trampoline3" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10943, -14356)
 
 [editable path="Env/schild"]
