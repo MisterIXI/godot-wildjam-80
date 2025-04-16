@@ -808,7 +808,6 @@ fit_margin = 934.0
 clear_margin = 689.0
 
 [node name="PlayerBody" parent="ShadowGroup" instance=ExtResource("2_hnw1m")]
-position = Vector2(8113, -14096)
 collision_layer = 3
 max_contacts_reported = 3
 metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
