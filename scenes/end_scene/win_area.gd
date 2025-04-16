@@ -6,18 +6,16 @@ extends Area2D
 func _ready() -> void: 
     body_entered.connect(on_body_entered)
 func on_body_entered(_body : Node2D) -> void:
-    if _body is PlayerController:
+    if _body.is_in_group("player"):
         ## CREATE INPUT BOX AND CONNECT TO CONFIRM EVENT
         var _new_name_input = set_name_input.instantiate()
         add_child(_new_name_input)
         ## set position next to area
         _new_name_input.pressed.connect(_on_set_name_cornfirm)
         ## disable area
-        set_deferred("monitorable",false)
-        set_deferred("monitoring",false)
-        set_deferred("queue_free",other_exit)
-        set_deferred("queue_free",self)
-        
+        get_tree().paused = true
+
+
 func _on_set_name_cornfirm(_name : String)->void:
     ReferenceManager.highscore_node.set_new_highscore(
         _name,
@@ -26,7 +24,7 @@ func _on_set_name_cornfirm(_name : String)->void:
     # go to leaderboard
     Menu.leaderboard_menu.show()
     Grace.reset_scene()
-    
+
 
 #get format 00h:00m:00s
 func _format(_value : float)->String:

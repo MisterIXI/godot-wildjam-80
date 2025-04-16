@@ -1,61 +1,16 @@
-[gd_scene load_steps=48 format=3 uid="uid://cy0whrgfyoaku"]
+[gd_scene load_steps=24 format=3 uid="uid://cy0whrgfyoaku"]
 
 [ext_resource type="PackedScene" uid="uid://bo7ds72obxh35" path="res://scenes/EnvironmentObjects/Obstacles/trampoline.tscn" id="1_75675"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="1_l8lib"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_66isk"]
-[ext_resource type="Texture2D" uid="uid://yaf2gpybvuke" path="res://assets/images/bath/background.png" id="3_l8lib"]
-[ext_resource type="Texture2D" uid="uid://bukqg3r7v8k4w" path="res://assets/images/bath/bathtub.png" id="4_nnpbe"]
-[ext_resource type="Texture2D" uid="uid://bi5micb4eyc0t" path="res://assets/images/bath/board.png" id="5_75675"]
-[ext_resource type="Texture2D" uid="uid://c8f67asdl6hcn" path="res://assets/images/bath/mirror.png" id="6_43cuh"]
 [ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="6_eupc4"]
 [ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="7_5p6ii"]
 [ext_resource type="Texture2D" uid="uid://c47a2rxyfvunw" path="res://assets/images/bath/toilet_bg.png" id="7_vm84y"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="8_66isk"]
-[ext_resource type="Script" uid="uid://cfefmqqmra80r" path="res://scenes/_game/end_scene/win_area.gd" id="12_5uh6b"]
-[ext_resource type="PackedScene" uid="uid://cn1seejpqc5o4" path="res://scenes/_game/end_scene/name_input.tscn" id="15_8aagw"]
-[ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="16_tqis0"]
-[ext_resource type="Texture2D" uid="uid://cw25dfqmriqs5" path="res://assets/images/menu/letters/H.png" id="17_rt6jx"]
-[ext_resource type="Texture2D" uid="uid://crcgfsxoot3oa" path="res://assets/images/menu/letters/A-2.png" id="18_fp8se"]
-[ext_resource type="Texture2D" uid="uid://uad80226meta" path="res://assets/images/menu/letters/N-2.png" id="19_k0p1e"]
-[ext_resource type="Texture2D" uid="uid://btj7c7r3o766f" path="res://assets/images/menu/letters/K-2.png" id="20_0j6sh"]
-[ext_resource type="Texture2D" uid="uid://crhm1gbotkxs3" path="res://assets/images/menu/letters/Y-3.png" id="21_8qtlk"]
-[ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="22_1i43f"]
-[ext_resource type="Texture2D" uid="uid://lhevu7k1gpvt" path="res://assets/images/menu/letters/U-2.png" id="23_dtsgp"]
-[ext_resource type="Texture2D" uid="uid://c7702frg6uret" path="res://assets/images/menu/letters/F-2.png" id="24_20qq3"]
-[ext_resource type="Texture2D" uid="uid://cg2rur3ei04i8" path="res://assets/images/menu/letters/O-3.png" id="25_ds3dg"]
-[ext_resource type="Texture2D" uid="uid://bcbm74v2pd8w7" path="res://assets/images/menu/letters/R-4.png" id="26_1pqn1"]
-[ext_resource type="Texture2D" uid="uid://c31h7aj58v4no" path="res://assets/images/menu/letters/P.png" id="27_5v22t"]
-[ext_resource type="Texture2D" uid="uid://dyiwkfxdprd1g" path="res://assets/images/menu/letters/L.png" id="28_p3jha"]
-[ext_resource type="Texture2D" uid="uid://b5noavplhmsg6" path="res://assets/images/menu/letters/A-6.png" id="29_fks0x"]
-[ext_resource type="Texture2D" uid="uid://tvfbbpoxdl5" path="res://assets/images/menu/letters/Y-4.png" id="30_yt0oo"]
-[ext_resource type="Texture2D" uid="uid://cfw870f3x7r7c" path="res://assets/images/menu/letters/I-2.png" id="31_d4di8"]
-[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="32_5m12p"]
-[ext_resource type="Script" uid="uid://cw4jta6e5jl4v" path="res://scenes/_game/end_scene/trigger_zone_on_enter.gd" id="32_u4omp"]
-[ext_resource type="Texture2D" uid="uid://biunqo3amubvy" path="res://assets/images/menu/letters/G-2.png" id="33_0xtt1"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_llnb5"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orjfd"]
-seamless = true
-noise = SubResource("FastNoiseLite_llnb5")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c66a7"]
-shader = ExtResource("2_66isk")
-shader_parameter/uv_scale = 1.0
-shader_parameter/line_color = Color(1, 0.67058, 0.655483, 1)
-shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
-shader_parameter/draw_line = true
-shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_orjfd")
-shader_parameter/noise_speed = 3.08
-shader_parameter/distortion_str = 0.01
-shader_parameter/frame_time = 0.25
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5uh6b"]
-size = Vector2(547, 555)
+[ext_resource type="PackedScene" uid="uid://bh36khiteekr2" path="res://scenes/end_scene/bathroom.tscn" id="11_12f7e"]
+[ext_resource type="Script" uid="uid://cfefmqqmra80r" path="res://scenes/end_scene/win_area.gd" id="12_5uh6b"]
+[ext_resource type="PackedScene" uid="uid://cn1seejpqc5o4" path="res://scenes/end_scene/name_input.tscn" id="15_8aagw"]
+[ext_resource type="Script" uid="uid://cw4jta6e5jl4v" path="res://scenes/end_scene/trigger_zone_on_enter.gd" id="32_u4omp"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_8rkkq"]
 frequency = 0.0043
@@ -78,15 +33,6 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqtn5"]
-size = Vector2(376.471, 334.118)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_211vs"]
-size = Vector2(300, 432.941)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aagw"]
-size = Vector2(300, 404.706)
-
 [sub_resource type="Curve" id="Curve_nnpbe"]
 _limits = [0.0, 100.0, 0.0, 1.0]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995781, 52.809), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
@@ -103,23 +49,34 @@ colors = PackedColorArray(0.862745, 0.309804, 0.223529, 1, 0.968627, 0.717647, 0
 [sub_resource type="CircleShape2D" id="CircleShape2D_l8lib"]
 radius = 99.8268
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_llnb5"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orjfd"]
+seamless = true
+noise = SubResource("FastNoiseLite_llnb5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c66a7"]
+shader = ExtResource("2_66isk")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 0.67058, 0.655483, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_orjfd")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aagw"]
+size = Vector2(300, 404.706)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k0p1e"]
 size = Vector2(1521, 1240)
 
 [node name="end_scene" type="Node2D"]
-
-[node name="bg" type="StaticBody2D" parent="."]
-position = Vector2(0, -467)
-scale = Vector2(2, 2)
-
-[node name="Bild" type="Sprite2D" parent="bg"]
-material = SubResource("ShaderMaterial_c66a7")
-texture = ExtResource("3_l8lib")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bg"]
-position = Vector2(-4.5, -7.5)
-shape = SubResource("RectangleShape2D_5uh6b")
-disabled = true
 
 [node name="Env" type="Node2D" parent="."]
 
@@ -411,103 +368,6 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(-13, 74)
 scale = Vector2(3.434, 3.434)
 
-[node name="bathtub" type="StaticBody2D" parent="Env"]
-position = Vector2(-226, -69)
-scale = Vector2(0.425, 0.425)
-
-[node name="Bild" type="Sprite2D" parent="Env/bathtub"]
-material = SubResource("ShaderMaterial_c66a7")
-texture = ExtResource("4_nnpbe")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/bathtub"]
-position = Vector2(30.5882, 94.1177)
-shape = SubResource("RectangleShape2D_aqtn5")
-disabled = true
-
-[node name="board" type="StaticBody2D" parent="Env"]
-position = Vector2(294, 195)
-scale = Vector2(0.425, 0.425)
-
-[node name="Bild" type="Sprite2D" parent="Env/board"]
-material = SubResource("ShaderMaterial_c66a7")
-position = Vector2(-94.1176, -623.529)
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("5_75675")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/board"]
-position = Vector2(-130, -595.294)
-shape = SubResource("RectangleShape2D_211vs")
-disabled = true
-
-[node name="mirror2" type="StaticBody2D" parent="Env"]
-position = Vector2(281, -84)
-scale = Vector2(0.315, 0.315)
-
-[node name="Bild" type="Sprite2D" parent="Env/mirror2"]
-material = SubResource("ShaderMaterial_c66a7")
-position = Vector2(-96.4707, -578.823)
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("6_43cuh")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/mirror2"]
-position = Vector2(-130, -562.353)
-shape = SubResource("RectangleShape2D_8aagw")
-disabled = true
-
-[node name="Mirror" type="StaticBody2D" parent="Env"]
-position = Vector2(-262, -77)
-scale = Vector2(0.315, 0.315)
-
-[node name="Bild" type="Sprite2D" parent="Env/Mirror"]
-material = SubResource("ShaderMaterial_c66a7")
-position = Vector2(-96.4707, -578.823)
-scale = Vector2(1.05, 1.05)
-texture = ExtResource("6_43cuh")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/Mirror"]
-position = Vector2(-130, -562.353)
-shape = SubResource("RectangleShape2D_8aagw")
-disabled = true
-
-[node name="shadow" type="StaticBody2D" parent="Env"]
-position = Vector2(-210, -49)
-scale = Vector2(0.365, 0.365)
-
-[node name="Bild" type="Sprite2D" parent="Env/shadow"]
-material = SubResource("ShaderMaterial_c66a7")
-position = Vector2(581.176, 91.7647)
-scale = Vector2(0.595, 0.595)
-texture = ExtResource("7_vm84y")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Env/shadow"]
-position = Vector2(-130, -562.353)
-shape = SubResource("RectangleShape2D_8aagw")
-disabled = true
-
-[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
-position = Vector2(3, -44)
-scale = Vector2(0.425, 0.425)
-emitting = false
-amount = 25
-texture = ExtResource("8_66isk")
-lifetime = 2.0
-explosiveness = 1.0
-randomness = 1.0
-lifetime_randomness = 1.0
-direction = Vector2(0, -5)
-spread = 180.0
-gravity = Vector2(0, 300)
-initial_velocity_min = 33.46
-initial_velocity_max = 1000.0
-damping_curve = SubResource("Curve_nnpbe")
-scale_amount_min = 0.1
-scale_amount_max = 0.5
-scale_amount_curve = SubResource("Curve_75675")
-color_initial_ramp = SubResource("Gradient_43cuh")
-hue_variation_max = 1.0
-
 [node name="CPUParticles2D_secret" type="CPUParticles2D" parent="."]
 position = Vector2(3, -5016)
 scale = Vector2(0.425, 0.425)
@@ -530,25 +390,12 @@ scale_amount_curve = SubResource("Curve_75675")
 color_initial_ramp = SubResource("Gradient_43cuh")
 hue_variation_max = 1.0
 
-[node name="Win_Area" type="Area2D" parent="." node_paths=PackedStringArray("other_exit")]
-position = Vector2(15, -23)
-scale = Vector2(0.425, 0.425)
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("12_5uh6b")
-other_exit = NodePath("../Win_Area_secret")
-set_name_input = ExtResource("15_8aagw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area"]
-shape = SubResource("CircleShape2D_l8lib")
-
-[node name="Win_Area_secret" type="Area2D" parent="." node_paths=PackedStringArray("other_exit")]
+[node name="Win_Area_secret" type="Area2D" parent="."]
 position = Vector2(1, -5015)
 scale = Vector2(0.425, 0.425)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("12_5uh6b")
-other_exit = NodePath("../Win_Area")
 set_name_input = ExtResource("15_8aagw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area_secret"]
@@ -569,108 +416,6 @@ position = Vector2(-130, -562.353)
 shape = SubResource("RectangleShape2D_8aagw")
 disabled = true
 
-[node name="Thankyouforplaying" type="Node2D" parent="."]
-
-[node name="Letter_T" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-219.985, -279.445)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("16_tqis0")
-
-[node name="Letter_H" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-180, -271)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("17_rt6jx")
-
-[node name="Letter_A" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-135, -274)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("18_fp8se")
-
-[node name="Letter_N" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-85, -272)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("19_k0p1e")
-
-[node name="Letter_K" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-29, -275)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("20_0j6sh")
-
-[node name="Letter_Y" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(89, -275)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("21_8qtlk")
-
-[node name="Letter_O" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(135, -266)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("22_1i43f")
-
-[node name="Letter_U" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(175, -270)
-scale = Vector2(0.17, 0.17)
-texture = ExtResource("23_dtsgp")
-
-[node name="Letter_F" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-221.985, -199.445)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("24_20qq3")
-
-[node name="Letter_O3" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-187, -193)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("25_ds3dg")
-
-[node name="Letter_R" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-152, -192)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("26_1pqn1")
-
-[node name="Letter_P" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-46, -193)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("27_5v22t")
-
-[node name="Letter_L" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(-19, -190)
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("28_p3jha")
-
-[node name="Letter_A2" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(20, -193)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("29_fks0x")
-
-[node name="Letter_Y2" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(54, -191)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("30_yt0oo")
-
-[node name="Letter_I" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(82, -187)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("31_d4di8")
-
-[node name="Letter_N2" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(110, -186)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("32_5m12p")
-
-[node name="Letter_G" type="Sprite2D" parent="Thankyouforplaying"]
-position = Vector2(144, -186)
-scale = Vector2(0.13, 0.13)
-texture = ExtResource("33_0xtt1")
-
-[node name="Trigger_Zone" type="Area2D" parent="." node_paths=PackedStringArray("cpu_particle")]
-collision_layer = 0
-collision_mask = 2
-script = ExtResource("32_u4omp")
-cpu_particle = NodePath("../CPUParticles2D")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Zone"]
-position = Vector2(-10, -482.5)
-shape = SubResource("RectangleShape2D_k0p1e")
-
 [node name="Trigger_Zone_secret" type="Area2D" parent="." node_paths=PackedStringArray("cpu_particle")]
 position = Vector2(-5, -5039)
 collision_layer = 0
@@ -681,3 +426,5 @@ cpu_particle = NodePath("../CPUParticles2D_secret")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Trigger_Zone_secret"]
 position = Vector2(6.5, -435)
 shape = SubResource("RectangleShape2D_k0p1e")
+
+[node name="Bathroom" parent="." instance=ExtResource("11_12f7e")]

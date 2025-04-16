@@ -1,75 +1,89 @@
-[gd_scene load_steps=141 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=148 format=3 uid="uid://cucfsuybxu4eu"]
 
-[ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
-[ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
-[ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="3_j6ebo"]
-[ext_resource type="PackedScene" uid="uid://bo7ds72obxh35" path="res://scenes/EnvironmentObjects/Obstacles/trampoline.tscn" id="4_oc67x"]
-[ext_resource type="PackedScene" uid="uid://ds2kjpvu182y0" path="res://scenes/EnvironmentObjects/pole.tscn" id="5_55gqm"]
-[ext_resource type="PackedScene" uid="uid://4vv4vr83shif" path="res://scenes/EnvironmentObjects/yield.tscn" id="5_j6ebo"]
-[ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="6_4wg66"]
-[ext_resource type="PackedScene" uid="uid://k6f2r7tmtvlb" path="res://scenes/EnvironmentObjects/gulli_3.tscn" id="7_74n1c"]
-[ext_resource type="PackedScene" uid="uid://bppojpxqxwl4k" path="res://scenes/EnvironmentObjects/leo.tscn" id="7_hcqwe"]
-[ext_resource type="PackedScene" uid="uid://qxr4i01dqg4m" path="res://scenes/EnvironmentObjects/gulli_4.tscn" id="8_7wess"]
-[ext_resource type="PackedScene" uid="uid://bsm4hc7ewy2bu" path="res://scenes/EnvironmentObjects/eye.tscn" id="8_qktsu"]
-[ext_resource type="PackedScene" uid="uid://cb8tooji1fm0o" path="res://scenes/EnvironmentObjects/gulli.tscn" id="9_0pdxe"]
-[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="10_0pdxe"]
-[ext_resource type="PackedScene" uid="uid://dkiepgksa1te6" path="res://scenes/EnvironmentObjects/zigaretten.tscn" id="10_k81dp"]
-[ext_resource type="Texture2D" uid="uid://cwu1wa6jl7lbn" path="res://assets/images/photos/breznak.png" id="11_ovmwo"]
-[ext_resource type="Texture2D" uid="uid://oyy2or6lqq7n" path="res://assets/images/photos/bild.png" id="12_3y6uy"]
-[ext_resource type="Texture2D" uid="uid://duy10k5w3q6a2" path="res://assets/images/photos/bild2.png" id="13_55gqm"]
-[ext_resource type="PackedScene" uid="uid://djwsv77l05fqn" path="res://scenes/EnvironmentObjects/zeitung.tscn" id="16_dklac"]
-[ext_resource type="PackedScene" uid="uid://dbi7dabob2xr5" path="res://scenes/EnvironmentObjects/schild.tscn" id="17_434gd"]
-[ext_resource type="PackedScene" uid="uid://cq42j031f7v1o" path="res://scenes/EnvironmentObjects/reclam.tscn" id="18_o7m6t"]
-[ext_resource type="PackedScene" uid="uid://d1114jsogyu88" path="res://scenes/EnvironmentObjects/einfahrt.tscn" id="20_5t7de"]
-[ext_resource type="Texture2D" uid="uid://bedtum68bed4r" path="res://assets/images/photos/reclam.png" id="22_k81dp"]
-[ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="26_j2mqq"]
-[ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="27_aosff"]
-[ext_resource type="Texture2D" uid="uid://bjy23a0cbs854" path="res://assets/images/photos/gulli4.png" id="27_av465"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="29_0qtus"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="30_6pish"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="31_lv4xw"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="32_kvor3"]
-[ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="32_lv4xw"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="33_kvor3"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="34_ae2dv"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/reifen.tscn" id="35_0wrp4"]
-[ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="35_ae2dv"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/isetta.tscn" id="35_kr8qw"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_1srk6"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/redlight.tscn" id="36_ae2dv"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="36_rj8kj"]
-[ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="40_rj8kj"]
-[ext_resource type="PackedScene" uid="uid://ba30px4pqwxrq" path="res://scenes/EnvironmentObjects/blume_1.tscn" id="41_86g1v"]
-[ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="42_bdk5x"]
-[ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="43_bdk5x"]
-[ext_resource type="Texture2D" uid="uid://dwtbv0645sp7l" path="res://assets/images/photos/gulli3.png" id="44_du3fb"]
-[ext_resource type="PackedScene" uid="uid://eabnrkt448ts" path="res://scenes/EnvironmentObjects/breznak.tscn" id="45_5lumb"]
-[ext_resource type="PackedScene" uid="uid://cvt85hwqbxe5d" path="res://scenes/EnvironmentObjects/bild.tscn" id="46_5lumb"]
-[ext_resource type="PackedScene" uid="uid://d1wjo8g6fnp2r" path="res://scenes/EnvironmentObjects/misc/arrow_3.tscn" id="47_n7uqk"]
-[ext_resource type="PackedScene" uid="uid://c11q60jv54e0h" path="res://scenes/EnvironmentObjects/misc/arrow_6.tscn" id="48_n845g"]
-[ext_resource type="PackedScene" uid="uid://rpqnhe6twc2a" path="res://scenes/EnvironmentObjects/misc/arrow_1.tscn" id="48_sh5yn"]
-[ext_resource type="PackedScene" uid="uid://dh5nyeua5j5k2" path="res://scenes/EnvironmentObjects/misc/arrow_4.tscn" id="50_eap4r"]
-[ext_resource type="PackedScene" uid="uid://dgnn4whbw7d7k" path="res://scenes/EnvironmentObjects/misc/arrow_2.tscn" id="51_gbabd"]
-[ext_resource type="PackedScene" uid="uid://drh7w1kw1envp" path="res://scenes/EnvironmentObjects/misc/arrow_5.tscn" id="52_j5nw4"]
-[ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="53_0pt5c"]
-[ext_resource type="PackedScene" uid="uid://bn8ts77vewg4e" path="res://scenes/EnvironmentObjects/misc/arrow_7.tscn" id="53_eap4r"]
-[ext_resource type="PackedScene" uid="uid://bb60f7pufgkvc" path="res://scenes/EnvironmentObjects/hundi.tscn" id="54_gbabd"]
-[ext_resource type="PackedScene" uid="uid://cqy2067hkppla" path="res://scenes/EnvironmentObjects/misc/yeh_flower.tscn" id="54_sp688"]
-[ext_resource type="PackedScene" uid="uid://dmrlpd5rmfaan" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="55_7skp6"]
-[ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="55_kvc7b"]
-[ext_resource type="PackedScene" uid="uid://1y4iqx8jvmf5" path="res://scenes/EnvironmentObjects/eightball.tscn" id="56_wlhql"]
-[ext_resource type="PackedScene" uid="uid://c2mkolo104wgq" path="res://scenes/EnvironmentObjects/cigret.tscn" id="57_wlhql"]
-[ext_resource type="PackedScene" uid="uid://doa0bax35p5je" path="res://scenes/EnvironmentObjects/Obstacles/windmill.tscn" id="58_6viny"]
-[ext_resource type="PackedScene" uid="uid://sde60sn8u46e" path="res://scenes/EnvironmentObjects/Obstacles/flower.tscn" id="58_kxfsc"]
-[ext_resource type="PackedScene" uid="uid://bkjieb8en8qgi" path="res://scenes/EnvironmentObjects/kafka.tscn" id="59_gm4cb"]
-[ext_resource type="PackedScene" uid="uid://bkwxktyxjbisq" path="res://scenes/EnvironmentObjects/radierer.tscn" id="60_5m0f6"]
-[ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="60_sp688"]
-[ext_resource type="PackedScene" uid="uid://u8qq6esgpedx" path="res://scenes/EnvironmentObjects/taschenmesser.tscn" id="61_30aor"]
-[ext_resource type="PackedScene" uid="uid://1s55niglbayl" path="res://scenes/EnvironmentObjects/misc/teto_love.tscn" id="61_qtlrg"]
-[ext_resource type="PackedScene" uid="uid://dh0d0fcqlb7nc" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="62_dyy75"]
-[ext_resource type="PackedScene" uid="uid://itm5pkt7qf64" path="res://scenes/EnvironmentObjects/misc/bunny_love.tscn" id="62_lmifq"]
-[ext_resource type="PackedScene" uid="uid://b7de2qvboavwn" path="res://scenes/EnvironmentObjects/Obstacles/gaensebluemchen.tscn" id="63_dyy75"]
-[ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="70_lmifq"]
+[ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_puc63"]
+[ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="2_hnw1m"]
+[ext_resource type="PackedScene" uid="uid://bo7ds72obxh35" path="res://scenes/EnvironmentObjects/Obstacles/trampoline.tscn" id="3_mvwki"]
+[ext_resource type="PackedScene" uid="uid://ds2kjpvu182y0" path="res://scenes/EnvironmentObjects/pole.tscn" id="4_jmj8x"]
+[ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="5_pd8rw"]
+[ext_resource type="PackedScene" uid="uid://bppojpxqxwl4k" path="res://scenes/EnvironmentObjects/leo.tscn" id="6_hoa4t"]
+[ext_resource type="PackedScene" uid="uid://bsm4hc7ewy2bu" path="res://scenes/EnvironmentObjects/eye.tscn" id="7_7kfqy"]
+[ext_resource type="PackedScene" uid="uid://cq42j031f7v1o" path="res://scenes/EnvironmentObjects/reclam.tscn" id="8_kprro"]
+[ext_resource type="PackedScene" uid="uid://dkiepgksa1te6" path="res://scenes/EnvironmentObjects/zigaretten.tscn" id="9_dom4v"]
+[ext_resource type="PackedScene" uid="uid://4vv4vr83shif" path="res://scenes/EnvironmentObjects/yield.tscn" id="10_jvvaj"]
+[ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="11_xkmml"]
+[ext_resource type="PackedScene" uid="uid://k6f2r7tmtvlb" path="res://scenes/EnvironmentObjects/gulli_3.tscn" id="12_x5g1v"]
+[ext_resource type="PackedScene" uid="uid://qxr4i01dqg4m" path="res://scenes/EnvironmentObjects/gulli_4.tscn" id="13_fqinl"]
+[ext_resource type="PackedScene" uid="uid://cb8tooji1fm0o" path="res://scenes/EnvironmentObjects/gulli.tscn" id="14_xe00i"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="15_ca5qb"]
+[ext_resource type="Texture2D" uid="uid://cwu1wa6jl7lbn" path="res://assets/images/photos/breznak.png" id="16_efefe"]
+[ext_resource type="Texture2D" uid="uid://oyy2or6lqq7n" path="res://assets/images/photos/bild.png" id="17_5qnix"]
+[ext_resource type="Texture2D" uid="uid://duy10k5w3q6a2" path="res://assets/images/photos/bild2.png" id="18_ek3nq"]
+[ext_resource type="PackedScene" uid="uid://djwsv77l05fqn" path="res://scenes/EnvironmentObjects/zeitung.tscn" id="19_n4khy"]
+[ext_resource type="PackedScene" uid="uid://dbi7dabob2xr5" path="res://scenes/EnvironmentObjects/schild.tscn" id="20_3grx3"]
+[ext_resource type="Texture2D" uid="uid://bedtum68bed4r" path="res://assets/images/photos/reclam.png" id="21_n83ne"]
+[ext_resource type="PackedScene" uid="uid://d1114jsogyu88" path="res://scenes/EnvironmentObjects/einfahrt.tscn" id="22_1pdv0"]
+[ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="23_hfh31"]
+[ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="24_sellv"]
+[ext_resource type="Texture2D" uid="uid://bjy23a0cbs854" path="res://assets/images/photos/gulli4.png" id="25_2en8o"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="26_wh06c"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="27_c2jfu"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="28_gh2fr"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="29_q5f3c"]
+[ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="30_uq1tj"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="31_vsj6i"]
+[ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="32_7m2cs"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/reifen.tscn" id="33_sefq2"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/isetta.tscn" id="34_kmssj"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="35_w6fbt"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_0a16p"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/redlight.tscn" id="37_8h2cb"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="38_5vcld"]
+[ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="39_3rpxd"]
+[ext_resource type="PackedScene" uid="uid://ba30px4pqwxrq" path="res://scenes/EnvironmentObjects/blume_1.tscn" id="40_twwkc"]
+[ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="41_426ba"]
+[ext_resource type="PackedScene" uid="uid://dg3mb3s3hl5tq" path="res://scenes/EnvironmentObjects/blume_2.tscn" id="42_7sxu4"]
+[ext_resource type="Texture2D" uid="uid://dwtbv0645sp7l" path="res://assets/images/photos/gulli3.png" id="43_i2ewu"]
+[ext_resource type="PackedScene" uid="uid://cvt85hwqbxe5d" path="res://scenes/EnvironmentObjects/bild.tscn" id="44_vl0f3"]
+[ext_resource type="PackedScene" uid="uid://eabnrkt448ts" path="res://scenes/EnvironmentObjects/breznak.tscn" id="45_0t7wf"]
+[ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="46_un4hr"]
+[ext_resource type="PackedScene" uid="uid://cqy2067hkppla" path="res://scenes/EnvironmentObjects/misc/yeh_flower.tscn" id="47_vppwm"]
+[ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="48_80jos"]
+[ext_resource type="PackedScene" uid="uid://bb60f7pufgkvc" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
+[ext_resource type="PackedScene" uid="uid://dmrlpd5rmfaan" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
+[ext_resource type="PackedScene" uid="uid://1y4iqx8jvmf5" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
+[ext_resource type="PackedScene" uid="uid://bkwxktyxjbisq" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
+[ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="53_p2apg"]
+[ext_resource type="PackedScene" uid="uid://1s55niglbayl" path="res://scenes/EnvironmentObjects/misc/teto_love.tscn" id="54_baflj"]
+[ext_resource type="PackedScene" uid="uid://itm5pkt7qf64" path="res://scenes/EnvironmentObjects/misc/bunny_love.tscn" id="55_pu5fs"]
+[ext_resource type="PackedScene" uid="uid://c2mkolo104wgq" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
+[ext_resource type="PackedScene" uid="uid://sde60sn8u46e" path="res://scenes/EnvironmentObjects/Obstacles/flower.tscn" id="57_xuxe5"]
+[ext_resource type="PackedScene" uid="uid://doa0bax35p5je" path="res://scenes/EnvironmentObjects/Obstacles/windmill.tscn" id="58_0cfh7"]
+[ext_resource type="PackedScene" uid="uid://bkjieb8en8qgi" path="res://scenes/EnvironmentObjects/kafka.tscn" id="59_icwdw"]
+[ext_resource type="PackedScene" uid="uid://u8qq6esgpedx" path="res://scenes/EnvironmentObjects/taschenmesser.tscn" id="60_t1w8w"]
+[ext_resource type="PackedScene" uid="uid://dh0d0fcqlb7nc" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
+[ext_resource type="PackedScene" uid="uid://b7de2qvboavwn" path="res://scenes/EnvironmentObjects/Obstacles/gaensebluemchen.tscn" id="62_76b8n"]
+[ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="63_hpdqr"]
+[ext_resource type="PackedScene" uid="uid://rpqnhe6twc2a" path="res://scenes/EnvironmentObjects/misc/arrow_1.tscn" id="64_npugr"]
+[ext_resource type="PackedScene" uid="uid://dh5nyeua5j5k2" path="res://scenes/EnvironmentObjects/misc/arrow_4.tscn" id="65_rliho"]
+[ext_resource type="PackedScene" uid="uid://dgnn4whbw7d7k" path="res://scenes/EnvironmentObjects/misc/arrow_2.tscn" id="66_wfufh"]
+[ext_resource type="PackedScene" uid="uid://drh7w1kw1envp" path="res://scenes/EnvironmentObjects/misc/arrow_5.tscn" id="67_nj6o4"]
+[ext_resource type="PackedScene" uid="uid://d1wjo8g6fnp2r" path="res://scenes/EnvironmentObjects/misc/arrow_3.tscn" id="68_ld05y"]
+[ext_resource type="PackedScene" uid="uid://c11q60jv54e0h" path="res://scenes/EnvironmentObjects/misc/arrow_6.tscn" id="69_fa2v0"]
+[ext_resource type="Script" uid="uid://cr82wba3404if" path="res://scenes/woldboundss/world_bounderies.gd" id="70_hnw1m"]
+[ext_resource type="PackedScene" uid="uid://bn8ts77vewg4e" path="res://scenes/EnvironmentObjects/misc/arrow_7.tscn" id="70_ro8g5"]
+[ext_resource type="PackedScene" uid="uid://bh36khiteekr2" path="res://scenes/end_scene/bathroom.tscn" id="72_mvwki"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puc63"]
+size = Vector2(58697, 6649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnw1m"]
+size = Vector2(58697, 7529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvwki"]
+size = Vector2(13986.8, 26827)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmj8x"]
+size = Vector2(17707.4, 26909)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3y6uy"]
 frequency = 0.0043
@@ -79,7 +93,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_3y6uy")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4wg66"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -100,7 +114,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_4wg66")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_434gd"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.67058, 0.655483, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -121,7 +135,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_o7m6t")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5t7de"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -142,7 +156,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_jonfs")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_137kd"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.603461, 0.631781, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -303,7 +317,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_nwnc6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_auqnv"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -324,7 +338,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_kvor3")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_155hr"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -345,7 +359,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_8rkkq")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7ccy"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.650215, 0.545754, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -366,7 +380,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_51hpo")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_rbl2x"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.513726, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
@@ -387,7 +401,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_k8o0i")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qtlrg"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.977553, 0.723897, 0, 1)
 shader_parameter/color_tint = Color(0, 0.431695, 0.71076, 1)
@@ -408,7 +422,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_hvge1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lmifq"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.246685, 0.54339, 1)
@@ -429,7 +443,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_sbg10")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_6db7r"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1.05888e-06, 0.939537, 0.69366, 1)
 shader_parameter/color_tint = Color(0.772092, 0.495016, 1, 1)
@@ -450,7 +464,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_x7slr")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_x6d88"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1.73271e-06, 0.751817, 0.5367, 1)
 shader_parameter/color_tint = Color(0.978486, 0.000807441, 0.981521, 1)
@@ -464,7 +478,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_fekjo"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.39355, 0.664279, 1)
@@ -478,7 +492,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_op8ru"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1.99743e-06, 0.482175, 0.266007, 1)
 shader_parameter/color_tint = Color(0.689884, 0.59411, 1, 1)
@@ -499,7 +513,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_s8go1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_oiexf"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.732678, 0.416326, 1)
 shader_parameter/color_tint = Color(0.15124, 0.152746, 0, 1)
@@ -513,7 +527,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jhphb"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.498932, 0.635923, 0.446624, 1)
@@ -527,7 +541,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gfili"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.987891, 0, 0.29245, 1)
 shader_parameter/color_tint = Color(1, 0.833333, 0, 1)
@@ -541,7 +555,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4lo1g"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.742644, 0.556787, 0, 1)
@@ -562,7 +576,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_gpcj6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kyjm3"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.33, 0.575667, 1)
 shader_parameter/color_tint = Color(0, 0.910908, 0.853495, 1)
@@ -583,7 +597,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_dyy75")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w641k"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.59518, 0.344287, 1)
 shader_parameter/color_tint = Color(4.81307e-07, 0.636991, 0.745919, 1)
@@ -597,7 +611,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_15ncb"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.255659, 0.255659, 0.255659, 1)
@@ -611,7 +625,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0n0jg"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.788962, 0, 0.165775, 1)
@@ -625,7 +639,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jaskx"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.7, 0, 1)
@@ -639,7 +653,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7y2hu"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.392522, 0.705341, 0, 1)
@@ -653,7 +667,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_t63gx"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.873298, 0.873298, 0.873298, 1)
@@ -667,7 +681,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_efqc4"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.912775, 0.285427, 0, 1)
@@ -681,7 +695,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_v0nwd"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.23426, 0.293346, 1, 1)
@@ -695,7 +709,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4sjbg"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.24, 0.24, 1)
@@ -716,7 +730,7 @@ seamless = true
 noise = SubResource("FastNoiseLite_6db7r")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ihnes"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.833079, 1.34766e-06, 0.492078, 1)
 shader_parameter/color_tint = Color(0.771949, 0.771439, 0.716126, 1)
@@ -730,7 +744,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_f3rew"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.130844, 0, 0.867469, 1)
 shader_parameter/color_tint = Color(0, 0.684647, 0.868583, 1)
@@ -744,7 +758,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3ri3j"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.455051, 0.774696, 1)
 shader_parameter/color_tint = Color(1, 0.885053, 0.502821, 1)
@@ -758,7 +772,7 @@ shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_01jn4"]
-shader = ExtResource("10_0pdxe")
+shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.783523, 0.783523, 0.783523, 1)
@@ -771,118 +785,154 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvwki"]
+shader = ExtResource("15_ca5qb")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0.734472, 0.445204, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 9.896
+shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [node name="Main" type="Node2D"]
 
-[node name="Bg" parent="." instance=ExtResource("1_wk6ws")]
+[node name="Bg" parent="." instance=ExtResource("1_puc63")]
 position = Vector2(2721, -9273)
 scale = Vector2(28.6653, 28.6653)
 metadata/_edit_lock_ = true
 
-[node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
+[node name="WorldBounderies" type="Area2D" parent="."]
+script = ExtResource("70_hnw1m")
+
+[node name="Bottom" type="CollisionShape2D" parent="WorldBounderies"]
+position = Vector2(2787, 7540.5)
+shape = SubResource("RectangleShape2D_puc63")
+
+[node name="Top" type="CollisionShape2D" parent="WorldBounderies"]
+position = Vector2(2770, -26429)
+shape = SubResource("RectangleShape2D_hnw1m")
+
+[node name="Right" type="CollisionShape2D" parent="WorldBounderies"]
+position = Vector2(25163.4, -9184.5)
+shape = SubResource("RectangleShape2D_mvwki")
+
+[node name="Left" type="CollisionShape2D" parent="WorldBounderies"]
+position = Vector2(-17786.7, -9156.5)
+shape = SubResource("RectangleShape2D_jmj8x")
+
+[node name="PlayerBody" parent="." instance=ExtResource("2_hnw1m")]
+position = Vector2(8449, -14084)
+collision_layer = 3
 max_contacts_reported = 3
+metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
 
 [node name="Env" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Trampoline13" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline13" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(2390, 64)
 rotation = 0.424969
 
-[node name="Trampoline17" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline17" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(2929, -4282)
 rotation = -0.0134494
 
-[node name="Trampoline18" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline18" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(-245, -5648)
 rotation = -0.141573
 
-[node name="Trampoline21" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline21" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(4015, -5217)
 rotation = 0.094141
 
-[node name="Trampoline22" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline22" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(4246, -5653)
 rotation = 0.094141
 
-[node name="Trampoline19" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline19" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(-742, -6114)
 rotation = 0.385683
 
-[node name="Trampoline23" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline23" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(3040, -10272)
 rotation = 0.385683
 
-[node name="Trampoline20" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline20" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(-166, -6276)
 rotation = -0.506
 
-[node name="Trampoline14" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline14" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(4847, -122)
 rotation = -0.38337
 
-[node name="Trampoline15" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline15" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(2755, -449)
 rotation = 0.0208447
 
-[node name="Trampoline16" parent="Env" instance=ExtResource("4_oc67x")]
+[node name="Trampoline16" parent="Env" instance=ExtResource("3_mvwki")]
 position = Vector2(2292, -752)
 rotation = 0.30017
 
-[node name="pole" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(2878, -1022)
 rotation = 0.406907
 scale = Vector2(0.38458, 0.38458)
 
-[node name="pole2" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole2" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(3090, -1209)
 rotation = 1.23474
 scale = Vector2(0.38458, 0.38458)
 
-[node name="A" parent="Env" instance=ExtResource("6_4wg66")]
+[node name="A" parent="Env" instance=ExtResource("5_pd8rw")]
 position = Vector2(2096, -1586)
 
-[node name="leo" parent="Env" instance=ExtResource("7_hcqwe")]
+[node name="leo" parent="Env" instance=ExtResource("6_hoa4t")]
 position = Vector2(2258, -1007)
 rotation = -0.192524
 scale = Vector2(0.667729, 0.667729)
 
-[node name="Eye" parent="Env" instance=ExtResource("8_qktsu")]
+[node name="Eye" parent="Env" instance=ExtResource("7_7kfqy")]
 position = Vector2(2587, -504)
 rotation = -0.593016
 scale = Vector2(0.36, 0.36)
 
-[node name="reclam" parent="Env" instance=ExtResource("18_o7m6t")]
+[node name="reclam" parent="Env" instance=ExtResource("8_kprro")]
 position = Vector2(4859, -2626)
 rotation = -1.12698
 
-[node name="zigaretten" parent="Env" instance=ExtResource("10_k81dp")]
+[node name="zigaretten" parent="Env" instance=ExtResource("9_dom4v")]
 position = Vector2(3864, -2835)
 rotation = -0.958182
 
-[node name="yield" parent="Env" instance=ExtResource("5_j6ebo")]
+[node name="yield" parent="Env" instance=ExtResource("10_jvvaj")]
 z_index = 65
 position = Vector2(2865, -2776)
 rotation = 1.60813
 scale = Vector2(1.82735, 1.82735)
 
-[node name="platform6" parent="Env" instance=ExtResource("2_d4148")]
+[node name="platform6" parent="Env" instance=ExtResource("11_xkmml")]
 position = Vector2(-1921, -6537)
 rotation = 0.700269
 scale = Vector2(0.810977, 1)
 
-[node name="yield2" parent="Env" instance=ExtResource("5_j6ebo")]
+[node name="yield2" parent="Env" instance=ExtResource("10_jvvaj")]
 position = Vector2(4017, -1673)
 scale = Vector2(0.436059, 0.660824)
 
-[node name="gulli3" parent="Env" instance=ExtResource("7_74n1c")]
+[node name="gulli3" parent="Env" instance=ExtResource("12_x5g1v")]
 position = Vector2(3097, -383)
 scale = Vector2(0.239999, 0.239999)
 
-[node name="gulli4" parent="Env" instance=ExtResource("8_7wess")]
+[node name="gulli4" parent="Env" instance=ExtResource("13_fqinl")]
 position = Vector2(3525, -398)
 scale = Vector2(0.36, 0.36)
 
-[node name="gulli" parent="Env" instance=ExtResource("9_0pdxe")]
+[node name="gulli" parent="Env" instance=ExtResource("14_xe00i")]
 position = Vector2(3938, -381)
 scale = Vector2(0.24, 0.24)
 
@@ -891,7 +941,7 @@ position = Vector2(4490, 254)
 
 [node name="Breznak" type="Sprite2D" parent="Env/Breznak"]
 material = SubResource("ShaderMaterial_4wg66")
-texture = ExtResource("11_ovmwo")
+texture = ExtResource("16_efefe")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/Breznak"]
 visible = false
@@ -903,7 +953,7 @@ metadata/_edit_group_ = true
 
 [node name="Bild" type="Sprite2D" parent="Env/Bild"]
 material = SubResource("ShaderMaterial_434gd")
-texture = ExtResource("12_3y6uy")
+texture = ExtResource("17_5qnix")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/Bild"]
 polygon = PackedVector2Array(-418, -373.1, -418, -372, -450.1, -372, -452.1, -369, -454.2, -369, -448, -284.9, -448, -279.2, -450.8, -248, -451.9, -248, -454.9, -156, -456, -156, -456, 27, -457.7, 37, -460, 37, -457, 44.4, -461.9, 113, -463, 113, -462, 186, -462, 204.2, -462.8, 205, -465, 205, -465, 216, -466.2, 216, -463.9, 246, -463.3, 246, -465.8, 263, -467, 263, -467, 280.5, -464, 286.5, -464, 288.8, -436.1, 292, -433.9, 292, -388.8, 288, -383.1, 288, -306.1, 292, -302, 292, -96, 287, -86.3, 287, -63.2, 291, -50.7, 291, -34, 286.5, 14, 288, 22.1, 288, 59.2, 285, 77.6, 285, 85, 286.6, 85, 288.1, 128.1, 286, 174.9, 286, 331, 291, 332.2, 291, 342, 288.6, 342, 287.9, 449.1, 283, 455.8, 283, 459.8, 279, 462.1, 279, 452, 79.9, 452, 44.7, 447.4, 31, 449.7, 16, 451, 16, 451, -28.1, 449, -45, 449, -52.4, 443.4, -66.9, 445.5, -75, 447.1, -75, 442.9, -189, 442, -189, 442, -253.8, 446, -289.9, 446, -301.2, 438, -348.3, 438, -351.1, 376.9, -348, 371.4, -348, 364, -349.7, 364, -351, 288, -352, 288, -353, -141, -359, -157.9, -359, -293, -368.9, -293, -370)
@@ -915,24 +965,24 @@ metadata/_edit_group_ = true
 
 [node name="Bild2" type="Sprite2D" parent="Env/Bild2"]
 material = SubResource("ShaderMaterial_5t7de")
-texture = ExtResource("13_55gqm")
+texture = ExtResource("18_ek3nq")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/Bild2"]
 polygon = PackedVector2Array(130, -321.1, 130, -319.9, -6, -310.9, -6, -310.1, -30, -311, -44.8, -311, -105.9, -318, -137.1, -318, -232.2, -309, -233.2, -310, -235, -310, -298.1, -307, -313.4, -307, -322.4, -303, -324.9, -303, -335.9, -48, -337.2, -48, -335, -20.8, -335, -5.20001, -337.8, 21, -339, 21, -342, 220, -343.3, 220, -340, 243.3, -340, 246, -264.9, 246, -243, 243.8, -243, 242.9, -111, 238.9, -111, 238.2, -92.1, 240, -81.8, 240, -63, 236.7, -63, 235.9, 233, 232, 237.1, 232, 273.2, 229, 320.8, 229, 323.8, 226, 326, 226, 329, 98, 329, 81.9, 324.8, 46, 323.9, 46, 321.9, -5, 321.1, -5, 322.9, -51, 324.1, -51, 319.9, -155, 319.2, -155, 322.9, -207, 324.1, -207, 321, -308.1, 321, -312.2, 317, -314.3, 317, -316.1, 272.9, -314, 266.1, -314)
 
-[node name="zeitung" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(1722, -2439)
 rotation = -0.800074
 
-[node name="zeitung2" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung2" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(1239, -2248)
 rotation = -0.814168
 
-[node name="zeitung3" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung3" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(821, -2024)
 rotation = -0.795795
 
-[node name="schild" parent="Env" instance=ExtResource("17_434gd")]
+[node name="schild" parent="Env" instance=ExtResource("20_3grx3")]
 position = Vector2(409, -1433)
 scale = Vector2(0.48, 0.48)
 
@@ -948,7 +998,7 @@ sync_to_physics = false
 [node name="Reclam" type="Sprite2D" parent="Env/reclamtitled"]
 material = SubResource("ShaderMaterial_137kd")
 position = Vector2(55.9265, 226.025)
-texture = ExtResource("22_k81dp")
+texture = ExtResource("21_n83ne")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/reclamtitled"]
 position = Vector2(66.4052, 235.864)
@@ -968,7 +1018,7 @@ sync_to_physics = false
 
 [node name="Reclam" type="Sprite2D" parent="Env/reclamvertical"]
 material = SubResource("ShaderMaterial_137kd")
-texture = ExtResource("22_k81dp")
+texture = ExtResource("21_n83ne")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/reclamvertical"]
 polygon = PackedVector2Array(77, -436, 77, -435, -198, -432, -260, -432, -260, -431, -269.1, -431, -271.1, -428, -273, -428, -275, 69, -276, 69, -275, 411, -275, 416.8, -271, 420.8, -271, 422.9, -129, 430.8, -129, 432, 95, 435.9, 95, 437.1, 224.1, 432, 244.1, 432, 270.2, 429, 282.1, 429, 284.1, 426, 286, 426, 288, 169, 289, 169, 286, -352, 286, -429.1, 283, -431.1, 283, -433, 275, -433, 275, -434, 229, -435, 229, -436)
@@ -979,33 +1029,33 @@ libraries = {
 }
 autoplay = "moveObject"
 
-[node name="Einfahrt" parent="Env" instance=ExtResource("20_5t7de")]
+[node name="Einfahrt" parent="Env" instance=ExtResource("22_1pdv0")]
 position = Vector2(5487, -1867)
 scale = Vector2(1.84371, 1.83125)
 
-[node name="pole3" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole3" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(2850, -402)
 rotation = 1.51901
 scale = Vector2(0.438672, 0.438672)
 
-[node name="zeitung4" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung4" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(2347, -658)
 rotation = 1.01995
 scale = Vector2(0.538897, 0.538897)
 
-[node name="poseidon" parent="Env" instance=ExtResource("26_j2mqq")]
+[node name="poseidon" parent="Env" instance=ExtResource("23_hfh31")]
 position = Vector2(3494, -4002)
 rotation = -0.119798
 
 [node name="gulli5" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(-447, -3805)
 scale = Vector2(0.320005, 0.320005)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 100.0
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli5"]
 material = SubResource("ShaderMaterial_auqnv")
-texture = ExtResource("27_av465")
+texture = ExtResource("25_2en8o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli5"]
 polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
@@ -1013,12 +1063,12 @@ polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -
 [node name="gulli6" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(-142, -4203)
 scale = Vector2(0.320005, 0.320005)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -100.0
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli6"]
 material = SubResource("ShaderMaterial_auqnv")
-texture = ExtResource("27_av465")
+texture = ExtResource("25_2en8o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli6"]
 polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
@@ -1026,13 +1076,13 @@ polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -
 [node name="gulli7" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(326, -4023)
 scale = Vector2(0.320005, 0.320005)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 120.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli7"]
 material = SubResource("ShaderMaterial_auqnv")
-texture = ExtResource("27_av465")
+texture = ExtResource("25_2en8o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli7"]
 polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
@@ -1041,13 +1091,13 @@ polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -
 position = Vector2(5985, -9405)
 rotation = 1.02958
 scale = Vector2(0.320005, 0.320005)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -160.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli27"]
 material = SubResource("ShaderMaterial_auqnv")
-texture = ExtResource("27_av465")
+texture = ExtResource("25_2en8o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli27"]
 polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
@@ -1055,51 +1105,51 @@ polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -
 [node name="gulli9" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(1094, -4245)
 scale = Vector2(0.320005, 0.320005)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 130.0
 metadata/_edit_group_ = true
 
 [node name="Gulli4" type="Sprite2D" parent="Env/gulli9"]
 material = SubResource("ShaderMaterial_auqnv")
-texture = ExtResource("27_av465")
+texture = ExtResource("25_2en8o")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli9"]
 polygon = PackedVector2Array(-40, -396.1, -40, -394.6, -77, -386, -80.4, -386, -106, -376.4, -124.2, -374, -128.6, -374, -143, -364, -152.1, -361, -156.8, -361, -165.7, -353, -171.8, -353, -183, -341.8, -190.3, -339, -192.8, -339, -198.5, -333.4, -200.8, -334, -202.8, -334, -220.9, -317, -224.8, -317, -228, -313.8, -228, -310.1, -249.7, -294, -251.4, -294, -254, -287.4, -254, -286, -263.7, -278, -265.2, -278, -268, -272.5, -268, -271, -282.9, -257, -284.4, -257, -287, -249.3, -287, -248.3, -289.5, -247, -291.8, -247, -295, -243.8, -295, -240, -301.7, -235, -303.3, -235, -304.4, -232.5, -302.5, -230.7, -304.7, -229, -306.4, -229, -310.4, -219, -312.6, -219, -311, -213, -312.8, -211, -314.3, -211, -331.3, -174, -333.6, -174, -332, -168, -341, -156, -343, -156, -343, -140.5, -348.2, -130, -349.7, -130, -351, -122.2, -351, -105.3, -356.5, -87, -357.9, -87, -359.9, -52, -362.2, -52, -358.3, -44.2, -359.8, -34, -361.2, -34, -359, -5.79999, -359, 1.20001, -351, 51.3, -351, 53.4, -321, 131.4, -321, 134, -314.7, 139, -314.1, 139, -302, 159.4, -302, 161.7, -284, 183.6, -284, 185.8, -261, 211.7, -261, 214, -240.7, 230, -238.2, 230, -238, 230.5, -238, 232.9, -230.7, 239, -227, 239, -223, 244.6, -223, 246.3, -220.5, 247.4, -218.2, 245, -213.7, 248, -212.1, 248, -209, 252.6, -209, 254.2, -187, 265.2, -187, 266.3, -130, 289.3, -130, 290.6, -102, 297.5, -102, 298.7, -57, 305.7, -57, 306.9, 9, 309, 13.3, 309, 21, 306.4, 31.8, 308, 34.8, 308, 38, 304.8, 38, 303.6, 52, 300.6, 52, 300, 71.2, 300, 111.1, 290, 114.8, 290, 126, 279.9, 149.3, 272, 152.8, 272, 164.4, 261.3, 166.8, 262, 169.7, 262, 189, 245.9, 201.4, 243, 204.8, 243, 257.8, 191, 259.4, 191, 262, 184.4, 262, 182.7, 268.9, 175, 270.1, 175, 288, 146.6, 288, 144.7, 303, 126, 304.2, 126, 322.2, 90, 323.5, 90, 339.5, 34, 340.8, 34, 345.8, -7, 347, -7, 346, -76, 346, -89.2, 333, -153.4, 333, -156.5, 322.2, -178, 321.5, -178, 319, -188, 319, -192.6, 306, -211.7, 306, -216.9, 289.8, -232, 288.1, -232, 264, -267.7, 264, -269.8, 253.8, -280, 251, -280, 245, -288.6, 245, -292, 218, -314.1, 218, -315.2, 206.5, -321, 205.2, -321, 203, -325.5, 203, -327.2, 179.5, -340, 177.7, -340, 169, -347.9, 169, -349.2, 125, -371.3, 125, -372.8, 101.1, -375, 99.5, -375, 86, -380.4, 86, -382.4, 78.6, -381, 74.4, -381, 68, -383.5, 68, -384.7, 34, -389.8, 34, -391, 0.5, -391, -3, -392.4, -3, -393.9)
 
-[node name="fahrradstr" parent="Env" instance=ExtResource("29_0qtus")]
+[node name="fahrradstr" parent="Env" instance=ExtResource("26_wh06c")]
 position = Vector2(-328, -3376)
 scale = Vector2(0.159998, 0.159998)
 
-[node name="broetchen1" parent="Env" instance=ExtResource("30_6pish")]
+[node name="broetchen1" parent="Env" instance=ExtResource("27_c2jfu")]
 position = Vector2(1709, -4690)
 rotation = 1.47893
 scale = Vector2(0.558168, 0.558168)
 
-[node name="broetchen2" parent="Env" instance=ExtResource("31_lv4xw")]
+[node name="broetchen2" parent="Env" instance=ExtResource("28_gh2fr")]
 position = Vector2(2164, -4733)
 rotation = 1.41938
 scale = Vector2(0.443716, 0.443716)
 
-[node name="broetchen" parent="Env" instance=ExtResource("32_kvor3")]
+[node name="broetchen" parent="Env" instance=ExtResource("29_q5f3c")]
 position = Vector2(2676, -4737)
 scale = Vector2(0.523398, 0.52)
 
 [node name="schild2" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(3025, -5106)
 scale = Vector2(0.240002, 0.240002)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 100.0
 metadata/_edit_group_ = true
 
 [node name="Schild2" type="Sprite2D" parent="Env/schild2"]
 material = SubResource("ShaderMaterial_155hr")
-texture = ExtResource("32_lv4xw")
+texture = ExtResource("30_uq1tj")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/schild2"]
 visible = false
 polygon = PackedVector2Array(-41, -348.1, -41, -346.9, -77.1, -345, -86.2, -345, -118.4, -338, -127.4, -338, -185.4, -315, -188.5, -315, -224.5, -294, -226.7, -294, -261.7, -267, -263.8, -267, -300.8, -230, -302, -230, -334, -186, -335.2, -186, -352.2, -152, -353.4, -152, -369.4, -108, -370.6, -108, -379.7, -65, -380.8, -65, -383.9, -28, -385.1, -28, -382, 29.1, -382, 37.2, -371, 83, -371, 87.4, -349, 141.5, -349, 144.6, -320, 191.6, -320, 193.8, -294, 221.8, -294, 223.9, -253, 260.8, -253, 262.1, -226, 280.1, -226, 281.2, -177, 306.2, -177, 307.4, -129, 323.4, -129, 324.7, -86, 331.7, -86, 333, -34, 334, -4.79999, 334, 61.4, 322, 66.4, 322, 84.4, 315, 87.5, 315, 127.5, 296, 129.6, 296, 158.6, 277, 160.7, 277, 193.7, 249, 195.9, 249, 219.8, 224, 224.2, 224, 230, 213.5, 235.3, 211, 237.7, 211, 239, 202.1, 239, 200.5, 259, 172, 260.2, 172, 268.2, 156, 269.3, 156, 288.3, 111, 289.6, 111, 303.5, 52, 304.9, 52, 307.9, 2, 309.2, 2, 304, -56, 304, -62.3, 296, -93, 296, -97.4, 285, -126.5, 285, -129.5, 267, -165.5, 267, -167.6, 253, -188.7, 253, -190.7, 221, -229.7, 221, -231.9, 187, -264, 187, -265, 165, -281.1, 165, -282.1, 126, -305.2, 126, -306.3, 105, -315.3, 105, -316.5, 43, -336.5, 43, -337.7, 5, -343.8, 5, -344.9)
 
-[node name="spielstr" parent="Env" instance=ExtResource("33_kvor3")]
+[node name="spielstr" parent="Env" instance=ExtResource("31_vsj6i")]
 position = Vector2(5153, -5040)
 rotation = 0.387761
 scale = Vector2(2.43279, 2.43279)
@@ -1108,13 +1158,13 @@ scale = Vector2(2.43279, 2.43279)
 position = Vector2(6348, -4311)
 rotation = -0.0725476
 scale = Vector2(-0.699918, -0.699918)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -160.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole4"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole4"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
@@ -1123,13 +1173,13 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(775, -254)
 rotation = -0.0725476
 scale = Vector2(-0.699918, -0.699918)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 80.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole7"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole7"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
@@ -1138,13 +1188,13 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(1212, -263)
 rotation = -1.64523
 scale = Vector2(-0.699918, -0.699918)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 80.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole8"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole8"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
@@ -1153,13 +1203,13 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(1666, -274)
 rotation = -0.0725476
 scale = Vector2(-0.699918, -0.699918)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 80.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole9"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole9"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
@@ -1168,13 +1218,13 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(5144, -11009)
 rotation = -0.0725476
 scale = Vector2(-0.699918, -0.699918)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 120.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole14"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole14"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
@@ -1183,13 +1233,13 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(6781, -4799)
 rotation = -1.63668
 scale = Vector2(-0.426009, -0.426009)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -160.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole5"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole5"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
@@ -1198,116 +1248,116 @@ polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, 
 position = Vector2(6813, -5482)
 rotation = -0.0725148
 scale = Vector2(-0.553993, -0.553993)
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -160.0
 metadata/_edit_group_ = true
 
 [node name="Pole" type="Sprite2D" parent="Env/pole6"]
 material = SubResource("ShaderMaterial_g7ccy")
-texture = ExtResource("35_ae2dv")
+texture = ExtResource("32_7m2cs")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/pole6"]
 polygon = PackedVector2Array(3, -412.4, 3, -410.4, -8.39999, -406, -14.9, -406, -25.9, -394, -27.8, -394, -28.8, -386, -29.9, -386, -68.9, 250, -70.6, 250, -67, 264, -67, 265.6, -69.7, 278, -71.1, 278, -70, 299.1, -70, 306.2, -71.8, 308, -74.1, 308, -73, 349.1, -76, 363.8, -76, 368.1, -84.7, 376, -86.5, 376, -89.5, 386, -91.2, 386, -90, 399.2, -90, 405.6, -87, 410.5, -87, 412.9, -80, 418.9, -80, 420.3, -51, 434.2, -51, 436, -26.5, 436, -2.5, 424, 0, 424, 17, 402, 20.2, 402, 18, 397.5, 18, 392.8, 19.8, 391, 21.2, 391, 22.3, 388.8, 18, 383, 16.4, 383, 16, 381.7, 16, 376.2, 7.90002, 367, 4.40002, 359, 3.79999, 359, 3, 353.7, 3, 344.1, 8, 341.1, 8, 337.3, 3, 331.3, 3, 328.3, 9.79999, 277, 11.3, 274.9, 9, 271.3, 9, 256.2, 31.8, -1, 33, -1, 33, -39.8, 62, -373.9, 62, -383.8, 51, -395.9, 51, -397.2, 37, -405.2, 37, -406.7)
 
-[node name="yield3" parent="Env" instance=ExtResource("5_j6ebo")]
+[node name="yield3" parent="Env" instance=ExtResource("10_jvvaj")]
 position = Vector2(7332, -4187)
 rotation = 1.13129
 
-[node name="reifen" parent="Env" instance=ExtResource("35_0wrp4")]
+[node name="reifen" parent="Env" instance=ExtResource("33_sefq2")]
 position = Vector2(7939, -5359)
 
-[node name="isetta" parent="Env" instance=ExtResource("35_kr8qw")]
+[node name="isetta" parent="Env" instance=ExtResource("34_kmssj")]
 position = Vector2(7570, -6269)
 rotation = -0.381527
 scale = Vector2(1.92406, 1.92406)
 
-[node name="leberkaes" parent="Env" instance=ExtResource("36_rj8kj")]
+[node name="leberkaes" parent="Env" instance=ExtResource("35_w6fbt")]
 position = Vector2(6809, -6446)
 
-[node name="zeitung5" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung5" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(3122, -4163)
 rotation = 0.664903
 
-[node name="schild1" parent="Env" instance=ExtResource("36_1srk6")]
+[node name="schild1" parent="Env" instance=ExtResource("36_0a16p")]
 position = Vector2(4933, -2919)
 rotation = -0.550847
 scale = Vector2(1.08623, 1.08623)
 
-[node name="zeitung6" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung6" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(5418, -3356)
 rotation = 0.188228
 scale = Vector2(1.76468, 1.76468)
 
-[node name="redlight" parent="Env" instance=ExtResource("36_ae2dv")]
+[node name="redlight" parent="Env" instance=ExtResource("37_8h2cb")]
 position = Vector2(6082, -3682)
 rotation = 0.842537
 
-[node name="StaticBody2D36" parent="Env" instance=ExtResource("2_d4148")]
+[node name="StaticBody2D36" parent="Env" instance=ExtResource("11_xkmml")]
 position = Vector2(6418, -2866)
 rotation = 1.47641
 
-[node name="StaticBody2D37" parent="Env" instance=ExtResource("2_d4148")]
+[node name="StaticBody2D37" parent="Env" instance=ExtResource("11_xkmml")]
 position = Vector2(6083, -1680)
 rotation = 2.07439
 
-[node name="StaticBody2D39" parent="Env" instance=ExtResource("2_d4148")]
+[node name="StaticBody2D39" parent="Env" instance=ExtResource("11_xkmml")]
 position = Vector2(5867, -862)
 rotation = 2.75345
 
-[node name="yellowlight" parent="Env" instance=ExtResource("34_ae2dv")]
+[node name="yellowlight" parent="Env" instance=ExtResource("38_5vcld")]
 position = Vector2(5328, -181)
 
-[node name="schild3" parent="Env" instance=ExtResource("36_1srk6")]
+[node name="schild3" parent="Env" instance=ExtResource("36_0a16p")]
 position = Vector2(5055, 36)
 rotation = 1.1554
 
-[node name="spielstr2" parent="Env" instance=ExtResource("33_kvor3")]
+[node name="spielstr2" parent="Env" instance=ExtResource("31_vsj6i")]
 position = Vector2(5234, -1186)
 scale = Vector2(0.84, 0.84)
 
-[node name="Bild3" parent="Env" instance=ExtResource("40_rj8kj")]
+[node name="Bild3" parent="Env" instance=ExtResource("39_3rpxd")]
 position = Vector2(4074, -6763)
 scale = Vector2(2.03895, 2.03895)
 
-[node name="Einfahrt2" parent="Env" instance=ExtResource("20_5t7de")]
+[node name="Einfahrt2" parent="Env" instance=ExtResource("22_1pdv0")]
 position = Vector2(3105, -6427)
 
-[node name="schild4" parent="Env" instance=ExtResource("36_1srk6")]
+[node name="schild4" parent="Env" instance=ExtResource("36_0a16p")]
 position = Vector2(2547, -6555)
 
-[node name="gulli8" parent="Env" instance=ExtResource("7_74n1c")]
+[node name="gulli8" parent="Env" instance=ExtResource("12_x5g1v")]
 position = Vector2(1450, -6414)
 
-[node name="Blume1" parent="Env" instance=ExtResource("41_86g1v")]
+[node name="Blume1" parent="Env" instance=ExtResource("40_twwkc")]
 position = Vector2(840, -6432)
 
-[node name="Frankfurt" parent="Env" instance=ExtResource("42_bdk5x")]
+[node name="Frankfurt" parent="Env" instance=ExtResource("41_426ba")]
 position = Vector2(247, -6338)
 
-[node name="schild5" parent="Env" instance=ExtResource("17_434gd")]
+[node name="schild5" parent="Env" instance=ExtResource("20_3grx3")]
 position = Vector2(3074, -6440)
 
-[node name="Blume2" parent="Env" instance=ExtResource("43_bdk5x")]
+[node name="Blume2" parent="Env" instance=ExtResource("42_7sxu4")]
 position = Vector2(2058, -6347)
 
-[node name="zeitung7" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung7" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(1234, -6125)
 rotation = -1.6909
 
-[node name="yellowlight2" parent="Env" instance=ExtResource("34_ae2dv")]
+[node name="yellowlight2" parent="Env" instance=ExtResource("38_5vcld")]
 position = Vector2(-1293, -6019)
 rotation = -1.85888
 
 [node name="gulli10" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(-1288, -6731)
 rotation = 0.0182014
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 100.0
 metadata/_edit_group_ = true
 
 [node name="Gulli3" type="Sprite2D" parent="Env/gulli10"]
 material = SubResource("ShaderMaterial_rbl2x")
-texture = ExtResource("44_du3fb")
+texture = ExtResource("43_i2ewu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli10"]
 polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
@@ -1315,13 +1365,13 @@ polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -
 [node name="gulli14" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(332, -7461)
 rotation = 0.0182014
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -100.0
 metadata/_edit_group_ = true
 
 [node name="Gulli3" type="Sprite2D" parent="Env/gulli14"]
 material = SubResource("ShaderMaterial_rbl2x")
-texture = ExtResource("44_du3fb")
+texture = ExtResource("43_i2ewu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli14"]
 polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
@@ -1329,13 +1379,13 @@ polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -
 [node name="gulli20" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(2236.53, -7995.27)
 rotation = 0.0182014
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = 100.0
 metadata/_edit_group_ = true
 
 [node name="Gulli3" type="Sprite2D" parent="Env/gulli20"]
 material = SubResource("ShaderMaterial_rbl2x")
-texture = ExtResource("44_du3fb")
+texture = ExtResource("43_i2ewu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli20"]
 polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
@@ -1343,507 +1393,503 @@ polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -
 [node name="gulli26" type="AnimatableBody2D" parent="Env" groups=["MovingObstacle"]]
 position = Vector2(4135, -8632)
 rotation = 0.0182014
-script = ExtResource("27_aosff")
+script = ExtResource("24_sellv")
 rotation_speed = -100.0
 metadata/_edit_group_ = true
 
 [node name="Gulli3" type="Sprite2D" parent="Env/gulli26"]
 material = SubResource("ShaderMaterial_rbl2x")
-texture = ExtResource("44_du3fb")
+texture = ExtResource("43_i2ewu")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Env/gulli26"]
 polygon = PackedVector2Array(-233, -355.1, -233, -352.3, -238.3, -350, -240.9, -350, -246.9, -343, -248.7, -343, -257.8, -279, -259, -279, -259, -246.3, -261.7, -231, -262.9, -231, -266, -178.1, -266, -177.2, -280, -53.1, -280, -36, -289.7, 28, -290.8, 28, -302.8, 140, -304.1, 140, -303, 158.1, -303, 166.7, -307, 195.9, -307, 200.8, -298, 209.8, -298, 212.2, -276.8, 210, -258, 215.4, -258, 218, -249, 214.4, -237, 215.7, -237, 217.2, -213.8, 215, -209.7, 215, -208, 216.1, -208, 217.8, -195.1, 219, -193.2, 219, -190.5, 216.3, -189, 217.8, -189, 220, -173, 220, -173, 221.2, -146.8, 219, -145.3, 219, -126, 225.4, -126, 227.1, -95.9, 226, -90.4, 226, -65, 230.7, -65, 232.1, -43.9, 231, -43.3, 231, -28, 233.7, -28, 235.4, -15.6, 233, -12, 235.1, -12, 237, 44, 236, 44.9, 236, 64, 240.5, 64, 242, 110.7, 242, 153, 248.7, 153, 250.1, 200.1, 248, 200.9, 248, 214, 251.5, 214, 253, 239.7, 253, 262.8, 257, 270.8, 257, 278.8, 249, 281.1, 249, 280, 224.9, 280, 222.3, 281.4, 218, 283, 218, 283, 205, 284.2, 205, 282, 186, 282, 185.3, 283.7, 174, 285, 174, 284, 115, 284, 114.1, 287.9, 43, 289.7, 43, 287, 34, 287, 31.6, 288.1, 30, 290.3, 30, 288, 13, 288, 7.40002, 289.4, 4, 291, 4, 291, -10, 292, -10, 292, -75.4, 293.1, -77, 295, -77, 296, -150, 296, -150.9, 303.9, -281, 305, -281, 305, -310, 293, -319, 293, -320.9, 202, -324, 201.2, -324, 90, -332.9, 90, -335.2, 83.5, -332, 66.3, -332, 59, -334.5, 59, -335.2, 56.8, -336.3, 52.3, -333, -170.9, -346, -188.3, -346, -190, -347.1, -190, -348.8, -201, -349.9, -201, -351.6, -211.1, -349, -219.6, -349)
 
-[node name="Bild4" parent="Env" instance=ExtResource("46_5lumb")]
+[node name="Bild4" parent="Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(2673, 520)
 
-[node name="fahrradstr2" parent="Env" instance=ExtResource("29_0qtus")]
+[node name="fahrradstr2" parent="Env" instance=ExtResource("26_wh06c")]
 position = Vector2(3960, -5864)
 scale = Vector2(0.164018, 0.164018)
 
-[node name="yield4" parent="Env" instance=ExtResource("5_j6ebo")]
+[node name="yield4" parent="Env" instance=ExtResource("10_jvvaj")]
 position = Vector2(-720, -6133)
 rotation = -1.1646
 scale = Vector2(0.869679, 0.869679)
 
-[node name="pole10" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole10" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(-98.9996, -5662)
 rotation = 1.34005
 scale = Vector2(0.410134, 0.410134)
 
-[node name="pole11" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole11" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(-19, -6347)
 rotation = 0.944747
 scale = Vector2(0.410134, 0.410134)
 
-[node name="Eye2" parent="Env" instance=ExtResource("8_qktsu")]
+[node name="Eye2" parent="Env" instance=ExtResource("7_7kfqy")]
 position = Vector2(-837, 315)
 rotation = -1.57753
 
-[node name="Breznak2" parent="Env" instance=ExtResource("45_5lumb")]
+[node name="Breznak2" parent="Env" instance=ExtResource("45_0t7wf")]
 position = Vector2(-166, 307)
 rotation = 1.759
 
-[node name="spielstr3" parent="Env" instance=ExtResource("33_kvor3")]
+[node name="spielstr3" parent="Env" instance=ExtResource("31_vsj6i")]
 position = Vector2(-364, -1390)
 rotation = -0.417041
 
-[node name="redlight2" parent="Env" instance=ExtResource("36_ae2dv")]
+[node name="redlight2" parent="Env" instance=ExtResource("37_8h2cb")]
 position = Vector2(-814, -167)
 rotation = -0.11697
 
-[node name="Einfahrt3" parent="Env" instance=ExtResource("20_5t7de")]
+[node name="Einfahrt3" parent="Env" instance=ExtResource("22_1pdv0")]
 position = Vector2(-446, -1927)
 rotation = -0.47391
 
-[node name="Breznak3" parent="Env" instance=ExtResource("45_5lumb")]
+[node name="Breznak3" parent="Env" instance=ExtResource("45_0t7wf")]
 position = Vector2(-653, -2394)
 rotation = -0.594996
 
-[node name="Bild5" parent="Env" instance=ExtResource("40_rj8kj")]
+[node name="Bild5" parent="Env" instance=ExtResource("39_3rpxd")]
 position = Vector2(-1016, -3030)
 rotation = 1.15128
 
-[node name="Bild6" parent="Env" instance=ExtResource("46_5lumb")]
+[node name="Bild6" parent="Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(-1335, -3641)
 rotation = 1.13678
 
-[node name="A2" parent="Env" instance=ExtResource("6_4wg66")]
+[node name="A2" parent="Env" instance=ExtResource("5_pd8rw")]
 position = Vector2(-1662, -4429)
 rotation = -0.457373
 
-[node name="Bild7" parent="Env" instance=ExtResource("40_rj8kj")]
+[node name="Bild7" parent="Env" instance=ExtResource("39_3rpxd")]
 position = Vector2(-1679, -5169)
 rotation = -0.397886
 
-[node name="Blume3" parent="Env" instance=ExtResource("41_86g1v")]
+[node name="Blume3" parent="Env" instance=ExtResource("40_twwkc")]
 position = Vector2(-1658, -5745)
 
-[node name="fahrradstr3" parent="Env" instance=ExtResource("29_0qtus")]
+[node name="fahrradstr3" parent="Env" instance=ExtResource("26_wh06c")]
 position = Vector2(-1228, -5611)
 rotation = 0.859793
 
-[node name="isetta2" parent="Env" instance=ExtResource("35_kr8qw")]
+[node name="isetta2" parent="Env" instance=ExtResource("34_kmssj")]
 position = Vector2(-994, -5056)
 
-[node name="pole12" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole12" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(-973, -4300)
 rotation = 2.61266
 
-[node name="spielstr5" parent="Env" instance=ExtResource("33_kvor3")]
+[node name="spielstr5" parent="Env" instance=ExtResource("31_vsj6i")]
 position = Vector2(3881, 432)
 rotation = -0.0443976
 
-[node name="zeitung8" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung8" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(3271, 290)
 rotation = 0.684279
 
-[node name="schild7" parent="Env" instance=ExtResource("36_1srk6")]
+[node name="schild7" parent="Env" instance=ExtResource("36_0a16p")]
 position = Vector2(2043, 269)
 rotation = 1.59019
 
-[node name="schild8" parent="Env" instance=ExtResource("17_434gd")]
+[node name="schild8" parent="Env" instance=ExtResource("20_3grx3")]
 position = Vector2(389, 379)
 rotation = -1.26899
 
-[node name="schild9" parent="Env" instance=ExtResource("36_1srk6")]
+[node name="schild9" parent="Env" instance=ExtResource("36_0a16p")]
 position = Vector2(6826, -3610)
 rotation = -0.0920417
 
-[node name="spielstr6" parent="Env" instance=ExtResource("33_kvor3")]
+[node name="spielstr6" parent="Env" instance=ExtResource("31_vsj6i")]
 position = Vector2(7020, -3075)
 rotation = -0.154541
 
-[node name="fahrradstr4" parent="Env" instance=ExtResource("29_0qtus")]
+[node name="fahrradstr4" parent="Env" instance=ExtResource("26_wh06c")]
 position = Vector2(7042, -2403)
 rotation = -0.135774
 
-[node name="Frankfurt3" parent="Env" instance=ExtResource("42_bdk5x")]
+[node name="Frankfurt3" parent="Env" instance=ExtResource("41_426ba")]
 position = Vector2(6226, -2297)
 rotation = -0.148076
 
-[node name="reclam3" parent="Env" instance=ExtResource("18_o7m6t")]
+[node name="reclam3" parent="Env" instance=ExtResource("8_kprro")]
 position = Vector2(6119, -2953)
 rotation = -0.0917692
 
-[node name="leberkaes2" parent="Env" instance=ExtResource("36_rj8kj")]
+[node name="leberkaes2" parent="Env" instance=ExtResource("35_w6fbt")]
 position = Vector2(6247, -3487)
 scale = Vector2(0.498143, 0.498143)
 
-[node name="isetta3" parent="Env" instance=ExtResource("35_kr8qw")]
+[node name="isetta3" parent="Env" instance=ExtResource("34_kmssj")]
 position = Vector2(6884, -1704)
 rotation = 0.37347
 
-[node name="schild10" parent="Env" instance=ExtResource("17_434gd")]
+[node name="schild10" parent="Env" instance=ExtResource("20_3grx3")]
 position = Vector2(6574, -1484)
 rotation = -0.881191
 
-[node name="zigaretten2" parent="Env" instance=ExtResource("10_k81dp")]
+[node name="zigaretten2" parent="Env" instance=ExtResource("9_dom4v")]
 position = Vector2(6254, -1031)
 rotation = 1.11775
 
-[node name="A3" parent="Env" instance=ExtResource("6_4wg66")]
+[node name="A3" parent="Env" instance=ExtResource("5_pd8rw")]
 position = Vector2(5664, -474)
 rotation = 1.18299
 
-[node name="Bild8" parent="Env" instance=ExtResource("40_rj8kj")]
+[node name="Bild8" parent="Env" instance=ExtResource("39_3rpxd")]
 position = Vector2(5644, -1321)
 rotation = -1.0437
 scale = Vector2(0.917257, 0.917257)
 
-[node name="gulli13" parent="Env" instance=ExtResource("7_74n1c")]
+[node name="gulli13" parent="Env" instance=ExtResource("12_x5g1v")]
 position = Vector2(6052, -1976)
 rotation = -1.13058
 scale = Vector2(0.729019, 0.729019)
 
-[node name="redlight3" parent="Env" instance=ExtResource("36_ae2dv")]
+[node name="redlight3" parent="Env" instance=ExtResource("37_8h2cb")]
 position = Vector2(5876, -1727)
 rotation = -1.18826
 scale = Vector2(0.73117, 0.73117)
 
-[node name="reclam4" parent="Env" instance=ExtResource("18_o7m6t")]
+[node name="reclam4" parent="Env" instance=ExtResource("8_kprro")]
 position = Vector2(1315, 343)
 rotation = 1.57516
 
-[node name="zeitung9" parent="Env" instance=ExtResource("16_dklac")]
+[node name="zeitung9" parent="Env" instance=ExtResource("19_n4khy")]
 position = Vector2(555, 219)
 rotation = 0.698752
 scale = Vector2(1.40241, 1.40241)
 
-[node name="Eye3" parent="Env" instance=ExtResource("53_0pt5c")]
+[node name="Eye3" parent="Env" instance=ExtResource("46_un4hr")]
 position = Vector2(416, -6153)
 rotation = -0.330501
 scale = Vector2(0.151649, 0.132691)
 
-[node name="Eye5" parent="Env" instance=ExtResource("53_0pt5c")]
+[node name="Eye5" parent="Env" instance=ExtResource("46_un4hr")]
 position = Vector2(289, -6147)
 rotation = -0.330501
 scale = Vector2(0.151649, 0.132691)
 
-[node name="Eye6" parent="Env" instance=ExtResource("53_0pt5c")]
+[node name="Eye6" parent="Env" instance=ExtResource("46_un4hr")]
 position = Vector2(362, -6199)
 rotation = -0.330501
 scale = Vector2(0.151649, 0.132691)
 
-[node name="Eye7" parent="Env" instance=ExtResource("53_0pt5c")]
+[node name="Eye7" parent="Env" instance=ExtResource("46_un4hr")]
 position = Vector2(240, -6192)
 rotation = -0.330501
 scale = Vector2(0.151649, 0.132691)
 
-[node name="YehFlower" parent="Env" instance=ExtResource("54_sp688")]
+[node name="YehFlower" parent="Env" instance=ExtResource("47_vppwm")]
 position = Vector2(3920, -2995)
 rotation = -0.0251959
 scale = Vector2(0.428494, 0.428494)
 
-[node name="MehFlower" parent="Env" instance=ExtResource("55_kvc7b")]
+[node name="MehFlower" parent="Env" instance=ExtResource("48_80jos")]
 z_index = 2000
 position = Vector2(4771, -3048)
 rotation = -0.025196
 scale = Vector2(0.428494, 0.428494)
 
-[node name="Hundi" parent="Env" instance=ExtResource("54_gbabd")]
+[node name="Hundi" parent="Env" instance=ExtResource("49_whrbn")]
 position = Vector2(543, -1337)
 rotation = 0.250175
 scale = Vector2(0.522704, 0.522704)
 
-[node name="Blattschuessel" parent="Env" instance=ExtResource("55_7skp6")]
+[node name="Blattschuessel" parent="Env" instance=ExtResource("50_0dkq8")]
 position = Vector2(-750, -828)
 
-[node name="Bild9" parent="Env" instance=ExtResource("40_rj8kj")]
+[node name="Bild9" parent="Env" instance=ExtResource("39_3rpxd")]
 position = Vector2(4545, -9857)
 
-[node name="Bild10" parent="Env" instance=ExtResource("46_5lumb")]
+[node name="Bild10" parent="Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(3772, -9812)
 
-[node name="Frankfurt4" parent="Env" instance=ExtResource("42_bdk5x")]
+[node name="Frankfurt4" parent="Env" instance=ExtResource("41_426ba")]
 position = Vector2(3680, -11049)
 rotation = -0.845263
 
-[node name="reclam2" parent="Env" instance=ExtResource("18_o7m6t")]
+[node name="reclam2" parent="Env" instance=ExtResource("8_kprro")]
 position = Vector2(4093, -11044)
 rotation = 0.854825
 scale = Vector2(0.64662, 0.64662)
 
-[node name="pole13" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole13" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(4669, -10512)
 rotation = 1.49731
 
-[node name="eightball" parent="Env" instance=ExtResource("56_wlhql")]
+[node name="eightball" parent="Env" instance=ExtResource("51_0h46h")]
 position = Vector2(-2764, -8205)
 rotation = -1.35531
 scale = Vector2(0.990021, 0.990021)
 
-[node name="Radierer" parent="Env" instance=ExtResource("60_5m0f6")]
+[node name="Radierer" parent="Env" instance=ExtResource("52_ehc6q")]
 position = Vector2(-2790, -7579)
 rotation = -1.35531
 scale = Vector2(0.990021, 0.990021)
 
-[node name="YehFlower2" parent="Env" instance=ExtResource("54_sp688")]
+[node name="YehFlower2" parent="Env" instance=ExtResource("47_vppwm")]
 position = Vector2(3237, -871)
 rotation = 3.09653
 scale = Vector2(0.174089, -0.193751)
 skew = -0.0827959
 
-[node name="MehFlower2" parent="Env" instance=ExtResource("55_kvc7b")]
+[node name="MehFlower2" parent="Env" instance=ExtResource("48_80jos")]
 position = Vector2(6100.2, -966.362)
 rotation = -0.0670354
 scale = Vector2(0.17378, 0.194028)
 skew = -0.0785044
 
-[node name="Eye4" parent="Env" instance=ExtResource("53_0pt5c")]
+[node name="Eye4" parent="Env" instance=ExtResource("46_un4hr")]
 z_index = 2000
 position = Vector2(1727, -14157)
 rotation = -1.98799
 scale = Vector2(1.29415, 1.13021)
 
-[node name="Breznak4" parent="Env" instance=ExtResource("45_5lumb")]
+[node name="Breznak4" parent="Env" instance=ExtResource("45_0t7wf")]
 position = Vector2(-2860, -9836)
 rotation = 0.258973
 scale = Vector2(3.94255, 3.94255)
 
-[node name="fahrradstr5" parent="Env" instance=ExtResource("29_0qtus")]
+[node name="fahrradstr5" parent="Env" instance=ExtResource("26_wh06c")]
 position = Vector2(-822, -12945)
 rotation = -0.641542
 scale = Vector2(4.68981, 4.09535)
 
-[node name="JacobLove" parent="Env/fahrradstr5" instance=ExtResource("60_sp688")]
+[node name="JacobLove" parent="Env/fahrradstr5" instance=ExtResource("53_p2apg")]
 z_index = 2000
 position = Vector2(-295.089, 1632.03)
 rotation = 0.713129
 scale = Vector2(0.137313, 0.141275)
 
-[node name="TetoLove" parent="Env" instance=ExtResource("61_qtlrg")]
+[node name="TetoLove" parent="Env" instance=ExtResource("54_baflj")]
 position = Vector2(5936, -3694)
 rotation = -0.109169
 scale = Vector2(0.293455, 0.293455)
 
-[node name="BunnyLove" parent="Env" instance=ExtResource("62_lmifq")]
+[node name="BunnyLove" parent="Env" instance=ExtResource("55_pu5fs")]
 position = Vector2(4099, -1357)
 rotation = 0.506217
 scale = Vector2(0.204515, 0.204515)
 
-[node name="YehFlower3" parent="Env" instance=ExtResource("54_sp688")]
+[node name="YehFlower3" parent="Env" instance=ExtResource("47_vppwm")]
 position = Vector2(3566, -7276)
 scale = Vector2(0.29056, 0.29056)
 
-[node name="MehFlower" parent="Env/YehFlower3" instance=ExtResource("55_kvc7b")]
+[node name="MehFlower" parent="Env/YehFlower3" instance=ExtResource("48_80jos")]
 position = Vector2(912.03, -158.315)
 
-[node name="Cigret" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(520, -6601)
 rotation = -0.219333
 
-[node name="Cigret2" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret2" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1345, -6780)
 rotation = -0.219333
 
-[node name="Cigret3" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret3" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(2161, -6964)
 rotation = -0.219333
 
-[node name="Cigret4" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret4" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(2980, -7146)
 rotation = -0.219333
 
-[node name="Cigret5" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret5" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(4935, -9238)
 rotation = -0.36079
 
-[node name="Cigret6" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret6" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(5135, -8528)
 rotation = -0.36079
 
-[node name="Einfahrt4" parent="Env" instance=ExtResource("20_5t7de")]
+[node name="Einfahrt4" parent="Env" instance=ExtResource("22_1pdv0")]
 position = Vector2(5694, -8849)
 
-[node name="Breznak5" parent="Env" instance=ExtResource("45_5lumb")]
+[node name="Breznak5" parent="Env" instance=ExtResource("45_0t7wf")]
 position = Vector2(4606, -9572)
 rotation = -0.354217
 
-[node name="Blattschuessel2" parent="Env" instance=ExtResource("55_7skp6")]
+[node name="Blattschuessel2" parent="Env" instance=ExtResource("50_0dkq8")]
 position = Vector2(4927, -9763)
 rotation = 0.126838
 
-[node name="flower" parent="Env" instance=ExtResource("58_kxfsc")]
+[node name="flower" parent="Env" instance=ExtResource("57_xuxe5")]
 position = Vector2(2865, -1419)
 scale = Vector2(0.490177, 0.490177)
 rotation_speed = 120.0
 
-[node name="flower2" parent="Env" instance=ExtResource("58_kxfsc")]
+[node name="flower2" parent="Env" instance=ExtResource("57_xuxe5")]
 position = Vector2(3688, -1864)
 scale = Vector2(0.490177, 0.490177)
 rotation_speed = 100.0
 
-[node name="flower3" parent="Env" instance=ExtResource("58_kxfsc")]
+[node name="flower3" parent="Env" instance=ExtResource("57_xuxe5")]
 position = Vector2(4508, -1735)
 scale = Vector2(0.490177, 0.490177)
 rotation_speed = -200.0
 
-[node name="Windmill" parent="Env" instance=ExtResource("58_6viny")]
+[node name="Windmill" parent="Env" instance=ExtResource("58_0cfh7")]
 position = Vector2(4589, -12180)
 scale = Vector2(0.312892, 0.312892)
 rotation_speed = 120.0
 
-[node name="Windmill2" parent="Env" instance=ExtResource("58_6viny")]
+[node name="Windmill2" parent="Env" instance=ExtResource("58_0cfh7")]
 position = Vector2(3884, -13013)
 scale = Vector2(0.312892, 0.312892)
 rotation_speed = 120.0
 
-[node name="Windmill3" parent="Env" instance=ExtResource("58_6viny")]
+[node name="Windmill3" parent="Env" instance=ExtResource("58_0cfh7")]
 position = Vector2(3233, -14153)
 scale = Vector2(0.312892, 0.312892)
 rotation_speed = 120.0
 
-[node name="Windmill4" parent="Env" instance=ExtResource("58_6viny")]
+[node name="Windmill4" parent="Env" instance=ExtResource("58_0cfh7")]
 position = Vector2(2428, -15181)
 scale = Vector2(0.312892, 0.312892)
 rotation_speed = 120.0
 
-[node name="Windmill5" parent="Env" instance=ExtResource("58_6viny")]
+[node name="Windmill5" parent="Env" instance=ExtResource("58_0cfh7")]
 position = Vector2(1788, -16285)
 rotation = 3.09713
 scale = Vector2(0.312892, 0.312892)
 rotation_speed = -120.0
 
-[node name="kafka" parent="Env" instance=ExtResource("59_gm4cb")]
+[node name="kafka" parent="Env" instance=ExtResource("59_icwdw")]
 position = Vector2(6481, -11918)
 rotation = -0.378348
 
-[node name="isetta4" parent="Env" instance=ExtResource("35_kr8qw")]
+[node name="isetta4" parent="Env" instance=ExtResource("34_kmssj")]
 position = Vector2(5604, -13268)
 scale = Vector2(1.83898, 1.83898)
 
-[node name="reifen2" parent="Env" instance=ExtResource("35_0wrp4")]
+[node name="reifen2" parent="Env" instance=ExtResource("33_sefq2")]
 position = Vector2(4900, -13810)
 scale = Vector2(1.44196, 1.44196)
 
-[node name="Radierer2" parent="Env" instance=ExtResource("60_5m0f6")]
+[node name="Radierer2" parent="Env" instance=ExtResource("52_ehc6q")]
 position = Vector2(7661, -8083)
 rotation = -0.868713
 scale = Vector2(4.16797, 4.16797)
 
-[node name="poseidon2" parent="Env" instance=ExtResource("26_j2mqq")]
+[node name="poseidon2" parent="Env" instance=ExtResource("23_hfh31")]
 position = Vector2(7536, -10457)
 rotation = -0.62175
 scale = Vector2(3.61119, 3.61119)
 
-[node name="taschenmesser" parent="Env" instance=ExtResource("61_30aor")]
+[node name="taschenmesser" parent="Env" instance=ExtResource("60_t1w8w")]
 position = Vector2(-1740, -6243)
 
-[node name="YoooPerlin" parent="Env" instance=ExtResource("62_dyy75")]
+[node name="YoooPerlin" parent="Env" instance=ExtResource("61_n7oya")]
 position = Vector2(-2377, -6876)
 
-[node name="taschenmesser2" parent="Env" instance=ExtResource("61_30aor")]
+[node name="taschenmesser2" parent="Env" instance=ExtResource("60_t1w8w")]
 position = Vector2(3871, -11563)
 rotation = 3.06989
 scale = Vector2(1, 1)
 
-[node name="yield5" parent="Env" instance=ExtResource("5_j6ebo")]
+[node name="yield5" parent="Env" instance=ExtResource("10_jvvaj")]
 position = Vector2(3213, -12492)
 rotation = -0.659518
 
-[node name="gaensebluemchen" parent="Env" instance=ExtResource("63_dyy75")]
+[node name="gaensebluemchen" parent="Env" instance=ExtResource("62_76b8n")]
 position = Vector2(3106, -13244)
 scale = Vector2(0.63133, 0.63133)
 rotation_speed = 100.0
 
-[node name="gaensebluemchen2" parent="Env" instance=ExtResource("63_dyy75")]
+[node name="gaensebluemchen2" parent="Env" instance=ExtResource("62_76b8n")]
 position = Vector2(4099, -13637)
 scale = Vector2(0.720105, 0.720105)
 rotation_speed = -100.0
 
-[node name="eightball2" parent="Env" instance=ExtResource("56_wlhql")]
+[node name="eightball2" parent="Env" instance=ExtResource("51_0h46h")]
 position = Vector2(2510, -13409)
 
-[node name="Einfahrt5" parent="Env" instance=ExtResource("20_5t7de")]
-position = Vector2(5121, -14976)
-rotation = -0.344635
+[node name="Einfahrt5" parent="Env" instance=ExtResource("22_1pdv0")]
+position = Vector2(5121, -14875)
+rotation = -0.591577
 scale = Vector2(2.30927, 2.30927)
 
-[node name="Eye8" parent="Env" instance=ExtResource("8_qktsu")]
+[node name="Eye8" parent="Env" instance=ExtResource("7_7kfqy")]
 position = Vector2(2007, -13962)
 rotation = -0.449569
 scale = Vector2(1.74282, 1.74282)
 
-[node name="Breznak6" parent="Env" instance=ExtResource("45_5lumb")]
+[node name="Breznak6" parent="Env" instance=ExtResource("45_0t7wf")]
 position = Vector2(2423, -14426)
 
-[node name="Bild11" parent="Env" instance=ExtResource("40_rj8kj")]
+[node name="Bild11" parent="Env" instance=ExtResource("39_3rpxd")]
 position = Vector2(1727, -15575)
 
-[node name="Cigret7" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret7" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(261, -14562)
 rotation = 1.23208
 
-[node name="Cigret8" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret8" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(530, -13798)
 rotation = 1.23208
 
-[node name="Cigret9" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret9" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(898, -13050)
 rotation = 0.930291
 
-[node name="Cigret10" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret10" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1318, -12394)
 rotation = 1.05915
 scale = Vector2(1, 1)
 
-[node name="Cigret11" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret11" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1772, -11705)
 rotation = 0.885525
 
-[node name="Cigret12" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret12" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(2270, -11089)
 rotation = 0.885525
 
-[node name="Cigret13" parent="Env" instance=ExtResource("57_wlhql")]
+[node name="Cigret13" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(2694, -10584)
 rotation = 0.848579
 
-[node name="A4" parent="Env" instance=ExtResource("6_4wg66")]
+[node name="A4" parent="Env" instance=ExtResource("5_pd8rw")]
 position = Vector2(208, -15462)
 rotation = 0.727976
 scale = Vector2(1, 1)
 
-[node name="Bild12" parent="Env" instance=ExtResource("46_5lumb")]
+[node name="Bild12" parent="Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(635, -16306)
 rotation = -0.882553
 
-[node name="Bild13" parent="Env" instance=ExtResource("46_5lumb")]
+[node name="Bild13" parent="Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(2661, -16595)
 
-[node name="Blattschuessel3" parent="Env" instance=ExtResource("55_7skp6")]
+[node name="Blattschuessel3" parent="Env" instance=ExtResource("50_0dkq8")]
 position = Vector2(1059, -17027)
 
-[node name="Frankfurt2" parent="Env" instance=ExtResource("42_bdk5x")]
+[node name="Frankfurt2" parent="Env" instance=ExtResource("41_426ba")]
 position = Vector2(1570, -17355)
 rotation = -0.555881
 
-[node name="pole15" parent="Env" instance=ExtResource("5_55gqm")]
-position = Vector2(5298, -16025)
-rotation = -0.587261
+[node name="reclam5" parent="Env" instance=ExtResource("8_kprro")]
+position = Vector2(4949, -16979)
+rotation = -0.7682
 
-[node name="reclam5" parent="Env" instance=ExtResource("18_o7m6t")]
-position = Vector2(4874, -16735)
-rotation = -0.0292029
-
-[node name="reifen3" parent="Env" instance=ExtResource("35_0wrp4")]
+[node name="reifen3" parent="Env" instance=ExtResource("33_sefq2")]
 position = Vector2(4411, -17473)
 rotation = 2.94713
 
-[node name="kafka2" parent="Env" instance=ExtResource("59_gm4cb")]
+[node name="kafka2" parent="Env" instance=ExtResource("59_icwdw")]
 position = Vector2(3573, -18093)
 rotation = -1.56497
 
-[node name="fahrradstr6" parent="Env" instance=ExtResource("29_0qtus")]
+[node name="fahrradstr6" parent="Env" instance=ExtResource("26_wh06c")]
 position = Vector2(2126, -17768)
 rotation = 0.58305
 
-[node name="pole16" parent="Env" instance=ExtResource("5_55gqm")]
+[node name="pole16" parent="Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(3488, -11414)
 rotation = 0.181127
 
-[node name="MesmerizedHead" parent="Env" instance=ExtResource("70_lmifq")]
+[node name="MesmerizedHead" parent="Env" instance=ExtResource("63_hpdqr")]
 position = Vector2(4603, -6420)
 rotation = -0.31774
 scale = Vector2(0.538799, 0.538799)
@@ -1851,319 +1897,352 @@ scale = Vector2(0.538799, 0.538799)
 [node name="Arrows" type="Node2D" parent="."]
 metadata/_edit_lock_ = true
 
-[node name="Arrow1" parent="Arrows" instance=ExtResource("48_sh5yn")]
+[node name="Arrow1" parent="Arrows" instance=ExtResource("64_npugr")]
 z_index = -1
 position = Vector2(353, -663)
 rotation = -1.84894
 scale = Vector2(1, -1)
 
-[node name="Arrow4" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow4" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 position = Vector2(2651, -2.00009)
 rotation = -0.0434922
 scale = Vector2(0.59815, 0.59815)
 
-[node name="Arrow2" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow2" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 material = SubResource("ShaderMaterial_qtlrg")
 position = Vector2(3241, -242)
 rotation = 2.27202
 
-[node name="Arrow5" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow5" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(4035, -213)
 rotation = 1.09082
 scale = Vector2(0.525406, 0.518179)
 
-[node name="Arrow7" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow7" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(497, -102)
 rotation = 2.30302
 scale = Vector2(1, 1)
 
-[node name="Arrow8" parent="Arrows" instance=ExtResource("47_n7uqk")]
+[node name="Arrow8" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 position = Vector2(4858, -377)
 rotation = -1.30386
 scale = Vector2(1, 1)
 
-[node name="Arrow9" parent="Arrows" instance=ExtResource("48_n845g")]
+[node name="Arrow9" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
 position = Vector2(3190, -655)
 rotation = 0.046531
 
-[node name="Arrow10" parent="Arrows" instance=ExtResource("53_eap4r")]
+[node name="Arrow10" parent="Arrows" instance=ExtResource("70_ro8g5")]
 z_index = -1
 material = SubResource("ShaderMaterial_lmifq")
 position = Vector2(4326, -2039)
 rotation = -1.72014
 
-[node name="Arrow11" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow11" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(2490, -2255)
 rotation = -2.78669
 scale = Vector2(1, 1)
 
-[node name="Arrow12" parent="Arrows" instance=ExtResource("47_n7uqk")]
+[node name="Arrow12" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 material = SubResource("ShaderMaterial_6db7r")
 position = Vector2(3465, -2335)
 rotation = -2.24094
 
-[node name="Arrow13" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow13" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_x6d88")
 position = Vector2(1219, -1901)
 rotation = -2.89675
 scale = Vector2(1, 1)
 
-[node name="Arrow14" parent="Arrows" instance=ExtResource("53_eap4r")]
+[node name="Arrow14" parent="Arrows" instance=ExtResource("70_ro8g5")]
 z_index = -1
 position = Vector2(411, -1679)
 rotation = -1.51486
 
-[node name="Arrow15" parent="Arrows" instance=ExtResource("47_n7uqk")]
+[node name="Arrow15" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 material = SubResource("ShaderMaterial_fekjo")
 position = Vector2(-96.0004, -3923)
 rotation = 0.292838
 scale = Vector2(1, 1)
 
-[node name="Arrow16" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow16" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 material = SubResource("ShaderMaterial_op8ru")
 position = Vector2(630, -4327)
 rotation = 2.07623
 
-[node name="Arrow17" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow17" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(1624, -4309)
 rotation = 0.556144
 
-[node name="Arrow18" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow18" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(2433, -4433)
 rotation = 2.20888
 
-[node name="Arrow19" parent="Arrows" instance=ExtResource("48_sh5yn")]
+[node name="Arrow19" parent="Arrows" instance=ExtResource("64_npugr")]
 z_index = -1
 material = SubResource("ShaderMaterial_oiexf")
 position = Vector2(3011, -4499)
 rotation = -0.268803
 
-[node name="Arrow20" parent="Arrows" instance=ExtResource("53_eap4r")]
+[node name="Arrow20" parent="Arrows" instance=ExtResource("70_ro8g5")]
 z_index = -1
 material = SubResource("ShaderMaterial_jhphb")
 position = Vector2(3229, -5251)
 rotation = 1.40937
 
-[node name="Arrow21" parent="Arrows" instance=ExtResource("47_n7uqk")]
+[node name="Arrow21" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 material = SubResource("ShaderMaterial_gfili")
 position = Vector2(4165, -4595)
 rotation = 1.33229
 
-[node name="Arrow22" parent="Arrows" instance=ExtResource("48_sh5yn")]
+[node name="Arrow22" parent="Arrows" instance=ExtResource("64_npugr")]
 z_index = -1
 position = Vector2(5846, -4003)
 rotation = 0.520953
 
-[node name="Arrow23" parent="Arrows" instance=ExtResource("53_eap4r")]
+[node name="Arrow23" parent="Arrows" instance=ExtResource("70_ro8g5")]
 z_index = -1
 material = SubResource("ShaderMaterial_4lo1g")
 position = Vector2(6557, -5650)
 rotation = -1.68802
 
-[node name="Arrow24" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow24" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(4469, -6156)
 rotation = -0.882951
 
-[node name="Arrow25" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow25" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(3607, -6046)
 rotation = -2.62423
 
-[node name="Arrow26" parent="Arrows" instance=ExtResource("48_n845g")]
+[node name="Arrow26" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
 material = SubResource("ShaderMaterial_kyjm3")
 position = Vector2(2659, -5985)
 rotation = 0.880397
 
-[node name="Arrow27" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow27" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 position = Vector2(1717, -5819)
 rotation = -2.28832
 
-[node name="Arrow28" parent="Arrows" instance=ExtResource("47_n7uqk")]
+[node name="Arrow28" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 position = Vector2(811, -5888)
 rotation = -2.08993
 
-[node name="Arrow29" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow29" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(44, -5914)
 rotation = 3.13228
 
-[node name="Arrow30" parent="Arrows" instance=ExtResource("48_sh5yn")]
+[node name="Arrow30" parent="Arrows" instance=ExtResource("64_npugr")]
 z_index = -1
 material = SubResource("ShaderMaterial_w641k")
 position = Vector2(-455, -6302)
 rotation = -1.46713
 scale = Vector2(1, -1)
 
-[node name="Arrow31" parent="Arrows" instance=ExtResource("48_n845g")]
+[node name="Arrow31" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
 position = Vector2(-914, -6399)
 rotation = 0.350144
 scale = Vector2(1, 1)
 
-[node name="Arrow32" parent="Arrows" instance=ExtResource("47_n7uqk")]
+[node name="Arrow32" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 position = Vector2(4827, -8949)
 rotation = 0.404128
 
-[node name="Arrow33" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow33" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(5897, -9624)
 rotation = 0.0571862
 
-[node name="Arrow34" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow34" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(5574, -9976)
 rotation = -0.167273
 scale = Vector2(1, 1)
 
-[node name="Arrow35" parent="Arrows" instance=ExtResource("48_n845g")]
+[node name="Arrow35" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
 position = Vector2(5059, -10334)
 
-[node name="Arrow6" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow6" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_15ncb")
 position = Vector2(-874, -7154)
 rotation = 0.305056
 scale = Vector2(1, 1)
 
-[node name="Arrow36" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow36" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_0n0jg")
 position = Vector2(-517, -7314)
 rotation = 0.564581
 
-[node name="Arrow37" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow37" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_jaskx")
 position = Vector2(-191, -7353)
 rotation = 0.728676
 
-[node name="Arrow38" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow38" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_7y2hu")
 position = Vector2(936.54, -7870.27)
 rotation = 0.305056
 scale = Vector2(1, 1)
 
-[node name="Arrow39" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow39" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_t63gx")
 position = Vector2(1309.53, -8011.27)
 rotation = 0.564581
 
-[node name="Arrow40" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow40" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_t63gx")
 position = Vector2(3212, -8561)
 rotation = 0.564581
 
-[node name="Arrow41" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow41" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_efqc4")
 position = Vector2(1694.53, -8072.27)
 rotation = 0.728676
 
-[node name="Arrow42" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow42" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_v0nwd")
 position = Vector2(2837.54, -8421.27)
 rotation = 0.305056
 scale = Vector2(1, 1)
 
-[node name="Arrow43" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow43" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_4sjbg")
 position = Vector2(3595.53, -8623.27)
 rotation = 0.728676
 
-[node name="Arrow44" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow44" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(5466, -9224)
 rotation = 1.51348
 
-[node name="Arrow3" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow3" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(4134, -10650)
 rotation = 2.30733
 
-[node name="Arrow45" parent="Arrows" instance=ExtResource("53_eap4r")]
+[node name="Arrow45" parent="Arrows" instance=ExtResource("70_ro8g5")]
 z_index = -1
 position = Vector2(3398, -10336)
 
-[node name="Arrow46" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow46" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(4857, -11297)
 rotation = -1.13688
 
-[node name="Arrow47" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow47" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 material = SubResource("ShaderMaterial_ihnes")
 position = Vector2(4264, -12561)
 rotation = -0.00161343
 
-[node name="Arrow48" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow48" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 material = SubResource("ShaderMaterial_f3rew")
 position = Vector2(3127, -14533)
 rotation = 0.223133
 scale = Vector2(1, 1)
 
-[node name="Arrow49" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow49" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 material = SubResource("ShaderMaterial_3ri3j")
 position = Vector2(3592, -13428)
 rotation = 0.213915
 
-[node name="Arrow50" parent="Arrows" instance=ExtResource("48_n845g")]
+[node name="Arrow50" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
 material = SubResource("ShaderMaterial_01jn4")
 position = Vector2(2737, -14974)
 
-[node name="Arrow51" parent="Arrows" instance=ExtResource("52_j5nw4")]
+[node name="Arrow51" parent="Arrows" instance=ExtResource("67_nj6o4")]
 z_index = -1
 position = Vector2(2281, -15551)
 rotation = -1.28761
 
-[node name="Arrow52" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow52" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 position = Vector2(1902, -16622)
 rotation = -0.364341
 scale = Vector2(1, 1)
 
-[node name="Arrow53" parent="Arrows" instance=ExtResource("51_gbabd")]
+[node name="Arrow53" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(2342, -17143)
 rotation = 3.10577
 scale = Vector2(1, 1)
 
-[node name="Arrow54" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow54" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 position = Vector2(1897, -14849)
 rotation = 0.32223
 
-[node name="Arrow55" parent="Arrows" instance=ExtResource("50_eap4r")]
+[node name="Arrow55" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 position = Vector2(1201, -15891)
 rotation = -0.0980117
 scale = Vector2(1, 1)
+
+[node name="Arrow56" parent="Arrows" instance=ExtResource("65_rliho")]
+z_index = -1
+material = SubResource("ShaderMaterial_mvwki")
+position = Vector2(3093, -17182)
+rotation = 1.35098
+scale = Vector2(1, 1)
+
+[node name="End" type="Node2D" parent="."]
+
+[node name="Bathroom" parent="End" instance=ExtResource("72_mvwki")]
+position = Vector2(9350, -14070)
+scale = Vector2(0.852058, 0.852058)
+
+[node name="pole15" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(4437, -16187)
+rotation = -1.08988
+scale = Vector2(1, 4.00051)
+
+[node name="pole16" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(6075, -14838)
+rotation = -0.343865
+scale = Vector2(1, 1.44714)
+
+[node name="pole17" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(6833, -14141)
+rotation = -1.31937
+scale = Vector2(1, 1.44714)
+
+[node name="pole18" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(8405, -13992)
+rotation = -1.59625
+scale = Vector2(1, 4.52815)
 
 [editable path="Env/schild"]
