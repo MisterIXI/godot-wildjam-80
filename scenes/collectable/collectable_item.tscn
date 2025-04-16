@@ -1,16 +1,62 @@
-[gd_scene load_steps=10 format=3 uid="uid://5ywona8gfnpd"]
+[gd_scene load_steps=13 format=3 uid="uid://5ywona8gfnpd"]
 
 [ext_resource type="Script" uid="uid://7dg87eebyhyn" path="res://scenes/collectable/collectable_item.gd" id="1_63id6"]
-[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="1_kd3vm"]
 [ext_resource type="Texture2D" uid="uid://dk7f51qt5p07c" path="res://assets/images/particle/konfetti.png" id="1_nr6eu"]
 [ext_resource type="Texture2D" uid="uid://de050tme13p3w" path="res://assets/images/test/toilet_paper_collectable.png" id="2_nr6eu"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="3_63id6"]
 
 [sub_resource type="Curve" id="Curve_63id6"]
 _data = [Vector2(0, 0.539326), 0.0, 0.0, 0, 0, Vector2(1, 0.011236), 0.0, 0.0, 0, 0]
 point_count = 2
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
+seamless = true
+noise = SubResource("FastNoiseLite_k2e0m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_il0ka"]
+shader = ExtResource("3_63id6")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 8.276
+shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_63id6"]
 radius = 46.1736
+
+[sub_resource type="Animation" id="Animation_63id6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
 
 [sub_resource type="Animation" id="Animation_nr6eu"]
 resource_name = "hovering"
@@ -41,33 +87,6 @@ tracks/1/keys = {
 "values": [0.0, -0.00202217, -0.00724666, -0.0144104, -0.0222503, -0.0295034, -0.0349066, -0.0383167, -0.0404948, -0.0415337, -0.0415264, -0.0405661, -0.0387456, -0.0361579, -0.032896, -0.029053, -0.0247218, -0.0199955, -0.0149669, -0.00972911, -0.00437512, 0.0010021, 0.00630955, 0.0114542, 0.0163432, 0.0208833, 0.0249818, 0.0285455, 0.0314815, 0.0336968, 0.0351071, 0.0359824, 0.0365051, 0.0366979, 0.0365834, 0.0361843, 0.0355232, 0.0346229, 0.0335059, 0.032195, 0.0307128, 0.0290819, 0.0273251, 0.025465, 0.0235242, 0.0215255, 0.0194915, 0.0174448, 0.0154082, 0.0134042, 0.0114556, 0.009585, 0.00781509, 0.00616852, 0.00466796, 0.00333607, 0.00219552, 0.00126898, 0.0005791, 0.000148553, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_63id6"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_il0ka"]
 _data = {
 &"RESET": SubResource("Animation_63id6"),
@@ -85,7 +104,6 @@ script = ExtResource("1_63id6")
 position = Vector2(-1, 0)
 amount = 16
 texture = ExtResource("1_nr6eu")
-lifetime = 0.5
 randomness = 1.0
 direction = Vector2(0, -1)
 spread = 180.0
@@ -97,7 +115,7 @@ scale_amount_max = 0.4
 scale_amount_curve = SubResource("Curve_63id6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-material = ExtResource("1_kd3vm")
+material = SubResource("ShaderMaterial_il0ka")
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_nr6eu")
 

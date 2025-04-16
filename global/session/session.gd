@@ -1,10 +1,10 @@
 extends Node
 
 var current_run_seconds: float = 0
-var collectables : Dictionary[int, bool]
+var collectables : Dictionary[String, bool]
 
-func _ready() -> void:
-  reset_collectables()
+# func _ready() -> void:
+#   reset_collectables()
 
 
 func reset_collectables() -> void:
@@ -13,14 +13,13 @@ func reset_collectables() -> void:
   #TODO: might need to give the collectables a unique id
   #TODO: Actually set all the collectables
 
+func set_collectables(_collectable : Dictionary[String, bool]) -> void:
+  collectables = _collectable
 
-func set_collectables(_uid : int, _bool :bool) -> void:
-  collectables[_uid] = _bool
   #TODO: Actually set all the collectables
 
-func collect_collectable(collectable_uid: int) -> void:
+func collect_collectable(collectable_uid: String) -> void:
   collectables[collectable_uid] = true
-
 
 func _process(_delta: float) -> void:
   current_run_seconds += _delta
