@@ -49,19 +49,19 @@
 [ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="46_un4hr"]
 [ext_resource type="PackedScene" uid="uid://cqy2067hkppla" path="res://scenes/EnvironmentObjects/misc/yeh_flower.tscn" id="47_vppwm"]
 [ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="48_80jos"]
-[ext_resource type="PackedScene" uid="uid://bb60f7pufgkvc" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
-[ext_resource type="PackedScene" uid="uid://dmrlpd5rmfaan" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
-[ext_resource type="PackedScene" uid="uid://1y4iqx8jvmf5" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
-[ext_resource type="PackedScene" uid="uid://bkwxktyxjbisq" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
 [ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="53_p2apg"]
 [ext_resource type="PackedScene" uid="uid://1s55niglbayl" path="res://scenes/EnvironmentObjects/misc/teto_love.tscn" id="54_baflj"]
 [ext_resource type="PackedScene" uid="uid://itm5pkt7qf64" path="res://scenes/EnvironmentObjects/misc/bunny_love.tscn" id="55_pu5fs"]
-[ext_resource type="PackedScene" uid="uid://c2mkolo104wgq" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
 [ext_resource type="PackedScene" uid="uid://sde60sn8u46e" path="res://scenes/EnvironmentObjects/Obstacles/flower.tscn" id="57_xuxe5"]
 [ext_resource type="PackedScene" uid="uid://doa0bax35p5je" path="res://scenes/EnvironmentObjects/Obstacles/windmill.tscn" id="58_0cfh7"]
 [ext_resource type="PackedScene" uid="uid://bkjieb8en8qgi" path="res://scenes/EnvironmentObjects/kafka.tscn" id="59_icwdw"]
 [ext_resource type="PackedScene" uid="uid://u8qq6esgpedx" path="res://scenes/EnvironmentObjects/taschenmesser.tscn" id="60_t1w8w"]
-[ext_resource type="PackedScene" uid="uid://dh0d0fcqlb7nc" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
 [ext_resource type="PackedScene" uid="uid://b7de2qvboavwn" path="res://scenes/EnvironmentObjects/Obstacles/gaensebluemchen.tscn" id="62_76b8n"]
 [ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="63_hpdqr"]
 [ext_resource type="PackedScene" uid="uid://rpqnhe6twc2a" path="res://scenes/EnvironmentObjects/misc/arrow_1.tscn" id="64_npugr"]
@@ -77,6 +77,19 @@
 [ext_resource type="Texture2D" uid="uid://crx3a1gxckxqs" path="res://assets/images/env/eye.png" id="75_kprro"]
 [ext_resource type="Texture2D" uid="uid://dmrwwq4uwxetw" path="res://assets/images/env/yeh_flower.png" id="76_dom4v"]
 [ext_resource type="Texture2D" uid="uid://c1nuxh5vrt8dj" path="res://assets/images/env/godot_wildjam_white.png" id="77_jvvaj"]
+[ext_resource type="PackedScene" uid="uid://5ywona8gfnpd" path="res://scenes/collectable/collectable_item.tscn" id="77_kprro"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_puc63"]
+size = Vector2(58697, 6649)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnw1m"]
+size = Vector2(58697, 7529)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvwki"]
+size = Vector2(13986.8, 26827)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmj8x"]
+size = Vector2(17707.4, 26909)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3y6uy"]
 frequency = 0.0043
@@ -164,7 +177,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(4317, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-870, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -175,7 +188,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3713, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-3788, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -203,7 +216,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(4317, -0.25, 0, 0.25, 0, 5004, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-870, -0.25, 0, 0.25, 0, -183, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/1/type = "bezier"
@@ -214,7 +227,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-3713, -0.25, 0, 0.25, 0, -2223, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-3788, -0.25, 0, 0.25, 0, -2298, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/2/type = "bezier"
@@ -245,7 +258,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(5353, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(166, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -256,7 +269,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1620, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-1695, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -273,7 +286,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(5344, -0.25, 0, 0.25, 0, 5345, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(157, -0.25, 0, 0.25, 0, 158, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/1/type = "bezier"
@@ -284,7 +297,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1626, -0.25, 0, 0.25, 0, -2571, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-1701, -0.25, 0, 0.25, 0, -2647, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 
@@ -757,6 +770,25 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
+seamless = true
+noise = SubResource("FastNoiseLite_k2e0m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkmml"]
+shader = ExtResource("15_ca5qb")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(0.941176, 0.384314, 0.294118, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [node name="Main" type="Node2D"]
 
 [node name="ShadowGroup" type="CanvasGroup" parent="."]
@@ -765,7 +797,6 @@ fit_margin = 934.0
 clear_margin = 689.0
 
 [node name="PlayerBody" parent="ShadowGroup" instance=ExtResource("2_hnw1m")]
-position = Vector2(76, -136)
 collision_layer = 3
 max_contacts_reported = 3
 metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
@@ -930,7 +961,7 @@ scale = Vector2(0.48, 0.48)
 visible = false
 
 [node name="reclamtitled" type="AnimatableBody2D" parent="ShadowGroup/Env" groups=["MovingObstacle"]]
-position = Vector2(4317, -3713)
+position = Vector2(-870, -3788)
 rotation = -0.432178
 scale = Vector2(0.439999, 0.439999)
 sync_to_physics = false
@@ -951,7 +982,7 @@ libraries = {
 autoplay = "moveObject"
 
 [node name="reclamvertical" type="AnimatableBody2D" parent="ShadowGroup/Env" groups=["MovingObstacle"]]
-position = Vector2(5353, -1620)
+position = Vector2(166, -1695)
 rotation = 0.00130769
 scale = Vector2(0.439999, 0.439999)
 sync_to_physics = false
@@ -1793,6 +1824,11 @@ rotation = 0.848579
 position = Vector2(208, -15462)
 rotation = 0.727976
 
+[node name="A5" parent="ShadowGroup/Env" instance=ExtResource("5_pd8rw")]
+position = Vector2(6570, -16398)
+rotation = 1.75909
+scale = Vector2(1.19362, 1.19362)
+
 [node name="Bild12" parent="ShadowGroup/Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(635, -16306)
 rotation = -0.882553
@@ -1822,6 +1858,10 @@ rotation = -1.56497
 [node name="fahrradstr6" parent="ShadowGroup/Env" instance=ExtResource("26_wh06c")]
 position = Vector2(2126, -17768)
 rotation = 0.58305
+
+[node name="fahrradstr7" parent="ShadowGroup/Env" instance=ExtResource("26_wh06c")]
+position = Vector2(5654, -16586)
+rotation = 1.95716
 
 [node name="pole16" parent="ShadowGroup/Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(3488, -11414)
@@ -2307,3 +2347,172 @@ position = Vector2(3093, -17182)
 rotation = 1.35098
 
 [editable path="ShadowGroup/Env/schild"]
+[node name="End" type="Node2D" parent="."]
+
+[node name="Bathroom" parent="End" instance=ExtResource("72_mvwki")]
+position = Vector2(9350, -14070)
+scale = Vector2(0.852058, 0.852058)
+metadata/_edit_lock_ = true
+
+[node name="pole15" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(4437, -16187)
+rotation = -1.08988
+scale = Vector2(1, 4.00051)
+metadata/_edit_lock_ = true
+
+[node name="pole16" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(6075, -14838)
+rotation = -0.343865
+scale = Vector2(1, 1.44714)
+metadata/_edit_lock_ = true
+
+[node name="pole17" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(6833, -14141)
+rotation = -1.31937
+scale = Vector2(1, 1.44714)
+metadata/_edit_lock_ = true
+
+[node name="pole18" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(8405, -13992)
+rotation = -1.59625
+scale = Vector2(1, 4.52815)
+metadata/_edit_lock_ = true
+
+[node name="pole19" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(11379, -14667)
+rotation = -2.4937
+
+[node name="pole20" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(11651, -15749)
+rotation = -3.13449
+
+[node name="pole21" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(11358, -16887)
+rotation = -3.78116
+
+[node name="pole22" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(10447, -17603)
+rotation = -4.29294
+
+[node name="pole23" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(9175, -18009)
+rotation = -4.8046
+
+[node name="pole24" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(7853, -17577)
+rotation = -5.39547
+
+[node name="eightball" parent="End" instance=ExtResource("51_0h46h")]
+position = Vector2(10589, -16163)
+
+[node name="Sprite2D3" type="Sprite2D" parent="End/eightball"]
+material = ExtResource("73_pd8rw")
+position = Vector2(-66, -107)
+scale = Vector2(0.155, 0.155)
+texture = ExtResource("75_kprro")
+
+[node name="broetchen1" parent="End" instance=ExtResource("27_c2jfu")]
+position = Vector2(8076, -16317)
+
+[node name="Sprite2D2" type="Sprite2D" parent="End/broetchen1"]
+material = ExtResource("73_pd8rw")
+position = Vector2(21, 122)
+scale = Vector2(0.245, 0.245)
+texture = ExtResource("76_dom4v")
+
+[node name="gulli" parent="End" instance=ExtResource("14_xe00i")]
+position = Vector2(8294, -14558)
+
+[node name="Sprite2D4" type="Sprite2D" parent="End/gulli"]
+material = SubResource("ShaderMaterial_xkmml")
+position = Vector2(-8, -29)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("77_jvvaj")
+
+[node name="pole25" parent="End" instance=ExtResource("4_jmj8x")]
+position = Vector2(7171, -16399)
+rotation = -3.16683
+
+[node name="Trampoline" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10387, -14017)
+
+[node name="Trampoline4" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(7196, -15839)
+rotation = 0.936605
+scale = Vector2(2, 2)
+
+[node name="Trampoline5" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(7502, -17307)
+rotation = 2.09744
+scale = Vector2(2, 2)
+
+[node name="Trampoline6" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(8717, -17992)
+rotation = 2.75365
+scale = Vector2(2, 2)
+
+[node name="Trampoline7" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10067, -17796)
+rotation = 3.54242
+scale = Vector2(2, 2)
+
+[node name="Trampoline8" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(11170, -17109)
+rotation = 3.74678
+scale = Vector2(2, 2)
+
+[node name="Trampoline9" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(11650, -16023)
+rotation = 4.43878
+scale = Vector2(2, 2)
+
+[node name="Trampoline10" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(11522, -14927)
+rotation = 4.83782
+scale = Vector2(2, 2)
+
+[node name="Windmill" parent="End" instance=ExtResource("58_0cfh7")]
+position = Vector2(9309, -16379)
+rotation = -0.497638
+rotation_speed = 444.0
+
+[node name="Trampoline2" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10656, -14168)
+scale = Vector2(1.125, 1.125)
+
+[node name="gaensebluemchen" parent="End" instance=ExtResource("62_76b8n")]
+position = Vector2(10379, -15066)
+rotation = -0.497638
+rotation_speed = 200.0
+
+[node name="gaensebluemchen2" parent="End" instance=ExtResource("62_76b8n")]
+position = Vector2(8449, -15478)
+rotation = -0.497638
+rotation_speed = 300.0
+
+[node name="Trampoline3" parent="End" instance=ExtResource("3_mvwki")]
+position = Vector2(10943, -14356)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="collectable" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(3025, -1059)
+uid = 523562340
+
+[node name="collectable2" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(328, -4421)
+uid = 523562341
+
+[node name="collectable3" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(4249, -9333)
+uid = 523562342
+
+[node name="collectable4" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(4449, -12800)
+uid = 523562343
+
+[node name="collectable5" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(1562, -16696)
+uid = 523562344
+
+[editable path="Env/schild"]
