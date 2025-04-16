@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://4aa2lrydyhgf"]
+[gd_scene load_steps=40 format=3 uid="uid://4aa2lrydyhgf"]
 
 [ext_resource type="Script" uid="uid://bns3wf0omgidn" path="res://global/menu/main_menu/main_menu.gd" id="1_kbhnn"]
 [ext_resource type="Texture2D" uid="uid://boxausdy83fgc" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-4.jpg" id="1_s0oey"]
@@ -15,6 +15,7 @@
 [ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="10_cp0kx"]
 [ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="10_e4xug"]
 [ext_resource type="Texture2D" uid="uid://djtjbdmx8r6mj" path="res://assets/images/menu/letters/L-2.png" id="11_70j52"]
+[ext_resource type="Script" uid="uid://uqspqt4pksjh" path="res://global/menu/main_menu/leaderboard_button.gd" id="11_awrfj"]
 [ext_resource type="Texture2D" uid="uid://do5m8aot4mglm" path="res://assets/images/menu/letters/I-3.png" id="11_gub5j"]
 [ext_resource type="Texture2D" uid="uid://dj2vflkp5cnk7" path="res://assets/images/menu/letters/E-4.png" id="12_e6vpv"]
 [ext_resource type="Texture2D" uid="uid://uad80226meta" path="res://assets/images/menu/letters/N-2.png" id="12_rfres"]
@@ -140,6 +141,7 @@ focus_mode = 0
 text = "
 "
 flat = true
+script = ExtResource("11_awrfj")
 
 [node name="LetterContainer" type="HBoxContainer" parent="LeaderboardButton"]
 layout_mode = 1
@@ -219,6 +221,26 @@ expand_mode = 3
 [node name="ButtonHover" type="Node" parent="LeaderboardButton"]
 script = ExtResource("10_cp0kx")
 metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
+[node name="TextureRect" type="TextureRect" parent="LeaderboardButton"]
+visible = false
+material = ExtResource("2_sjqqk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -77.0
+offset_top = -26.0
+offset_right = 22.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("18_7wnyk")
+expand_mode = 3
+
+[node name="OnVisible2dModulate" type="Node" parent="LeaderboardButton/TextureRect"]
+script = ExtResource("22_6riyg")
+metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 
 [node name="SettingsButton" type="Button" parent="."]
 custom_minimum_size = Vector2(0, 100)

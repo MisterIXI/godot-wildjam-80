@@ -20,7 +20,7 @@ func _ready():
   
   main_menu.visibility_changed.connect(_on_mm_visibility_changed)
   main_menu.play_button.pressed.connect(_on_mm_play)
-  main_menu.leaderboard_button.pressed.connect(win_menu.show)#_on_mm_leaderboard)
+  main_menu.leaderboard_button.pressed.connect(_on_mm_leaderboard)
   main_menu.settings_button.pressed.connect(_on_mm_settings)
 
   pause_menu.visibility_changed.connect(_on_pm_visibility_changed)
@@ -42,6 +42,7 @@ func _on_mm_visibility_changed() -> void:
     if not get_tree().paused:
       get_tree().paused = true
       print_rich("[color=MAGENTA]Menu >> [color=WHITE]Game tree has been paused.")
+    main_menu.leaderboard_button.disabled = !Schlüsseljunge.leaderboard_active
 
 func _on_mm_play() -> void:
   if get_tree().paused:

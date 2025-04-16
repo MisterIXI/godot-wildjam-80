@@ -9,8 +9,6 @@ func _ready() -> void:
 
   if OS.get_name() == "Web":
     disabled = true
-  elif not disabled:
-    disabled = false
   
   disabledTextureRect.visible = disabled
 
