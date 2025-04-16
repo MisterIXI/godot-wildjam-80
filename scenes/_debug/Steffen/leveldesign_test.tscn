@@ -1611,9 +1611,24 @@ position = Vector2(8416, -5176)
 rotation = 1.40937
 
 [node name="Eye3" parent="Env" instance=ExtResource("53_0pt5c")]
-position = Vector2(5577, -6104)
+position = Vector2(5603, -6078)
 rotation = -0.330501
-scale = Vector2(0.181028, 0.175134)
+scale = Vector2(0.151649, 0.132691)
+
+[node name="Eye5" parent="Env" instance=ExtResource("53_0pt5c")]
+position = Vector2(5476, -6072)
+rotation = -0.330501
+scale = Vector2(0.151649, 0.132691)
+
+[node name="Eye6" parent="Env" instance=ExtResource("53_0pt5c")]
+position = Vector2(5549, -6124)
+rotation = -0.330501
+scale = Vector2(0.151649, 0.132691)
+
+[node name="Eye7" parent="Env" instance=ExtResource("53_0pt5c")]
+position = Vector2(5427, -6117)
+rotation = -0.330501
+scale = Vector2(0.151649, 0.132691)
 
 [node name="YehFlower" parent="Env" instance=ExtResource("54_sp688")]
 position = Vector2(9107, -2920)
