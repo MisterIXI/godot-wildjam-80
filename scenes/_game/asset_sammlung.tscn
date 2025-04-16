@@ -1,4 +1,4 @@
-[gd_scene load_steps=116 format=3 uid="uid://one3lojhqxny"]
+[gd_scene load_steps=118 format=3 uid="uid://one3lojhqxny"]
 
 [ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="1_jonfs"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="2_pavb3"]
@@ -60,6 +60,7 @@
 [ext_resource type="PackedScene" uid="uid://cqy2067hkppla" path="res://scenes/EnvironmentObjects/misc/yeh_flower.tscn" id="58_6y8k3"]
 [ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="59_ni00m"]
 [ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="60_bgk6h"]
+[ext_resource type="Shader" uid="uid://dol10qudc3737" path="res://resources/shaders/canvas_shadow.gdshader" id="60_ni00m"]
 [ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="61_7vdwf"]
 [ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="62_y20dm"]
 [ext_resource type="Texture2D" uid="uid://dkb5jr7y6s53p" path="res://assets/images/env/jumppad.png" id="63_6y8k3"]
@@ -76,8 +77,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_auvsv")
@@ -97,8 +96,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_y20dm")
@@ -118,8 +115,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_bgk6h")
@@ -139,8 +134,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_22fwu")
@@ -160,8 +153,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_u5vne")
@@ -181,8 +172,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_vnp3x")
@@ -202,8 +191,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_l61rb")
@@ -223,8 +210,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_q6pwm")
@@ -244,8 +229,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.0622252, 0.631935, 0.764967, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = false
 shader_parameter/line_thickness = 0.0
 shader_parameter/noise = SubResource("NoiseTexture2D_dec8x")
@@ -265,8 +248,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.240303, 0.550845, 1.54018e-06, 1)
 shader_parameter/color_tint = Color(0.727748, 2.29102e-05, 0.525341, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.605
 shader_parameter/noise = SubResource("NoiseTexture2D_nfb5c")
@@ -286,8 +267,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.761026, 0.634567, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 5.019
 shader_parameter/noise = SubResource("NoiseTexture2D_e4lke")
@@ -307,8 +286,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.14794, 0.673304, 1, 1)
 shader_parameter/color_tint = Color(1, 0.36, 0.36, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -328,8 +305,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 8.101
 shader_parameter/noise = SubResource("NoiseTexture2D_fttd1")
@@ -349,8 +324,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.618011, 0.257665, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 7.589
 shader_parameter/noise = SubResource("NoiseTexture2D_o514j")
@@ -370,8 +343,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0, 0.702744, 0.398731, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 6.05
 shader_parameter/noise = SubResource("NoiseTexture2D_ueopi")
@@ -391,8 +362,6 @@ shader = ExtResource("35_g7ccy")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.383
 shader_parameter/noise = SubResource("NoiseTexture2D_6y8k3")
@@ -485,6 +454,17 @@ _data = {
 &"bump": SubResource("Animation_x1wpk"),
 &"idle": SubResource("Animation_22fwu")
 }
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgk6h"]
+shader = ExtResource("60_ni00m")
+shader_parameter/drop_shadow_color = Color(0, 0, 0, 0.5)
+shader_parameter/shadow_offset_x = -0.015
+shader_parameter/shadow_offset_y = 0.028
+shader_parameter/shadow_rotation = 0.0
+shader_parameter/rotation_pivot = Vector2(0.5, 0.5)
+shader_parameter/shadow_blur_strength = 8.769
+shader_parameter/shadow_blur_samples = 4
+shader_parameter/_blur_scale_factor = 1.0
 
 [node name="AssetSammlung" type="Node2D"]
 position = Vector2(527, -6)
@@ -681,23 +661,11 @@ position = Vector2(-1805, -3693)
 [node name="flower" parent="." instance=ExtResource("55_ii8xg")]
 position = Vector2(-1177, -4259)
 
-[node name="TetoLove" parent="." instance=ExtResource("56_p80xa")]
-position = Vector2(-2269, -5933)
-
 [node name="BunnyLove" parent="." instance=ExtResource("57_y20dm")]
-position = Vector2(-3353, -5790)
+position = Vector2(-3370, -5882)
 
 [node name="YehFlower" parent="." instance=ExtResource("58_6y8k3")]
-position = Vector2(-2876, -7324)
-
-[node name="MehFlower" parent="." instance=ExtResource("59_ni00m")]
-position = Vector2(-3690, -6765)
-
-[node name="Eye2" parent="." instance=ExtResource("60_bgk6h")]
-position = Vector2(-2761, -6642)
-
-[node name="JacobLove" parent="." instance=ExtResource("61_7vdwf")]
-position = Vector2(-1755, -6867)
+position = Vector2(-2993, -7375)
 
 [node name="MesmerizedHead" parent="." instance=ExtResource("62_y20dm")]
 position = Vector2(-5210, -5348)
@@ -705,6 +673,7 @@ position = Vector2(-5210, -5348)
 [node name="Jumppad" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_sxpdh")
 position = Vector2(-5873, -5346)
+rotation = -0.00424562
 scale = Vector2(1.2, 0.6)
 texture = ExtResource("63_6y8k3")
 offset = Vector2(0, -222.505)
@@ -713,3 +682,21 @@ offset = Vector2(0, -222.505)
 libraries = {
 &"": SubResource("AnimationLibrary_u5vne")
 }
+
+[node name="CanvasGroup" type="CanvasGroup" parent="."]
+material = SubResource("ShaderMaterial_bgk6h")
+position = Vector2(145, -18)
+
+[node name="TetoLove" parent="CanvasGroup" instance=ExtResource("56_p80xa")]
+position = Vector2(-2269, -5933)
+
+[node name="MehFlower" parent="CanvasGroup" instance=ExtResource("59_ni00m")]
+position = Vector2(-4144, -6823)
+rotation = -0.176272
+scale = Vector2(1, 1)
+
+[node name="Eye2" parent="CanvasGroup" instance=ExtResource("60_bgk6h")]
+position = Vector2(-3038, -6605)
+
+[node name="JacobLove" parent="CanvasGroup" instance=ExtResource("61_7vdwf")]
+position = Vector2(-1687, -6881)
