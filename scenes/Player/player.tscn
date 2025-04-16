@@ -243,7 +243,7 @@ shader_parameter/mask_size = 0.22
 shader_parameter/mask_edge = 1.0
 shader_parameter/animation_speed = 12.59
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "backup_ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
@@ -254,6 +254,7 @@ rope = NodePath("RopeVisuals/VerletRope")
 rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
+backup_ground_cast = NodePath("BackupGroundRaycast")
 hop_cd_timer = NodePath("HopCD")
 naddel_ripping_timer = NodePath("NaddelModeRipTimer")
 impact_cd_timer = NodePath("ImpactCD")
@@ -465,6 +466,9 @@ z_index = 1681
 material = SubResource("ShaderMaterial_wyey8")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_n7rn1")
+
+[node name="BackupGroundRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 53.805)
 
 [node name="GroundShapeCheck" type="ShapeCast2D" parent="."]
 shape = SubResource("RectangleShape2D_434gd")

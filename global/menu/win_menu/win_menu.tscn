@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://b6jm1jji7oqb"]
+[gd_scene load_steps=22 format=3 uid="uid://b6jm1jji7oqb"]
 
 [ext_resource type="Script" uid="uid://0hu6ucj28dwc" path="res://global/menu/win_menu/win_menu.gd" id="1_7f638"]
 [ext_resource type="Material" uid="uid://b4uin2akd0f2b" path="res://resources/shaders/menu_transition.tres" id="2_uto2b"]
@@ -18,6 +18,7 @@
 [ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="16_pdgc7"]
 [ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="17_13uys"]
 [ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="18_khbdn"]
+[ext_resource type="Script" uid="uid://bpcmfk0tpjacc" path="res://components/transition/untransition.gd" id="19_uto2b"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oy6jt"]
 bg_color = Color(0.545098, 0.603922, 0.286275, 1)
@@ -26,7 +27,14 @@ corner_radius_top_right = 5
 corner_radius_bottom_right = 5
 corner_radius_bottom_left = 5
 
-[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button")]
+[sub_resource type="LabelSettings" id="LabelSettings_uto2b"]
+font = ExtResource("6_dboxc")
+font_size = 18
+font_color = Color(0.784233, 0.608026, 0.937188, 1)
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
+
+[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button", "untransition")]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -36,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7f638")
 confirm_button = NodePath("Paper/ConfirmButton")
+untransition = NodePath("Untransition")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 material = ExtResource("2_uto2b")
@@ -213,8 +222,29 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 script = ExtResource("17_13uys")
 metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -255.0
+offset_right = -4.0
+offset_bottom = 37.0
+grow_horizontal = 0
+text = "Tap 'ESC' or 'Q' to keep playing!"
+label_settings = SubResource("LabelSettings_uto2b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("18_khbdn")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../Paper/ConfirmButton"), NodePath("../Paper")]
+anything_else = [NodePath("../Paper"), NodePath("../Label")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
+
+[node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
+process_mode = 3
+script = ExtResource("19_uto2b")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../Paper"), NodePath("../Label")]
+metadata/_custom_type_script = "uid://bpcmfk0tpjacc"
