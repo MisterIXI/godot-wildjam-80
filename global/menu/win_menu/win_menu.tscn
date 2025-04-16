@@ -34,7 +34,7 @@ font_color = Color(0.784233, 0.608026, 0.937188, 1)
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button")]
+[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button", "untransition")]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -44,6 +44,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7f638")
 confirm_button = NodePath("Paper/ConfirmButton")
+untransition = NodePath("Untransition")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 material = ExtResource("2_uto2b")
