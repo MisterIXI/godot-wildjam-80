@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=142 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
@@ -770,6 +770,10 @@ shader_parameter/noise = SubResource("NoiseTexture2D_o514j")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
+
+[sub_resource type="LabelSettings" id="LabelSettings_lmifq"]
+font_size = 150
+font_color = Color(0, 0, 0, 1)
 
 [node name="Main" type="Node2D"]
 
@@ -1736,7 +1740,6 @@ position = Vector2(-2377, -6876)
 [node name="taschenmesser2" parent="Env" instance=ExtResource("61_30aor")]
 position = Vector2(3871, -11563)
 rotation = 3.06989
-scale = Vector2(1, 1)
 
 [node name="yield5" parent="Env" instance=ExtResource("5_j6ebo")]
 position = Vector2(3213, -12492)
@@ -1786,7 +1789,6 @@ rotation = 0.930291
 [node name="Cigret10" parent="Env" instance=ExtResource("57_wlhql")]
 position = Vector2(1318, -12394)
 rotation = 1.05915
-scale = Vector2(1, 1)
 
 [node name="Cigret11" parent="Env" instance=ExtResource("57_wlhql")]
 position = Vector2(1772, -11705)
@@ -1803,7 +1805,6 @@ rotation = 0.848579
 [node name="A4" parent="Env" instance=ExtResource("6_4wg66")]
 position = Vector2(208, -15462)
 rotation = 0.727976
-scale = Vector2(1, 1)
 
 [node name="Bild12" parent="Env" instance=ExtResource("46_5lumb")]
 position = Vector2(635, -16306)
@@ -1879,13 +1880,11 @@ scale = Vector2(0.525406, 0.518179)
 z_index = -1
 position = Vector2(497, -102)
 rotation = 2.30302
-scale = Vector2(1, 1)
 
 [node name="Arrow8" parent="Arrows" instance=ExtResource("47_n7uqk")]
 z_index = -1
 position = Vector2(4858, -377)
 rotation = -1.30386
-scale = Vector2(1, 1)
 
 [node name="Arrow9" parent="Arrows" instance=ExtResource("48_n845g")]
 z_index = -1
@@ -1902,7 +1901,6 @@ rotation = -1.72014
 z_index = -1
 position = Vector2(2490, -2255)
 rotation = -2.78669
-scale = Vector2(1, 1)
 
 [node name="Arrow12" parent="Arrows" instance=ExtResource("47_n7uqk")]
 z_index = -1
@@ -1915,7 +1913,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_x6d88")
 position = Vector2(1219, -1901)
 rotation = -2.89675
-scale = Vector2(1, 1)
 
 [node name="Arrow14" parent="Arrows" instance=ExtResource("53_eap4r")]
 z_index = -1
@@ -1927,7 +1924,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_fekjo")
 position = Vector2(-96.0004, -3923)
 rotation = 0.292838
-scale = Vector2(1, 1)
 
 [node name="Arrow16" parent="Arrows" instance=ExtResource("51_gbabd")]
 z_index = -1
@@ -2016,7 +2012,6 @@ scale = Vector2(1, -1)
 z_index = -1
 position = Vector2(-914, -6399)
 rotation = 0.350144
-scale = Vector2(1, 1)
 
 [node name="Arrow32" parent="Arrows" instance=ExtResource("47_n7uqk")]
 z_index = -1
@@ -2032,7 +2027,6 @@ rotation = 0.0571862
 z_index = -1
 position = Vector2(5574, -9976)
 rotation = -0.167273
-scale = Vector2(1, 1)
 
 [node name="Arrow35" parent="Arrows" instance=ExtResource("48_n845g")]
 z_index = -1
@@ -2043,7 +2037,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_15ncb")
 position = Vector2(-874, -7154)
 rotation = 0.305056
-scale = Vector2(1, 1)
 
 [node name="Arrow36" parent="Arrows" instance=ExtResource("50_eap4r")]
 z_index = -1
@@ -2062,7 +2055,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_7y2hu")
 position = Vector2(936.54, -7870.27)
 rotation = 0.305056
-scale = Vector2(1, 1)
 
 [node name="Arrow39" parent="Arrows" instance=ExtResource("50_eap4r")]
 z_index = -1
@@ -2087,7 +2079,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_v0nwd")
 position = Vector2(2837.54, -8421.27)
 rotation = 0.305056
-scale = Vector2(1, 1)
 
 [node name="Arrow43" parent="Arrows" instance=ExtResource("50_eap4r")]
 z_index = -1
@@ -2125,7 +2116,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_f3rew")
 position = Vector2(3127, -14533)
 rotation = 0.223133
-scale = Vector2(1, 1)
 
 [node name="Arrow49" parent="Arrows" instance=ExtResource("51_gbabd")]
 z_index = -1
@@ -2147,13 +2137,11 @@ rotation = -1.28761
 z_index = -1
 position = Vector2(1902, -16622)
 rotation = -0.364341
-scale = Vector2(1, 1)
 
 [node name="Arrow53" parent="Arrows" instance=ExtResource("51_gbabd")]
 z_index = -1
 position = Vector2(2342, -17143)
 rotation = 3.10577
-scale = Vector2(1, 1)
 
 [node name="Arrow54" parent="Arrows" instance=ExtResource("50_eap4r")]
 z_index = -1
@@ -2164,6 +2152,17 @@ rotation = 0.32223
 z_index = -1
 position = Vector2(1201, -15891)
 rotation = -0.0980117
-scale = Vector2(1, 1)
+
+[node name="ACHTUN ALTE SCENE" type="Label" parent="."]
+offset_left = -333.0
+offset_top = -567.0
+offset_right = 2761.0
+offset_bottom = -154.0
+text = "ACHTUN ALTE SCENE
+Neue Scene unter /scene/_game/main.tscn"
+label_settings = SubResource("LabelSettings_lmifq")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/scene_tree_color = Color(0.88, 0.24, 0.24, 0.35)
 
 [editable path="Env/schild"]
