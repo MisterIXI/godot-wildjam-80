@@ -1,0 +1,302 @@
+[gd_scene load_steps=40 format=3 uid="uid://bh36khiteekr2"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_8gboa"]
+[ext_resource type="Texture2D" uid="uid://yaf2gpybvuke" path="res://assets/images/bath/background.png" id="2_m7vh0"]
+[ext_resource type="Texture2D" uid="uid://2arbq41dbeos" path="res://assets/images/menu/letters/T-4.png" id="3_if1qk"]
+[ext_resource type="Texture2D" uid="uid://cw25dfqmriqs5" path="res://assets/images/menu/letters/H.png" id="4_h0hl8"]
+[ext_resource type="Texture2D" uid="uid://crcgfsxoot3oa" path="res://assets/images/menu/letters/A-2.png" id="5_ra3g2"]
+[ext_resource type="Texture2D" uid="uid://uad80226meta" path="res://assets/images/menu/letters/N-2.png" id="6_rwwp5"]
+[ext_resource type="Texture2D" uid="uid://btj7c7r3o766f" path="res://assets/images/menu/letters/K-2.png" id="7_5pkir"]
+[ext_resource type="Texture2D" uid="uid://crhm1gbotkxs3" path="res://assets/images/menu/letters/Y-3.png" id="8_r6xpa"]
+[ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="9_5y4n5"]
+[ext_resource type="Texture2D" uid="uid://lhevu7k1gpvt" path="res://assets/images/menu/letters/U-2.png" id="10_ousho"]
+[ext_resource type="Texture2D" uid="uid://c7702frg6uret" path="res://assets/images/menu/letters/F-2.png" id="11_q5aiv"]
+[ext_resource type="Texture2D" uid="uid://cg2rur3ei04i8" path="res://assets/images/menu/letters/O-3.png" id="12_3awcv"]
+[ext_resource type="Texture2D" uid="uid://bcbm74v2pd8w7" path="res://assets/images/menu/letters/R-4.png" id="13_u0xdq"]
+[ext_resource type="Texture2D" uid="uid://c31h7aj58v4no" path="res://assets/images/menu/letters/P.png" id="14_e2ojh"]
+[ext_resource type="Texture2D" uid="uid://dyiwkfxdprd1g" path="res://assets/images/menu/letters/L.png" id="15_qgcag"]
+[ext_resource type="Texture2D" uid="uid://b5noavplhmsg6" path="res://assets/images/menu/letters/A-6.png" id="16_wcb4v"]
+[ext_resource type="Texture2D" uid="uid://tvfbbpoxdl5" path="res://assets/images/menu/letters/Y-4.png" id="17_rt88m"]
+[ext_resource type="Texture2D" uid="uid://cfw870f3x7r7c" path="res://assets/images/menu/letters/I-2.png" id="18_kta6l"]
+[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="19_qhdqg"]
+[ext_resource type="Texture2D" uid="uid://biunqo3amubvy" path="res://assets/images/menu/letters/G-2.png" id="20_oykw4"]
+[ext_resource type="Texture2D" uid="uid://bukqg3r7v8k4w" path="res://assets/images/bath/bathtub.png" id="21_cjciw"]
+[ext_resource type="Texture2D" uid="uid://bi5micb4eyc0t" path="res://assets/images/bath/board.png" id="22_y824d"]
+[ext_resource type="Texture2D" uid="uid://c8f67asdl6hcn" path="res://assets/images/bath/mirror.png" id="23_o3p7x"]
+[ext_resource type="Texture2D" uid="uid://c47a2rxyfvunw" path="res://assets/images/bath/toilet_bg.png" id="24_420c7"]
+[ext_resource type="Script" uid="uid://cw4jta6e5jl4v" path="res://scenes/end_scene/trigger_zone_on_enter.gd" id="25_rm6hv"]
+[ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="26_tyjuk"]
+[ext_resource type="Script" uid="uid://cfefmqqmra80r" path="res://scenes/end_scene/win_area.gd" id="27_k58xk"]
+[ext_resource type="PackedScene" uid="uid://cn1seejpqc5o4" path="res://scenes/end_scene/name_input.tscn" id="28_4kjxf"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_llnb5"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_orjfd"]
+seamless = true
+noise = SubResource("FastNoiseLite_llnb5")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c66a7"]
+shader = ExtResource("1_8gboa")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 0.67058, 0.655483, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_orjfd")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aqtn5"]
+size = Vector2(376.471, 334.118)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_211vs"]
+size = Vector2(300, 432.941)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8aagw"]
+size = Vector2(300, 404.706)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0p1e"]
+size = Vector2(999, 1085)
+
+[sub_resource type="Curve" id="Curve_nnpbe"]
+_limits = [0.0, 100.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.995781, 52.809), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Curve" id="Curve_75675"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.991561, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_43cuh"]
+offsets = PackedFloat32Array(0, 0.218009, 0.42654, 0.592417, 0.701422, 0.805687, 0.919431, 1)
+colors = PackedColorArray(0.862745, 0.309804, 0.223529, 1, 0.968627, 0.717647, 0.235294, 1, 0, 0.788235, 0.713726, 1, 0.435294, 0.2, 0.247059, 0.501961, 0.952941, 0.894118, 0.764706, 0.631373, 0.94902, 0.419608, 0.435294, 0.690196, 0.435294, 0.764706, 0.67451, 0.729412, 1, 0.529412, 0.0196078, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2fxmi"]
+size = Vector2(49.4117, 209.412)
+
+[node name="Bathroom" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(0, -467)
+scale = Vector2(2, 2)
+texture = ExtResource("2_m7vh0")
+
+[node name="Thankyouforplaying" type="Node2D" parent="."]
+
+[node name="Letter_T" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-219.985, -279.445)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("3_if1qk")
+
+[node name="Letter_H" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-180, -271)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("4_h0hl8")
+
+[node name="Letter_A" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-135, -274)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("5_ra3g2")
+
+[node name="Letter_N" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-85, -272)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("6_rwwp5")
+
+[node name="Letter_K" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-29, -275)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("7_5pkir")
+
+[node name="Letter_Y" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(89, -275)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("8_r6xpa")
+
+[node name="Letter_O" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(135, -266)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("9_5y4n5")
+
+[node name="Letter_U" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(175, -270)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("10_ousho")
+
+[node name="Letter_F" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-221.985, -199.445)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("11_q5aiv")
+
+[node name="Letter_O3" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-187, -193)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("12_3awcv")
+
+[node name="Letter_R" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-152, -192)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("13_u0xdq")
+
+[node name="Letter_P" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-46, -193)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("14_e2ojh")
+
+[node name="Letter_L" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(-19, -190)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("15_qgcag")
+
+[node name="Letter_A2" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(20, -193)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("16_wcb4v")
+
+[node name="Letter_Y2" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(54, -191)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("17_rt88m")
+
+[node name="Letter_I" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(82, -187)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("18_kta6l")
+
+[node name="Letter_N2" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(110, -186)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("19_qhdqg")
+
+[node name="Letter_G" type="Sprite2D" parent="Thankyouforplaying"]
+position = Vector2(144, -186)
+scale = Vector2(0.13, 0.13)
+texture = ExtResource("20_oykw4")
+
+[node name="Furniture" type="Node2D" parent="."]
+
+[node name="bathtub" type="StaticBody2D" parent="Furniture"]
+position = Vector2(-226, -69)
+scale = Vector2(0.425, 0.425)
+
+[node name="Bild" type="Sprite2D" parent="Furniture/bathtub"]
+material = SubResource("ShaderMaterial_c66a7")
+texture = ExtResource("21_cjciw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/bathtub"]
+position = Vector2(30.5882, 94.1177)
+shape = SubResource("RectangleShape2D_aqtn5")
+disabled = true
+
+[node name="board" type="StaticBody2D" parent="Furniture"]
+position = Vector2(294, 195)
+scale = Vector2(0.425, 0.425)
+
+[node name="Bild" type="Sprite2D" parent="Furniture/board"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(-94.1176, -623.529)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("22_y824d")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/board"]
+position = Vector2(-130, -595.294)
+shape = SubResource("RectangleShape2D_211vs")
+disabled = true
+
+[node name="mirror2" type="StaticBody2D" parent="Furniture"]
+position = Vector2(281, -84)
+scale = Vector2(0.315, 0.315)
+
+[node name="Bild" type="Sprite2D" parent="Furniture/mirror2"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(-96.4707, -578.823)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("23_o3p7x")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/mirror2"]
+position = Vector2(-130, -562.353)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="Mirror" type="StaticBody2D" parent="Furniture"]
+position = Vector2(-262, -77)
+scale = Vector2(0.315, 0.315)
+
+[node name="Bild" type="Sprite2D" parent="Furniture/Mirror"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(-96.4707, -578.823)
+scale = Vector2(1.05, 1.05)
+texture = ExtResource("23_o3p7x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/Mirror"]
+position = Vector2(-130, -562.353)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="shadow" type="StaticBody2D" parent="Furniture"]
+position = Vector2(-210, -49)
+scale = Vector2(0.365, 0.365)
+
+[node name="Bild" type="Sprite2D" parent="Furniture/shadow"]
+material = SubResource("ShaderMaterial_c66a7")
+position = Vector2(581.176, 91.7647)
+scale = Vector2(0.595, 0.595)
+texture = ExtResource("24_420c7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Furniture/shadow"]
+position = Vector2(-130, -562.353)
+shape = SubResource("RectangleShape2D_8aagw")
+disabled = true
+
+[node name="ParticlesArea" type="Area2D" parent="." node_paths=PackedStringArray("cpu_particle")]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("25_rm6hv")
+cpu_particle = NodePath("CPUParticles2D")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ParticlesArea"]
+position = Vector2(-13.5, -473.5)
+shape = SubResource("RectangleShape2D_k0p1e")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="ParticlesArea"]
+position = Vector2(3, -44)
+scale = Vector2(0.425, 0.425)
+emitting = false
+amount = 25
+texture = ExtResource("26_tyjuk")
+lifetime = 2.0
+explosiveness = 1.0
+randomness = 1.0
+lifetime_randomness = 1.0
+direction = Vector2(0, -5)
+spread = 180.0
+gravity = Vector2(0, 300)
+initial_velocity_min = 33.46
+initial_velocity_max = 1000.0
+damping_curve = SubResource("Curve_nnpbe")
+scale_amount_min = 0.1
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_75675")
+color_initial_ramp = SubResource("Gradient_43cuh")
+hue_variation_max = 1.0
+
+[node name="Win_Area" type="Area2D" parent="."]
+position = Vector2(15, -23)
+scale = Vector2(0.425, 0.425)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("27_k58xk")
+set_name_input = ExtResource("28_4kjxf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area"]
+position = Vector2(-30.5882, 37.6471)
+shape = SubResource("RectangleShape2D_2fxmi")
+debug_color = Color(0.851177, 0.371948, 1.92523e-07, 0.42)

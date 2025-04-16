@@ -1,7 +1,7 @@
 [gd_scene load_steps=17 format=3 uid="uid://cn1seejpqc5o4"]
 
 [ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="1_lcgkv"]
-[ext_resource type="Script" uid="uid://c0nf7onadwaui" path="res://scenes/_game/end_scene/name_input.gd" id="1_ms0xx"]
+[ext_resource type="Script" uid="uid://c0nf7onadwaui" path="res://scenes/end_scene/name_input.gd" id="1_ms0xx"]
 [ext_resource type="Texture2D" uid="uid://c5gl0smf8dn4e" path="res://assets/images/menu/letters/C.png" id="2_68jny"]
 [ext_resource type="Texture2D" uid="uid://bll36ne5b77mp" path="res://assets/images/menu/wallpaper/spiral-retro-background-3.jpg" id="2_tmhfe"]
 [ext_resource type="FontVariation" uid="uid://c5oytoyxdwaxk" path="res://resources/font/Slabo_13px.tres" id="3_cckeb"]
