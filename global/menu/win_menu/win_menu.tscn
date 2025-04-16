@@ -1,0 +1,220 @@
+[gd_scene load_steps=20 format=3 uid="uid://b6jm1jji7oqb"]
+
+[ext_resource type="Script" uid="uid://0hu6ucj28dwc" path="res://global/menu/win_menu/win_menu.gd" id="1_7f638"]
+[ext_resource type="Material" uid="uid://b4uin2akd0f2b" path="res://resources/shaders/menu_transition.tres" id="2_uto2b"]
+[ext_resource type="Texture2D" uid="uid://bll36ne5b77mp" path="res://assets/images/menu/wallpaper/spiral-retro-background-3.jpg" id="3_md77v"]
+[ext_resource type="Texture2D" uid="uid://uki0hpt75hx8" path="res://assets/images/menu/win-menu/background.png" id="4_06xxa"]
+[ext_resource type="FontFile" uid="uid://dl8um6mjcf2fo" path="res://assets/fonts/Schoolbell/Schoolbell-Regular.ttf" id="5_gkiyk"]
+[ext_resource type="FontFile" uid="uid://d3w10pqgnrc6n" path="res://assets/fonts/Comic_Neue/ComicNeue-Bold.ttf" id="6_dboxc"]
+[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="7_llcdx"]
+[ext_resource type="Texture2D" uid="uid://c5gl0smf8dn4e" path="res://assets/images/menu/letters/C.png" id="8_tvnah"]
+[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="9_cys7a"]
+[ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="10_4d8gp"]
+[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="11_lho1j"]
+[ext_resource type="Texture2D" uid="uid://bdy2l14ad74v8" path="res://assets/images/menu/letters/F-3.png" id="12_vpjhs"]
+[ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="13_hxir0"]
+[ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="14_c0oca"]
+[ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="15_vke48"]
+[ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="16_pdgc7"]
+[ext_resource type="Script" uid="uid://wj7pnwgxam2o" path="res://components/on_visible/on_visible2d_modulate.gd" id="17_13uys"]
+[ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="18_khbdn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oy6jt"]
+bg_color = Color(0.545098, 0.603922, 0.286275, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button")]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_7f638")
+confirm_button = NodePath("Paper/ConfirmButton")
+
+[node name="Wallpaper" type="TextureRect" parent="."]
+material = ExtResource("2_uto2b")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -320.0
+offset_right = 21.0
+offset_bottom = 240.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_md77v")
+expand_mode = 4
+
+[node name="Paper" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.0
+offset_top = -300.0
+offset_right = 398.0
+offset_bottom = 340.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0408797
+texture = ExtResource("4_06xxa")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Paper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -303.004
+offset_top = -268.993
+offset_right = 234.212
+offset_bottom = 179.007
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0349066
+theme_override_colors/default_color = Color(0.0745823, 0.0722412, 0.0722412, 1)
+theme_override_fonts/normal_font = ExtResource("5_gkiyk")
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "Dear Gamer,
+You have done what many couldn't. You have beaten our game in [color=red][shake rate=20.0 level=5 connected=1]5 hours, 5 minutes and 13 seconds[/shake][/color], which is very impressive I might add. 
+
+And you took the time to collect [rainbow freq=1.0 sat=1 val=0.8 speed=-1.0]5 out of 5 Toilettepaperrolls[/rainbow]. So next time nature calls, I can head to the bathroom without a worry.
+
+Your feat will give you the [color=blue][wave amp=50.0 freq=5.0 connected=1]#4th place[/wave][/color] in the online leaderboard. Mind telling us your name? The world should know who pulled this off!
+
+
+
+Keep it up gamer."
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="TextEdit" type="TextEdit" parent="Paper"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -290.78
+offset_top = 92.8086
+offset_right = -40.7795
+offset_bottom = 124.314
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0349066
+theme_override_colors/font_placeholder_color = Color(0.883333, 0, 1, 1)
+theme_override_colors/font_color = Color(0.882353, 0, 1, 1)
+theme_override_fonts/font = ExtResource("6_dboxc")
+theme_override_font_sizes/font_size = 20
+theme_override_styles/normal = SubResource("StyleBoxFlat_oy6jt")
+placeholder_text = "Anonymous"
+context_menu_enabled = false
+emoji_menu_enabled = false
+shortcut_keys_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="ConfirmButton" type="Button" parent="Paper"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.152
+offset_top = -120.939
+offset_right = 177.848
+offset_bottom = -48.9391
+grow_horizontal = 2
+grow_vertical = 0
+rotation = -0.0349066
+pivot_offset = Vector2(182.5, 36)
+focus_mode = 0
+text = "
+"
+flat = true
+
+[node name="LetterContainer" type="HBoxContainer" parent="Paper/ConfirmButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.625
+offset_top = -33.835
+offset_right = 178.625
+offset_bottom = 33.835
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="C" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("8_tvnah")
+expand_mode = 3
+
+[node name="OnVisible2dShaderAlpha" type="Node" parent="Paper/ConfirmButton/LetterContainer/C"]
+script = ExtResource("9_cys7a")
+
+[node name="O" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("10_4d8gp")
+expand_mode = 3
+
+[node name="N" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("11_lho1j")
+expand_mode = 3
+
+[node name="F" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("12_vpjhs")
+expand_mode = 3
+
+[node name="I" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("13_hxir0")
+expand_mode = 3
+
+[node name="R" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("14_c0oca")
+expand_mode = 3
+
+[node name="M" type="TextureRect" parent="Paper/ConfirmButton/LetterContainer"]
+material = ExtResource("7_llcdx")
+layout_mode = 2
+texture = ExtResource("15_vke48")
+expand_mode = 3
+
+[node name="ButtonHover" type="Node" parent="Paper/ConfirmButton"]
+script = ExtResource("16_pdgc7")
+metadata/_custom_type_script = "uid://iryt2xkha5ve"
+
+[node name="OnVisible2dModulate" type="Node" parent="Paper"]
+script = ExtResource("17_13uys")
+metadata/_custom_type_script = "uid://wj7pnwgxam2o"
+
+[node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
+script = ExtResource("18_khbdn")
+wallpaper = NodePath("../Wallpaper")
+anything_else = [NodePath("../Paper/ConfirmButton"), NodePath("../Paper")]
+metadata/_custom_type_script = "uid://duya6nqidc6d5"

@@ -20,7 +20,7 @@ func _ready():
   
   main_menu.visibility_changed.connect(_on_mm_visibility_changed)
   main_menu.play_button.pressed.connect(_on_mm_play)
-  main_menu.leaderboard_button.pressed.connect(_on_mm_leaderboard)
+  main_menu.leaderboard_button.pressed.connect(win_menu.show)#_on_mm_leaderboard)
   main_menu.settings_button.pressed.connect(_on_mm_settings)
 
   pause_menu.visibility_changed.connect(_on_pm_visibility_changed)
@@ -100,13 +100,10 @@ func _on_lm_back() -> void:
 func _on_wm_confirm() -> void:
   get_tree().reload_current_scene()
   Grace.reset_scene()
-
+  await Grace.scene_loaded
   leaderboard_menu.show()
-  leaderboard_menu.last_menu = main_menu
 
 
-func _on_leaderboard_is_inactive() ->void:
-  leaderboard_menu.hide()
 ## General
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("pause"):

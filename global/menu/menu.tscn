@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://bqihfmd6cswst"]
+[gd_scene load_steps=8 format=3 uid="uid://bqihfmd6cswst"]
 
 [ext_resource type="Script" uid="uid://dr6hefbi3ioga" path="res://global/menu/menu.gd" id="1_adrvt"]
 [ext_resource type="PackedScene" uid="uid://4aa2lrydyhgf" path="res://global/menu/main_menu/main_menu.tscn" id="1_sjb18"]
@@ -6,20 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cent0ph746c7e" path="res://global/menu/settings_menu/settings_menu.tscn" id="3_c2i1n"]
 [ext_resource type="PackedScene" uid="uid://bteygbql26mqp" path="res://global/menu/leaderboard_menu/leaderboard_menu.tscn" id="5_71gem"]
 [ext_resource type="PackedScene" uid="uid://daycv1awn5ygk" path="res://scenes/ui/hud.tscn" id="6_peatc"]
-[ext_resource type="Script" uid="uid://0hu6ucj28dwc" path="res://global/menu/win_menu/win_menu.gd" id="7_70jwd"]
-[ext_resource type="Material" uid="uid://b4uin2akd0f2b" path="res://resources/shaders/menu_transition.tres" id="7_gaine"]
-[ext_resource type="Texture2D" uid="uid://bll36ne5b77mp" path="res://assets/images/menu/wallpaper/spiral-retro-background-3.jpg" id="8_gaine"]
-[ext_resource type="Material" uid="uid://dpa10fi3fpgl2" path="res://resources/shaders/letter_shadow_material.tres" id="9_egilb"]
-[ext_resource type="Script" uid="uid://duya6nqidc6d5" path="res://components/transition/transition.gd" id="9_idyvg"]
-[ext_resource type="Texture2D" uid="uid://c5gl0smf8dn4e" path="res://assets/images/menu/letters/C.png" id="10_vn7y8"]
-[ext_resource type="Script" uid="uid://b56jfdihlxedt" path="res://components/on_visible/on_visible2d_shader_alpha.gd" id="11_4ks52"]
-[ext_resource type="Texture2D" uid="uid://ksde624emo1a" path="res://assets/images/menu/letters/O-2.png" id="12_xyope"]
-[ext_resource type="Texture2D" uid="uid://dre8y3k23eg05" path="res://assets/images/menu/letters/N.png" id="13_48ncn"]
-[ext_resource type="Texture2D" uid="uid://bdy2l14ad74v8" path="res://assets/images/menu/letters/F-3.png" id="14_oy6jt"]
-[ext_resource type="Texture2D" uid="uid://cbareui3ycq2d" path="res://assets/images/menu/letters/I-4.png" id="15_5pght"]
-[ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="16_wlgxr"]
-[ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="17_3fs4y"]
-[ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="18_qe6y3"]
+[ext_resource type="PackedScene" uid="uid://b6jm1jji7oqb" path="res://global/menu/win_menu/win_menu.tscn" id="7_htnj2"]
 
 [node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu", "hud_menu", "win_menu")]
 process_mode = 3
@@ -34,7 +21,6 @@ win_menu = NodePath("WinMenu")
 [node name="HUD" parent="." instance=ExtResource("6_peatc")]
 
 [node name="MainMenu" parent="." instance=ExtResource("1_sjb18")]
-visible = false
 mouse_filter = 1
 
 [node name="PauseMenu" parent="." instance=ExtResource("2_c2i1n")]
@@ -48,116 +34,5 @@ mouse_filter = 1
 [node name="LeaderboardMenu" parent="." instance=ExtResource("5_71gem")]
 visible = false
 
-[node name="WinMenu" type="Control" parent="." node_paths=PackedStringArray("confirm_button")]
-clip_contents = true
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("7_70jwd")
-confirm_button = NodePath("ConfirmButton")
-
-[node name="Wallpaper" type="TextureRect" parent="WinMenu"]
-material = ExtResource("7_gaine")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = -320.0
-offset_bottom = 240.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("8_gaine")
-expand_mode = 4
-
-[node name="ConfirmButton" type="Button" parent="WinMenu"]
-custom_minimum_size = Vector2(500, 100)
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -250.0
-offset_top = -154.0
-offset_right = 250.0
-offset_bottom = -54.0
-grow_horizontal = 2
-grow_vertical = 0
-pivot_offset = Vector2(250, 50)
-focus_mode = 0
-text = "
-"
-flat = true
-
-[node name="LetterContainer" type="HBoxContainer" parent="WinMenu/ConfirmButton"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -246.0
-offset_top = -47.1225
-offset_right = 246.0
-offset_bottom = 47.1225
-grow_horizontal = 2
-grow_vertical = 2
-alignment = 1
-
-[node name="C" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("10_vn7y8")
-expand_mode = 3
-
-[node name="OnVisible2dShaderAlpha" type="Node" parent="WinMenu/ConfirmButton/LetterContainer/C"]
-script = ExtResource("11_4ks52")
-
-[node name="O" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("12_xyope")
-expand_mode = 3
-
-[node name="N" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("13_48ncn")
-expand_mode = 3
-
-[node name="F" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("14_oy6jt")
-expand_mode = 3
-
-[node name="I" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("15_5pght")
-expand_mode = 3
-
-[node name="R" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("16_wlgxr")
-expand_mode = 3
-
-[node name="M" type="TextureRect" parent="WinMenu/ConfirmButton/LetterContainer"]
-material = ExtResource("9_egilb")
-layout_mode = 2
-texture = ExtResource("17_3fs4y")
-expand_mode = 3
-
-[node name="ButtonHover" type="Node" parent="WinMenu/ConfirmButton"]
-script = ExtResource("18_qe6y3")
-metadata/_custom_type_script = "uid://iryt2xkha5ve"
-
-[node name="Transition" type="Node" parent="WinMenu" node_paths=PackedStringArray("wallpaper", "anything_else")]
-script = ExtResource("9_idyvg")
-wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../ConfirmButton")]
-metadata/_custom_type_script = "uid://duya6nqidc6d5"
+[node name="WinMenu" parent="." instance=ExtResource("7_htnj2")]
+visible = false
