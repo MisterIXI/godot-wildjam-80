@@ -1,4 +1,4 @@
-[gd_scene load_steps=156 format=3 uid="uid://cucfsuybxu4eu"]
+[gd_scene load_steps=165 format=3 uid="uid://cucfsuybxu4eu"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_puc63"]
 [ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="2_hnw1m"]
@@ -26,19 +26,19 @@
 [ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="23_hfh31"]
 [ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="24_sellv"]
 [ext_resource type="Texture2D" uid="uid://bjy23a0cbs854" path="res://assets/images/photos/gulli4.png" id="25_2en8o"]
-[ext_resource type="PackedScene" uid="uid://bwgxsmbpyh5nq" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="26_wh06c"]
-[ext_resource type="PackedScene" uid="uid://51bai6yg040r" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="27_c2jfu"]
-[ext_resource type="PackedScene" uid="uid://bif0uca6ftk1d" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="28_gh2fr"]
-[ext_resource type="PackedScene" uid="uid://crglposwftdms" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="29_q5f3c"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="26_wh06c"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="27_c2jfu"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="28_gh2fr"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="29_q5f3c"]
 [ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="30_uq1tj"]
-[ext_resource type="PackedScene" uid="uid://dpoa3ew1vnww6" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="31_vsj6i"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="31_vsj6i"]
 [ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="32_7m2cs"]
-[ext_resource type="PackedScene" uid="uid://0jait75dgawh" path="res://scenes/EnvironmentObjects/reifen.tscn" id="33_sefq2"]
-[ext_resource type="PackedScene" uid="uid://7swphsmengui" path="res://scenes/EnvironmentObjects/isetta.tscn" id="34_kmssj"]
-[ext_resource type="PackedScene" uid="uid://1j4exdyv0vk6" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="35_w6fbt"]
-[ext_resource type="PackedScene" uid="uid://brqky1wh7xwv8" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_0a16p"]
-[ext_resource type="PackedScene" uid="uid://cbs1kk2k7axw" path="res://scenes/EnvironmentObjects/redlight.tscn" id="37_8h2cb"]
-[ext_resource type="PackedScene" uid="uid://c7k088bw8pt83" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="38_5vcld"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/reifen.tscn" id="33_sefq2"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/isetta.tscn" id="34_kmssj"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="35_w6fbt"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_0a16p"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/redlight.tscn" id="37_8h2cb"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="38_5vcld"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="39_3rpxd"]
 [ext_resource type="PackedScene" uid="uid://ba30px4pqwxrq" path="res://scenes/EnvironmentObjects/blume_1.tscn" id="40_twwkc"]
 [ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="41_426ba"]
@@ -49,19 +49,19 @@
 [ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="46_un4hr"]
 [ext_resource type="PackedScene" uid="uid://cqy2067hkppla" path="res://scenes/EnvironmentObjects/misc/yeh_flower.tscn" id="47_vppwm"]
 [ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="48_80jos"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
+[ext_resource type="PackedScene" uid="uid://bb60f7pufgkvc" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
+[ext_resource type="PackedScene" uid="uid://dmrlpd5rmfaan" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
+[ext_resource type="PackedScene" uid="uid://1y4iqx8jvmf5" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
+[ext_resource type="PackedScene" uid="uid://bkwxktyxjbisq" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
 [ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="53_p2apg"]
 [ext_resource type="PackedScene" uid="uid://1s55niglbayl" path="res://scenes/EnvironmentObjects/misc/teto_love.tscn" id="54_baflj"]
 [ext_resource type="PackedScene" uid="uid://itm5pkt7qf64" path="res://scenes/EnvironmentObjects/misc/bunny_love.tscn" id="55_pu5fs"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
+[ext_resource type="PackedScene" uid="uid://c2mkolo104wgq" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
 [ext_resource type="PackedScene" uid="uid://sde60sn8u46e" path="res://scenes/EnvironmentObjects/Obstacles/flower.tscn" id="57_xuxe5"]
 [ext_resource type="PackedScene" uid="uid://doa0bax35p5je" path="res://scenes/EnvironmentObjects/Obstacles/windmill.tscn" id="58_0cfh7"]
 [ext_resource type="PackedScene" uid="uid://bkjieb8en8qgi" path="res://scenes/EnvironmentObjects/kafka.tscn" id="59_icwdw"]
 [ext_resource type="PackedScene" uid="uid://u8qq6esgpedx" path="res://scenes/EnvironmentObjects/taschenmesser.tscn" id="60_t1w8w"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
+[ext_resource type="PackedScene" uid="uid://dh0d0fcqlb7nc" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
 [ext_resource type="PackedScene" uid="uid://b7de2qvboavwn" path="res://scenes/EnvironmentObjects/Obstacles/gaensebluemchen.tscn" id="62_76b8n"]
 [ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="63_hpdqr"]
 [ext_resource type="PackedScene" uid="uid://rpqnhe6twc2a" path="res://scenes/EnvironmentObjects/misc/arrow_1.tscn" id="64_npugr"]
@@ -70,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://drh7w1kw1envp" path="res://scenes/EnvironmentObjects/misc/arrow_5.tscn" id="67_nj6o4"]
 [ext_resource type="PackedScene" uid="uid://d1wjo8g6fnp2r" path="res://scenes/EnvironmentObjects/misc/arrow_3.tscn" id="68_ld05y"]
 [ext_resource type="PackedScene" uid="uid://c11q60jv54e0h" path="res://scenes/EnvironmentObjects/misc/arrow_6.tscn" id="69_fa2v0"]
+[ext_resource type="Texture2D" uid="uid://c6sxitlxyd6gw" path="res://assets/images/photos/radierer.png" id="69_jvvaj"]
 [ext_resource type="Script" uid="uid://cr82wba3404if" path="res://scenes/woldboundss/world_bounderies.gd" id="70_hnw1m"]
 [ext_resource type="PackedScene" uid="uid://bn8ts77vewg4e" path="res://scenes/EnvironmentObjects/misc/arrow_7.tscn" id="70_ro8g5"]
 [ext_resource type="PackedScene" uid="uid://bh36khiteekr2" path="res://scenes/end_scene/bathroom.tscn" id="72_mvwki"]
@@ -78,18 +79,6 @@
 [ext_resource type="Texture2D" uid="uid://dmrwwq4uwxetw" path="res://assets/images/env/yeh_flower.png" id="76_dom4v"]
 [ext_resource type="Texture2D" uid="uid://c1nuxh5vrt8dj" path="res://assets/images/env/godot_wildjam_white.png" id="77_jvvaj"]
 [ext_resource type="PackedScene" uid="uid://5ywona8gfnpd" path="res://scenes/collectable/collectable_item.tscn" id="77_kprro"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_puc63"]
-size = Vector2(58697, 6649)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hnw1m"]
-size = Vector2(58697, 7529)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvwki"]
-size = Vector2(13986.8, 26827)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_jmj8x"]
-size = Vector2(17707.4, 26909)
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3y6uy"]
 frequency = 0.0043
@@ -401,6 +390,28 @@ shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x1wpk"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_u5vne"]
+seamless = true
+noise = SubResource("FastNoiseLite_x1wpk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqinl"]
+shader = ExtResource("15_ca5qb")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 4.991
+shader_parameter/noise = SubResource("NoiseTexture2D_u5vne")
+shader_parameter/noise_speed = 1.715
+shader_parameter/distortion_str = 0.001
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xe00i"]
+size = Vector2(724.808, 248.96)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puc63"]
 size = Vector2(58697, 6649)
@@ -758,6 +769,25 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_dom4v"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jvvaj"]
+seamless = true
+noise = SubResource("FastNoiseLite_dom4v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x5g1v"]
+shader = ExtResource("15_ca5qb")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.708487, 0.00160872, 0.864371, 1)
+shader_parameter/color_tint = Color(0, 0.483066, 0.442675, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 10.454
+shader_parameter/noise = SubResource("NoiseTexture2D_jvvaj")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mvwki"]
 shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
@@ -770,25 +800,6 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
-seamless = true
-noise = SubResource("FastNoiseLite_k2e0m")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xkmml"]
-shader = ExtResource("15_ca5qb")
-shader_parameter/uv_scale = 1.0
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/color_tint = Color(0.941176, 0.384314, 0.294118, 1)
-shader_parameter/draw_line = true
-shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
-shader_parameter/noise_speed = 3.08
-shader_parameter/distortion_str = 0.01
-shader_parameter/frame_time = 0.25
-
 [node name="Main" type="Node2D"]
 
 [node name="ShadowGroup" type="CanvasGroup" parent="."]
@@ -797,6 +808,7 @@ fit_margin = 934.0
 clear_margin = 689.0
 
 [node name="PlayerBody" parent="ShadowGroup" instance=ExtResource("2_hnw1m")]
+position = Vector2(8113, -14096)
 collision_layer = 3
 max_contacts_reported = 3
 metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
@@ -1875,33 +1887,8 @@ scale = Vector2(0.538799, 0.538799)
 [node name="End" type="Node2D" parent="ShadowGroup"]
 
 [node name="Bathroom" parent="ShadowGroup/End" instance=ExtResource("72_mvwki")]
-position = Vector2(9350, -14070)
+position = Vector2(9342, -14075)
 scale = Vector2(0.852058, 0.852058)
-metadata/_edit_lock_ = true
-
-[node name="pole15" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
-position = Vector2(4437, -16187)
-rotation = -1.08988
-scale = Vector2(1, 4.00051)
-metadata/_edit_lock_ = true
-
-[node name="pole16" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
-position = Vector2(6075, -14838)
-rotation = -0.343865
-scale = Vector2(1, 1.44714)
-metadata/_edit_lock_ = true
-
-[node name="pole17" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
-position = Vector2(6833, -14141)
-rotation = -1.31937
-scale = Vector2(1, 1.44714)
-metadata/_edit_lock_ = true
-
-[node name="pole18" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
-position = Vector2(8405, -13992)
-rotation = -1.59625
-scale = Vector2(1, 4.52815)
-metadata/_edit_lock_ = true
 
 [node name="pole19" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
 position = Vector2(11379, -14667)
@@ -1945,13 +1932,10 @@ position = Vector2(21, 122)
 scale = Vector2(0.245, 0.245)
 texture = ExtResource("76_dom4v")
 
-[node name="gulli" parent="ShadowGroup/End" instance=ExtResource("14_xe00i")]
-position = Vector2(8294, -14558)
-
-[node name="Sprite2D4" type="Sprite2D" parent="ShadowGroup/End/gulli"]
+[node name="Sprite2D4" type="Sprite2D" parent="ShadowGroup/End"]
 material = SubResource("ShaderMaterial_xkmml")
-position = Vector2(-8, -29)
-scale = Vector2(0.47, 0.47)
+position = Vector2(9333, -14445)
+scale = Vector2(0.243809, 0.243809)
 texture = ExtResource("77_jvvaj")
 
 [node name="pole25" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
@@ -1962,7 +1946,7 @@ rotation = -3.16683
 position = Vector2(10387, -14017)
 
 [node name="Trampoline4" parent="ShadowGroup/End" instance=ExtResource("3_mvwki")]
-position = Vector2(7196, -15839)
+position = Vector2(7149, -15947)
 rotation = 0.936605
 scale = Vector2(2, 2)
 
@@ -2018,6 +2002,54 @@ rotation_speed = 300.0
 [node name="Trampoline3" parent="ShadowGroup/End" instance=ExtResource("3_mvwki")]
 position = Vector2(10943, -14356)
 
+[node name="yield5" parent="ShadowGroup/End" instance=ExtResource("10_jvvaj")]
+position = Vector2(6278, -14686)
+rotation = -0.5868
+scale = Vector2(2.10861, 2.10861)
+
+[node name="CollisionPolygon2D" parent="ShadowGroup/End/yield5" index="1"]
+visible = true
+
+[node name="Radierer2" type="StaticBody2D" parent="ShadowGroup/End"]
+position = Vector2(8697, -13495)
+rotation = -0.00209111
+scale = Vector2(4.72774, 4.16797)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="ShadowGroup/End/Radierer2"]
+material = SubResource("ShaderMaterial_fqinl")
+position = Vector2(-8.87641, -4.09979)
+rotation = 0.00293532
+scale = Vector2(1.07614, 1)
+texture = ExtResource("69_jvvaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ShadowGroup/End/Radierer2"]
+position = Vector2(20.6832, -5.37085)
+rotation = -0.00257969
+scale = Vector2(0.999999, 0.999999)
+shape = SubResource("RectangleShape2D_xe00i")
+
+[node name="spielstr" parent="ShadowGroup/End" instance=ExtResource("31_vsj6i")]
+position = Vector2(6632, -13791)
+rotation = 0.270584
+scale = Vector2(1.46201, 1.46201)
+
+[node name="Cigret8" parent="ShadowGroup/End" instance=ExtResource("56_bgmey")]
+position = Vector2(3480, -16739)
+rotation = 3.65663
+
+[node name="Cigret10" parent="ShadowGroup/End" instance=ExtResource("56_bgmey")]
+position = Vector2(4199, -16340)
+rotation = 3.64126
+
+[node name="Cigret11" parent="ShadowGroup/End" instance=ExtResource("56_bgmey")]
+position = Vector2(4925, -15944)
+rotation = 3.64126
+
+[node name="Cigret12" parent="ShadowGroup/End" instance=ExtResource("56_bgmey")]
+position = Vector2(5645, -15551)
+rotation = 3.64126
+
 [node name="Bg" parent="." instance=ExtResource("1_puc63")]
 position = Vector2(2721, -9273)
 scale = Vector2(28.6653, 28.6653)
@@ -2043,7 +2075,6 @@ position = Vector2(-17786.7, -9156.5)
 shape = SubResource("RectangleShape2D_jmj8x")
 
 [node name="Arrows" type="Node2D" parent="."]
-metadata/_edit_lock_ = true
 
 [node name="Arrow4" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
@@ -2330,6 +2361,12 @@ z_index = -1
 position = Vector2(2342, -17143)
 rotation = 3.10577
 
+[node name="Arrow57" parent="Arrows" instance=ExtResource("66_wfufh")]
+z_index = -1
+material = SubResource("ShaderMaterial_x5g1v")
+position = Vector2(7947, -14231)
+rotation = 2.23926
+
 [node name="Arrow54" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 position = Vector2(1897, -14849)
@@ -2345,153 +2382,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_mvwki")
 position = Vector2(3093, -17182)
 rotation = 1.35098
-
-[editable path="ShadowGroup/Env/schild"]
-[node name="End" type="Node2D" parent="."]
-
-[node name="Bathroom" parent="End" instance=ExtResource("72_mvwki")]
-position = Vector2(9350, -14070)
-scale = Vector2(0.852058, 0.852058)
-metadata/_edit_lock_ = true
-
-[node name="pole15" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(4437, -16187)
-rotation = -1.08988
-scale = Vector2(1, 4.00051)
-metadata/_edit_lock_ = true
-
-[node name="pole16" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(6075, -14838)
-rotation = -0.343865
-scale = Vector2(1, 1.44714)
-metadata/_edit_lock_ = true
-
-[node name="pole17" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(6833, -14141)
-rotation = -1.31937
-scale = Vector2(1, 1.44714)
-metadata/_edit_lock_ = true
-
-[node name="pole18" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(8405, -13992)
-rotation = -1.59625
-scale = Vector2(1, 4.52815)
-metadata/_edit_lock_ = true
-
-[node name="pole19" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(11379, -14667)
-rotation = -2.4937
-
-[node name="pole20" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(11651, -15749)
-rotation = -3.13449
-
-[node name="pole21" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(11358, -16887)
-rotation = -3.78116
-
-[node name="pole22" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(10447, -17603)
-rotation = -4.29294
-
-[node name="pole23" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(9175, -18009)
-rotation = -4.8046
-
-[node name="pole24" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(7853, -17577)
-rotation = -5.39547
-
-[node name="eightball" parent="End" instance=ExtResource("51_0h46h")]
-position = Vector2(10589, -16163)
-
-[node name="Sprite2D3" type="Sprite2D" parent="End/eightball"]
-material = ExtResource("73_pd8rw")
-position = Vector2(-66, -107)
-scale = Vector2(0.155, 0.155)
-texture = ExtResource("75_kprro")
-
-[node name="broetchen1" parent="End" instance=ExtResource("27_c2jfu")]
-position = Vector2(8076, -16317)
-
-[node name="Sprite2D2" type="Sprite2D" parent="End/broetchen1"]
-material = ExtResource("73_pd8rw")
-position = Vector2(21, 122)
-scale = Vector2(0.245, 0.245)
-texture = ExtResource("76_dom4v")
-
-[node name="gulli" parent="End" instance=ExtResource("14_xe00i")]
-position = Vector2(8294, -14558)
-
-[node name="Sprite2D4" type="Sprite2D" parent="End/gulli"]
-material = SubResource("ShaderMaterial_xkmml")
-position = Vector2(-8, -29)
-scale = Vector2(0.47, 0.47)
-texture = ExtResource("77_jvvaj")
-
-[node name="pole25" parent="End" instance=ExtResource("4_jmj8x")]
-position = Vector2(7171, -16399)
-rotation = -3.16683
-
-[node name="Trampoline" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(10387, -14017)
-
-[node name="Trampoline4" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(7196, -15839)
-rotation = 0.936605
-scale = Vector2(2, 2)
-
-[node name="Trampoline5" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(7502, -17307)
-rotation = 2.09744
-scale = Vector2(2, 2)
-
-[node name="Trampoline6" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(8717, -17992)
-rotation = 2.75365
-scale = Vector2(2, 2)
-
-[node name="Trampoline7" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(10067, -17796)
-rotation = 3.54242
-scale = Vector2(2, 2)
-
-[node name="Trampoline8" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(11170, -17109)
-rotation = 3.74678
-scale = Vector2(2, 2)
-
-[node name="Trampoline9" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(11650, -16023)
-rotation = 4.43878
-scale = Vector2(2, 2)
-
-[node name="Trampoline10" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(11522, -14927)
-rotation = 4.83782
-scale = Vector2(2, 2)
-
-[node name="Windmill" parent="End" instance=ExtResource("58_0cfh7")]
-position = Vector2(9309, -16379)
-rotation = -0.497638
-rotation_speed = 444.0
-
-[node name="Trampoline2" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(10656, -14168)
-scale = Vector2(1.125, 1.125)
-
-[node name="gaensebluemchen" parent="End" instance=ExtResource("62_76b8n")]
-position = Vector2(10379, -15066)
-rotation = -0.497638
-rotation_speed = 200.0
-
-[node name="gaensebluemchen2" parent="End" instance=ExtResource("62_76b8n")]
-position = Vector2(8449, -15478)
-rotation = -0.497638
-rotation_speed = 300.0
-
-[node name="Trampoline3" parent="End" instance=ExtResource("3_mvwki")]
-position = Vector2(10943, -14356)
 
 [node name="Collectables" type="Node2D" parent="."]
 
@@ -2515,4 +2405,8 @@ uid = 523562343
 position = Vector2(1562, -16696)
 uid = 523562344
 
-[editable path="Env/schild"]
+[editable path="ShadowGroup/Env/schild"]
+[editable path="ShadowGroup/End/yield5"]
+[editable path="ShadowGroup/End/Cigret8"]
+[editable path="ShadowGroup/End/Cigret11"]
+[editable path="ShadowGroup/End/Cigret12"]

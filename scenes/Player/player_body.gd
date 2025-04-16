@@ -8,6 +8,7 @@ class_name PlayerController
 
 @export var max_rope_distance : float = 300
 @export var ground_cast: ShapeCast2D
+@export var backup_ground_cast: RayCast2D
 @export var debug_movement: bool = false
 
 @export var hop_cd_timer: Timer
@@ -27,7 +28,7 @@ signal hopped_left
 signal hard_impact
 
 func is_grounded():
-	return ground_cast.is_colliding() or debug_movement
+	return (ground_cast.is_colliding() or backup_ground_cast.is_colliding()) or debug_movement
 
 func _physics_process(_delta):
 	velocity_buffer.append(linear_velocity.length())
@@ -35,6 +36,7 @@ func _physics_process(_delta):
 		velocity_buffer.pop_front()
 	# rotate ground ray
 	ground_cast.rotation_degrees = 360 - rotation_degrees
+	backup_ground_cast.rotation_degrees = 360 - rotation_degrees
 	if is_grounded() and hop_cd_timer.time_left == 0:
 	# on move_right and move_left, apply force to the player
 		if Input.is_action_just_pressed("move_right"):
@@ -93,7 +95,6 @@ func _integrate_forces(state):
 	if impact_cd_timer.time_left == 0 and state.get_contact_count() >= 1 and impact_force > hard_impact_threshold:
 		dust_cloud_system.emit_at(state.get_contact_local_position(0))
 		hard_impact.emit()
-		SoundManager._flush_toilet()
 		impact_cd_timer.start()
 		# print("IMPACT: ", impact_force, " | data: ", velocity_buffer, " ", state.linear_velocity.length())
 

@@ -107,7 +107,7 @@ func _on_wm_confirm() -> void:
 ## General
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("pause"):
-    if not main_menu.visible and not settings_menu.visible and not leaderboard_menu.visible:
+    if not main_menu.visible and not settings_menu.visible and not leaderboard_menu.visible and not win_menu.visible:
       if pause_menu.visible:
         for child in pause_menu.get_children():
           if child is Untransition:
@@ -122,3 +122,6 @@ func _input(event: InputEvent) -> void:
       settings_menu.last_menu.show()
     elif leaderboard_menu.visible:
       main_menu.show()
+    elif win_menu.visible:
+      win_menu.untransition.start_animation()
+      get_tree().paused = false

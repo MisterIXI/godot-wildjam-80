@@ -31,7 +31,7 @@ bus = &"SFX"
 
 [node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_iut0o")
-volume_db = -10.0
+volume_db = -20.0
 bus = &"Music"
 parameters/looping = true
 
