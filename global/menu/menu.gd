@@ -7,6 +7,7 @@ extends Node
 @export var settings_menu : SettingsMenu
 @export var leaderboard_menu : LeaderboardMenu
 @export var hud_menu : HUDmenu
+@export var win_menu : WinMenu
 
 func _ready():
   pause_menu.hide()
@@ -31,6 +32,8 @@ func _ready():
   settings_menu.confirm_button.pressed.connect(_on_sm_confirm)
 
   leaderboard_menu.back_button.pressed.connect(_on_lm_back)
+
+  win_menu.confirm_button.pressed.connect(_on_wm_confirm)
 
 
 ## Main menu
@@ -91,6 +94,16 @@ func _on_sm_confirm() -> void:
 ## Leaderboard menu
 func _on_lm_back() -> void:
   main_menu.show()
+
+
+## Win menu
+func _on_wm_confirm() -> void:
+  get_tree().reload_current_scene()
+  Grace.reset_scene()
+
+  leaderboard_menu.show()
+  leaderboard_menu.last_menu = main_menu
+
 
 func _on_leaderboard_is_inactive() ->void:
   leaderboard_menu.hide()
