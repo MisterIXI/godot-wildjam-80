@@ -134,6 +134,115 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="AudioContainer" type="VBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -314.0
+offset_right = 360.0
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="MasterVolume" type="TextureRect" parent="Settings/AudioContainer"]
+layout_mode = 2
+texture = ExtResource("10_0o6ow")
+
+[node name="MasterSlider" type="HSlider" parent="Settings/AudioContainer/MasterVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_4ks52")
+max_value = 200.0
+value = 100.0
+
+[node name="MusicVolume" type="TextureRect" parent="Settings/AudioContainer"]
+layout_mode = 2
+texture = ExtResource("11_y1s3r")
+
+[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/MusicVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oy6jt")
+max_value = 200.0
+value = 100.0
+
+[node name="SFXVolume" type="TextureRect" parent="Settings/AudioContainer"]
+layout_mode = 2
+texture = ExtResource("12_nayh4")
+
+[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/SFXVolume"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 330.0
+offset_right = -27.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_oy6jt")
+max_value = 200.0
+value = 100.0
+
+[node name="NaddelMode" type="TextureRect" parent="Settings/AudioContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("13_dslyc")
+
+[node name="CheckBox" type="CheckBox" parent="Settings/AudioContainer/NaddelMode"]
+modulate = Color(0.803922, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487
+anchor_top = 0.479
+anchor_right = 0.487
+anchor_bottom = 0.529
+offset_left = -26.64
+offset_top = -24.74
+offset_right = -2.64001
+offset_bottom = -3.74
+scale = Vector2(2.05298, 2.06019)
+focus_mode = 0
+metadata/scene_tree_color = Color(0.15, 0.15, 0.15, 0.35)
+
+[node name="ControlsContainer" type="HBoxContainer" parent="Settings"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -429.0
+offset_top = -50.0
+offset_right = 429.0
+offset_bottom = 164.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Control1" type="TextureRect" parent="Settings/ControlsContainer"]
+layout_mode = 2
+texture = ExtResource("14_7607p")
+
+[node name="Control2" type="TextureRect" parent="Settings/ControlsContainer"]
+layout_mode = 2
+texture = ExtResource("15_4flft")
+
 [node name="ConfirmButton" type="Button" parent="Settings"]
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 1
@@ -143,9 +252,9 @@ anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = -246.0
-offset_top = -141.0
+offset_top = -166.0
 offset_right = 246.0
-offset_bottom = -41.0
+offset_bottom = -66.0
 grow_horizontal = 2
 grow_vertical = 0
 pivot_offset = Vector2(246, 50)
@@ -217,113 +326,6 @@ expand_mode = 3
 [node name="ButtonHover" type="Node" parent="Settings/ConfirmButton"]
 script = ExtResource("12_3uqb3")
 metadata/_custom_type_script = "uid://iryt2xkha5ve"
-
-[node name="AudioContainer" type="VBoxContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -360.0
-offset_top = -289.0
-offset_right = 360.0
-offset_bottom = -37.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MasterVolume" type="TextureRect" parent="Settings/AudioContainer"]
-layout_mode = 2
-texture = ExtResource("10_0o6ow")
-
-[node name="MasterSlider" type="HSlider" parent="Settings/AudioContainer/MasterVolume"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 330.0
-offset_right = -27.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_4ks52")
-max_value = 200.0
-value = 100.0
-
-[node name="MusicVolume" type="TextureRect" parent="Settings/AudioContainer"]
-layout_mode = 2
-texture = ExtResource("11_y1s3r")
-
-[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/MusicVolume"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 330.0
-offset_right = -27.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_oy6jt")
-max_value = 200.0
-value = 100.0
-
-[node name="SFXVolume" type="TextureRect" parent="Settings/AudioContainer"]
-layout_mode = 2
-texture = ExtResource("12_nayh4")
-
-[node name="MusicSlider" type="HSlider" parent="Settings/AudioContainer/SFXVolume"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 330.0
-offset_right = -27.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = SubResource("Theme_oy6jt")
-max_value = 200.0
-value = 100.0
-
-[node name="NaddelMode" type="TextureRect" parent="Settings/AudioContainer"]
-layout_mode = 2
-texture = ExtResource("13_dslyc")
-
-[node name="CheckBox" type="CheckBox" parent="Settings/AudioContainer/NaddelMode"]
-modulate = Color(0.803922, 0, 0, 1)
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.487
-anchor_top = 0.479
-anchor_right = 0.487
-anchor_bottom = 0.529
-offset_left = -26.64
-offset_top = -24.74
-offset_right = -2.64001
-offset_bottom = -3.74
-scale = Vector2(2.05298, 2.06019)
-focus_mode = 0
-metadata/scene_tree_color = Color(0.15, 0.15, 0.15, 0.35)
-
-[node name="ControlsContainer" type="HBoxContainer" parent="Settings"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -429.0
-offset_top = -25.0
-offset_right = 429.0
-offset_bottom = 189.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control1" type="TextureRect" parent="Settings/ControlsContainer"]
-layout_mode = 2
-texture = ExtResource("14_7607p")
-
-[node name="Control2" type="TextureRect" parent="Settings/ControlsContainer"]
-layout_mode = 2
-texture = ExtResource("15_4flft")
 
 [node name="OnVisible2dModulate" type="Node" parent="Settings"]
 script = ExtResource("17_k1n7e")

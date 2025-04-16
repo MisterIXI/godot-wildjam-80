@@ -34,7 +34,7 @@ font_color = Color(0.784233, 0.608026, 0.937188, 1)
 outline_size = 8
 outline_color = Color(0, 0, 0, 1)
 
-[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button", "untransition")]
+[node name="WinMenu" type="Control" node_paths=PackedStringArray("confirm_button", "untransition", "text", "text_edit")]
 clip_contents = true
 layout_mode = 3
 anchors_preset = 15
@@ -45,6 +45,8 @@ grow_vertical = 2
 script = ExtResource("1_7f638")
 confirm_button = NodePath("Paper/ConfirmButton")
 untransition = NodePath("Untransition")
+text = NodePath("Paper/RichTextLabel")
+text_edit = NodePath("Paper/TextEdit")
 
 [node name="Wallpaper" type="TextureRect" parent="."]
 material = ExtResource("2_uto2b")
@@ -96,7 +98,7 @@ theme_override_fonts/normal_font = ExtResource("5_gkiyk")
 theme_override_font_sizes/normal_font_size = 20
 bbcode_enabled = true
 text = "Dear Gamer,
-You have done what many couldn't. You have beaten our game in [color=red][shake rate=20.0 level=5 connected=1]5 hours, 5 minutes and 13 seconds[/shake][/color], which is very impressive I might add. 
+You have done what many couldn't. You have beaten our game in [color=red][shake rate=20.0 level=5 connected=1] 0 hours, 5 minutes and 13 seconds[/shake][/color], which very impressive I might add.
 
 And you took the time to collect [rainbow freq=1.0 sat=1 val=0.8 speed=-1.0]5 out of 5 Toilettepaperrolls[/rainbow]. So next time nature calls, I can head to the bathroom without a worry.
 
