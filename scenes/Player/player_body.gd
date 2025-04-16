@@ -93,7 +93,6 @@ func _integrate_forces(state):
 	if impact_cd_timer.time_left == 0 and state.get_contact_count() >= 1 and impact_force > hard_impact_threshold:
 		dust_cloud_system.emit_at(state.get_contact_local_position(0))
 		hard_impact.emit()
-		SoundManager._flush_toilet()
 		impact_cd_timer.start()
 		# print("IMPACT: ", impact_force, " | data: ", velocity_buffer, " ", state.linear_velocity.length())
 

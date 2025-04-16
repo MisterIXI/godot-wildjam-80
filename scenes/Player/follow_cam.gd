@@ -10,6 +10,7 @@ var target_zoom: Vector2 = Vector2.ONE
 var shake_tween: Tween
 @export var impact_shake_strength: float = 10
 @export var speedline_rect: ColorRect
+@export var wind_howl_audio_player: AudioStreamPlayer
 @onready var current_strength: float = zoom.x
 var shake_until: float = 0.0
 @export_range(0.0, 1.0) var constant_shake: float = 0.0

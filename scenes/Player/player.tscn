@@ -1,4 +1,4 @@
-[gd_scene load_steps=56 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=64 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -12,12 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="7_n7rn1"]
 [ext_resource type="PackedScene" uid="uid://cix64hjf82n1n" path="res://scenes/VFX/sparkle.tscn" id="8_7tfl1"]
 [ext_resource type="Texture2D" uid="uid://cgwaudgdfmeaa" path="res://assets/images/particle/dustclouds/dustclouds/5.PNG" id="8_an8q1"]
+[ext_resource type="AudioStream" uid="uid://d185dfxuk6j1v" path="res://assets/sounds/sfx/wind_howl.wav" id="9_aciub"]
 [ext_resource type="Texture2D" uid="uid://djk0rp2b2rkru" path="res://assets/images/particle/dustclouds/dustclouds/6.PNG" id="9_hxkm2"]
 [ext_resource type="Texture2D" uid="uid://bekw5dwk3qly2" path="res://assets/images/target.png" id="9_x8khf"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="10_t6q27"]
 [ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
+[ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="18_18ciy"]
+[ext_resource type="AudioStream" uid="uid://cesmwqx6vj4j5" path="res://assets/sounds/sfx/spring.wav" id="18_cg2hl"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 [ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
+[ext_resource type="Script" uid="uid://blv1f0i7pwfuj" path="res://scenes/Player/toilette_flush_player.gd" id="19_cg2hl"]
+[ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="20_o05ft"]
+[ext_resource type="AudioStream" uid="uid://djjsq53q0rsxx" path="res://assets/sounds/toilet/flush/Toilet Flush 3.wav" id="21_nbg44"]
+[ext_resource type="AudioStream" uid="uid://du328dml2c3be" path="res://assets/sounds/toilet/flush/Toilet Flush 4.wav" id="22_jn0uf"]
+[ext_resource type="AudioStream" uid="uid://3jpqblqwr1qt" path="res://assets/sounds/toilet/flush/Toilet Flush 5.wav" id="23_4ni0x"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
 friction = 0.1
@@ -359,7 +367,7 @@ scale = Vector2(2.88, 2.88)
 shape = SubResource("RectangleShape2D_uxo23")
 disabled = true
 
-[node name="FollowCam" type="Camera2D" parent="." node_paths=PackedStringArray("speedline_rect") groups=["player_camera"]]
+[node name="FollowCam" type="Camera2D" parent="." node_paths=PackedStringArray("speedline_rect", "wind_howl_audio_player") groups=["player_camera"]]
 process_mode = 3
 process_callback = 0
 position_smoothing_enabled = true
@@ -368,8 +376,12 @@ zoom_curve = SubResource("Curve_aciub")
 speedline_curve = SubResource("Curve_hk2ix")
 speedshake_curve = SubResource("Curve_43ckd")
 speedline_rect = NodePath("../CanvasLayer/ColorRect")
+wind_howl_audio_player = NodePath("WindHowlPlayer")
 
 [node name="CamerashakeCD" type="Timer" parent="FollowCam"]
+
+[node name="WindHowlPlayer" type="AudioStreamPlayer" parent="FollowCam"]
+stream = ExtResource("9_aciub")
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
 visible = false
@@ -490,6 +502,17 @@ texture_mode = 1
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(-43, 41)
 
+[node name="JumpSpringPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_cg2hl")
+pitch_scale = 1.87
+
+[node name="ToiletteFlushPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("18_18ciy")
+volume_db = -10.0
+pitch_scale = 2.0
+script = ExtResource("19_cg2hl")
+flush_sfx_arr = Array[AudioStream]([ExtResource("18_18ciy"), ExtResource("20_o05ft"), ExtResource("21_nbg44"), ExtResource("22_jn0uf"), ExtResource("23_4ni0x")])
+
 [node name="NaddelModeRipTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -524,6 +547,7 @@ mouse_filter = 2
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hard_impact" from="." to="FollowCam" method="_on_hard_impact"]
+[connection signal="hard_impact" from="." to="ToiletteFlushPlayer" method="_on_player_body_hard_impact"]
 [connection signal="hopped_left" from="." to="CharacterFlipper" method="on_flip_left"]
 [connection signal="hopped_right" from="." to="CharacterFlipper" method="on_flip_right"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
