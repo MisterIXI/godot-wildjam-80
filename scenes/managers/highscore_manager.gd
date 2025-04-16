@@ -10,6 +10,21 @@ func _ready() -> void:
 	highscore_table.clear()
 	ReferenceManager.highscore_node = self
 	# set_new_highscore("robbi",5, 22)
+	#test
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
+	
+	
 	get_leaderboard()
 ############## GLOBAL SET HIGHSCORE FUNCTION ##############
 

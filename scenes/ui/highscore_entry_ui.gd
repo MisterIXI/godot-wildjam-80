@@ -10,11 +10,7 @@ extends PanelContainer
 ################ RANDOM FONT FUNCTION ############
 @onready var _font_01 : FontVariation =  load("res://resources/font/Barriecito.tres")
 @onready var _font_02 : FontVariation = load("res://resources/font/IBMPlexMono.tres")
-@onready var _font_03: FontVariation = load("res://resources/font/Codystar.tres")
 @onready var _font_04: FontVariation = load("res://resources/font/Dancing_Script.tres")
-@onready var _font_05: FontVariation =load("res://resources/font/Edu_AU_VIC_WA_NT_Arrows.tres")
-@onready var _font_06: FontVariation =load("res://resources/font/Playwrite_MX_Guides.tres")
-@onready var _font_07: FontVariation = load("res://resources/font/Shadows_Into_Light.tres")
 @onready var _font_08: FontVariation = load("res://resources/font/Slabo_13px.tres")
 @onready var _font_09: FontVariation =load("res://resources/font/UnifrakturMaguntia.tres")
 
@@ -24,11 +20,7 @@ func _ready() -> void:
     ## add all fonts to list
     font_list.append(_font_01)
     font_list.append(_font_02)
-    font_list.append(_font_03)
     font_list.append(_font_04)
-    font_list.append(_font_05)
-    font_list.append(_font_06)
-    font_list.append(_font_07)
     font_list.append(_font_08)
     font_list.append(_font_09)
     #select random new font

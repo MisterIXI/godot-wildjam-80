@@ -29,14 +29,5 @@ func _wait_for_finished():
         var _time_entry =  highscore_entry.instantiate() as PanelContainer
         vbox_container.add_child(_time_entry)
         highscore_list.append(_time_entry)
-        _time_entry.on_initialze(str(_i), x.playername, _format(float(x.time)), "x " +str(x.collectables), x.date)
+        _time_entry.on_initialze(str(_i), x.playername, ReferenceManager.format(float(x.time)), "x " +str(x.collectables), x.date)
         _i +=1
-
-func _format(_value : float)->String:
-    #TODO Robert: simmt das hier noch?
-    var mseconds : float = fmod(_value,100)
-    var seconds: float = fmod(_value/1000, 60.0)
-    var minutes : int = int((_value / 60000)) %60
-    
-    var _string :String = "%02dm:%02ds:%02dms" % [minutes,seconds,mseconds]
-    return _string
