@@ -4,3 +4,4 @@
 
 [node name="Grace" type="Node"]
 script = ExtResource("1_5f355")
+ignore_saved_scene = true
