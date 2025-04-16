@@ -15,7 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://djk0rp2b2rkru" path="res://assets/images/particle/dustclouds/dustclouds/6.PNG" id="9_hxkm2"]
 [ext_resource type="Texture2D" uid="uid://bekw5dwk3qly2" path="res://assets/images/target.png" id="9_x8khf"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="10_t6q27"]
-[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
+[ext_resource type="Script" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 [ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
 
@@ -235,7 +235,7 @@ shader_parameter/mask_size = 0.22
 shader_parameter/mask_edge = 1.0
 shader_parameter/animation_speed = 12.59
 
-[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "backup_ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
 physics_material_override = SubResource("PhysicsMaterial_ovmwo")
 continuous_cd = 1
 contact_monitor = true
@@ -246,6 +246,7 @@ rope = NodePath("RopeVisuals/VerletRope")
 rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
 custom_joint = NodePath("CustomJoint")
 ground_cast = NodePath("GroundShapeCheck")
+backup_ground_cast = NodePath("BackupGroundRaycast")
 hop_cd_timer = NodePath("HopCD")
 naddel_ripping_timer = NodePath("NaddelModeRipTimer")
 impact_cd_timer = NodePath("ImpactCD")
@@ -453,6 +454,9 @@ z_index = 1681
 material = SubResource("ShaderMaterial_wyey8")
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("7_n7rn1")
+
+[node name="BackupGroundRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 53.805)
 
 [node name="GroundShapeCheck" type="ShapeCast2D" parent="."]
 shape = SubResource("RectangleShape2D_434gd")
