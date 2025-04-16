@@ -5,6 +5,7 @@ var grace_key = "None"
 var game_API_key = "None"
 var leaderboard_key = "None"
 
+var leaderboard_active = false
 
 func _ready():
   if not FileAccess.file_exists(path):

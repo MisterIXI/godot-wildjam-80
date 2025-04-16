@@ -9,6 +9,7 @@ func on_body_entered(_body : Node2D) -> void:
     if _body.is_in_group("player"):
         ## CREATE INPUT BOX AND CONNECT TO CONFIRM EVENT
 
+        get_tree().paused = true
         Menu.win_menu.show()
         # var _new_name_input = set_name_input.instantiate()
         # add_child(_new_name_input)

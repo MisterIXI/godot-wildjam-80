@@ -22,9 +22,9 @@ buses/default_bus_layout="uid://d1p4mrrl1ay2f"
 [autoload]
 
 "Schlüsseljunge"="*res://global/schlüsseljunge/schlüsseljunge.tscn"
+ReferenceManager="*res://scenes/managers/reference_manager.tscn"
 Menu="*res://global/menu/menu.tscn"
 SoundManager="*res://global/soundManager.tscn"
-ReferenceManager="*res://scenes/managers/reference_manager.tscn"
 Grace="*res://global/grace/grace.tscn"
 Session="*res://global/session/session.tscn"
 

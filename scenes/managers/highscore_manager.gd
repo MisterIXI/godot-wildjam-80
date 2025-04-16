@@ -1,7 +1,7 @@
 extends Node
 class_name Highscore_Manager
-signal leaderboard_request_completed()
-@export var _leaderboard : LeaderboardMenu
+signal leaderboard_request_completed
+
 const URIGET  = "_get"
 var highscore_table : Array[Highscore_Entry]
 var send_request : HTTPRequest
@@ -56,8 +56,13 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body) 
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# IN 20 YEARS, THERE IS NO INTERNET
-	# if !json.get_data():
-	# 	_leaderboard.on_leaderboard_hide()
+
+	if json.get_data():
+		Schlüsseljunge.leaderboard_active = true
+	else:
+		Schlüsseljunge.leaderboard_active = false
+		leaderboard_request_completed.emit()
+		return
 	
 	highscore_table.clear()
 	for x in json.get_data():

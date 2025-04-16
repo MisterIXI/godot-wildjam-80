@@ -12,14 +12,18 @@ You have done what many couldn't. You have beaten our game in [color=red][shake 
 
 And you took the time to collect [rainbow freq=1.0 sat=1 val=0.8 speed=-1.0]#TPCOUNT# out of 5 toilette papers[/rainbow]. So next time nature calls, I can head to the bathroom without a worry.
 
-Your feat will give you the [color=blue][wave amp=50.0 freq=5.0 connected=1]#PLACE# place[/wave][/color] in the online leaderboard. Mind telling us your name? The world should know who pulled this off!
+#LEADERBOARD#
 
 
 
 Keep it up gamer."
 
+var leaderboard_active_text : String ="Your feat will give you the [color=blue][wave amp=50.0 freq=5.0 connected=1]#PLACE# place[/wave][/color] in the online leaderboard. Mind telling us your name? The world should know who pulled this off!"
+var leaderboard_inactve_text : String = "I am sure you'd be at the top of the leaderboard - if it was working right now! You're welcome to enter your name anyway, even if it doesn't do much right now."
+
 func _ready() -> void:
   visibility_changed.connect(_on_visibility_changed)
+  confirm_button.pressed.connect(_on_button_pressed)
 
 
 func _on_visibility_changed():
@@ -27,8 +31,22 @@ func _on_visibility_changed():
     var _text : String = default_text
     _text = _text.replace("#TIME#", _format_time(Session.current_run_seconds))
     _text = _text.replace("#TPCOUNT#", _format_collectables(Session.collectables))
-    _text = _text.replace("#PLACE#", _format_place(5))
-    #TODO: find current place
+
+    if Schlüsseljunge.leaderboard_active:
+      _text = _text.replace("#LEADERBOARD#", leaderboard_active_text)
+
+      ReferenceManager.highscore_node.get_leaderboard()
+      await ReferenceManager.highscore_node.leaderboard_request_completed
+      var highscore_times = []
+      for item in ReferenceManager.highscore_node.highscore_table:
+        highscore_times.append(item.time)
+      highscore_times.append(Session.current_run_seconds)
+      highscore_times.sort()
+      var place : int = highscore_times.find(Session.current_run_seconds) + 1
+      _text = _text.replace("#PLACE#", _format_place(place))
+    else:
+      _text = _text.replace("#LEADERBOARD#", leaderboard_inactve_text)
+
     text.text = _text
 
 
@@ -67,3 +85,23 @@ func _format_place(_place : int) -> String:
     return "#3rd"
   else:
     return "#" + str(_place) + "th"
+
+
+func _on_button_pressed() -> void:
+  if Schlüsseljunge.leaderboard_active == false:
+    return
+  var _name : String = text_edit.text.replace(" ", "_").split("\n")[0].strip_edges()
+  if _name == "":
+    _name = "Anonymous"
+
+  var _col_count : int = 0
+  for val in Session.collectables.values():
+    if val:
+      _col_count += 1
+
+  ReferenceManager.highscore_node.set_new_highscore(_name, int(Session.current_run_seconds), _col_count)
+
+
+func _input(event: InputEvent) -> void:
+  if visible and event is InputEventKey and event.keycode == KEY_ENTER:
+    text_edit.release_focus()
