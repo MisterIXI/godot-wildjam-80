@@ -11,6 +11,7 @@
 
 # Ignore all files that are local vscode settings
 .vscode/
+*.code-workspace
 
 # Ignore config_file
 🔑
