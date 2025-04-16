@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="17_3fs4y"]
 [ext_resource type="Script" uid="uid://iryt2xkha5ve" path="res://components/button_hover/button_hover.gd" id="18_qe6y3"]
 
-[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu", "hud_menu")]
+[node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu", "hud_menu", "win_menu")]
 process_mode = 3
 script = ExtResource("1_adrvt")
 main_menu = NodePath("MainMenu")
@@ -29,6 +29,7 @@ pause_menu = NodePath("PauseMenu")
 settings_menu = NodePath("SettingsMenu")
 leaderboard_menu = NodePath("LeaderboardMenu")
 hud_menu = NodePath("HUD")
+win_menu = NodePath("WinMenu")
 
 [node name="HUD" parent="." instance=ExtResource("6_peatc")]
 

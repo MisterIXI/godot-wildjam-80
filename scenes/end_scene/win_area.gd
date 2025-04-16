@@ -8,12 +8,14 @@ func _ready() -> void:
 func on_body_entered(_body : Node2D) -> void:
     if _body.is_in_group("player"):
         ## CREATE INPUT BOX AND CONNECT TO CONFIRM EVENT
-        var _new_name_input = set_name_input.instantiate()
-        add_child(_new_name_input)
-        ## set position next to area
-        _new_name_input.pressed.connect(_on_set_name_cornfirm)
-        ## disable area
-        get_tree().paused = true
+
+        Menu.win_menu.show()
+        # var _new_name_input = set_name_input.instantiate()
+        # add_child(_new_name_input)
+        # ## set position next to area
+        # _new_name_input.pressed.connect(_on_set_name_cornfirm)
+        # ## disable area
+        # get_tree().paused = true
 
 
 func _on_set_name_cornfirm(_name : String)->void:

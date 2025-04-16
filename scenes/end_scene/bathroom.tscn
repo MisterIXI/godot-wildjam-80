@@ -298,6 +298,5 @@ set_name_input = ExtResource("28_4kjxf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area"]
 position = Vector2(-30.5882, 37.6471)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2fxmi")
 debug_color = Color(0.851177, 0.371948, 1.92523e-07, 0.42)
