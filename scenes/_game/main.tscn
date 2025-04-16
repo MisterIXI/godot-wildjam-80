@@ -2207,25 +2207,30 @@ rotation = 1.35098
 [node name="Bathroom" parent="End" instance=ExtResource("72_mvwki")]
 position = Vector2(9350, -14070)
 scale = Vector2(0.852058, 0.852058)
+metadata/_edit_lock_ = true
 
 [node name="pole15" parent="End" instance=ExtResource("4_jmj8x")]
 position = Vector2(4437, -16187)
 rotation = -1.08988
 scale = Vector2(1, 4.00051)
+metadata/_edit_lock_ = true
 
 [node name="pole16" parent="End" instance=ExtResource("4_jmj8x")]
 position = Vector2(6075, -14838)
 rotation = -0.343865
 scale = Vector2(1, 1.44714)
+metadata/_edit_lock_ = true
 
 [node name="pole17" parent="End" instance=ExtResource("4_jmj8x")]
 position = Vector2(6833, -14141)
 rotation = -1.31937
 scale = Vector2(1, 1.44714)
+metadata/_edit_lock_ = true
 
 [node name="pole18" parent="End" instance=ExtResource("4_jmj8x")]
 position = Vector2(8405, -13992)
 rotation = -1.59625
 scale = Vector2(1, 4.52815)
+metadata/_edit_lock_ = true
 
 [editable path="Env/schild"]
