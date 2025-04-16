@@ -164,7 +164,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(4317, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-870, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -175,7 +175,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-3713, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-3788, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/2/type = "bezier"
@@ -203,7 +203,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(4317, -0.25, 0, 0.25, 0, 5004, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-870, -0.25, 0, 0.25, 0, -183, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/1/type = "bezier"
@@ -214,7 +214,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-3713, -0.25, 0, 0.25, 0, -2223, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-3788, -0.25, 0, 0.25, 0, -2298, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/2/type = "bezier"
@@ -245,7 +245,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(5353, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(166, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/1/type = "bezier"
@@ -256,7 +256,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1620, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-1695, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 
@@ -273,7 +273,7 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(5344, -0.25, 0, 0.25, 0, 5345, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(157, -0.25, 0, 0.25, 0, 158, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 tracks/1/type = "bezier"
@@ -284,7 +284,7 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1626, -0.25, 0, 0.25, 0, -2571, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-1701, -0.25, 0, 0.25, 0, -2647, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 3)
 }
 
@@ -765,7 +765,6 @@ fit_margin = 934.0
 clear_margin = 689.0
 
 [node name="PlayerBody" parent="ShadowGroup" instance=ExtResource("2_hnw1m")]
-position = Vector2(76, -136)
 collision_layer = 3
 max_contacts_reported = 3
 metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
@@ -784,7 +783,6 @@ rotation = -0.0134494
 [node name="Trampoline18" parent="ShadowGroup/Env" instance=ExtResource("3_mvwki")]
 position = Vector2(-245, -5648)
 rotation = -0.141573
-scale = Vector2(1, 1)
 
 [node name="Trampoline21" parent="ShadowGroup/Env" instance=ExtResource("3_mvwki")]
 position = Vector2(4015, -5217)
@@ -845,7 +843,6 @@ scale = Vector2(0.36, 0.36)
 [node name="reclam" parent="ShadowGroup/Env" instance=ExtResource("8_kprro")]
 position = Vector2(4859, -2626)
 rotation = -1.12698
-scale = Vector2(1, 1)
 
 [node name="zigaretten" parent="ShadowGroup/Env" instance=ExtResource("9_dom4v")]
 position = Vector2(3864, -2835)
@@ -932,7 +929,7 @@ scale = Vector2(0.48, 0.48)
 visible = false
 
 [node name="reclamtitled" type="AnimatableBody2D" parent="ShadowGroup/Env" groups=["MovingObstacle"]]
-position = Vector2(4317, -3713)
+position = Vector2(-870, -3788)
 rotation = -0.432178
 scale = Vector2(0.439999, 0.439999)
 sync_to_physics = false
@@ -953,7 +950,7 @@ libraries = {
 autoplay = "moveObject"
 
 [node name="reclamvertical" type="AnimatableBody2D" parent="ShadowGroup/Env" groups=["MovingObstacle"]]
-position = Vector2(5353, -1620)
+position = Vector2(166, -1695)
 rotation = 0.00130769
 scale = Vector2(0.439999, 0.439999)
 sync_to_physics = false
@@ -1237,7 +1234,6 @@ rotation = 0.842537
 [node name="StaticBody2D36" parent="ShadowGroup/Env" instance=ExtResource("11_xkmml")]
 position = Vector2(6418, -2866)
 rotation = 1.47641
-scale = Vector2(1, 1)
 
 [node name="StaticBody2D37" parent="ShadowGroup/Env" instance=ExtResource("11_xkmml")]
 position = Vector2(6083, -1680)
@@ -1290,7 +1286,6 @@ rotation = -1.6909
 [node name="yellowlight2" parent="ShadowGroup/Env" instance=ExtResource("38_5vcld")]
 position = Vector2(-1293, -6019)
 rotation = -1.85888
-scale = Vector2(1, 1)
 
 [node name="gulli10" type="AnimatableBody2D" parent="ShadowGroup/Env" groups=["MovingObstacle"]]
 position = Vector2(-1288, -6731)
@@ -1378,7 +1373,6 @@ rotation = -1.57753
 [node name="Breznak2" parent="ShadowGroup/Env" instance=ExtResource("45_0t7wf")]
 position = Vector2(-166, 307)
 rotation = 1.759
-scale = Vector2(1, 1)
 
 [node name="spielstr3" parent="ShadowGroup/Env" instance=ExtResource("31_vsj6i")]
 position = Vector2(-364, -1390)
@@ -1500,7 +1494,6 @@ scale = Vector2(0.73117, 0.73117)
 [node name="reclam4" parent="ShadowGroup/Env" instance=ExtResource("8_kprro")]
 position = Vector2(1315, 343)
 rotation = 1.57516
-scale = Vector2(1, 1)
 
 [node name="zeitung9" parent="ShadowGroup/Env" instance=ExtResource("19_n4khy")]
 position = Vector2(555, 219)
@@ -1555,7 +1548,6 @@ position = Vector2(3772, -9812)
 [node name="Frankfurt4" parent="ShadowGroup/Env" instance=ExtResource("41_426ba")]
 position = Vector2(3680, -11049)
 rotation = -0.845263
-scale = Vector2(1, 1)
 
 [node name="reclam2" parent="ShadowGroup/Env" instance=ExtResource("8_kprro")]
 position = Vector2(4093, -11044)
@@ -1734,7 +1726,6 @@ position = Vector2(-2377, -6876)
 [node name="taschenmesser2" parent="ShadowGroup/Env" instance=ExtResource("60_t1w8w")]
 position = Vector2(3871, -11563)
 rotation = 3.06989
-scale = Vector2(1, 1)
 
 [node name="yield5" parent="ShadowGroup/Env" instance=ExtResource("10_jvvaj")]
 position = Vector2(3213, -12492)
@@ -1784,7 +1775,6 @@ rotation = 0.930291
 [node name="Cigret10" parent="ShadowGroup/Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1318, -12394)
 rotation = 1.05915
-scale = Vector2(1, 1)
 
 [node name="Cigret11" parent="ShadowGroup/Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1772, -11705)
@@ -1801,7 +1791,11 @@ rotation = 0.848579
 [node name="A4" parent="ShadowGroup/Env" instance=ExtResource("5_pd8rw")]
 position = Vector2(208, -15462)
 rotation = 0.727976
-scale = Vector2(1, 1)
+
+[node name="A5" parent="ShadowGroup/Env" instance=ExtResource("5_pd8rw")]
+position = Vector2(6570, -16398)
+rotation = 1.75909
+scale = Vector2(1.19362, 1.19362)
 
 [node name="Bild12" parent="ShadowGroup/Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(635, -16306)
@@ -1832,6 +1826,10 @@ rotation = -1.56497
 [node name="fahrradstr6" parent="ShadowGroup/Env" instance=ExtResource("26_wh06c")]
 position = Vector2(2126, -17768)
 rotation = 0.58305
+
+[node name="fahrradstr7" parent="ShadowGroup/Env" instance=ExtResource("26_wh06c")]
+position = Vector2(5654, -16586)
+rotation = 1.95716
 
 [node name="pole16" parent="ShadowGroup/Env" instance=ExtResource("4_jmj8x")]
 position = Vector2(3488, -11414)
