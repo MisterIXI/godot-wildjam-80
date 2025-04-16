@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://cucfsuybxu4eu"]
+[gd_scene load_steps=156 format=3 uid="uid://cucfsuybxu4eu"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_puc63"]
 [ext_resource type="PackedScene" uid="uid://ctf01l8umfh5d" path="res://scenes/Player/player.tscn" id="2_hnw1m"]
@@ -25,19 +25,19 @@
 [ext_resource type="PackedScene" uid="uid://c684f4deg6ysv" path="res://scenes/EnvironmentObjects/poseidon.tscn" id="23_hfh31"]
 [ext_resource type="Script" uid="uid://bo3b67xvha71b" path="res://scenes/EnvironmentObjects/Obstacles/fan_obstacle.gd" id="24_sellv"]
 [ext_resource type="Texture2D" uid="uid://bjy23a0cbs854" path="res://assets/images/photos/gulli4.png" id="25_2en8o"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="26_wh06c"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="27_c2jfu"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="28_gh2fr"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="29_q5f3c"]
+[ext_resource type="PackedScene" uid="uid://bwgxsmbpyh5nq" path="res://scenes/EnvironmentObjects/fahrradstr.tscn" id="26_wh06c"]
+[ext_resource type="PackedScene" uid="uid://51bai6yg040r" path="res://scenes/EnvironmentObjects/broetchen_1.tscn" id="27_c2jfu"]
+[ext_resource type="PackedScene" uid="uid://bif0uca6ftk1d" path="res://scenes/EnvironmentObjects/broetchen_2.tscn" id="28_gh2fr"]
+[ext_resource type="PackedScene" uid="uid://crglposwftdms" path="res://scenes/EnvironmentObjects/broetchen.tscn" id="29_q5f3c"]
 [ext_resource type="Texture2D" uid="uid://1derm0nw745m" path="res://assets/images/photos/schild2.png" id="30_uq1tj"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="31_vsj6i"]
+[ext_resource type="PackedScene" uid="uid://dpoa3ew1vnww6" path="res://scenes/EnvironmentObjects/spielstr.tscn" id="31_vsj6i"]
 [ext_resource type="Texture2D" uid="uid://dw5qenhgrsbll" path="res://assets/images/photos/pole.png" id="32_7m2cs"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/reifen.tscn" id="33_sefq2"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/isetta.tscn" id="34_kmssj"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="35_w6fbt"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_0a16p"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/redlight.tscn" id="37_8h2cb"]
-[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="38_5vcld"]
+[ext_resource type="PackedScene" uid="uid://0jait75dgawh" path="res://scenes/EnvironmentObjects/reifen.tscn" id="33_sefq2"]
+[ext_resource type="PackedScene" uid="uid://7swphsmengui" path="res://scenes/EnvironmentObjects/isetta.tscn" id="34_kmssj"]
+[ext_resource type="PackedScene" uid="uid://1j4exdyv0vk6" path="res://scenes/EnvironmentObjects/leberkaes.tscn" id="35_w6fbt"]
+[ext_resource type="PackedScene" uid="uid://brqky1wh7xwv8" path="res://scenes/EnvironmentObjects/schild_1.tscn" id="36_0a16p"]
+[ext_resource type="PackedScene" uid="uid://cbs1kk2k7axw" path="res://scenes/EnvironmentObjects/redlight.tscn" id="37_8h2cb"]
+[ext_resource type="PackedScene" uid="uid://c7k088bw8pt83" path="res://scenes/EnvironmentObjects/yellowlight.tscn" id="38_5vcld"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="39_3rpxd"]
 [ext_resource type="PackedScene" uid="uid://ba30px4pqwxrq" path="res://scenes/EnvironmentObjects/blume_1.tscn" id="40_twwkc"]
 [ext_resource type="PackedScene" uid="uid://balu0lmgji3hv" path="res://scenes/EnvironmentObjects/frankfurt.tscn" id="41_426ba"]
@@ -48,19 +48,19 @@
 [ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="46_un4hr"]
 [ext_resource type="PackedScene" uid="uid://cqy2067hkppla" path="res://scenes/EnvironmentObjects/misc/yeh_flower.tscn" id="47_vppwm"]
 [ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="48_80jos"]
-[ext_resource type="PackedScene" uid="uid://bb60f7pufgkvc" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
-[ext_resource type="PackedScene" uid="uid://dmrlpd5rmfaan" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
-[ext_resource type="PackedScene" uid="uid://1y4iqx8jvmf5" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
-[ext_resource type="PackedScene" uid="uid://bkwxktyxjbisq" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/hundi.tscn" id="49_whrbn"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/blattschuessel.tscn" id="50_0dkq8"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/eightball.tscn" id="51_0h46h"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/radierer.tscn" id="52_ehc6q"]
 [ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="53_p2apg"]
 [ext_resource type="PackedScene" uid="uid://1s55niglbayl" path="res://scenes/EnvironmentObjects/misc/teto_love.tscn" id="54_baflj"]
 [ext_resource type="PackedScene" uid="uid://itm5pkt7qf64" path="res://scenes/EnvironmentObjects/misc/bunny_love.tscn" id="55_pu5fs"]
-[ext_resource type="PackedScene" uid="uid://c2mkolo104wgq" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/cigret.tscn" id="56_bgmey"]
 [ext_resource type="PackedScene" uid="uid://sde60sn8u46e" path="res://scenes/EnvironmentObjects/Obstacles/flower.tscn" id="57_xuxe5"]
 [ext_resource type="PackedScene" uid="uid://doa0bax35p5je" path="res://scenes/EnvironmentObjects/Obstacles/windmill.tscn" id="58_0cfh7"]
 [ext_resource type="PackedScene" uid="uid://bkjieb8en8qgi" path="res://scenes/EnvironmentObjects/kafka.tscn" id="59_icwdw"]
 [ext_resource type="PackedScene" uid="uid://u8qq6esgpedx" path="res://scenes/EnvironmentObjects/taschenmesser.tscn" id="60_t1w8w"]
-[ext_resource type="PackedScene" uid="uid://dh0d0fcqlb7nc" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
+[ext_resource type="PackedScene" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="61_n7oya"]
 [ext_resource type="PackedScene" uid="uid://b7de2qvboavwn" path="res://scenes/EnvironmentObjects/Obstacles/gaensebluemchen.tscn" id="62_76b8n"]
 [ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="63_hpdqr"]
 [ext_resource type="PackedScene" uid="uid://rpqnhe6twc2a" path="res://scenes/EnvironmentObjects/misc/arrow_1.tscn" id="64_npugr"]
@@ -76,6 +76,7 @@
 [ext_resource type="Texture2D" uid="uid://crx3a1gxckxqs" path="res://assets/images/env/eye.png" id="75_kprro"]
 [ext_resource type="Texture2D" uid="uid://dmrwwq4uwxetw" path="res://assets/images/env/yeh_flower.png" id="76_dom4v"]
 [ext_resource type="Texture2D" uid="uid://c1nuxh5vrt8dj" path="res://assets/images/env/godot_wildjam_white.png" id="77_jvvaj"]
+[ext_resource type="PackedScene" uid="uid://5ywona8gfnpd" path="res://scenes/collectable/collectable_item.tscn" id="77_kprro"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_puc63"]
 size = Vector2(58697, 6649)
@@ -101,8 +102,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_55gqm")
@@ -122,8 +121,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.67058, 0.655483, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_dklac")
@@ -143,8 +140,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_1i5yh")
@@ -164,8 +159,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.603461, 0.631781, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 50.0
 shader_parameter/noise = SubResource("NoiseTexture2D_pavb3")
@@ -325,8 +318,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_155hr")
@@ -346,8 +337,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_esix6")
@@ -367,8 +356,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.650215, 0.545754, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_51hpo")
@@ -388,8 +375,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.513726, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_g7ccy")
@@ -409,8 +394,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.977553, 0.723897, 0, 1)
 shader_parameter/color_tint = Color(0, 0.431695, 0.71076, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.605
 shader_parameter/noise = SubResource("NoiseTexture2D_nfb5c")
@@ -430,8 +413,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.246685, 0.54339, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 6.05
 shader_parameter/noise = SubResource("NoiseTexture2D_ueopi")
@@ -451,8 +432,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1.05888e-06, 0.939537, 0.69366, 1)
 shader_parameter/color_tint = Color(0.772092, 0.495016, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.122
 shader_parameter/noise = SubResource("NoiseTexture2D_e4lke")
@@ -472,8 +451,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1.73271e-06, 0.751817, 0.5367, 1)
 shader_parameter/color_tint = Color(0.978486, 0.000807441, 0.981521, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -486,8 +463,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.39355, 0.664279, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 5.019
 shader_parameter/noise = SubResource("NoiseTexture2D_e4lke")
@@ -500,8 +475,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1.99743e-06, 0.482175, 0.266007, 1)
 shader_parameter/color_tint = Color(0.689884, 0.59411, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.605
 shader_parameter/noise = SubResource("NoiseTexture2D_nfb5c")
@@ -521,8 +494,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.732678, 0.416326, 1)
 shader_parameter/color_tint = Color(0.15124, 0.152746, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.816
 shader_parameter/noise = SubResource("NoiseTexture2D_dec8x")
@@ -535,8 +506,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.498932, 0.635923, 0.446624, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 6.05
 shader_parameter/noise = SubResource("NoiseTexture2D_ueopi")
@@ -549,8 +518,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.987891, 0, 0.29245, 1)
 shader_parameter/color_tint = Color(1, 0.833333, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.711
 shader_parameter/noise = SubResource("NoiseTexture2D_e4lke")
@@ -563,8 +530,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.742644, 0.556787, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 6.05
 shader_parameter/noise = SubResource("NoiseTexture2D_ueopi")
@@ -584,8 +549,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.33, 0.575667, 1)
 shader_parameter/color_tint = Color(0, 0.910908, 0.853495, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 7.589
 shader_parameter/noise = SubResource("NoiseTexture2D_o514j")
@@ -605,8 +568,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.59518, 0.344287, 1)
 shader_parameter/color_tint = Color(4.81307e-07, 0.636991, 0.745919, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.17
 shader_parameter/noise = SubResource("NoiseTexture2D_4x7f5")
@@ -619,8 +580,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.255659, 0.255659, 0.255659, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -633,8 +592,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.788962, 0, 0.165775, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -647,8 +604,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.7, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -661,8 +616,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.392522, 0.705341, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -675,8 +628,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.873298, 0.873298, 0.873298, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -689,8 +640,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.912775, 0.285427, 0, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -703,8 +652,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.23426, 0.293346, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -717,8 +664,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 0.24, 0.24, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -738,8 +683,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.833079, 1.34766e-06, 0.492078, 1)
 shader_parameter/color_tint = Color(0.771949, 0.771439, 0.716126, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.605
 shader_parameter/noise = SubResource("NoiseTexture2D_x6d88")
@@ -752,8 +695,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0.130844, 0, 0.867469, 1)
 shader_parameter/color_tint = Color(0, 0.684647, 0.868583, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.605
 shader_parameter/noise = SubResource("NoiseTexture2D_x6d88")
@@ -766,8 +707,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 0.455051, 0.774696, 1)
 shader_parameter/color_tint = Color(1, 0.885053, 0.502821, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 12.605
 shader_parameter/noise = SubResource("NoiseTexture2D_x6d88")
@@ -780,8 +719,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.783523, 0.783523, 0.783523, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 7.589
 shader_parameter/noise = SubResource("NoiseTexture2D_o514j")
@@ -794,8 +731,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.734472, 0.445204, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.896
 shader_parameter/noise = SubResource("NoiseTexture2D_uuuym")
@@ -815,8 +750,6 @@ shader = ExtResource("15_ca5qb")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.941176, 0.384314, 0.294118, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
 shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
@@ -2372,5 +2305,27 @@ rotation_speed = 300.0
 
 [node name="Trampoline3" parent="End" instance=ExtResource("3_mvwki")]
 position = Vector2(10943, -14356)
+
+[node name="Collectables" type="Node2D" parent="."]
+
+[node name="collectable" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(123, -12)
+uid = 523562340
+
+[node name="collectable2" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(244, -17)
+uid = 523562341
+
+[node name="collectable3" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(366, -17)
+uid = 523562342
+
+[node name="collectable4" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(491, -12)
+uid = 523562343
+
+[node name="collectable5" parent="Collectables" instance=ExtResource("77_kprro")]
+position = Vector2(607, -10)
+uid = 523562344
 
 [editable path="Env/schild"]
