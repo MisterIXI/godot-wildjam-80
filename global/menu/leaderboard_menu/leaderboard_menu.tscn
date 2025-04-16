@@ -39,7 +39,8 @@ expand_mode = 4
 [node name="Highscore_menu" parent="." instance=ExtResource("4_4kfob")]
 layout_mode = 1
 
-[node name="highscore_manager" parent="Highscore_menu" instance=ExtResource("2_lmh2u")]
+[node name="highscore_manager" parent="Highscore_menu" node_paths=PackedStringArray("_leaderboard") instance=ExtResource("2_lmh2u")]
+_leaderboard = NodePath("../..")
 
 [node name="OnVisible2dModulate" type="Node" parent="Highscore_menu"]
 script = ExtResource("6_hbrpu")

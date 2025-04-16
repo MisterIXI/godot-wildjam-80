@@ -1,11 +1,13 @@
 extends Node
 class_name Highscore_Manager
 signal leaderboard_request_completed()
+@export var _leaderboard : LeaderboardMenu
 const URIGET  = "_get"
 var highscore_table : Array[Highscore_Entry]
 var send_request : HTTPRequest
 var leaderboard_request : HTTPRequest
 var headers = ["Content-Type: application/x-www-form-urlencoded"]
+
 func _ready() -> void:
 	highscore_table.clear()
 	ReferenceManager.highscore_node = self
@@ -53,7 +55,10 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body) 
 	print("get_leaderboard_completed")
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
-
+	# IN 20 YEARS, THERE IS NO INTERNET
+	if !json.get_data():
+		_leaderboard.on_leaderboard_hide()
+	
 	highscore_table.clear()
 	for x in json.get_data():
 		print(x["player_name"], " - ", x["score"], " - ", x["collectables"], " - ", x["timestamp"])

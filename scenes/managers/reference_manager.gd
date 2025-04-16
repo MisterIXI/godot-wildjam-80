@@ -1,4 +1,5 @@
 extends Node
+signal game_done()
 
 var player_node : Node2D
 var game_ui_node :  CanvasLayer
@@ -6,6 +7,8 @@ var highscore_node : Highscore_Manager
 var game_manager : Game_Manager
 var hud : Control
 
+func on_game_done()->void:
+    game_done.emit()
 #get format 00h:00m:00s
 func format(_value : float)->String:
     var _string :String

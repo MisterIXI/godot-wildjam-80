@@ -92,7 +92,8 @@ func _on_sm_confirm() -> void:
 func _on_lm_back() -> void:
   main_menu.show()
 
-
+func _on_leaderboard_is_inactive() ->void:
+  leaderboard_menu.hide()
 ## General
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("pause"):

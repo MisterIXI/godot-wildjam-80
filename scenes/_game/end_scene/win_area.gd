@@ -10,6 +10,8 @@ func on_body_entered(_body : Node2D) -> void:
         ## CREATE INPUT BOX AND CONNECT TO CONFIRM EVENT
         var _new_name_input = set_name_input.instantiate()
         add_child(_new_name_input)
+        ## Signal to Hud - > stop Timer
+        ReferenceManager.on_game_done()
         ## set position next to area
         _new_name_input.pressed.connect(_on_set_name_cornfirm)
         ## disable area
