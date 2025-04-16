@@ -15,7 +15,7 @@ polygon = PackedVector2Array(211, -381.4, 211, -379, 208.4, -379, 172.5, -354, 1
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_cwr2x")
-volume_db = -7.0
+volume_db = -8.0
 pitch_scale = 0.8
 autoplay = true
 max_distance = 1000.0
