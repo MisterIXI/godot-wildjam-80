@@ -56,8 +56,8 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body) 
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# IN 20 YEARS, THERE IS NO INTERNET
-	if !json.get_data():
-		_leaderboard.on_leaderboard_hide()
+	# if !json.get_data():
+	# 	_leaderboard.on_leaderboard_hide()
 	
 	highscore_table.clear()
 	for x in json.get_data():
