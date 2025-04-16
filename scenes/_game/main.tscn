@@ -826,7 +826,6 @@ position = Vector2(-17786.7, -9156.5)
 shape = SubResource("RectangleShape2D_jmj8x")
 
 [node name="PlayerBody" parent="." instance=ExtResource("2_hnw1m")]
-position = Vector2(8449, -14084)
 collision_layer = 3
 max_contacts_reported = 3
 metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
@@ -1786,7 +1785,6 @@ position = Vector2(-2377, -6876)
 [node name="taschenmesser2" parent="Env" instance=ExtResource("60_t1w8w")]
 position = Vector2(3871, -11563)
 rotation = 3.06989
-scale = Vector2(1, 1)
 
 [node name="yield5" parent="Env" instance=ExtResource("10_jvvaj")]
 position = Vector2(3213, -12492)
@@ -1836,7 +1834,6 @@ rotation = 0.930291
 [node name="Cigret10" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1318, -12394)
 rotation = 1.05915
-scale = Vector2(1, 1)
 
 [node name="Cigret11" parent="Env" instance=ExtResource("56_bgmey")]
 position = Vector2(1772, -11705)
@@ -1853,7 +1850,6 @@ rotation = 0.848579
 [node name="A4" parent="Env" instance=ExtResource("5_pd8rw")]
 position = Vector2(208, -15462)
 rotation = 0.727976
-scale = Vector2(1, 1)
 
 [node name="Bild12" parent="Env" instance=ExtResource("44_vl0f3")]
 position = Vector2(635, -16306)
@@ -1925,13 +1921,11 @@ scale = Vector2(0.525406, 0.518179)
 z_index = -1
 position = Vector2(497, -102)
 rotation = 2.30302
-scale = Vector2(1, 1)
 
 [node name="Arrow8" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
 position = Vector2(4858, -377)
 rotation = -1.30386
-scale = Vector2(1, 1)
 
 [node name="Arrow9" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
@@ -1948,7 +1942,6 @@ rotation = -1.72014
 z_index = -1
 position = Vector2(2490, -2255)
 rotation = -2.78669
-scale = Vector2(1, 1)
 
 [node name="Arrow12" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
@@ -1961,7 +1954,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_x6d88")
 position = Vector2(1219, -1901)
 rotation = -2.89675
-scale = Vector2(1, 1)
 
 [node name="Arrow14" parent="Arrows" instance=ExtResource("70_ro8g5")]
 z_index = -1
@@ -1973,7 +1965,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_fekjo")
 position = Vector2(-96.0004, -3923)
 rotation = 0.292838
-scale = Vector2(1, 1)
 
 [node name="Arrow16" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
@@ -2062,7 +2053,6 @@ scale = Vector2(1, -1)
 z_index = -1
 position = Vector2(-914, -6399)
 rotation = 0.350144
-scale = Vector2(1, 1)
 
 [node name="Arrow32" parent="Arrows" instance=ExtResource("68_ld05y")]
 z_index = -1
@@ -2078,7 +2068,6 @@ rotation = 0.0571862
 z_index = -1
 position = Vector2(5574, -9976)
 rotation = -0.167273
-scale = Vector2(1, 1)
 
 [node name="Arrow35" parent="Arrows" instance=ExtResource("69_fa2v0")]
 z_index = -1
@@ -2089,7 +2078,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_15ncb")
 position = Vector2(-874, -7154)
 rotation = 0.305056
-scale = Vector2(1, 1)
 
 [node name="Arrow36" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
@@ -2108,7 +2096,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_7y2hu")
 position = Vector2(936.54, -7870.27)
 rotation = 0.305056
-scale = Vector2(1, 1)
 
 [node name="Arrow39" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
@@ -2133,7 +2120,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_v0nwd")
 position = Vector2(2837.54, -8421.27)
 rotation = 0.305056
-scale = Vector2(1, 1)
 
 [node name="Arrow43" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
@@ -2171,7 +2157,6 @@ z_index = -1
 material = SubResource("ShaderMaterial_f3rew")
 position = Vector2(3127, -14533)
 rotation = 0.223133
-scale = Vector2(1, 1)
 
 [node name="Arrow49" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
@@ -2193,13 +2178,11 @@ rotation = -1.28761
 z_index = -1
 position = Vector2(1902, -16622)
 rotation = -0.364341
-scale = Vector2(1, 1)
 
 [node name="Arrow53" parent="Arrows" instance=ExtResource("66_wfufh")]
 z_index = -1
 position = Vector2(2342, -17143)
 rotation = 3.10577
-scale = Vector2(1, 1)
 
 [node name="Arrow54" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
@@ -2210,14 +2193,12 @@ rotation = 0.32223
 z_index = -1
 position = Vector2(1201, -15891)
 rotation = -0.0980117
-scale = Vector2(1, 1)
 
 [node name="Arrow56" parent="Arrows" instance=ExtResource("65_rliho")]
 z_index = -1
 material = SubResource("ShaderMaterial_mvwki")
 position = Vector2(3093, -17182)
 rotation = 1.35098
-scale = Vector2(1, 1)
 
 [node name="End" type="Node2D" parent="."]
 
