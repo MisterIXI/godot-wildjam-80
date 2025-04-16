@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://bo0lnpc1o70fe"]
+
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_kg6wd"]
+[ext_resource type="Texture2D" uid="uid://crx3a1gxckxqs" path="res://assets/images/env/eye.png" id="2_xv1sy"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_gej5r"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cjvxm"]
+seamless = true
+noise = SubResource("FastNoiseLite_gej5r")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sdh65"]
+shader = ExtResource("1_kg6wd")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = false
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_cjvxm")
+shader_parameter/noise_speed = -0.22
+shader_parameter/distortion_str = 0.04
+shader_parameter/frame_time = 0.01
+
+[node name="Eye2" type="Sprite2D"]
+material = SubResource("ShaderMaterial_sdh65")
+texture = ExtResource("2_xv1sy")

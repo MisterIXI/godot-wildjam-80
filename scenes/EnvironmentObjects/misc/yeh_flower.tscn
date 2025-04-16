@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cqy2067hkppla"]
+
+[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="1_p6hs0"]
+[ext_resource type="Texture2D" uid="uid://dmrwwq4uwxetw" path="res://assets/images/env/yeh_flower.png" id="2_qpug0"]
+
+[node name="YehFlower" type="Sprite2D"]
+material = ExtResource("1_p6hs0")
+texture = ExtResource("2_qpug0")

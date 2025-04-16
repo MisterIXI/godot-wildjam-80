@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwmorrmmdot48"]
+
+[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="1_8b0x6"]
+[ext_resource type="Texture2D" uid="uid://csb5p2al4xab" path="res://assets/images/env/jacob_love.png" id="2_3rlnv"]
+
+[node name="JacobLove" type="Sprite2D"]
+material = ExtResource("1_8b0x6")
+texture = ExtResource("2_3rlnv")

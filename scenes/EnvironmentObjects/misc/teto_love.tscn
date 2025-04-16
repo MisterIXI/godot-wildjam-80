@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://1s55niglbayl"]
+
+[ext_resource type="Material" uid="uid://c7fr7y7myakdy" path="res://resources/shaders/outline.tres" id="1_8yead"]
+[ext_resource type="Texture2D" uid="uid://blx8478xaf7pk" path="res://assets/images/env/teto_love.png" id="2_3b27o"]
+
+[node name="TetoLove" type="Sprite2D"]
+material = ExtResource("1_8yead")
+texture = ExtResource("2_3b27o")
