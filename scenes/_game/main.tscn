@@ -854,7 +854,7 @@ position = Vector2(4246, -5653)
 rotation = 0.094141
 
 [node name="Trampoline19" parent="Env" instance=ExtResource("3_mvwki")]
-position = Vector2(-742, -6114)
+position = Vector2(-736, -6132)
 rotation = 0.385683
 
 [node name="Trampoline23" parent="Env" instance=ExtResource("3_mvwki")]
@@ -862,6 +862,7 @@ position = Vector2(3040, -10272)
 rotation = 0.385683
 
 [node name="Trampoline20" parent="Env" instance=ExtResource("3_mvwki")]
+z_index = 1
 position = Vector2(-166, -6276)
 rotation = -0.506
 
@@ -1033,13 +1034,13 @@ position = Vector2(5487, -1867)
 scale = Vector2(1.84371, 1.83125)
 
 [node name="pole3" parent="Env" instance=ExtResource("4_jmj8x")]
-position = Vector2(2850, -402)
-rotation = 1.51901
+position = Vector2(2852, -387)
+rotation = 1.62206
 scale = Vector2(0.438672, 0.438672)
 
 [node name="zeitung4" parent="Env" instance=ExtResource("19_n4khy")]
-position = Vector2(2347, -658)
-rotation = 1.01995
+position = Vector2(2324, -659)
+rotation = 1.09354
 scale = Vector2(0.538897, 0.538897)
 
 [node name="poseidon" parent="Env" instance=ExtResource("23_hfh31")]
@@ -1416,13 +1417,14 @@ rotation = -1.1646
 scale = Vector2(0.869679, 0.869679)
 
 [node name="pole10" parent="Env" instance=ExtResource("4_jmj8x")]
-position = Vector2(-98.9996, -5662)
+position = Vector2(-99, -5626)
 rotation = 1.34005
 scale = Vector2(0.410134, 0.410134)
 
 [node name="pole11" parent="Env" instance=ExtResource("4_jmj8x")]
-position = Vector2(-19, -6347)
-rotation = 0.944747
+z_index = 1
+position = Vector2(-21, -6305)
+rotation = 1.00887
 scale = Vector2(0.410134, 0.410134)
 
 [node name="Eye2" parent="Env" instance=ExtResource("7_7kfqy")]
