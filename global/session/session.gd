@@ -3,8 +3,8 @@ extends Node
 var current_run_seconds: float = 0
 var collectables : Dictionary[String, bool]
 
-func _ready() -> void:
-  reset_collectables()
+# func _ready() -> void:
+#   reset_collectables()
 
 
 func reset_collectables() -> void:

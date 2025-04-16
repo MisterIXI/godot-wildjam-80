@@ -2309,23 +2309,23 @@ position = Vector2(10943, -14356)
 [node name="Collectables" type="Node2D" parent="."]
 
 [node name="collectable" parent="Collectables" instance=ExtResource("77_kprro")]
-position = Vector2(123, -12)
+position = Vector2(3025, -1059)
 uid = 523562340
 
 [node name="collectable2" parent="Collectables" instance=ExtResource("77_kprro")]
-position = Vector2(244, -17)
+position = Vector2(328, -4421)
 uid = 523562341
 
 [node name="collectable3" parent="Collectables" instance=ExtResource("77_kprro")]
-position = Vector2(366, -17)
+position = Vector2(4249, -9333)
 uid = 523562342
 
 [node name="collectable4" parent="Collectables" instance=ExtResource("77_kprro")]
-position = Vector2(491, -12)
+position = Vector2(4449, -12800)
 uid = 523562343
 
 [node name="collectable5" parent="Collectables" instance=ExtResource("77_kprro")]
-position = Vector2(607, -10)
+position = Vector2(1562, -16696)
 uid = 523562344
 
 [editable path="Env/schild"]
