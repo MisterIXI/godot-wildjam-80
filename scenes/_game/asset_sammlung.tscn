@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=3 uid="uid://one3lojhqxny"]
+[gd_scene load_steps=116 format=3 uid="uid://one3lojhqxny"]
 
 [ext_resource type="PackedScene" uid="uid://2ddq8u17sfj7" path="res://scenes/EnvironmentObjects/a.tscn" id="1_jonfs"]
 [ext_resource type="PackedScene" uid="uid://c28s5iggrkcmc" path="res://scenes/EnvironmentObjects/bild_2.tscn" id="2_pavb3"]
@@ -61,6 +61,8 @@
 [ext_resource type="PackedScene" uid="uid://df6hamphiy3f3" path="res://scenes/EnvironmentObjects/misc/meh_flower.tscn" id="59_ni00m"]
 [ext_resource type="PackedScene" uid="uid://bo0lnpc1o70fe" path="res://scenes/EnvironmentObjects/misc/eye_2.tscn" id="60_bgk6h"]
 [ext_resource type="PackedScene" uid="uid://cwmorrmmdot48" path="res://scenes/EnvironmentObjects/misc/jacob_love.tscn" id="61_7vdwf"]
+[ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="62_y20dm"]
+[ext_resource type="Texture2D" uid="uid://dkb5jr7y6s53p" path="res://assets/images/env/jumppad.png" id="63_6y8k3"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ii8xg"]
 frequency = 0.0043
@@ -377,6 +379,113 @@ shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_bgk6h"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7vdwf"]
+seamless = true
+noise = SubResource("FastNoiseLite_bgk6h")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sxpdh"]
+shader = ExtResource("35_g7ccy")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 9.383
+shader_parameter/noise = SubResource("NoiseTexture2D_7vdwf")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="Animation" id="Animation_22fwu"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.15, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="Animation" id="Animation_nylcs"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_x1wpk"]
+resource_name = "bump"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.2, 0, 0, 0, 0, 1.3942, 0, 0, 0, -0.114613, 1.019, -0.0375, 0, 0.0375, 0, 1.2, -0.166667, 0, 0.1, 0.136603, 1.2, -0.1, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.65, 0.85)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.6, 0, 0, 0, 0, 0.491788, 0, 0, 0, 0.416597, 1.183, -0.0375, 0, 0.0375, 0, 0.6, -0.166667, 0, 0.15, -0.101812, 0.6, -0.1, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.65, 0.85)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5vne"]
+_data = {
+&"RESET": SubResource("Animation_nylcs"),
+&"bump": SubResource("Animation_x1wpk"),
+&"idle": SubResource("Animation_22fwu")
+}
+
 [node name="AssetSammlung" type="Node2D"]
 position = Vector2(527, -6)
 
@@ -589,3 +698,18 @@ position = Vector2(-2761, -6642)
 
 [node name="JacobLove" parent="." instance=ExtResource("61_7vdwf")]
 position = Vector2(-1755, -6867)
+
+[node name="MesmerizedHead" parent="." instance=ExtResource("62_y20dm")]
+position = Vector2(-5210, -5348)
+
+[node name="Jumppad" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_sxpdh")
+position = Vector2(-5873, -5346)
+scale = Vector2(1.2, 0.6)
+texture = ExtResource("63_6y8k3")
+offset = Vector2(0, -222.505)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Jumppad"]
+libraries = {
+&"": SubResource("AnimationLibrary_u5vne")
+}

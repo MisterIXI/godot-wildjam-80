@@ -1,0 +1,110 @@
+[gd_scene load_steps=13 format=3 uid="uid://do2brp63bsxxv"]
+
+[ext_resource type="Texture2D" uid="uid://cek6unqs73vma" path="res://assets/images/env/mesmerized_head.png" id="2_p3hu3"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="3_rjphy"]
+[ext_resource type="Texture2D" uid="uid://c5lphxe0m2xpv" path="res://assets/images/env/spiral.png" id="4_byuv5"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
+seamless = true
+noise = SubResource("FastNoiseLite_k2e0m")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nnvl4"]
+shader = ExtResource("3_rjphy")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.658171, 0.002714, 0.905119, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 33.486
+shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_o7br7"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i81uc"]
+seamless = true
+noise = SubResource("FastNoiseLite_o7br7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6her5"]
+shader = ExtResource("3_rjphy")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0, 0, 0, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 12.661
+shader_parameter/noise = SubResource("NoiseTexture2D_i81uc")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="Animation" id="Animation_ijbko"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_cqghc"]
+resource_name = "turn"
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 1),
+"points": PackedFloat32Array(0, 0, 0, 0, 0, 6.28319, 0, 0, 0, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ydqxp"]
+_data = {
+&"RESET": SubResource("Animation_ijbko"),
+&"turn": SubResource("Animation_cqghc")
+}
+
+[node name="MesmerizedHead" type="Sprite2D"]
+material = SubResource("ShaderMaterial_nnvl4")
+texture = ExtResource("2_p3hu3")
+
+[node name="Spiral" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6her5")
+position = Vector2(-76.0001, -7.00014)
+scale = Vector2(0.34082, 0.34082)
+texture = ExtResource("4_byuv5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spiral"]
+libraries = {
+&"": SubResource("AnimationLibrary_ydqxp")
+}
+autoplay = "turn"
+
+[node name="Spiral2" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_6her5")
+position = Vector2(69.9998, -7.00014)
+scale = Vector2(0.34082, 0.34082)
+texture = ExtResource("4_byuv5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spiral2"]
+libraries = {
+&"": SubResource("AnimationLibrary_ydqxp")
+}
+autoplay = "turn"

@@ -1,4 +1,4 @@
-[gd_scene load_steps=140 format=3 uid="uid://1hg7rqnq1mmb"]
+[gd_scene load_steps=141 format=3 uid="uid://1hg7rqnq1mmb"]
 
 [ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_wk6ws"]
 [ext_resource type="PackedScene" uid="uid://bau7ij7simao5" path="res://scenes/EnvironmentObjects/platform.tscn" id="2_d4148"]
@@ -69,6 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://dh0d0fcqlb7nc" path="res://scenes/EnvironmentObjects/yooo_perlin.tscn" id="62_dyy75"]
 [ext_resource type="PackedScene" uid="uid://itm5pkt7qf64" path="res://scenes/EnvironmentObjects/misc/bunny_love.tscn" id="62_lmifq"]
 [ext_resource type="PackedScene" uid="uid://b7de2qvboavwn" path="res://scenes/EnvironmentObjects/Obstacles/gaensebluemchen.tscn" id="63_dyy75"]
+[ext_resource type="PackedScene" uid="uid://do2brp63bsxxv" path="res://scenes/EnvironmentObjects/misc/mesmerized_head.tscn" id="70_lmifq"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_3y6uy"]
 frequency = 0.0043
@@ -778,7 +779,7 @@ scale = Vector2(12.79, 12.79)
 metadata/_edit_lock_ = true
 
 [node name="PlayerBody" parent="." instance=ExtResource("3_j6ebo")]
-position = Vector2(7249, -7033)
+position = Vector2(9840, -6066)
 max_contacts_reported = 3
 
 [node name="Env" type="Node2D" parent="."]
@@ -1792,9 +1793,9 @@ rotation = 0.713129
 scale = Vector2(0.137313, 0.141275)
 
 [node name="TetoLove" parent="Env" instance=ExtResource("61_qtlrg")]
-position = Vector2(11110, -3646)
+position = Vector2(11123, -3619)
 rotation = -0.109169
-scale = Vector2(0.249431, 0.249431)
+scale = Vector2(0.293455, 0.293455)
 
 [node name="BunnyLove" parent="Env" instance=ExtResource("62_lmifq")]
 position = Vector2(9286, -1282)
@@ -2139,5 +2140,10 @@ rotation = 0.58305
 [node name="pole2" parent="." instance=ExtResource("5_55gqm")]
 position = Vector2(8675, -11339)
 rotation = 0.181127
+
+[node name="MesmerizedHead" parent="." instance=ExtResource("70_lmifq")]
+position = Vector2(9790, -6345)
+rotation = -0.31774
+scale = Vector2(0.538799, 0.538799)
 
 [editable path="Env/schild"]
