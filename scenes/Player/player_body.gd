@@ -99,7 +99,8 @@ func _integrate_forces(state):
 
 func _on_body_entered(body:Node):
 	if body.is_in_group("Trampoline"):
-		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10) 
+		apply_central_impulse(body.transform.basis_xform(Vector2.UP) * jumpForce * 10)
+		body.bounce()
 
 func _ready() -> void:
 	SoundManager._play_background_music()

@@ -1,6 +1,116 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo7ds72obxh35"]
+[gd_scene load_steps=14 format=3 uid="uid://bo7ds72obxh35"]
 
 [ext_resource type="Texture2D" uid="uid://ye24j2akgvq2" path="res://assets/images/primitive_objects/plattform_a_300_50.png" id="1_0icuh"]
+[ext_resource type="Script" uid="uid://d1mbflnpl80gd" path="res://scenes/EnvironmentObjects/Obstacles/trampoline.gd" id="1_yk0qq"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_on4mv"]
+[ext_resource type="Texture2D" uid="uid://dkb5jr7y6s53p" path="res://assets/images/env/jumppad.png" id="3_yk0qq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1hxwy"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7vdwf"]
+seamless = true
+noise = SubResource("FastNoiseLite_1hxwy")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gdksa"]
+shader = ExtResource("2_on4mv")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/shadow_color = Color(0, 0, 0, 1)
+shader_parameter/shadow_blur = 1.0
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 9.383
+shader_parameter/noise = SubResource("NoiseTexture2D_7vdwf")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="Animation" id="Animation_22fwu"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.15, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
+[sub_resource type="Animation" id="Animation_nylcs"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_x1wpk"]
+resource_name = "bump"
+step = 0.05
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0, 0),
+"points": PackedFloat32Array(1.2, 0, 0, 0, 0, 1.3942, 0, 0, 0, -0.114613, 1.019, -0.0375, 0, 0.0375, 0, 1.2, -0.166667, 0, 0.1, 0.136603, 1.2, -0.1, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.65, 0.85)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(1, 0, 0, 0, 0),
+"points": PackedFloat32Array(0.6, 0, 0, 0, 0, 0.491788, 0, 0, 0, 0.416597, 1.183, -0.0375, 0, 0.0375, 0, 0.6, -0.166667, 0, 0.15, -0.101812, 0.6, -0.1, 0, 0, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.65, 0.85)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5vne"]
+_data = {
+&"RESET": SubResource("Animation_nylcs"),
+&"bump": SubResource("Animation_x1wpk"),
+&"idle": SubResource("Animation_22fwu")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6bry8"]
 size = Vector2(291, 31.2034)
@@ -10,11 +120,31 @@ size = Vector2(291, 11.341)
 
 [node name="Trampoline" type="StaticBody2D" groups=["Trampoline"]]
 rotation = -0.497638
+script = ExtResource("1_yk0qq")
 
 [node name="TrampolineSprite" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(0.0323066, 0.666266, 0.169058, 1)
 position = Vector2(135.5, -9)
 texture = ExtResource("1_0icuh")
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(43.3588, 106.63)
+scale = Vector2(0.685, 0.685)
+
+[node name="Jumppad" type="Sprite2D" parent="Node2D"]
+material = SubResource("ShaderMaterial_gdksa")
+position = Vector2(142.213, -50.2033)
+scale = Vector2(1.2, 0.6)
+texture = ExtResource("3_yk0qq")
+offset = Vector2(0, -222.505)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Node2D/Jumppad"]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_u5vne")
+}
+autoplay = "idle"
 
 [node name="TrampolineShape" type="CollisionShape2D" parent="."]
 position = Vector2(135.5, -12.3983)

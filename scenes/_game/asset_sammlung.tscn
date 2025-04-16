@@ -382,7 +382,7 @@ shader_parameter/frame_time = 0.25
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_bgk6h"]
 frequency = 0.0043
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_7vdwf"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_6y8k3"]
 seamless = true
 noise = SubResource("FastNoiseLite_bgk6h")
 
@@ -395,7 +395,7 @@ shader_parameter/shadow_color = Color(0, 0, 0, 1)
 shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.383
-shader_parameter/noise = SubResource("NoiseTexture2D_7vdwf")
+shader_parameter/noise = SubResource("NoiseTexture2D_6y8k3")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
