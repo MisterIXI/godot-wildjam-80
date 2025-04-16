@@ -1786,6 +1786,13 @@ position = Vector2(9286, -1282)
 rotation = 0.506217
 scale = Vector2(0.204515, 0.204515)
 
+[node name="YehFlower3" parent="Env" instance=ExtResource("54_sp688")]
+position = Vector2(8753, -7201)
+scale = Vector2(0.29056, 0.29056)
+
+[node name="MehFlower" parent="Env/YehFlower3" instance=ExtResource("55_kvc7b")]
+position = Vector2(912.03, -158.315)
+
 [node name="Arrow4" parent="." instance=ExtResource("50_eap4r")]
 z_index = -1
 material = SubResource("ShaderMaterial_15ncb")
