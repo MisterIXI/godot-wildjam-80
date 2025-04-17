@@ -2,7 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://domxekq3xbmw5"
+uid="uid://tuhwgebbw7g1"
 path="res://.godot/imported/magic_impact.wav-779016ad030f80b9dd6fe645a6700079.sample"
 
 [deps]
@@ -21,8 +21,4 @@ edit/normalize=false
 edit/loop_mode=0
 edit/loop_begin=0
 edit/loop_end=-1
-<<<<<<< HEAD
 compress/mode=0
-=======
-compress/mode=2
->>>>>>> e09fb24d7e741955260a9e0b60ac1a75a8aecaa3

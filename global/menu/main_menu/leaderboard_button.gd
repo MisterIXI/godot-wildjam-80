@@ -13,7 +13,7 @@ func _ready() -> void:
   await get_tree().create_timer(0.1).timeout
 
   ReferenceManager.highscore_node.leaderboard_request_completed.connect(completer.emit)
-  get_tree().create_timer(5).timeout.connect(completer.emit)
+  get_tree().create_timer(1).timeout.connect(completer.emit)
   await completer
 
   disabled = !Schlüsseljunge.leaderboard_active
