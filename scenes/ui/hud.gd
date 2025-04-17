@@ -5,19 +5,27 @@ class_name HUDmenu
 var _game_done : bool = false
 var collectables : int  = 0 :
     set(value) : 
-        collectables +=1
+        collectables = value
         _collectable_label.text ="x" +str(collectables)
-        #TODO: add collectables to the session
 
 func _ready() -> void:
     ReferenceManager.hud  =self
     ReferenceManager.game_done.connect(_on_game_done)
+    update_collectables()
 func _process(_delta: float) -> void:
     if !_game_done:
         _timer_label.text = ReferenceManager.format(Session.current_run_seconds)
     
 # get collectable_score from hud
-func get_collectable_score() -> int:
-    return collectables
 func _on_game_done() ->void:
     _game_done = true
+
+func update_collectables():
+    collectables = _format_collectables(Session.collectables)
+
+func _format_collectables(_collectables : Dictionary) -> int:
+  var count = 0
+  for val in _collectables.values():
+    if val:
+      count += 1
+  return count

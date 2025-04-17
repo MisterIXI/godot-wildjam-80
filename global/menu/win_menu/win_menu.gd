@@ -42,7 +42,7 @@ func _on_visibility_changed():
         highscore_times.append(item.time)
       highscore_times.append(Session.current_run_seconds)
       highscore_times.sort()
-      var place : int = highscore_times.find(Session.current_run_seconds) + 1
+      var place : int = highscore_times.find(Session.current_run_seconds)
       _text = _text.replace("#PLACE#", _format_place(place))
     else:
       _text = _text.replace("#LEADERBOARD#", leaderboard_inactve_text)

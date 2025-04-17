@@ -10,16 +10,14 @@ var collectables : Dictionary[String, bool]
 func reset_collectables() -> void:
   for item in collectables:
     collectables[item] = false
-  #TODO: might need to give the collectables a unique id
-  #TODO: Actually set all the collectables
 
 func set_collectables(_collectable : Dictionary[String, bool]) -> void:
   collectables = _collectable
-
-  #TODO: Actually set all the collectables
+  ReferenceManager.hud.update_collectables()
 
 func collect_collectable(collectable_uid: String) -> void:
   collectables[collectable_uid] = true
+  ReferenceManager.hud.update_collectables()
 
 func _process(_delta: float) -> void:
   current_run_seconds += _delta

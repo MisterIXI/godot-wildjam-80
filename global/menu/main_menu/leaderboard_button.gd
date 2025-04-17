@@ -18,3 +18,10 @@ func _ready() -> void:
 
   disabled = !Schlüsseljunge.leaderboard_active
   disabledTextureRect.visible = disabled
+
+  visibility_changed.connect(update_disability)
+
+
+func update_disability():
+  disabled = !Schlüsseljunge.leaderboard_active
+  disabledTextureRect.visible = disabled
