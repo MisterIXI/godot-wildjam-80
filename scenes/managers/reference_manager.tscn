@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://chlo1mcvnyep0"]
+[gd_scene load_steps=11 format=3 uid="uid://chlo1mcvnyep0"]
 
 [ext_resource type="Script" uid="uid://goc2ox0y8vvu" path="res://scenes/managers/reference_manager.gd" id="1_11kig"]
+[ext_resource type="FontVariation" uid="uid://chb5fk54588hb" path="res://resources/font/Barriecito.tres" id="2_a6ym2"]
+[ext_resource type="FontVariation" uid="uid://dx8m4ay02ebms" path="res://resources/font/IBMPlexMono.tres" id="3_qux6d"]
+[ext_resource type="FontVariation" uid="uid://ctb64twv4gtgi" path="res://resources/font/Dancing_Script.tres" id="4_cc1o5"]
+[ext_resource type="FontVariation" uid="uid://c5oytoyxdwaxk" path="res://resources/font/Slabo_13px.tres" id="5_tbgdj"]
+[ext_resource type="FontVariation" uid="uid://dhk7e7h7lcd02" path="res://resources/font/UnifrakturMaguntia.tres" id="6_cvi0v"]
+[ext_resource type="FontFile" uid="uid://dl8um6mjcf2fo" path="res://assets/fonts/Schoolbell/Schoolbell-Regular.ttf" id="7_twqjq"]
+[ext_resource type="FontFile" uid="uid://bbq0k8dlmcepd" path="res://assets/fonts/Comic_Neue/ComicNeue-Regular.ttf" id="8_6130s"]
+[ext_resource type="FontFile" uid="uid://kpywfytxyhof" path="res://assets/fonts/Delius/Delius-Regular.ttf" id="9_r6fmq"]
+[ext_resource type="FontFile" uid="uid://b2hau4qt3k4pb" path="res://assets/fonts/Noticia_Text/NoticiaText-Regular.ttf" id="10_b4a88"]
 
 [node name="Reference_Manager" type="Node"]
 script = ExtResource("1_11kig")
+fonts = Array[Font]([ExtResource("2_a6ym2"), ExtResource("3_qux6d"), ExtResource("4_cc1o5"), ExtResource("5_tbgdj"), ExtResource("6_cvi0v"), ExtResource("7_twqjq"), ExtResource("8_6130s"), ExtResource("9_r6fmq"), ExtResource("10_b4a88")])

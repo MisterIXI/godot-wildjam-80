@@ -6,6 +6,8 @@ var game_ui_node :  CanvasLayer
 var highscore_node : Highscore_Manager
 var hud : Control
 
+@export var fonts : Array[Font]
+
 func on_game_done()->void:
     game_done.emit()
 #get format 00h:00m:00s
