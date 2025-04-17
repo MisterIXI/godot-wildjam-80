@@ -10,6 +10,7 @@ var collectables : Dictionary[String, bool]
 func reset_collectables() -> void:
   for item in collectables:
     collectables[item] = false
+  ReferenceManager.hud.update_collectables()
 
 func set_collectables(_collectable : Dictionary[String, bool]) -> void:
   collectables = _collectable
