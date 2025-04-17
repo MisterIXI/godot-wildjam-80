@@ -1,9 +1,9 @@
-[gd_scene load_steps=66 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=60 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
-[ext_resource type="Texture2D" uid="uid://b34pfool0yx1p" path="res://assets/images/Player/Spritesheet.png" id="2_uxo23"]
 [ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/Player/follow_cam.gd" id="3_dl1wr"]
+[ext_resource type="SpriteFrames" uid="uid://dhrx10b46guw2" path="res://resources/player/player.tres" id="3_nbg44"]
 [ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
 [ext_resource type="Script" uid="uid://c5n4yw6dca0lq" path="res://scenes/Player/dust_cloud_particle_system.gd" id="5_tayva"]
@@ -22,8 +22,8 @@
 [ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="18_18ciy"]
 [ext_resource type="AudioStream" uid="uid://cesmwqx6vj4j5" path="res://assets/sounds/sfx/spring.wav" id="18_cg2hl"]
 [ext_resource type="Shader" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
-[ext_resource type="Script" path="res://scenes/Player/toilette_flush_player.gd" id="19_cg2hl"]
-[ext_resource type="Script" path="res://scenes/Player/jump_spring_player.gd" id="19_o05ft"]
+[ext_resource type="Script" uid="uid://blv1f0i7pwfuj" path="res://scenes/Player/toilette_flush_player.gd" id="19_cg2hl"]
+[ext_resource type="Script" uid="uid://cljlbfvoyxk1d" path="res://scenes/Player/jump_spring_player.gd" id="19_o05ft"]
 [ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="20_o05ft"]
 [ext_resource type="AudioStream" uid="uid://djjsq53q0rsxx" path="res://assets/sounds/toilet/flush/Toilet Flush 3.wav" id="21_nbg44"]
 [ext_resource type="AudioStream" uid="uid://du328dml2c3be" path="res://assets/sounds/toilet/flush/Toilet Flush 4.wav" id="22_jn0uf"]
@@ -51,54 +51,6 @@ shader_parameter/noise = SubResource("NoiseTexture2D_jxtnq")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.015
 shader_parameter/frame_time = 0.25
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n7rn1"]
-atlas = ExtResource("2_uxo23")
-region = Rect2(0, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7tfl1"]
-atlas = ExtResource("2_uxo23")
-region = Rect2(512, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jxtnq"]
-atlas = ExtResource("2_uxo23")
-region = Rect2(0, 512, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_t6q27"]
-atlas = ExtResource("2_uxo23")
-region = Rect2(512, 0, 512, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uxo23"]
-atlas = ExtResource("2_uxo23")
-region = Rect2(512, 512, 512, 512)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_t6q27"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n7rn1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7tfl1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jxtnq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t6q27")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uxo23")
-}],
-"loop": true,
-"name": &"throw",
-"speed": 5.0
-}]
 
 [sub_resource type="Curve" id="Curve_x8khf"]
 _data = [Vector2(0, 0), 0.0, 1.01966, 0, 0, Vector2(1, 0), -0.273211, 0.0, 0, 0]
@@ -267,7 +219,7 @@ z_index = 1000
 material = SubResource("ShaderMaterial_t6q27")
 position = Vector2(-2.58746, -2.58746)
 scale = Vector2(0.275049, 0.275049)
-sprite_frames = SubResource("SpriteFrames_t6q27")
+sprite_frames = ExtResource("3_nbg44")
 animation = &"throw"
 autoplay = "default"
 script = ExtResource("3_uxo23")

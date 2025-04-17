@@ -1,0 +1,74 @@
+[gd_scene load_steps=13 format=3 uid="uid://bp6p8dsgaanxk"]
+
+[ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="1_1wcil"]
+[ext_resource type="Texture2D" uid="uid://crx3a1gxckxqs" path="res://assets/images/env/eye.png" id="2_es1mq"]
+[ext_resource type="Texture2D" uid="uid://dmrwwq4uwxetw" path="res://assets/images/env/yeh_flower.png" id="3_renho"]
+[ext_resource type="Texture2D" uid="uid://dlwrldvavfxvh" path="res://assets/images/menu/letters/L-3.png" id="4_fuo85"]
+[ext_resource type="Texture2D" uid="uid://b4byxf1mmeva6" path="res://assets/images/menu/letters/E-2.png" id="5_i1um4"]
+[ext_resource type="Texture2D" uid="uid://c2k0fsglxkiss" path="res://assets/images/menu/letters/B.png" id="6_ffacv"]
+[ext_resource type="Texture2D" uid="uid://yap44aaft0fp" path="res://assets/images/menu/letters/E-6.png" id="7_ktuk5"]
+[ext_resource type="Texture2D" uid="uid://bidunxrs6levk" path="res://assets/images/menu/letters/R-2.png" id="8_2ehr1"]
+[ext_resource type="Texture2D" uid="uid://btj7c7r3o766f" path="res://assets/images/menu/letters/K-2.png" id="9_omtju"]
+[ext_resource type="Texture2D" uid="uid://bvnr8cja804ip" path="res://assets/images/menu/letters/Ae.png" id="10_3bddb"]
+[ext_resource type="Texture2D" uid="uid://i6l2phnoo050" path="res://assets/images/menu/letters/ß.png" id="11_n5yg2"]
+[ext_resource type="SpriteFrames" uid="uid://dhrx10b46guw2" path="res://resources/player/player.tres" id="12_es1mq"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Bg" parent="." instance=ExtResource("1_1wcil")]
+visible = false
+position = Vector2(2721, -9273)
+scale = Vector2(28.6653, 28.6653)
+metadata/_edit_lock_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(182, 357)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("2_es1mq")
+flip_h = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1668, 400)
+scale = Vector2(0.47, 0.47)
+texture = ExtResource("3_renho")
+
+[node name="Sprite_L" type="Sprite2D" parent="."]
+position = Vector2(222, 881)
+texture = ExtResource("4_fuo85")
+
+[node name="Sprite_E" type="Sprite2D" parent="."]
+position = Vector2(416, 964)
+texture = ExtResource("5_i1um4")
+
+[node name="Sprite_B" type="Sprite2D" parent="."]
+position = Vector2(625, 922)
+texture = ExtResource("6_ffacv")
+
+[node name="Sprite_E2" type="Sprite2D" parent="."]
+position = Vector2(820, 966)
+texture = ExtResource("7_ktuk5")
+
+[node name="Sprite_R" type="Sprite2D" parent="."]
+position = Vector2(1015, 903)
+texture = ExtResource("8_2ehr1")
+
+[node name="Sprite_K" type="Sprite2D" parent="."]
+position = Vector2(1269, 947)
+texture = ExtResource("9_omtju")
+
+[node name="Sprite_Ae" type="Sprite2D" parent="."]
+position = Vector2(1551, 941)
+texture = ExtResource("10_3bddb")
+
+[node name="Sprite_ß" type="Sprite2D" parent="."]
+position = Vector2(1805, 878)
+texture = ExtResource("11_n5yg2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(966, 637)
+rotation = -1.60328
+sprite_frames = ExtResource("12_es1mq")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(984, 345)
+zoom = Vector2(0.405, 0.405)
