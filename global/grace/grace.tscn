@@ -4,3 +4,4 @@
 
 [node name="Grace" type="Node"]
 script = ExtResource("1_5f355")
+saving_interval = 2.0
