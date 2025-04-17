@@ -5,8 +5,8 @@
 [resource]
 shader = ExtResource("1_3fp8f")
 shader_parameter/drop_shadow_color = Color(0.1434, 0.0744, 0.24, 0.501961)
-shader_parameter/shadow_offset_x = 0.01
-shader_parameter/shadow_offset_y = 0.01
+shader_parameter/shadow_offset_x = 0.005
+shader_parameter/shadow_offset_y = 0.005
 shader_parameter/shadow_rotation = 0.0
 shader_parameter/rotation_pivot = Vector2(0.5, 0.5)
 shader_parameter/shadow_blur_strength = 20.0
