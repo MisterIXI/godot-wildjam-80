@@ -1,7 +1,7 @@
 extends Panel
 
 @onready var vbox_container : VBoxContainer = $ScrollContainer/VBoxContainer
-var highscore_entry : PackedScene =preload("res://scenes/ui/highscore_entry.tscn")
+@export var highscore_entry : PanelContainer
 
 var highscore_list :Array[PanelContainer]
 func _ready() -> void:
@@ -26,7 +26,8 @@ func _on_visible_changed() ->void:
 func _wait_for_finished():
     var _i  :int  =0
     for x in ReferenceManager.highscore_node.highscore_table:
-        var _time_entry =  highscore_entry.instantiate() as PanelContainer
+        var _time_entry =  highscore_entry.duplicate()
+        _time_entry.visbile = true
         vbox_container.add_child(_time_entry)
         highscore_list.append(_time_entry)
         _time_entry.on_initialze(str(_i), x.playername, ReferenceManager.format(float(x.time)), "x " +str(x.collectables), x.date)
