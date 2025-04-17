@@ -15,6 +15,7 @@ var segments : Array[VerletNode] = []
 @onready var player : RigidBody2D = get_parent() as RigidBody2D
 @export var tearing_particle : CPUParticles2D
 @export var rope_connect_sound_player: AudioStreamPlayer2D
+@export var rope_rip_sound_player: AudioStreamPlayer2D
 var rope_throw_tween : Tween
 func _ready():
 	init_rope()
@@ -85,6 +86,7 @@ func activate(new_anchor_pos: Vector2):
 	rope_throw_tween.tween_property(segments[-1],"pos", new_anchor_pos,0.1)
 	rope_throw_tween.tween_callback(func():
 		rope_connect_sound_player.global_position = new_anchor_pos
+		rope_rip_sound_player.global_position = new_anchor_pos
 		rope_connect_sound_player.pitch_scale = randf_range(0.8, 1.2)
 		rope_connect_sound_player.play()
 		)
@@ -95,6 +97,8 @@ func deactivate():
 		if particle_count > 0:
 			tearing_particle.global_position = rope.global_position
 			# animate tearing particle
+			rope_rip_sound_player.pitch_scale = randf_range(1.0, 1.6)
+			rope_rip_sound_player.play()
 			tearing_particle.amount = particle_count
 			tearing_particle.emission_points = PackedVector2Array(rope.points)
 			tearing_particle.emitting = true

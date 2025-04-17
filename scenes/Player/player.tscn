@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=61 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
@@ -19,6 +19,7 @@
 [ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="11_n7rn1"]
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 [ext_resource type="AudioStream" uid="uid://tuhwgebbw7g1" path="res://assets/sounds/sfx/magic_impact.wav" id="13_nbg44"]
+[ext_resource type="AudioStream" uid="uid://cs41vrapayuxb" path="res://assets/sounds/sfx/rip2.wav" id="15_32uah"]
 [ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="18_18ciy"]
 [ext_resource type="AudioStream" uid="uid://cesmwqx6vj4j5" path="res://assets/sounds/sfx/spring.wav" id="18_cg2hl"]
 [ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
@@ -352,7 +353,7 @@ script = ExtResource("6_n7rn1")
 [node name="RopeVisuals" type="Node2D" parent="."]
 top_level = true
 
-[node name="VerletRope" type="Node2D" parent="RopeVisuals" node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin", "tearing_particle", "rope_connect_sound_player")]
+[node name="VerletRope" type="Node2D" parent="RopeVisuals" node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin", "tearing_particle", "rope_connect_sound_player", "rope_rip_sound_player")]
 top_level = true
 script = ExtResource("7_dl1wr")
 pull_strength = 100.0
@@ -362,12 +363,17 @@ rope_origin = NodePath("../../RopeOrigin")
 iteration_count = 50
 tearing_particle = NodePath("TearingParticles")
 rope_connect_sound_player = NodePath("RopeConnectSoundPlayer")
+rope_rip_sound_player = NodePath("RopeRipSoundPlayer")
 
 [node name="RopeConnectSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
 stream = ExtResource("13_nbg44")
 volume_db = -20.0
 pitch_scale = 1.23
 bus = &"SFX"
+
+[node name="RopeRipSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
+stream = ExtResource("15_32uah")
+volume_db = -9.0
 
 [node name="RopeRender" type="Line2D" parent="RopeVisuals/VerletRope"]
 visible = false

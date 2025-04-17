@@ -17,42 +17,12 @@ shader = ExtResource("2_on4mv")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_blur = 1.0
-shader_parameter/shadow_offset = Vector2(0.02, -0.02)
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 9.383
 shader_parameter/noise = SubResource("NoiseTexture2D_7vdwf")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
-
-[sub_resource type="Animation" id="Animation_22fwu"]
-resource_name = "idle"
-length = 2.0
-loop_mode = 1
-step = 0.1
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:scale:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.15, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 2)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:scale:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 2)
-}
 
 [sub_resource type="Animation" id="Animation_nylcs"]
 length = 0.001
@@ -105,6 +75,34 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.1, 0.2, 0.65, 0.85)
 }
 
+[sub_resource type="Animation" id="Animation_22fwu"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+step = 0.1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(1.2, -0.25, 0, 0.25, 0, 1.15, -0.25, 0, 0.25, 0, 1.2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.6, -0.25, 0, 0.25, 0, 0.65, -0.25, 0, 0.25, 0, 0.6, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_u5vne"]
 _data = {
 &"RESET": SubResource("Animation_nylcs"),
@@ -155,3 +153,6 @@ shape = SubResource("RectangleShape2D_6bry8")
 [node name="BlockerShape" type="CollisionShape2D" parent="BottomBlocker"]
 position = Vector2(135.692, 9.98366)
 shape = SubResource("RectangleShape2D_k0j4s")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+pitch_scale = 0.5
