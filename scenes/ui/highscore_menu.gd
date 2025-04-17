@@ -24,11 +24,11 @@ func _on_visible_changed() ->void:
             on_activate()
 
 func _wait_for_finished():
-    var _i  :int  =0
+    var _i  :int  =1
     for x in ReferenceManager.highscore_node.highscore_table:
         var _time_entry =  highscore_entry.duplicate()
-        _time_entry.visbile = true
         vbox_container.add_child(_time_entry)
         highscore_list.append(_time_entry)
         _time_entry.on_initialze(str(_i), x.playername, ReferenceManager.format(float(x.time)), "x " +str(x.collectables), x.date)
+        _time_entry.show()
         _i +=1

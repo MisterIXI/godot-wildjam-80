@@ -1934,8 +1934,10 @@ texture = ExtResource("76_dom4v")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ShadowGroup/End"]
 material = SubResource("ShaderMaterial_xkmml")
-position = Vector2(9333, -14445)
-scale = Vector2(0.243809, 0.243809)
+position = Vector2(9557, -14298)
+rotation = 0.0610865
+scale = Vector2(0.0719903, 0.0781249)
+skew = 0.0174533
 texture = ExtResource("77_jvvaj")
 
 [node name="pole25" parent="ShadowGroup/End" instance=ExtResource("4_jmj8x")]
@@ -1944,6 +1946,10 @@ rotation = -3.16683
 
 [node name="Trampoline" parent="ShadowGroup/End" instance=ExtResource("3_mvwki")]
 position = Vector2(10387, -14017)
+
+[node name="Trampoline11" parent="ShadowGroup/End" instance=ExtResource("3_mvwki")]
+position = Vector2(10137, -14006)
+rotation = -0.100584
 
 [node name="Trampoline4" parent="ShadowGroup/End" instance=ExtResource("3_mvwki")]
 position = Vector2(7149, -15947)

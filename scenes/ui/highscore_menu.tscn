@@ -9,7 +9,7 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ol4y4"]
 
-[node name="Highscore_menu" type="Panel"]
+[node name="Highscore_menu" type="Panel" node_paths=PackedStringArray("highscore_entry")]
 custom_minimum_size = Vector2(700, 550)
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,7 @@ grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_styles/panel = SubResource("StyleBoxEmpty_7i3tj")
 script = ExtResource("1_ml1x6")
+highscore_entry = NodePath("highscore_entry")
 
 [node name="highscore_entry" parent="." instance=ExtResource("2_n1skn")]
 visible = false
