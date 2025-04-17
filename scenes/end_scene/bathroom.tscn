@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://bh36khiteekr2"]
+[gd_scene load_steps=39 format=3 uid="uid://bh36khiteekr2"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_8gboa"]
 [ext_resource type="Texture2D" uid="uid://yaf2gpybvuke" path="res://assets/images/bath/background.png" id="2_m7vh0"]
@@ -27,7 +27,6 @@
 [ext_resource type="Script" uid="uid://cw4jta6e5jl4v" path="res://scenes/end_scene/trigger_zone_on_enter.gd" id="25_rm6hv"]
 [ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="26_tyjuk"]
 [ext_resource type="Script" uid="uid://cfefmqqmra80r" path="res://scenes/end_scene/win_area.gd" id="27_k58xk"]
-[ext_resource type="PackedScene" uid="uid://cn1seejpqc5o4" path="res://scenes/end_scene/name_input.tscn" id="28_4kjxf"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_llnb5"]
 frequency = 0.0043
@@ -292,7 +291,6 @@ scale = Vector2(0.425, 0.425)
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("27_k58xk")
-set_name_input = ExtResource("28_4kjxf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Win_Area"]
 position = Vector2(-30.5882, 37.6471)

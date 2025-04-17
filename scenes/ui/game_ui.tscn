@@ -1,12 +1,48 @@
-[gd_scene load_steps=5 format=3 uid="uid://bln2dmxvo8fwj"]
+[gd_scene load_steps=5 format=3 uid="uid://tglgm60clq71"]
 
-[ext_resource type="Script" uid="uid://oqnqvlhfwqkd" path="res://scenes/ui/game_ui.gd" id="1_bma8u"]
 [ext_resource type="PackedScene" uid="uid://b4nwq2o70i1sp" path="res://scenes/ui/highscore_menu.tscn" id="2_ru5ln"]
 [ext_resource type="PackedScene" uid="uid://daycv1awn5ygk" path="res://scenes/ui/hud.tscn" id="3_fct72"]
 [ext_resource type="Texture2D" uid="uid://dxbpbbl6ti2m5" path="res://assets/images/test/pause_vignette.png" id="4_fct72"]
 
+[sub_resource type="GDScript" id="GDScript_bma8u"]
+script/source = "extends CanvasLayer
+class_name Game_UI
+##################### REFERENCES 
+@onready var _control_menu : Control =$Menu
+@onready var _control_gamehud: Control = $HUD
+@onready var _control_game_over: Control = $Game_Over
+@onready var _control_game_win : Control = $Game_Win
+@onready var _control_pause : Control = $Game_Pause
+#################### BASE GLOBAL FUNCTIONS
+func on_start_hud() ->void:
+    _disable_all_menues()
+    _control_gamehud.show()
+func on_start_menu() -> void:
+    _disable_all_menues()
+    _control_menu.show()
+func on_start_game_over()->void:
+    _disable_all_menues()
+    _control_game_over.show()
+func on_start_game_win() ->void:
+    _disable_all_menues()
+    _control_game_win.show()
+func on_start_game_paused()->void:
+    _disable_all_menues()
+    _control_pause.show()
+
+###################### BASE PRIVATE FUNCTIONS
+func _ready():
+    ReferenceManager.game_ui_node = self
+func _disable_all_menues()->void:
+    _control_game_over.hide()
+    _control_game_win.hide()
+    _control_gamehud.hide()
+    _control_menu.hide()
+    _control_pause.hide()
+"
+
 [node name="Game_UI" type="CanvasLayer"]
-script = ExtResource("1_bma8u")
+script = SubResource("GDScript_bma8u")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 3
@@ -29,6 +65,7 @@ grow_vertical = 1
 [node name="HUD" parent="." instance=ExtResource("3_fct72")]
 
 [node name="Game_Over" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
