@@ -373,7 +373,8 @@ bus = &"SFX"
 
 [node name="RopeRipSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
 stream = ExtResource("15_32uah")
-volume_db = -9.0
+volume_db = -12.0
+bus = &"SFX"
 
 [node name="RopeRender" type="Line2D" parent="RopeVisuals/VerletRope"]
 visible = false
