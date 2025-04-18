@@ -13,6 +13,12 @@ var anim_left_active: bool = false
 var anim_tween: Tween
 @onready var sprite_scale: Vector2 = player_sprite.scale
 
+func _physics_process(_delta):
+	if Input.is_action_just_pressed("move_right"):
+		on_flip_right()
+	elif Input.is_action_just_pressed("move_left"):
+		on_flip_left()
+
 func on_flip_right():
 	if facing_right or anim_right_active:
 		return
