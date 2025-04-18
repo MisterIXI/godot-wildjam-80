@@ -10,6 +10,7 @@
 
 [node name="Menu" type="CanvasLayer" node_paths=PackedStringArray("main_menu", "pause_menu", "settings_menu", "leaderboard_menu", "hud_menu", "win_menu")]
 process_mode = 3
+layer = 2
 script = ExtResource("1_adrvt")
 main_menu = NodePath("MainMenu")
 pause_menu = NodePath("PauseMenu")
