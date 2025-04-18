@@ -11,7 +11,9 @@ var shake_tween: Tween
 @export var impact_shake_strength: float = 10
 @export var speedline_rect: ColorRect
 @export var wind_howl_audio_player: AudioStreamPlayer2D
+@export var riff_player: AudioStreamPlayer2D
 @onready var current_strength: float = zoom.x
+@export var riff_curve: Curve
 var shake_until: float = 0.0
 @export_range(0.0, 1.0) var constant_shake: float = 0.0
 
@@ -39,6 +41,7 @@ func _process(delta):
 	if constant_shake + speed_shake == 0.0:
 		offset = Vector2.ZERO
 	wind_howl_audio_player.volume_db = -80 + (current_strength * 70)
+	riff_player.volume_db = -80 + (riff_curve.sample(current_strength) * 70)
 
 func _on_hard_impact():
 	if shake_tween:
