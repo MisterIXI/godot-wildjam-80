@@ -5,4 +5,4 @@ func _ready() -> void:
 
 func _on_timer_show_toggled(_bool : bool) -> void:
     print("Timer visible changed to ", _bool)
-    ReferenceManager.on_menu_disabled_timer(_bool)
+    ReferenceManager.on_hud_toggle(_bool)

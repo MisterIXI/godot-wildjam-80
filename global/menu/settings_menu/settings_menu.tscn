@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cent0ph746c7e"]
+[gd_scene load_steps=40 format=3 uid="uid://cent0ph746c7e"]
 
 [ext_resource type="Script" uid="uid://ckliwfxwsyjdj" path="res://global/menu/settings_menu/settings_menu.gd" id="1_7xw0p"]
 [ext_resource type="Texture2D" uid="uid://bhswu1gkrqjnv" path="res://assets/images/menu/wallpaper/retro-grunge-pattern-background-1.jpg" id="1_d7ncu"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://mqsepkn0kqvt" path="res://assets/images/menu/settings/timeronoff_toggle.png" id="7_p7lwn"]
 [ext_resource type="Script" uid="uid://dg51d53cpck5l" path="res://global/menu/settings_menu/Timer_check_box.gd" id="8_n8dmn"]
 [ext_resource type="Texture2D" uid="uid://bwyjr428l7o5o" path="res://assets/images/menu/letters/R.png" id="8_p7lwn"]
+[ext_resource type="Script" uid="uid://dalinc41i10cm" path="res://global/menu/settings_menu/fc_toggle.gd" id="9_0o6ow"]
 [ext_resource type="Texture2D" uid="uid://j5aww2x8kmhu" path="res://assets/images/menu/letters/M-4.png" id="9_n8dmn"]
 [ext_resource type="Texture2D" uid="uid://crc5j1g3jwhnm" path="res://assets/images/menu/settings/master_volume.png" id="10_0o6ow"]
 [ext_resource type="Texture2D" uid="uid://oyj2gfndflx5" path="res://assets/images/menu/settings/music_volume.png" id="11_y1s3r"]
@@ -223,11 +224,11 @@ scale = Vector2(2.05298, 2.06019)
 focus_mode = 0
 metadata/scene_tree_color = Color(0.15, 0.15, 0.15, 0.35)
 
-[node name="TimerOnOff" type="TextureRect" parent="Settings/AudioContainer"]
+[node name="HUDandFC" type="TextureRect" parent="Settings/AudioContainer"]
 layout_mode = 2
 texture = ExtResource("7_p7lwn")
 
-[node name="CheckBox" type="CheckBox" parent="Settings/AudioContainer/TimerOnOff"]
+[node name="HUDToggle" type="CheckBox" parent="Settings/AudioContainer/HUDandFC"]
 modulate = Color(0.803922, 0, 0, 1)
 layout_mode = 1
 anchors_preset = -1
@@ -235,14 +236,30 @@ anchor_left = 0.487
 anchor_top = 0.479
 anchor_right = 0.487
 anchor_bottom = 0.529
-offset_left = -26.64
-offset_top = -24.74
-offset_right = -2.64001
-offset_bottom = -3.74
+offset_left = -90.64
+offset_top = -23.74
+offset_right = -66.64
+offset_bottom = -2.74
 scale = Vector2(2.05298, 2.06019)
 focus_mode = 0
-button_pressed = true
 script = ExtResource("8_n8dmn")
+metadata/scene_tree_color = Color(0.15, 0.15, 0.15, 0.35)
+
+[node name="FCToggle" type="CheckBox" parent="Settings/AudioContainer/HUDandFC"]
+modulate = Color(0.803922, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.487
+anchor_top = 0.479
+anchor_right = 0.487
+anchor_bottom = 0.529
+offset_left = 66.36
+offset_top = -23.74
+offset_right = 90.36
+offset_bottom = -2.74
+scale = Vector2(2.05298, 2.06019)
+focus_mode = 0
+script = ExtResource("9_0o6ow")
 metadata/scene_tree_color = Color(0.15, 0.15, 0.15, 0.35)
 
 [node name="ControlsContainer" type="HBoxContainer" parent="Settings"]
