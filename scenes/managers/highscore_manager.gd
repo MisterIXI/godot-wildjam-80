@@ -3,7 +3,8 @@ class_name Highscore_Manager
 signal leaderboard_request_completed
 
 const URIGET  = "_get"
-const URIFIN = "/index.php"
+const STR  ="/"
+
 var highscore_table : Array[Highscore_Entry]
 var send_request : HTTPRequest
 var leaderboard_request : HTTPRequest
@@ -12,22 +13,6 @@ var headers = ["Content-Type: application/x-www-form-urlencoded"]
 func _ready() -> void:
 	highscore_table.clear()
 	ReferenceManager.highscore_node = self
-	# set_new_highscore("robbi",5, 22)
-	#test
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	# highscore_table.append(Highscore_Entry.new("anonym_" + str(randi_range(0,999999)),str(randi_range(0,5555)),str(randi_range(0,5)),Time.get_date_string_from_system()))
-	
-	
 	get_leaderboard()
 ############## GLOBAL SET HIGHSCORE FUNCTION ##############
 
@@ -86,8 +71,8 @@ func _send_score(_name: String, _score :int, _collectables : int):
 	add_child(send_request)
 	send_request.request_completed.connect(_on_score_request_completed)
 	# Send request
-	
-	send_request.request(Schlüsseljunge.leaderboard_key + URIFIN, headers, HTTPClient.METHOD_POST, form_data)
+
+	send_request.request(Schlüsseljunge.leaderboard_key +STR, headers, HTTPClient.METHOD_POST, form_data)
 
 func get_leaderboard() -> void :
 	if Schlüsseljunge.leaderboard_key == "None" or Schlüsseljunge.game_API_key == "None":
@@ -96,5 +81,4 @@ func get_leaderboard() -> void :
 	leaderboard_request = HTTPRequest.new()
 	add_child(leaderboard_request)
 	leaderboard_request.request_completed.connect(_on_leaderboard_request_completed)# maybe later
-
-	leaderboard_request.request(Schlüsseljunge.leaderboard_key+URIGET +URIFIN)
+	leaderboard_request.request(Schlüsseljunge.leaderboard_key+URIGET + STR)
