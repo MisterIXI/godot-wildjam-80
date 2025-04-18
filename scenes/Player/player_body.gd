@@ -97,6 +97,7 @@ func _integrate_forces(state):
 		hard_impact.emit()
 		impact_cd_timer.start()
 		# print("IMPACT: ", impact_force, " | data: ", velocity_buffer, " ", state.linear_velocity.length())
+		SoundManager._flush_toilet()
 
 func _on_body_entered(body:Node):
 	if body.is_in_group("Trampoline"):
