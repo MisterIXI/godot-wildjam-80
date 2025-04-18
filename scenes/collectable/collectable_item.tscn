@@ -1,9 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://5ywona8gfnpd"]
+[gd_scene load_steps=18 format=3 uid="uid://5ywona8gfnpd"]
 
 [ext_resource type="Script" uid="uid://7dg87eebyhyn" path="res://scenes/collectable/collectable_item.gd" id="1_63id6"]
 [ext_resource type="Texture2D" uid="uid://dk7f51qt5p07c" path="res://assets/images/particle/konfetti.png" id="1_nr6eu"]
 [ext_resource type="Texture2D" uid="uid://de050tme13p3w" path="res://assets/images/test/toilet_paper_collectable.png" id="2_nr6eu"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="3_63id6"]
+[ext_resource type="AudioStream" uid="uid://cs41vrapayuxb" path="res://assets/sounds/sfx/rip2.wav" id="5_il0ka"]
 
 [sub_resource type="Shader" id="Shader_srbc7"]
 code = "shader_type canvas_item;
@@ -170,13 +171,14 @@ _data = {
 &"hovering": SubResource("Animation_nr6eu")
 }
 
-[node name="collectable" type="Area2D" node_paths=PackedStringArray("available_visuals", "collected_visuals", "collision_shape")]
+[node name="collectable" type="Area2D" node_paths=PackedStringArray("available_visuals", "collected_visuals", "collision_shape", "collection_audio_source")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_63id6")
 available_visuals = NodePath("AvailableVisuals")
 collected_visuals = NodePath("TakenVisuals")
 collision_shape = NodePath("CollisionShape2D")
+collection_audio_source = NodePath("CollectionSource")
 
 [node name="TakenVisuals" type="Node2D" parent="."]
 
@@ -212,3 +214,9 @@ libraries = {
 &"": SubResource("AnimationLibrary_il0ka")
 }
 autoplay = "hovering"
+
+[node name="CollectionSource" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_il0ka")
+volume_db = 10.0
+pitch_scale = 0.5
+bus = &"SFX"

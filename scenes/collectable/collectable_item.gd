@@ -4,6 +4,7 @@ extends Area2D
 @export var available_visuals: Node2D
 @export var collected_visuals: Node2D
 @export var collision_shape: CollisionShape2D
+@export var collection_audio_source: AudioStreamPlayer2D
 var _minicheck :bool = false
 var _mother : Node2D
 func _ready() -> void:
@@ -18,6 +19,7 @@ func _on_body_entered(body : Node2D) ->void:
         _minicheck = true
         Session.collect_collectable(str(uid))
         _disable_collectable()
+        collection_audio_source.play()
 
 func reset_collectable() -> void:
     #Reset the collectable
