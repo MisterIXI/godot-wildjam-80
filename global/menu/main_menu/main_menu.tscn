@@ -131,9 +131,9 @@ metadata/_custom_type_script = "uid://iryt2xkha5ve"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 offset_left = 213.0
-offset_top = 228.0
+offset_top = 392.5
 offset_right = 1067.0
-offset_bottom = 328.0
+offset_bottom = 492.5
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(427, 50)
@@ -246,9 +246,9 @@ metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 offset_left = 358.0
-offset_top = 392.5
+offset_top = 228.0
 offset_right = 922.0
-offset_bottom = 492.5
+offset_bottom = 328.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(282, 50)
@@ -391,15 +391,32 @@ metadata/_custom_type_script = "uid://wj7pnwgxam2o"
 script = ExtResource("10_cp0kx")
 metadata/_custom_type_script = "uid://iryt2xkha5ve"
 
-[node name="Label" type="Label" parent="."]
+[node name="QTipLabel" type="Label" parent="."]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -223.0
-offset_bottom = 37.0
+offset_top = 1.0
+offset_bottom = 38.0
 grow_horizontal = 0
 text = "Tap 'ESC' or 'Q' to pause!"
+label_settings = SubResource("LabelSettings_awrfj")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VersionLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -37.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "V1.0"
 label_settings = SubResource("LabelSettings_awrfj")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -407,12 +424,12 @@ vertical_alignment = 1
 [node name="Transition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else")]
 script = ExtResource("23_70ii0")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../LeaderboardButton"), NodePath("../Label")]
+anything_else = [NodePath("../PlayButton"), NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../LeaderboardButton"), NodePath("../QTipLabel")]
 metadata/_custom_type_script = "uid://duya6nqidc6d5"
 
 [node name="Untransition" type="Node" parent="." node_paths=PackedStringArray("wallpaper", "anything_else", "_activator")]
 script = ExtResource("24_dpyif")
 wallpaper = NodePath("../Wallpaper")
-anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton"), NodePath("../LeaderboardButton"), NodePath("../Label")]
+anything_else = [NodePath("../SettingsButton"), NodePath("../QuitButton"), NodePath("../PlayButton"), NodePath("../LeaderboardButton"), NodePath("../QTipLabel")]
 _activator = [NodePath("../PlayButton")]
 metadata/_custom_type_script = "uid://bpcmfk0tpjacc"
