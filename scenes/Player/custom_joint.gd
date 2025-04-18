@@ -8,6 +8,7 @@ var length: float = 0.0
 @export var anchor: Node2D = null
 @export var anchor_indicator: Node2D = null
 @export var sparkle: SparkleEmitter = null
+@export var character_flipper: CharacterFlipper = null
 
 func activate(target_pos: Vector2, target_body: Node2D):
 	if target_body.is_in_group("MovingObstacle"):
@@ -45,10 +46,12 @@ func _physics_process(_delta):
 			# print("Too far: " + str(overshoot))
 			player.linear_velocity += rope_dir * overshoot * 13
 	if is_active:
-		# apply angular velocity if not hanging from hand
-		if player.rotation_degrees < -55:
+		var constraint = Vector2(-55, -35)
+		if not character_flipper.facing_right:
+			constraint = Vector2(35, 55)
+		if player.rotation_degrees < constraint.x:
 			player.apply_torque(8000)
-		elif player.rotation_degrees > -35:
+		elif player.rotation_degrees > constraint.y:
 			player.apply_torque(-8000)
 	else:
 		if player.rotation_degrees < -20:

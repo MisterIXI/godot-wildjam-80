@@ -1,4 +1,6 @@
 extends Node
+class_name CharacterFlipper
+
 @export var anim_duration: float = 0.3
 @export var player_sprite: AnimatedSprite2D
 @export var left_colliders: Array[CollisionShape2D]

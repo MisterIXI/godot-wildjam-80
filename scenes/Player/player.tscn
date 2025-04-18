@@ -421,12 +421,13 @@ scale = Vector2(0.25, 0.25)
 
 [node name="RopeTearing" type="Node2D" parent="RopeVisuals"]
 
-[node name="CustomJoint" type="Node2D" parent="." node_paths=PackedStringArray("anchor", "anchor_indicator", "sparkle")]
+[node name="CustomJoint" type="Node2D" parent="." node_paths=PackedStringArray("anchor", "anchor_indicator", "sparkle", "character_flipper")]
 top_level = true
 script = ExtResource("4_wwtew")
 anchor = NodePath("Anchor")
 anchor_indicator = NodePath("Anchor/AnchorIndicator")
 sparkle = NodePath("../RopeVisuals/Sparkle")
+character_flipper = NodePath("../CharacterFlipper")
 
 [node name="Anchor" type="Node2D" parent="CustomJoint"]
 position = Vector2(41, -339)
