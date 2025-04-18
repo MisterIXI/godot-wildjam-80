@@ -102,7 +102,10 @@ func _on_wm_confirm() -> void:
   get_tree().reload_current_scene()
   Grace.reset_scene()
   await Grace.scene_loaded
-  leaderboard_menu.show()
+  if Schlüsseljunge.leaderboard_active == false:
+    leaderboard_menu.show()
+  else:
+    main_menu.show()
 
 
 ## General
