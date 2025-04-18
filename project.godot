@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="godot-wildjam-80"
+config/name="Leberkäß"
 run/main_scene="uid://cucfsuybxu4eu"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://5k1nh622u4xb"
+config/windows_native_icon="res://assets/images/logo/logo_icon.ico"
 
 [audio]
 
