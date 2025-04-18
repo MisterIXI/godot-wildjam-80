@@ -20,11 +20,11 @@
 [ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="12_7tfl1"]
 [ext_resource type="AudioStream" uid="uid://tuhwgebbw7g1" path="res://assets/sounds/sfx/magic_impact.wav" id="13_nbg44"]
 [ext_resource type="AudioStream" uid="uid://cs41vrapayuxb" path="res://assets/sounds/sfx/rip2.wav" id="15_32uah"]
-[ext_resource type="Script" uid="uid://id82w7eklxd4" path="res://scenes/Player/rope_render.gd" id="16_ihqbe"]
+[ext_resource type="Script" path="res://scenes/Player/rope_render.gd" id="16_ihqbe"]
 [ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="18_18ciy"]
 [ext_resource type="AudioStream" uid="uid://cesmwqx6vj4j5" path="res://assets/sounds/sfx/spring.wav" id="18_cg2hl"]
-[ext_resource type="Script" uid="uid://bu6ayf5gais3y" path="res://scenes/Player/tearing_particles.gd" id="18_cgmen"]
-[ext_resource type="Shader" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
+[ext_resource type="Script" path="res://scenes/Player/tearing_particles.gd" id="18_cgmen"]
+[ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
 [ext_resource type="Script" uid="uid://blv1f0i7pwfuj" path="res://scenes/Player/EffectTriggers/toilette_flush_player.gd" id="19_cg2hl"]
 [ext_resource type="Script" uid="uid://cljlbfvoyxk1d" path="res://scenes/Player/EffectTriggers/jump_spring_player.gd" id="19_o05ft"]
 [ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="20_o05ft"]
@@ -374,13 +374,13 @@ rope_rip_sound_player = NodePath("RopeRipSoundPlayer")
 
 [node name="RopeConnectSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
 stream = ExtResource("13_nbg44")
-volume_db = -20.0
+volume_db = -15.0
 pitch_scale = 1.23
 bus = &"SFX"
 
 [node name="RopeRipSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
 stream = ExtResource("15_32uah")
-volume_db = -9.0
+volume_db = -3.0
 bus = &"SFX"
 
 [node name="RopeRender" type="Line2D" parent="RopeVisuals/VerletRope"]
@@ -488,7 +488,7 @@ position = Vector2(-43, 41)
 
 [node name="JumpSpringPlayer" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("18_cg2hl")
-volume_db = -20.0
+volume_db = -18.0
 pitch_scale = 1.87
 bus = &"SFX"
 script = ExtResource("19_o05ft")

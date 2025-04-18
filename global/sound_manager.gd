@@ -1,38 +1,21 @@
 extends Node2D
 
-@onready var flush1_sfx = $Flush1SFX
-@onready var flush2_sfx = $Flush2SFX
-@onready var flush3_sfx = $Flush3SFX
-@onready var flush4_sfx = $Flush4SFX
-@onready var flush5_sfx = $Flush5SFX
-
-@onready var paper1_sfx = $Paper1SFX
-@onready var paper2_sfx = $Paper2SFX
-@onready var paper3_sfx = $Paper3SFX
-
+@onready var paper_sfx = $PaperSFX
+@onready var flush_sfx = $FlushSFX
 @onready var click_sfx = $ClickSFX
 
 @onready var background_music = $BackgroundMusic
 @onready var naddel_music = $NaddelMusic
-
-@onready var flushSounds = [flush1_sfx,flush2_sfx,flush3_sfx,flush4_sfx,flush5_sfx]
-@onready var paperSounds = [paper1_sfx,paper2_sfx,paper3_sfx]
 
 @onready var up_sfx: AudioStreamPlayer = $UpSFX
 @onready var down_sfx: AudioStreamPlayer = $DownSFX
 
 
 func _flush_toilet()->void:
-    var flush = flushSounds.pick_random()
-
-    if flush != null:
-        flush.play()
+    flush_sfx.play()
 
 func _make_paper_sound()->void:
-    var paper = paperSounds.pick_random()
-
-    if paper != null:
-        paper.play()
+    paper_sfx.play()
 
 func _play_background_music()->void: 
     background_music.play()      
