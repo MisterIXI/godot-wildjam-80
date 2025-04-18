@@ -1,5 +1,6 @@
 extends Node
-signal golden_paper_enabled()
+signal golden_paper_enabled
+signal collectables_reset
 var current_run_seconds: float = 0
 var collectables : Dictionary[String, bool]
 var golden_paper  : bool = false
@@ -11,6 +12,7 @@ var golden_paper  : bool = false
 func reset_collectables() -> void:
   for item in collectables:
     collectables[item] = false
+  collectables_reset.emit()
   ReferenceManager.hud.update_collectables()
 
 func set_gold_paper_unlocked(_bool : bool) ->void:

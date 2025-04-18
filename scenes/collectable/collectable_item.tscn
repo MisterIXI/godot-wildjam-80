@@ -1,9 +1,85 @@
-[gd_scene load_steps=13 format=3 uid="uid://5ywona8gfnpd"]
+[gd_scene load_steps=17 format=3 uid="uid://5ywona8gfnpd"]
 
 [ext_resource type="Script" uid="uid://7dg87eebyhyn" path="res://scenes/collectable/collectable_item.gd" id="1_63id6"]
 [ext_resource type="Texture2D" uid="uid://dk7f51qt5p07c" path="res://assets/images/particle/konfetti.png" id="1_nr6eu"]
 [ext_resource type="Texture2D" uid="uid://de050tme13p3w" path="res://assets/images/test/toilet_paper_collectable.png" id="2_nr6eu"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="3_63id6"]
+
+[sub_resource type="Shader" id="Shader_srbc7"]
+code = "shader_type canvas_item;
+
+uniform float uv_scale = 1.0;
+uniform vec4 line_color: source_color = vec4(1);
+uniform vec4 color_tint: source_color = vec4(1);
+uniform bool draw_line = true;
+uniform float line_thickness: hint_range(0, 50) = 1.0;
+uniform sampler2D noise: repeat_enable;
+uniform float noise_speed = 1.0;
+uniform float distortion_str = 0.1;
+uniform float frame_time:hint_range(0.0, 1.0, 0.01) = 0.25;
+
+varying float max_offset;
+
+const vec2 OFFSETS[8] = {
+	vec2(-1, -1), vec2(-1, 0), vec2(-1, 1), vec2(0, -1), vec2(0, 1),
+	vec2(1, -1), vec2(1, 0), vec2(1, 1)
+};
+
+
+void fragment() {
+
+	//posterize time
+	float rounded_time = round(TIME/ frame_time) * frame_time;
+
+	//distort UVs by posterized time
+	vec2 base_uv = UV * uv_scale;
+	vec2 noise_uv = UV * vec2(1.) + noise_speed * rounded_time;
+	float noise_tex = texture(noise, noise_uv).r;
+	vec2 distorted_uv = base_uv + noise_tex * distortion_str;
+
+	vec4 color = texture(TEXTURE, distorted_uv) * color_tint;
+
+	// create outline
+	vec2 size = TEXTURE_PIXEL_SIZE * line_thickness / 2.0;
+	float inline = 1.0;
+	float outline = 0.0;
+	for (int i = 0; i < OFFSETS.length(); i++) {
+		float sample = texture(TEXTURE, distorted_uv + size * OFFSETS[i]).a;
+		outline += sample;
+		inline *= sample;
+	}
+	outline = min(1.0, outline) - color.a;
+	inline = (1.0 - inline) * color.a;
+
+
+	vec4 outline_color = mix(line_color,color, color.a);
+	float alpha = ((outline + inline) * float(draw_line)) + color.a;
+	alpha = smoothstep(0.75,0.9, alpha);
+
+	vec4 final_color = vec4(outline_color.r, outline_color.g, outline_color.b, alpha);
+
+	COLOR = final_color;
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_63id6"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
+seamless = true
+noise = SubResource("FastNoiseLite_63id6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_il0ka"]
+shader = SubResource("Shader_srbc7")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0, 0, 0, 0)
+shader_parameter/color_tint = Color(0.41598, 0.41598, 0.41598, 0.439216)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 4.866
+shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.01
+shader_parameter/frame_time = 0.25
 
 [sub_resource type="Curve" id="Curve_63id6"]
 _data = [Vector2(0, 0.539326), 0.0, 0.0, 0, 0, Vector2(1, 0.011236), 0.0, 0.0, 0, 0]
@@ -12,7 +88,7 @@ point_count = 2
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
 frequency = 0.0043
 
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_nn3cr"]
 seamless = true
 noise = SubResource("FastNoiseLite_k2e0m")
 
@@ -23,7 +99,7 @@ shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 5.581
-shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
+shader_parameter/noise = SubResource("NoiseTexture2D_nn3cr")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
@@ -37,7 +113,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("AvailableVisuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -49,7 +125,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("AvailableVisuals:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -66,7 +142,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Visuals:position")
+tracks/0/path = NodePath("AvailableVisuals:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -78,7 +154,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/path = NodePath("AvailableVisuals:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -94,14 +170,23 @@ _data = {
 &"hovering": SubResource("Animation_nr6eu")
 }
 
-[node name="collectable" type="Area2D"]
+[node name="collectable" type="Area2D" node_paths=PackedStringArray("available_visuals", "collected_visuals", "collision_shape")]
 collision_layer = 0
 collision_mask = 2
 script = ExtResource("1_63id6")
+available_visuals = NodePath("AvailableVisuals")
+collected_visuals = NodePath("TakenVisuals")
+collision_shape = NodePath("CollisionShape2D")
 
-[node name="Visuals" type="Node2D" parent="."]
+[node name="TakenVisuals" type="Node2D" parent="."]
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="Visuals"]
+[node name="Sprite2D" type="Sprite2D" parent="TakenVisuals"]
+material = SubResource("ShaderMaterial_il0ka")
+texture = ExtResource("2_nr6eu")
+
+[node name="AvailableVisuals" type="Node2D" parent="."]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="AvailableVisuals"]
 position = Vector2(-1, 0)
 amount = 16
 texture = ExtResource("1_nr6eu")
@@ -115,7 +200,7 @@ scale_amount_min = 0.2
 scale_amount_max = 0.6
 scale_amount_curve = SubResource("Curve_63id6")
 
-[node name="Sprite2D" type="Sprite2D" parent="Visuals"]
+[node name="Sprite2D" type="Sprite2D" parent="AvailableVisuals"]
 material = SubResource("ShaderMaterial_63id6")
 texture = ExtResource("2_nr6eu")
 
