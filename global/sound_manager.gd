@@ -18,6 +18,9 @@ extends Node2D
 @onready var flushSounds = [flush1_sfx,flush2_sfx,flush3_sfx,flush4_sfx,flush5_sfx]
 @onready var paperSounds = [paper1_sfx,paper2_sfx,paper3_sfx]
 
+@onready var up_sfx: AudioStreamPlayer = $UpSFX
+@onready var down_sfx: AudioStreamPlayer = $DownSFX
+
 
 func _flush_toilet()->void:
     var flush = flushSounds.pick_random()
@@ -45,6 +48,12 @@ func _stop_naddel_music()->void:
 
 func _make_click_sound()->void: 
     click_sfx.play()      
+
+func _play_up_sfx()->void:
+    up_sfx.play()
+
+func _play_down_sfx()->void:
+    down_sfx.play()
 
 func _change_to_naddel_music()->void: 
     _stop_background_music()

@@ -33,7 +33,7 @@ func start_animation():
     item.visible = false
   _animate = true
 
-  #TODO Naddel: Play menu transition out sound
+  SoundManager._play_up_sfx()
 
 
 func _process(delta: float) -> void:

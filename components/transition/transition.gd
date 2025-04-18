@@ -30,7 +30,7 @@ func start_animation():
   _parent.get_parent().move_child(_parent, -1)
   _animate = true
 
-  #TODO Naddel: Play menu transition in sound
+  SoundManager._play_down_sfx()
 
 
 func _process(delta: float) -> void:
