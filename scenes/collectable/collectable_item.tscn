@@ -217,6 +217,6 @@ autoplay = "hovering"
 
 [node name="CollectionSource" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_il0ka")
-volume_db = 10.0
+volume_db = 5.0
 pitch_scale = 0.5
 bus = &"SFX"
