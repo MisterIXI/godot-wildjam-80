@@ -16,13 +16,13 @@ frequency = 0.0043
 seamless = true
 noise = SubResource("FastNoiseLite_k2e0m")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_il0ka"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_63id6"]
 shader = ExtResource("3_63id6")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
 shader_parameter/draw_line = true
-shader_parameter/line_thickness = 8.276
+shader_parameter/line_thickness = 5.581
 shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
@@ -111,13 +111,12 @@ spread = 180.0
 gravity = Vector2(0, -50)
 initial_velocity_max = 193.8
 angle_max = 720.0
-scale_amount_min = 0.1
-scale_amount_max = 0.4
+scale_amount_min = 0.2
+scale_amount_max = 0.6
 scale_amount_curve = SubResource("Curve_63id6")
 
 [node name="Sprite2D" type="Sprite2D" parent="Visuals"]
-material = SubResource("ShaderMaterial_il0ka")
-scale = Vector2(0.5, 0.5)
+material = SubResource("ShaderMaterial_63id6")
 texture = ExtResource("2_nr6eu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

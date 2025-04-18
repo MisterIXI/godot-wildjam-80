@@ -6,7 +6,7 @@ var _game_done : bool = false
 var collectables : int  = 0 :
     set(value) : 
         collectables = value
-        _collectable_label.text ="x" +str(collectables)
+        _collectable_label.text =str(collectables)+"/5"
 
 func _ready() -> void:
     ReferenceManager.hud  =self
