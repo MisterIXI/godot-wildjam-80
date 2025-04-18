@@ -1,6 +1,0 @@
-[gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://c74c3ythhw0qe"]
-
-[ext_resource type="FontFile" uid="uid://ehiahksc5ddd" path="res://assets/fonts/magazine/Magazine-Cutouts-Font.ttf" id="1_wi7ws"]
-
-[resource]
-base_font = ExtResource("1_wi7ws")

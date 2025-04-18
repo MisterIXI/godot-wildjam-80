@@ -1,40 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://daycv1awn5ygk"]
+[gd_scene load_steps=8 format=3 uid="uid://daycv1awn5ygk"]
 
 [ext_resource type="Script" uid="uid://cgut3llrhbygb" path="res://scenes/ui/hud.gd" id="1_hqnrr"]
-[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_136eg"]
+[ext_resource type="Texture2D" uid="uid://uki0hpt75hx8" path="res://assets/images/menu/win-menu/background.png" id="2_8qguk"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="2_bo48s"]
 [ext_resource type="FontVariation" uid="uid://dx8m4ay02ebms" path="res://resources/font/IBMPlexMono.tres" id="3_bo48s"]
-[ext_resource type="FontVariation" uid="uid://c74c3ythhw0qe" path="res://resources/font/magazine_letters.tres" id="5_oj5la"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_136eg"]
+texture = ExtResource("2_8qguk")
+expand_margin_left = 18.0
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hqnrr"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_k2e0m"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_klap2"]
-seamless = true
-noise = SubResource("FastNoiseLite_k2e0m")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gss2c"]
-shader = ExtResource("2_136eg")
-shader_parameter/uv_scale = 1.0
-shader_parameter/line_color = Color(1, 1, 1, 1)
-shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/draw_line = true
-shader_parameter/line_thickness = 4.494
-shader_parameter/noise = SubResource("NoiseTexture2D_klap2")
-shader_parameter/noise_speed = 3.08
-shader_parameter/distortion_str = 0.01
-shader_parameter/frame_time = 0.25
-
-[sub_resource type="LabelSettings" id="LabelSettings_h022r"]
-font = ExtResource("5_oj5la")
-font_size = 25
-outline_size = 2
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 0.298039)
-shadow_offset = Vector2(2, 2)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bo48s"]
 
@@ -60,6 +35,10 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_136eg")
+
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
@@ -71,7 +50,6 @@ layout_mode = 2
 size_flags_horizontal = 8
 
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/PanelContainer/HBoxContainer"]
-material = SubResource("ShaderMaterial_gss2c")
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
 texture = ExtResource("2_bo48s")
@@ -84,17 +62,14 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_bo48s")
 theme_override_font_sizes/font_size = 32
 text = "0/5"
-label_settings = SubResource("LabelSettings_h022r")
 horizontal_alignment = 1
 
 [node name="VSeparator" type="VSeparator" parent="MarginContainer/PanelContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 75
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bo48s")
 
 [node name="time_value" type="Label" parent="MarginContainer/PanelContainer/HBoxContainer"]
-visible = false
 custom_minimum_size = Vector2(150, 23)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
@@ -105,7 +80,6 @@ horizontal_alignment = 2
 autowrap_mode = 2
 
 [node name="VSeparator2" type="VSeparator" parent="MarginContainer/PanelContainer/HBoxContainer"]
-visible = false
 layout_mode = 2
 theme_override_constants/separation = 50
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bo48s")
