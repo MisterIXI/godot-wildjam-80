@@ -12,9 +12,9 @@ func _ready() -> void:
     ReferenceManager.hud  =self
     ReferenceManager.game_done.connect(_on_game_done)
     update_collectables()
-func _process(_delta: float) -> void:
-    if !_game_done:
-        _timer_label.text = ReferenceManager.format(Session.current_run_seconds)
+# func _process(_delta: float) -> void:
+#     if !_game_done:
+#         _timer_label.text = ReferenceManager.format(Session.current_run_seconds)
     
 # get collectable_score from hud
 func _on_game_done() ->void:
