@@ -3,6 +3,7 @@ class_name Highscore_Manager
 signal leaderboard_request_completed
 
 const URIGET  = "_get"
+const URIFIN = "/index.php"
 var highscore_table : Array[Highscore_Entry]
 var send_request : HTTPRequest
 var leaderboard_request : HTTPRequest
@@ -86,7 +87,7 @@ func _send_score(_name: String, _score :int, _collectables : int):
 	send_request.request_completed.connect(_on_score_request_completed)
 	# Send request
 	
-	send_request.request(Schlüsseljunge.leaderboard_key, headers, HTTPClient.METHOD_POST, form_data)
+	send_request.request(Schlüsseljunge.leaderboard_key + URIFIN, headers, HTTPClient.METHOD_POST, form_data)
 
 func get_leaderboard() -> void :
 	if Schlüsseljunge.leaderboard_key == "None" or Schlüsseljunge.game_API_key == "None":
@@ -96,4 +97,4 @@ func get_leaderboard() -> void :
 	add_child(leaderboard_request)
 	leaderboard_request.request_completed.connect(_on_leaderboard_request_completed)# maybe later
 
-	leaderboard_request.request(Schlüsseljunge.leaderboard_key+URIGET)
+	leaderboard_request.request(Schlüsseljunge.leaderboard_key+URIGET +URIFIN)
