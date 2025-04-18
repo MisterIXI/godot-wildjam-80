@@ -72,7 +72,10 @@ func reset_audio_bus():
 func load_scene():
   if ignore_saved_scene and not OS.get_name() == "Web":
     return
-
+  if Schlüsseljunge.grace_key == "None":
+    print_rich("[color=CYAN]Grace >> [color=RED]No key set for scene file!")
+    reset_scene()
+    return
   var config = ConfigFile.new()
 
   var err = config.load_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
