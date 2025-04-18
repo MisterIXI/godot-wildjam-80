@@ -13,7 +13,6 @@ extends Node
 var _audio_bus_path = "user://audio_bus.cfg"
 var _scene_path = "user://scene.cfg"
 var timer: float = 0
-
 signal scene_loaded
 
 func _ready():
@@ -98,6 +97,9 @@ func load_scene():
   if config.has_section_key("session", "collectables"):
     Session.set_collectables(config.get_value("session", "collectables"))
 
+  if config.has_section_key("session", "golden_paper"):
+    Session.set_gold_paper_unlocked(config.get_value("session", "golden_paper"))
+
   print_rich("[color=CYAN]Grace >> [color=WHITE]Scene successfully loaded from file.")
 
 
@@ -108,6 +110,7 @@ func save_scene():
   config.set_value("player", "global_rotation", get_tree().get_first_node_in_group("player").global_rotation)
   config.set_value("session", "seconds", Session.current_run_seconds)
   config.set_value("session", "collectables", Session.collectables)
+  config.set_value("session", "golden_paper", Session.golden_paper)
 
   var err = config.save_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
   if err != OK:
