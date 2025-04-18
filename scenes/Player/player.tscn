@@ -1,12 +1,12 @@
-[gd_scene load_steps=61 format=3 uid="uid://ctf01l8umfh5d"]
+[gd_scene load_steps=63 format=3 uid="uid://ctf01l8umfh5d"]
 
 [ext_resource type="Script" uid="uid://bag5vv3x50wl4" path="res://scenes/Player/player_body.gd" id="1_hvfru"]
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_n7rn1"]
 [ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/Player/follow_cam.gd" id="3_dl1wr"]
 [ext_resource type="SpriteFrames" uid="uid://dhrx10b46guw2" path="res://resources/player/player.tres" id="3_nbg44"]
-[ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/toilette_animation.gd" id="3_uxo23"]
+[ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/EffectTriggers/toilette_animation.gd" id="3_uxo23"]
 [ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="4_wwtew"]
-[ext_resource type="Script" uid="uid://c5n4yw6dca0lq" path="res://scenes/Player/dust_cloud_particle_system.gd" id="5_tayva"]
+[ext_resource type="Script" uid="uid://c5n4yw6dca0lq" path="res://scenes/Player/EffectTriggers/dust_cloud_particle_system.gd" id="5_tayva"]
 [ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="6_n7rn1"]
 [ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="7_dl1wr"]
 [ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="7_n7rn1"]
@@ -23,12 +23,14 @@
 [ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="18_18ciy"]
 [ext_resource type="AudioStream" uid="uid://cesmwqx6vj4j5" path="res://assets/sounds/sfx/spring.wav" id="18_cg2hl"]
 [ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="18_x8khf"]
-[ext_resource type="Script" uid="uid://blv1f0i7pwfuj" path="res://scenes/Player/toilette_flush_player.gd" id="19_cg2hl"]
-[ext_resource type="Script" uid="uid://cljlbfvoyxk1d" path="res://scenes/Player/jump_spring_player.gd" id="19_o05ft"]
+[ext_resource type="Script" uid="uid://blv1f0i7pwfuj" path="res://scenes/Player/EffectTriggers/toilette_flush_player.gd" id="19_cg2hl"]
+[ext_resource type="Script" uid="uid://cljlbfvoyxk1d" path="res://scenes/Player/EffectTriggers/jump_spring_player.gd" id="19_o05ft"]
 [ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="20_o05ft"]
 [ext_resource type="AudioStream" uid="uid://djjsq53q0rsxx" path="res://assets/sounds/toilet/flush/Toilet Flush 3.wav" id="21_nbg44"]
 [ext_resource type="AudioStream" uid="uid://du328dml2c3be" path="res://assets/sounds/toilet/flush/Toilet Flush 4.wav" id="22_jn0uf"]
 [ext_resource type="AudioStream" uid="uid://3jpqblqwr1qt" path="res://assets/sounds/toilet/flush/Toilet Flush 5.wav" id="23_4ni0x"]
+[ext_resource type="AudioStream" uid="uid://lf3eatadc5j4" path="res://assets/sounds/sfx/donk_sfx.wav" id="28_4ni0x"]
+[ext_resource type="Script" uid="uid://cjx8nf1ogoehw" path="res://scenes/Player/EffectTriggers/impact_sound_player.gd" id="29_kp55c"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
 friction = 0.1
@@ -495,6 +497,10 @@ bus = &"SFX"
 script = ExtResource("19_cg2hl")
 flush_sfx_arr = Array[AudioStream]([ExtResource("18_18ciy"), ExtResource("20_o05ft"), ExtResource("21_nbg44"), ExtResource("22_jn0uf"), ExtResource("23_4ni0x")])
 
+[node name="ImpactSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("28_4ni0x")
+script = ExtResource("29_kp55c")
+
 [node name="NaddelModeRipTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -530,6 +536,7 @@ mouse_filter = 2
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="hard_impact" from="." to="FollowCam" method="_on_hard_impact"]
 [connection signal="hard_impact" from="." to="ToiletteFlushPlayer" method="_on_player_body_hard_impact"]
+[connection signal="hard_impact" from="." to="ImpactSoundPlayer" method="_on_player_body_hard_impact"]
 [connection signal="hopped_left" from="." to="JumpSpringPlayer" method="_on_player_body_hopped_left"]
 [connection signal="hopped_right" from="." to="JumpSpringPlayer" method="_on_player_body_hopped_right"]
 [connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
