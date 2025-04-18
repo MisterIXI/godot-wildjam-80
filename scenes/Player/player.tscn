@@ -221,8 +221,9 @@ material = SubResource("ShaderMaterial_t6q27")
 position = Vector2(-2.58746, -2.58746)
 scale = Vector2(0.275049, 0.275049)
 sprite_frames = ExtResource("3_nbg44")
-animation = &"throw"
+animation = &"gold_throw"
 autoplay = "default"
+frame_progress = 0.265992
 script = ExtResource("3_uxo23")
 
 [node name="DustCloudParticleSystem" type="Node2D" parent="." node_paths=PackedStringArray("particles")]
@@ -373,7 +374,7 @@ bus = &"SFX"
 
 [node name="RopeRipSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
 stream = ExtResource("15_32uah")
-volume_db = -12.0
+volume_db = -9.0
 bus = &"SFX"
 
 [node name="RopeRender" type="Line2D" parent="RopeVisuals/VerletRope"]
