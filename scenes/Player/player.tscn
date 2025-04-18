@@ -338,9 +338,11 @@ wind_howl_audio_player = NodePath("WindHowlPlayer")
 [node name="CamerashakeCD" type="Timer" parent="FollowCam"]
 
 [node name="WindHowlPlayer" type="AudioStreamPlayer2D" parent="FollowCam"]
+process_mode = 1
 stream = ExtResource("9_aciub")
 volume_db = -80.0
 autoplay = true
+bus = &"SFX"
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
 visible = false
