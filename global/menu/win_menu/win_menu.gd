@@ -42,7 +42,6 @@ func _on_visibility_changed():
         highscore_times.append(int(item.time))
       highscore_times.append(int(Session.current_run_seconds))
       highscore_times.sort()
-      print("Highscore times:", highscore_times)
       var place : int = highscore_times.find(int(Session.current_run_seconds))
       _text = _text.replace("#PLACE#", _format_place(place+1))
     else:

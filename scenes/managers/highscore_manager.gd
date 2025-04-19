@@ -27,17 +27,17 @@ func set_new_highscore(_name, _score : int, _collectables : int, _playeruid : St
 
 #######################################################################################
 func _on_score_request_completed(_result, _response_code, _header, _body) -> void:
-	print("send completed")
+	# print("send completed")
 	# var json = JSON.new()
 	# json.parse(_body.get_string_from_utf8())
 	
 	# Print data
-	print(_body.get_string_from_ascii())
+	print_rich("[color=Green] Leaderboard Manager >> [color=WHITE]Highscore sent, got response: " + _body.get_string_from_ascii())
 	# clear node
 	send_request.queue_free()
 
 func _on_leaderboard_request_completed(_result, _response_code, _headers, body) ->void:
-	print("get_leaderboard_completed")
+	# print("get_leaderboard_completed")
 	var json = JSON.new()
 	json.parse(body.get_string_from_utf8())
 	# IN 20 YEARS, THERE IS NO INTERNET
@@ -48,11 +48,11 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body) 
 		Schlüsseljunge.leaderboard_active = false
 		leaderboard_request_completed.emit()
 		return
-	print(json.get_data())
+	# print(json.get_data())
 	highscore_table.clear()
 	for x in json.get_data():
 		highscore_table.append(Highscore_Entry.new(x["player_name"],x["score"],x["collectables"], x["timestamp"],x["playeruid"]))
-	print("Leaderboard_Manager : highscores loaded")
+	print_rich("[color=Yellow] Leaderboard Manager >> [color=WHITE]Highscores loaded")
 	leaderboard_request.queue_free()
 	leaderboard_request_completed.emit()
 
@@ -61,7 +61,7 @@ func _send_score(_name: String, _score :int, _collectables : int, _playeruid : S
 		return
 
 	var _signature  =  (_name + str(_score) +str(_collectables) + _playeruid + Schlüsseljunge.game_API_key).sha256_text()
-	print(_signature)
+	# print(_signature)
 	var form_data = "name=%s&score=%s&timestamp=%s&collectables=%s&playeruid=%s&signature=%s" % [
         _name.uri_encode(), str(_score),Time.get_datetime_string_from_system(), str(_collectables), _playeruid, _signature.uri_encode()
     ]

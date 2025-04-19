@@ -8,7 +8,6 @@ const UID_SIZE : int  = 20
 
 func set_playeruid(_string) ->void:
     _player_uid = _string
-    print("PlayerUID = ",_player_uid)
 
 func get_playeruid() -> String:
     return _player_uid
