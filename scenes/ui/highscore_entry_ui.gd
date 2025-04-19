@@ -26,6 +26,6 @@ func on_initialze(_rank,_playername,_time, _collectable, _date, _playeruid) ->vo
     collectable_label.text = _collectable
     time_label.text = _time
     date_label.text = _date
-    if PlayerUidManager.get_playeruid() == _playeruid:
+    if _playeruid != "" and PlayerUidManager.get_playeruid() == _playeruid:
         _myscore_texture.visible = true
         _myscore_color.visible  = true

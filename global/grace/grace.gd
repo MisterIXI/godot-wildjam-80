@@ -102,10 +102,12 @@ func load_scene():
 
   if config.has_section_key("session", "golden_paper"):
     Session.set_gold_paper_unlocked(config.get_value("session", "golden_paper"))
-  if config.has_section_key("session","playeruid"):
+  if config.has_section_key("session","playeruid") and config.get_value("session","playeruid") != "":
     PlayerUidManager.set_playeruid(config.get_value("session", "playeruid"))
+    print_rich("[color=CYAN]Grace >> [color=WHITE]Player UID loaded: " + PlayerUidManager.get_playeruid())
   else:
     PlayerUidManager.create_playeruid()
+    print_rich("[color=CYAN]Grace >> [color=WHITE]New Player UID created: " + PlayerUidManager.get_playeruid())
   print_rich("[color=CYAN]Grace >> [color=WHITE]Scene successfully loaded from file.")
 
 
@@ -141,12 +143,13 @@ func reset_scene():
     camera.reset()
 
   Session.reset()
-
+  if PlayerUidManager.get_playeruid() == "":
+    PlayerUidManager.create_playeruid()
+    print_rich("[color=CYAN]Grace >> [color=WHITE]New Player UID created: " + PlayerUidManager.get_playeruid())
   print_rich("[color=CYAN]Grace >> [color=WHITE]Scene reset to default values.")
   await get_tree().create_timer(0.5).timeout
   save_scene()
   scene_loaded.emit()
-
 
 func _process(delta: float) -> void:
   if interval_saving == false or get_tree().paused or get_tree().get_first_node_in_group("player") == null:
