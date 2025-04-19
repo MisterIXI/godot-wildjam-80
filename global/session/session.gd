@@ -29,7 +29,7 @@ func set_collectables(_collectable : Dictionary[String, bool]) -> void:
 func collect_collectable(collectable_uid: String) -> void:
   collectables[collectable_uid] = true
   ReferenceManager.hud.update_collectables()
-
+  _check_golden_paper()
     
     ## effect
 func _process(_delta: float) -> void:
