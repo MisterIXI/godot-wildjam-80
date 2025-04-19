@@ -102,7 +102,10 @@ func load_scene():
 
   if config.has_section_key("session", "golden_paper"):
     Session.set_gold_paper_unlocked(config.get_value("session", "golden_paper"))
-
+  if config.has_section_key("session","playeruid"):
+    PlayerUidManager.set_playeruid(config.get_value("session", "playeruid"))
+  else:
+    PlayerUidManager.create_playeruid()
   print_rich("[color=CYAN]Grace >> [color=WHITE]Scene successfully loaded from file.")
 
 
@@ -114,6 +117,7 @@ func save_scene():
   config.set_value("session", "seconds", Session.current_run_seconds)
   config.set_value("session", "collectables", Session.collectables)
   config.set_value("session", "golden_paper", Session.golden_paper)
+  config.set_value("session","playeruid", PlayerUidManager.get_playeruid())
 
   var err = config.save_encrypted_pass(_scene_path, Schlüsseljunge.grace_key)
   if err != OK:

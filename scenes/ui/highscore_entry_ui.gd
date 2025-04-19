@@ -6,7 +6,8 @@ extends PanelContainer
 @onready var collectable_label : Label = $MarginContainer/HBoxContainer/value_collectables
 @onready var time_label : Label =$MarginContainer/HBoxContainer/value_time
 @onready var date_label : Label =$MarginContainer/HBoxContainer/value_date
-
+@onready var _myscore_texture : TextureRect = $myScoreTexture
+@onready var _myscore_color : ColorRect = $ColorRect
 var font_list :Array[Font]
 
 func _ready() -> void:
@@ -19,9 +20,12 @@ func _ready() -> void:
     time_label.add_theme_font_override("font", _new_font)
     date_label.add_theme_font_override("font", _new_font)
 
-func on_initialze(_rank,_playername,_time, _collectable, _date) ->void :
+func on_initialze(_rank,_playername,_time, _collectable, _date, _playeruid) ->void :
     rank_label.text = _rank
     player_name_label.text = _playername
     collectable_label.text = _collectable
     time_label.text = _time
     date_label.text = _date
+    if PlayerUidManager.get_playeruid() == _playeruid:
+        _myscore_texture.visible = true
+        _myscore_color.visible  = true

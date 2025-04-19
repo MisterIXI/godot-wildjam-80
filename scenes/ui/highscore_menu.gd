@@ -29,6 +29,6 @@ func _wait_for_finished():
         var _time_entry =  highscore_entry.duplicate()
         vbox_container.add_child(_time_entry)
         highscore_list.append(_time_entry)
-        _time_entry.on_initialze(str(_i), x.playername, ReferenceManager.format(float(x.time)), "x " +str(x.collectables), x.date)
+        _time_entry.on_initialze(str(_i), x.playername, ReferenceManager.format(float(x.time)), "x " +str(x.collectables), x.date, x.playeruid)
         _time_entry.show()
         _i +=1

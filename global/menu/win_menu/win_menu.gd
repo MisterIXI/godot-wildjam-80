@@ -99,7 +99,7 @@ func _on_button_pressed() -> void:
     if val:
       _col_count += 1
 
-  ReferenceManager.highscore_node.set_new_highscore(_name, int(Session.current_run_seconds), _col_count)
+  ReferenceManager.highscore_node.set_new_highscore(_name, int(Session.current_run_seconds), _col_count, PlayerUidManager.get_playeruid())
 
 
 func _input(event: InputEvent) -> void:
