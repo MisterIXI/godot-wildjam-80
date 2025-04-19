@@ -14,6 +14,7 @@ func _ready() -> void:
 	highscore_table.clear()
 	ReferenceManager.highscore_node = self
 	get_leaderboard()
+
 ############## GLOBAL SET HIGHSCORE FUNCTION ##############
 func set_new_highscore(_name, _score : int, _collectables : int, _playeruid : String) -> void:
 	if Schlüsseljunge.leaderboard_key == "None" or Schlüsseljunge.game_API_key == "None":
@@ -21,7 +22,7 @@ func set_new_highscore(_name, _score : int, _collectables : int, _playeruid : St
 
 	# IF DEBUG_MODE  = FALSE
 	#print("Debug Highscore: New Highscore %s&- %s&- %s" % [_name,_score, _collectables])
-	highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), str(Time.get_date_string_from_system()),_playeruid))
+	highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), Time.get_datetime_string_from_system(),_playeruid))
 	_send_score(_name,_score,_collectables,_playeruid)
 
 #######################################################################################
@@ -61,8 +62,8 @@ func _send_score(_name: String, _score :int, _collectables : int, _playeruid : S
 
 	var _signature  =  (_name + str(_score) +str(_collectables) + _playeruid + Schlüsseljunge.game_API_key).sha256_text()
 	print(_signature)
-	var form_data = "name=%s&score=%s&collectables=%s&playeruid=%s&signature=%s" % [
-        _name.uri_encode(), str(_score), str(_collectables), _playeruid, _signature.uri_encode()
+	var form_data = "name=%s&score=%s&timestamp=%s&collectables=%s&playeruid=%s&signature=%s" % [
+        _name.uri_encode(), str(_score),Time.get_datetime_string_from_system(), str(_collectables), _playeruid, _signature.uri_encode()
     ]
 	send_request = HTTPRequest.new()
 	add_child(send_request)
