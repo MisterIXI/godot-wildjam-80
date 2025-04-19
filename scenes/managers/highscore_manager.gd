@@ -32,7 +32,7 @@ func _on_score_request_completed(_result, _response_code, _header, _body) -> voi
 	# json.parse(_body.get_string_from_utf8())
 	
 	# Print data
-	print_rich("[color=Green] Leaderboard Manager >> [color=WHITE]Highscore sent, got response: " + _body.get_string_from_ascii())
+	print_rich("[color=Green]Leaderboard Manager >> [color=WHITE]Highscore sent, got response: " + _body.get_string_from_ascii())
 	# clear node
 	send_request.queue_free()
 
@@ -52,7 +52,7 @@ func _on_leaderboard_request_completed(_result, _response_code, _headers, body) 
 	highscore_table.clear()
 	for x in json.get_data():
 		highscore_table.append(Highscore_Entry.new(x["player_name"],x["score"],x["collectables"], x["timestamp"],x["playeruid"]))
-	print_rich("[color=Yellow] Leaderboard Manager >> [color=WHITE]Highscores loaded")
+	print_rich("[color=Yellow]Leaderboard Manager >> [color=WHITE]Highscores loaded")
 	leaderboard_request.queue_free()
 	leaderboard_request_completed.emit()
 
