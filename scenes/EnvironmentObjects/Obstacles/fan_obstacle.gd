@@ -1,4 +1,5 @@
 extends AnimatableBody2D
+class_name FanObstacle
 
 @export var rotation_speed: float = 1.0
 
