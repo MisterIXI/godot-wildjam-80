@@ -1,25 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://1y4iqx8jvmf5"]
+[gd_scene load_steps=6 format=3 uid="uid://1y4iqx8jvmf5"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_5kx2r"]
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_2ops5"]
 [ext_resource type="Texture2D" uid="uid://c6jqeajrmslw2" path="res://assets/images/photos/eightball.png" id="2_at83x"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_51l36"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_q6pwm"]
-seamless = true
-noise = SubResource("FastNoiseLite_51l36")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lwkc6"]
 shader = ExtResource("1_5kx2r")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_q6pwm")
+shader_parameter/noise = ExtResource("2_2ops5")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25

@@ -1,25 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://djwsv77l05fqn"]
+[gd_scene load_steps=5 format=3 uid="uid://djwsv77l05fqn"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_0caes"]
 [ext_resource type="Texture2D" uid="uid://cxq1r8kngjm3t" path="res://assets/images/photos/zeitung.png" id="2_4i01n"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_137kd"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_73yom"]
-seamless = true
-noise = SubResource("FastNoiseLite_137kd")
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_deo2s"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_qepi8"]
 shader = ExtResource("1_0caes")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0, 0.423529, 0.576471, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_73yom")
+shader_parameter/noise = ExtResource("2_deo2s")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25

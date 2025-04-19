@@ -1,25 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://rpqnhe6twc2a"]
+[gd_scene load_steps=5 format=3 uid="uid://rpqnhe6twc2a"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_1chlg"]
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_ngism"]
 [ext_resource type="Texture2D" uid="uid://cqyibh2mh6160" path="res://assets/images/arrows/arrow1.png" id="2_w4yux"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_s8go1"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dec8x"]
-seamless = true
-noise = SubResource("FastNoiseLite_s8go1")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pwf7x"]
 shader = ExtResource("1_1chlg")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(0.0622252, 0.631935, 0.764967, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = false
 shader_parameter/line_thickness = 0.0
-shader_parameter/noise = SubResource("NoiseTexture2D_dec8x")
+shader_parameter/noise = ExtResource("2_ngism")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25

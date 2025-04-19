@@ -1,25 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://u8qq6esgpedx"]
+[gd_scene load_steps=5 format=3 uid="uid://u8qq6esgpedx"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_aqt5h"]
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_6cud2"]
 [ext_resource type="Texture2D" uid="uid://blqaih548qsyb" path="res://assets/images/photos/taschenmesser.png" id="2_ripga"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_2uvn0"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vnp3x"]
-seamless = true
-noise = SubResource("FastNoiseLite_2uvn0")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3boap"]
 shader = ExtResource("1_aqt5h")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_blur = 1.0
-shader_parameter/shadow_offset = Vector2(0.02, -0.02)
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_vnp3x")
+shader_parameter/noise = ExtResource("2_6cud2")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25

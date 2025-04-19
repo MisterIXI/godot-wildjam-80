@@ -1,25 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://bkjieb8en8qgi"]
+[gd_scene load_steps=5 format=3 uid="uid://bkjieb8en8qgi"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_0f01c"]
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_ktaob"]
 [ext_resource type="Texture2D" uid="uid://b42dl2vc08sko" path="res://assets/images/photos/kafka.png" id="2_q4swc"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_c66a7"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_01acu"]
-seamless = true
-noise = SubResource("FastNoiseLite_c66a7")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cgf43"]
 shader = ExtResource("1_0f01c")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 0.301961, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_01acu")
+shader_parameter/noise = ExtResource("2_ktaob")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25

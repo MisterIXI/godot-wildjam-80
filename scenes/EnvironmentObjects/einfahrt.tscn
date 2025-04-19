@@ -1,25 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://d1114jsogyu88"]
+[gd_scene load_steps=5 format=3 uid="uid://d1114jsogyu88"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_7ubcf"]
 [ext_resource type="Texture2D" uid="uid://disqpf0tf78u4" path="res://assets/images/photos/einfahrt.png" id="2_beyco"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_qepi8"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_b3ptk"]
-seamless = true
-noise = SubResource("FastNoiseLite_qepi8")
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_ltyqy"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b670h"]
 shader = ExtResource("1_7ubcf")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(0, 0.630363, 0.53785, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_b3ptk")
+shader_parameter/noise = ExtResource("2_ltyqy")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25

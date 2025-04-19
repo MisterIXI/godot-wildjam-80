@@ -1,25 +1,17 @@
-[gd_scene load_steps=6 format=3 uid="uid://dkiepgksa1te6"]
+[gd_scene load_steps=5 format=3 uid="uid://dkiepgksa1te6"]
 
 [ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="1_hyhao"]
+[ext_resource type="Texture2D" uid="uid://dsim7rcldk835" path="res://assets/images/env/noise_texture.tres" id="2_i80ly"]
 [ext_resource type="Texture2D" uid="uid://bcck1t7cjwbm8" path="res://assets/images/photos/zigarettenschachtel.png" id="2_ic2hm"]
-
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_73yom"]
-frequency = 0.0043
-
-[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_qepi8"]
-seamless = true
-noise = SubResource("FastNoiseLite_73yom")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_b3ptk"]
 shader = ExtResource("1_hyhao")
 shader_parameter/uv_scale = 1.0
 shader_parameter/line_color = Color(1, 1, 1, 1)
 shader_parameter/color_tint = Color(1, 1, 1, 1)
-shader_parameter/shadow_color = Color(0, 0, 0, 1)
-shader_parameter/shadow_blur = 1.0
 shader_parameter/draw_line = true
 shader_parameter/line_thickness = 33.486
-shader_parameter/noise = SubResource("NoiseTexture2D_qepi8")
+shader_parameter/noise = ExtResource("2_i80ly")
 shader_parameter/noise_speed = 3.08
 shader_parameter/distortion_str = 0.01
 shader_parameter/frame_time = 0.25
