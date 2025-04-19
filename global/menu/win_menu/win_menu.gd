@@ -39,11 +39,12 @@ func _on_visibility_changed():
       await ReferenceManager.highscore_node.leaderboard_request_completed
       var highscore_times = []
       for item in ReferenceManager.highscore_node.highscore_table:
-        highscore_times.append(item.time)
-      highscore_times.append(Session.current_run_seconds)
+        highscore_times.append(int(item.time))
+      highscore_times.append(int(Session.current_run_seconds))
       highscore_times.sort()
-      var place : int = highscore_times.find(Session.current_run_seconds)
-      _text = _text.replace("#PLACE#", _format_place(place))
+      print("Highscore times:", highscore_times)
+      var place : int = highscore_times.find(int(Session.current_run_seconds))
+      _text = _text.replace("#PLACE#", _format_place(place+1))
     else:
       _text = _text.replace("#LEADERBOARD#", leaderboard_inactve_text)
 

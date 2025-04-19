@@ -22,7 +22,7 @@ func set_new_highscore(_name, _score : int, _collectables : int, _playeruid : St
 
 	# IF DEBUG_MODE  = FALSE
 	#print("Debug Highscore: New Highscore %s&- %s&- %s" % [_name,_score, _collectables])
-	highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), Time.get_datetime_string_from_system(),_playeruid))
+	# highscore_table.append(Highscore_Entry.new(_name,str(_score),str(_collectables), Time.get_datetime_string_from_system(),_playeruid))
 	_send_score(_name,_score,_collectables,_playeruid)
 
 #######################################################################################
