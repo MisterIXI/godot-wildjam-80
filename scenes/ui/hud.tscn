@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://daycv1awn5ygk"]
+[gd_scene load_steps=9 format=3 uid="uid://daycv1awn5ygk"]
 
 [ext_resource type="Script" uid="uid://cgut3llrhbygb" path="res://scenes/ui/hud.gd" id="1_hqnrr"]
 [ext_resource type="Texture2D" uid="uid://uki0hpt75hx8" path="res://assets/images/menu/win-menu/background.png" id="2_8qguk"]
 [ext_resource type="Texture2D" uid="uid://bu2javu6ivbji" path="res://assets/images/test/toilet_paper.png" id="2_bo48s"]
 [ext_resource type="FontVariation" uid="uid://dx8m4ay02ebms" path="res://resources/font/IBMPlexMono.tres" id="3_bo48s"]
+[ext_resource type="Script" uid="uid://c6o1c8cw2wdei" path="res://scenes/ui/fps_counter.gd" id="5_136eg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_136eg"]
 texture = ExtResource("2_8qguk")
@@ -83,3 +84,19 @@ autowrap_mode = 2
 layout_mode = 2
 theme_override_constants/separation = 50
 theme_override_styles/separator = SubResource("StyleBoxEmpty_bo48s")
+
+[node name="FPSCounter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1190.0
+offset_right = 1279.0
+offset_bottom = 36.0
+theme_override_font_sizes/font_size = 26
+text = "123FPS"
+horizontal_alignment = 2
+script = ExtResource("5_136eg")
+
+[node name="FPSUpdate" type="Timer" parent="FPSCounter"]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="FPSCounter/FPSUpdate" to="FPSCounter" method="_on_fps_update_timeout"]
