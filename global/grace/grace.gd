@@ -102,6 +102,7 @@ func load_scene():
 
   if config.has_section_key("session", "golden_paper"):
     Session.set_gold_paper_unlocked(config.get_value("session", "golden_paper"))
+    print_rich("[color=CYAN]Grace >> [color=WHITE]Golden paper unlocked!")
   if config.has_section_key("session","playeruid") and config.get_value("session","playeruid") != "":
     PlayerUidManager.set_playeruid(config.get_value("session", "playeruid"))
     print_rich("[color=CYAN]Grace >> [color=WHITE]Player UID loaded: " + PlayerUidManager.get_playeruid())
