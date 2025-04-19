@@ -376,12 +376,11 @@ top_level = true
 [node name="VerletRope" type="Node2D" parent="RopeVisuals" node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin", "tearing_particle", "rope_connect_sound_player", "rope_rip_sound_player")]
 top_level = true
 script = ExtResource("7_dl1wr")
-target_length = 20.0
+target_length = 15.0
 pull_strength = 100.0
 rope = NodePath("RopeRender")
 rope_anchor = NodePath("../../CustomJoint/Anchor")
 rope_origin = NodePath("../../RopeOrigin")
-iteration_count = 5
 tearing_particle = NodePath("TearingParticles")
 rope_connect_sound_player = NodePath("RopeConnectSoundPlayer")
 rope_rip_sound_player = NodePath("RopeRipSoundPlayer")
