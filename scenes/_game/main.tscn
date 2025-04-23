@@ -1762,16 +1762,17 @@ position = Vector2(-2860, -9836)
 rotation = 0.258973
 scale = Vector2(3.94255, 3.94255)
 
+[node name="JacobLove" parent="ShadowGroup/Env" instance=ExtResource("53_p2apg")]
+z_index = 2000
+position = Vector2(2069, -6761.99)
+rotation = 0.00536945
+scale = Vector2(0.610375, 0.615917)
+skew = 0.133734
+
 [node name="fahrradstr5" parent="ShadowGroup/Env" instance=ExtResource("26_wh06c")]
 position = Vector2(-822, -12945)
 rotation = -0.641542
 scale = Vector2(4.68981, 4.09535)
-
-[node name="JacobLove" parent="ShadowGroup/Env/fahrradstr5" instance=ExtResource("53_p2apg")]
-z_index = 2000
-position = Vector2(-295.089, 1632.03)
-rotation = 0.713129
-scale = Vector2(0.137313, 0.141275)
 
 [node name="TetoLove" parent="ShadowGroup/Env" instance=ExtResource("54_baflj")]
 position = Vector2(5952, -3699)
