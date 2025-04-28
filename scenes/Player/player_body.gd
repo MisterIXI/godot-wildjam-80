@@ -39,14 +39,14 @@ func _physics_process(_delta):
 	backup_ground_cast.rotation_degrees = 360 - rotation_degrees
 	if is_grounded() and hop_cd_timer.time_left == 0:
 	# on move_right and move_left, apply force to the player
-		if Input.is_action_just_pressed("move_right"):
+		if Input.is_action_pressed("move_right"):
 			# if Vector2.RIGHT.dot(linear_velocity) < 100:
 			apply_central_impulse(Vector2(1,-1) * 100)
 			hop_cd_timer.start()
 			hopped_right.emit()
 			dust_cloud_system.emit_at(global_position + Vector2.DOWN * 40)
 			# 	apply_central_force(Vector2(500, 0))
-		elif Input.is_action_just_pressed("move_left"):
+		elif Input.is_action_pressed("move_left"):
 			# if Vector2.LEFT.dot(linear_velocity) < 100:
 			apply_central_impulse(Vector2(-1,-1) * 100)
 			dust_cloud_system.emit_at(global_position + Vector2.DOWN * 40)
