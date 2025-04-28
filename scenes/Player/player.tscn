@@ -362,7 +362,7 @@ autoplay = true
 bus = &"SFX"
 
 [node name="TargetIndicator" type="Sprite2D" parent="."]
-visible = false
+top_level = true
 z_index = 1680
 material = SubResource("ShaderMaterial_43ckd")
 position = Vector2(149, 6.00002)
