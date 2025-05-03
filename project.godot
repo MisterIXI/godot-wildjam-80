@@ -40,7 +40,7 @@ mouse_cursor/custom_image_hotspot=Vector2(12, 12)
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/scenetree-palette/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_rl_agents/plugin.cfg", "res://addons/scenetree-palette/plugin.cfg")
 
 [file_customization]
 
