@@ -4,12 +4,15 @@ extends Sprite2D
 @export var color_tint_active: Color = Color(1.0, 1.0, 1.0, 1.0)
 @export var color_tint_inactive: Color = Color(0.5, 0.5, 0.5, 1.0)
 
-@onready var parent: PlayerController = get_parent() as PlayerController
+@onready var parent: AIPlayerController = get_parent() as AIPlayerController
 
 func _process(_delta):
 	# get mouse position in world coordinates
 	var mouse_pos = get_global_mouse_position()
 	var mouse_dir = (mouse_pos - parent.global_position).normalized()
+	if not parent.manual_control:
+		var rad_angle = (parent.aiming_angle + 1) * PI
+		mouse_dir = Vector2(cos(rad_angle), sin(rad_angle))
 	# raycast in mouse direction
 	var space_state = get_world_2d().direct_space_state
 	var query = PhysicsRayQueryParameters2D.create(

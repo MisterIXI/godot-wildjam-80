@@ -816,6 +816,11 @@ clear_margin = 689.0
 [node name="PlayerBody" parent="ShadowGroup" instance=ExtResource("2_hnw1m")]
 collision_layer = 3
 max_contacts_reported = 3
+jumpForce = null
+max_rope_distance = null
+debug_movement = null
+velocity_buffer_size = null
+ai_player = null
 metadata/scene_tree_color = Color(0.44, 0.88, 0.24, 0.35)
 
 [node name="Env" type="Node2D" parent="ShadowGroup"]

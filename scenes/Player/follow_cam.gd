@@ -16,8 +16,10 @@ var shake_tween: Tween
 @export var riff_curve: Curve
 var shake_until: float = 0.0
 @export_range(0.0, 1.0) var constant_shake: float = 0.0
-
+@export var disable_cam: bool = false
 func _process(delta):
+	if disable_cam:
+		return
 	# print("Zoom: " + str(zoom), " Target Zoom: " + str(target_zoom) + " Player Speed: " + str(player.linear_velocity.length()))
 	var strength = min(1.0, max(0.0, (player.linear_velocity.length()) / 2000))
 	#print("Speed: " + str(player.linear_velocity.length()), " Strength: " + str(strength))
@@ -44,6 +46,8 @@ func _process(delta):
 	riff_player.volume_db = -80 + (riff_curve.sample(current_strength) * 70)
 
 func _on_hard_impact():
+	if disable_cam:
+		return
 	if shake_tween:
 		shake_tween.kill()
 	constant_shake = impact_shake_strength
@@ -52,6 +56,8 @@ func _on_hard_impact():
 	shake_tween.tween_property(self,"constant_shake", 0.0, 0.3)
 
 func reset():
+	if disable_cam:
+		return
 	target_zoom = Vector2.ONE
 	zoom = Vector2.ONE
 	position = Vector2.ZERO

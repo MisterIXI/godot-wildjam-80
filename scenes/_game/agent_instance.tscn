@@ -1,0 +1,113 @@
+[gd_scene load_steps=9 format=3 uid="uid://c0wjh7ssovxt3"]
+
+[ext_resource type="PackedScene" uid="uid://cihf2lekiek5v" path="res://scenes/Player/ai_player/ai_player.tscn" id="1_sk6ld"]
+[ext_resource type="PackedScene" uid="uid://qyeesw421pvs" path="res://scenes/EnvironmentObjects/basic_body.tscn" id="2_1qae3"]
+[ext_resource type="PackedScene" uid="uid://cb8tooji1fm0o" path="res://scenes/EnvironmentObjects/gulli.tscn" id="3_p8w60"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wwqf7"]
+radius = 150.0
+
+[sub_resource type="Gradient" id="Gradient_lvrog"]
+offsets = PackedFloat32Array(0, 0.676538, 0.722096)
+colors = PackedColorArray(0, 1, 0, 0.337255, 0, 1, 0, 0.337255, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_k5c21"]
+gradient = SubResource("Gradient_lvrog")
+width = 300
+height = 300
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_gk774"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wwqf7"]
+size = Vector2(100, 100)
+
+[node name="AgentInstance" type="Node2D"]
+
+[node name="PlayerBody" parent="." node_paths=PackedStringArray("target_area", "reward_label") instance=ExtResource("1_sk6ld")]
+position = Vector2(-172, 132)
+target_area = NodePath("../TargetArea")
+reward_label = NodePath("../Label")
+
+[node name="ShadowGroup" type="CanvasGroup" parent="."]
+
+[node name="BasicBody" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(-1, 241)
+scale = Vector2(9.32, 1)
+
+[node name="BasicBody2" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(2127, 422)
+scale = Vector2(9.32, 1)
+
+[node name="BasicBody4" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(1716, 590)
+rotation = 1.5708
+scale = Vector2(2.76, 1)
+
+[node name="BasicBody5" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(402, 515)
+rotation = 1.5708
+scale = Vector2(5.28, 1)
+
+[node name="BasicBody6" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(-515, -178)
+rotation = 1.5708
+scale = Vector2(9.32, 1)
+
+[node name="BasicBody7" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(2597, -78)
+rotation = 1.5708
+scale = Vector2(9.32, 1)
+
+[node name="BasicBody3" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(1063, 730)
+scale = Vector2(12.64, 1)
+
+[node name="BasicBody8" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(1063, 730)
+scale = Vector2(12.64, 1)
+
+[node name="BasicBody9" parent="ShadowGroup" instance=ExtResource("2_1qae3")]
+position = Vector2(1076, -585)
+scale = Vector2(31.56, 1)
+
+[node name="gulli" parent="ShadowGroup" instance=ExtResource("3_p8w60")]
+position = Vector2(786, -51)
+scale = Vector2(0.306602, 0.306602)
+
+[node name="gulli2" parent="ShadowGroup" instance=ExtResource("3_p8w60")]
+position = Vector2(1312, -9.00002)
+scale = Vector2(0.306602, 0.306602)
+
+[node name="TargetArea" type="Area2D" parent="." groups=["TargetArea"]]
+position = Vector2(2348.89, 213)
+metadata/_edit_group_ = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TargetArea"]
+shape = SubResource("CircleShape2D_wwqf7")
+
+[node name="Sprite2D" type="Sprite2D" parent="TargetArea"]
+texture = SubResource("GradientTexture2D_k5c21")
+
+[node name="DeathZone" type="Area2D" parent="." groups=["DeathArea"]]
+position = Vector2(1056, 647)
+scale = Vector2(12.24, 1)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="DeathZone"]
+modulate = Color(1, 0, 0, 0.764706)
+scale = Vector2(100, 100)
+texture = SubResource("CanvasTexture_gk774")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+shape = SubResource("RectangleShape2D_wwqf7")
+
+[node name="Label" type="Label" parent="."]
+offset_left = -417.0
+offset_top = -479.0
+offset_right = 1361.0
+offset_bottom = -258.0
+theme_override_font_sizes/font_size = 161
+text = "Avg_rew: 30.314"

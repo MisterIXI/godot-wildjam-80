@@ -1,0 +1,538 @@
+[gd_scene load_steps=64 format=3 uid="uid://cihf2lekiek5v"]
+
+[ext_resource type="Script" uid="uid://1fhbkyi3i7gb" path="res://scenes/Player/ai_player/ai_player_body.gd" id="1_ldalq"]
+[ext_resource type="Shader" uid="uid://cefnir7qbcg6p" path="res://resources/shaders/outline.gdshader" id="2_jo2k7"]
+[ext_resource type="SpriteFrames" uid="uid://dhrx10b46guw2" path="res://resources/player/player.tres" id="3_1y5cd"]
+[ext_resource type="Script" uid="uid://by7gdb44hiqxf" path="res://scenes/Player/EffectTriggers/toilette_animation.gd" id="4_0epx1"]
+[ext_resource type="Script" uid="uid://c5n4yw6dca0lq" path="res://scenes/Player/EffectTriggers/dust_cloud_particle_system.gd" id="5_a8pmw"]
+[ext_resource type="Texture2D" uid="uid://cgwaudgdfmeaa" path="res://assets/images/particle/dustclouds/dustclouds/5.PNG" id="6_otxns"]
+[ext_resource type="Texture2D" uid="uid://djk0rp2b2rkru" path="res://assets/images/particle/dustclouds/dustclouds/6.PNG" id="7_3qgvx"]
+[ext_resource type="Texture2D" uid="uid://bekw5dwk3qly2" path="res://assets/images/target.png" id="11_wvli2"]
+[ext_resource type="Script" uid="uid://hdw54jovtong" path="res://scenes/Player/target_indicator.gd" id="12_gm6gi"]
+[ext_resource type="Script" uid="uid://ch3o4nn7tdkpo" path="res://scenes/Player/verlet_rope.gd" id="13_fjopx"]
+[ext_resource type="AudioStream" uid="uid://tuhwgebbw7g1" path="res://assets/sounds/sfx/magic_impact.wav" id="14_hu5j4"]
+[ext_resource type="AudioStream" uid="uid://cs41vrapayuxb" path="res://assets/sounds/sfx/rip2.wav" id="15_fpcy8"]
+[ext_resource type="Texture2D" uid="uid://denuo5xmllsen" path="res://assets/images/Player/kackpappe_rotiert.png" id="16_wjlgm"]
+[ext_resource type="Script" path="res://scenes/Player/rope_render.gd" id="17_4xewt"]
+[ext_resource type="Texture2D" uid="uid://bsyt5f5aovw1g" path="res://assets/images/particle/kackpappe_partikel.png" id="18_reghr"]
+[ext_resource type="Script" path="res://scenes/Player/tearing_particles.gd" id="19_4y6sg"]
+[ext_resource type="PackedScene" uid="uid://cix64hjf82n1n" path="res://scenes/VFX/sparkle.tscn" id="20_rm005"]
+[ext_resource type="Script" uid="uid://bol6dlvq252ru" path="res://scenes/Player/custom_joint.gd" id="21_gc4xl"]
+[ext_resource type="Texture2D" uid="uid://cem2543fo6x70" path="res://assets/images/particle/targetstar.png" id="22_83mid"]
+[ext_resource type="AudioStream" uid="uid://cesmwqx6vj4j5" path="res://assets/sounds/sfx/spring.wav" id="23_xlenc"]
+[ext_resource type="Script" uid="uid://cljlbfvoyxk1d" path="res://scenes/Player/EffectTriggers/jump_spring_player.gd" id="24_dvnwn"]
+[ext_resource type="AudioStream" uid="uid://cnbftg5ku5l5e" path="res://assets/sounds/toilet/flush/Toilet Flush 1.wav" id="25_h0r8o"]
+[ext_resource type="Script" uid="uid://blv1f0i7pwfuj" path="res://scenes/Player/EffectTriggers/toilette_flush_player.gd" id="26_qwnph"]
+[ext_resource type="AudioStream" uid="uid://c7g47tlh680s0" path="res://assets/sounds/toilet/flush/Toilet Flush 2.wav" id="27_eurxh"]
+[ext_resource type="AudioStream" uid="uid://djjsq53q0rsxx" path="res://assets/sounds/toilet/flush/Toilet Flush 3.wav" id="28_mg2qj"]
+[ext_resource type="AudioStream" uid="uid://du328dml2c3be" path="res://assets/sounds/toilet/flush/Toilet Flush 4.wav" id="29_835g6"]
+[ext_resource type="AudioStream" uid="uid://3jpqblqwr1qt" path="res://assets/sounds/toilet/flush/Toilet Flush 5.wav" id="30_ca370"]
+[ext_resource type="AudioStream" uid="uid://lf3eatadc5j4" path="res://assets/sounds/sfx/donk_sfx.wav" id="31_gbq27"]
+[ext_resource type="Script" uid="uid://cjx8nf1ogoehw" path="res://scenes/Player/EffectTriggers/impact_sound_player.gd" id="32_aan6m"]
+[ext_resource type="Script" uid="uid://bl1q8wdtirtxe" path="res://scenes/Player/character_flipper.gd" id="33_1a4wn"]
+[ext_resource type="Shader" uid="uid://c5q6tmlsfjxch" path="res://scenes/Player/speedline_shader.gdshader" id="34_e540m"]
+[ext_resource type="Script" uid="uid://d045mayjeih03" path="res://addons/godot_rl_agents/sensors/sensors_2d/PositionSensor2D.gd" id="34_gsp2o"]
+[ext_resource type="Script" uid="uid://cmsfb87bdrhkw" path="res://scenes/Player/ai_player/ai_controller.gd" id="35_oitdx"]
+[ext_resource type="Script" uid="uid://ik58ip17ehdq" path="res://addons/godot_rl_agents/sensors/sensors_2d/RaycastSensor2D.gd" id="36_2sxha"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ovmwo"]
+friction = 0.1
+bounce = 0.3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_7tfl1"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_jxtnq"]
+seamless = true
+noise = SubResource("FastNoiseLite_7tfl1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6q27"]
+shader = ExtResource("2_jo2k7")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 11.576
+shader_parameter/noise = SubResource("NoiseTexture2D_jxtnq")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.015
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="Curve" id="Curve_x8khf"]
+_data = [Vector2(0, 0), 0.0, 1.01966, 0, 0, Vector2(1, 0), -0.273211, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_aciub"]
+offsets = PackedFloat32Array(0, 0.982558)
+colors = PackedColorArray(0.48, 0.48, 0.48, 1, 0.91, 0.91, 0.91, 1)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3y6uy"]
+radius = 7.33754
+height = 26.4589
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_55gqm"]
+radius = 6.23372
+height = 22.3146
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uxo23"]
+size = Vector2(8.88574, 16.5668)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_aciub"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_hk2ix"]
+seamless = true
+noise = SubResource("FastNoiseLite_aciub")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43ckd"]
+shader = ExtResource("2_jo2k7")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 0.200276, 0.640977, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 20.409
+shader_parameter/noise = SubResource("NoiseTexture2D_hk2ix")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.035
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_uxo23"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_n7rn1"]
+seamless = true
+noise = SubResource("FastNoiseLite_uxo23")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7tfl1"]
+shader = ExtResource("2_jo2k7")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 29.775
+shader_parameter/noise = SubResource("NoiseTexture2D_n7rn1")
+shader_parameter/noise_speed = 5.41
+shader_parameter/distortion_str = 0.05
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_lc41v"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_gaubk"]
+seamless = true
+noise = SubResource("FastNoiseLite_lc41v")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ttrp"]
+shader = ExtResource("2_jo2k7")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 19.572
+shader_parameter/noise = SubResource("NoiseTexture2D_gaubk")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.05
+shader_parameter/frame_time = 0.2
+
+[sub_resource type="Curve" id="Curve_lhrto"]
+_limits = [-200.0, 200.0, 0.0, 1.0]
+_data = [Vector2(0, 200), 0.0, 0.0, 0, 0, Vector2(1, -200), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_vip2i"]
+_limits = [-360.0, 360.0, 0.0, 1.0]
+_data = [Vector2(0, -10), 0.0, 0.0, 0, 0, Vector2(1, 10), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_4s802"]
+_data = [Vector2(0, 1), 0.0, -0.121407, 0, 0, Vector2(0.413462, 0.47191), -2.25361, -2.25361, 0, 0, Vector2(1, 0), -0.0922531, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_jxtnq"]
+frequency = 0.0043
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_t6q27"]
+seamless = true
+noise = SubResource("FastNoiseLite_jxtnq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wyey8"]
+shader = ExtResource("2_jo2k7")
+shader_parameter/uv_scale = 1.0
+shader_parameter/line_color = Color(0.127962, 0.829678, 1, 1)
+shader_parameter/color_tint = Color(1, 1, 1, 1)
+shader_parameter/draw_line = true
+shader_parameter/line_thickness = 25.281
+shader_parameter/noise = SubResource("NoiseTexture2D_t6q27")
+shader_parameter/noise_speed = 3.08
+shader_parameter/distortion_str = 0.035
+shader_parameter/frame_time = 0.25
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_434gd"]
+size = Vector2(60, 50)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_x8khf"]
+noise_type = 3
+frequency = 0.2462
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_aciub"]
+seamless = true
+noise = SubResource("FastNoiseLite_x8khf")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aciub"]
+shader = ExtResource("34_e540m")
+shader_parameter/noise = SubResource("NoiseTexture2D_aciub")
+shader_parameter/line_color = Color(1, 1, 1, 1)
+shader_parameter/line_count = 2.0
+shader_parameter/line_density = 0.0
+shader_parameter/line_faloff = 0.07
+shader_parameter/mask_size = 0.22
+shader_parameter/mask_edge = 1.0
+shader_parameter/animation_speed = 12.59
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gsp2o"]
+radius = 45.0
+height = 118.0
+
+[node name="PlayerBody" type="RigidBody2D" node_paths=PackedStringArray("rope", "rope_target", "custom_joint", "ground_cast", "backup_ground_cast", "hop_cd_timer", "naddel_ripping_timer", "impact_cd_timer", "dust_cloud_system") groups=["player"]]
+physics_material_override = SubResource("PhysicsMaterial_ovmwo")
+continuous_cd = 1
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_ldalq")
+hard_impact_threshold = 1300.0
+rope = NodePath("RopeVisuals/VerletRope")
+rope_target = NodePath("CustomJoint/Anchor/AnchorIndicator")
+custom_joint = NodePath("CustomJoint")
+ground_cast = NodePath("GroundShapeCheck")
+backup_ground_cast = NodePath("BackupGroundRaycast")
+hop_cd_timer = NodePath("HopCD")
+naddel_ripping_timer = NodePath("NaddelModeRipTimer")
+impact_cd_timer = NodePath("ImpactCD")
+dust_cloud_system = NodePath("DustCloudParticleSystem")
+
+[node name="ToiletteAnimation" type="AnimatedSprite2D" parent="."]
+z_index = 1000
+material = SubResource("ShaderMaterial_t6q27")
+position = Vector2(-2.58746, -2.58746)
+scale = Vector2(0.275049, 0.275049)
+sprite_frames = ExtResource("3_1y5cd")
+animation = &"gold_throw"
+autoplay = "default"
+frame_progress = 0.265992
+script = ExtResource("4_0epx1")
+
+[node name="DustCloudParticleSystem" type="Node2D" parent="." node_paths=PackedStringArray("particles")]
+top_level = true
+script = ExtResource("5_a8pmw")
+particles = [NodePath("DustcloudParticles"), NodePath("DustcloudParticles2")]
+
+[node name="DustcloudParticles" type="CPUParticles2D" parent="DustCloudParticleSystem"]
+z_index = 2000
+scale = Vector2(0.275049, 0.275049)
+emitting = false
+amount = 4
+texture = ExtResource("6_otxns")
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.86
+emission_shape = 1
+emission_sphere_radius = 60.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.03
+scale_amount_max = 0.08
+scale_amount_curve = SubResource("Curve_x8khf")
+color_initial_ramp = SubResource("Gradient_aciub")
+
+[node name="DustcloudParticles2" type="CPUParticles2D" parent="DustCloudParticleSystem"]
+z_index = 2000
+scale = Vector2(0.275049, 0.275049)
+emitting = false
+amount = 4
+texture = ExtResource("7_3qgvx")
+lifetime = 0.75
+one_shot = true
+explosiveness = 0.86
+emission_shape = 1
+emission_sphere_radius = 60.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 100.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+angle_min = -180.0
+angle_max = 180.0
+scale_amount_min = 0.03
+scale_amount_max = 0.08
+scale_amount_curve = SubResource("Curve_x8khf")
+color_initial_ramp = SubResource("Gradient_aciub")
+
+[node name="LPlayerCollider1" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(-18, -9)
+rotation = -0.229376
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_3y6uy")
+
+[node name="LPlayerCollider2" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(4.41259, 9.41254)
+rotation = -1.64299
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_55gqm")
+
+[node name="LPlayerCollider3" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(-6, 31)
+rotation = -1.59329
+scale = Vector2(2.88, 2.88)
+shape = SubResource("RectangleShape2D_uxo23")
+
+[node name="RPlayerCollider1" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(18, -9)
+rotation = 0.228638
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_3y6uy")
+disabled = true
+
+[node name="RPlayerCollider2" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(-4.413, 9.413)
+rotation = 1.64235
+scale = Vector2(2.88, 2.88)
+shape = SubResource("CapsuleShape2D_55gqm")
+disabled = true
+
+[node name="RPlayerCollider3" type="CollisionShape2D" parent="."]
+z_index = 200
+position = Vector2(6, 31)
+rotation = 1.59349
+scale = Vector2(2.88, 2.88)
+shape = SubResource("RectangleShape2D_uxo23")
+disabled = true
+
+[node name="TargetIndicator" type="Sprite2D" parent="."]
+top_level = true
+z_index = 1680
+material = SubResource("ShaderMaterial_43ckd")
+position = Vector2(149, 6.00002)
+scale = Vector2(0.17, 0.17)
+texture = ExtResource("11_wvli2")
+script = ExtResource("12_gm6gi")
+
+[node name="RopeVisuals" type="Node2D" parent="."]
+top_level = true
+
+[node name="VerletRope" type="Node2D" parent="RopeVisuals" node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin", "tearing_particle", "rope_connect_sound_player", "rope_rip_sound_player")]
+top_level = true
+script = ExtResource("13_fjopx")
+target_length = 30.0
+pull_strength = 100.0
+rope = NodePath("RopeRender")
+rope_anchor = NodePath("../../CustomJoint/Anchor")
+rope_origin = NodePath("../../RopeOrigin")
+tearing_particle = NodePath("TearingParticles")
+rope_connect_sound_player = NodePath("RopeConnectSoundPlayer")
+rope_rip_sound_player = NodePath("RopeRipSoundPlayer")
+
+[node name="RopeConnectSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
+stream = ExtResource("14_hu5j4")
+volume_db = -15.0
+pitch_scale = 1.23
+bus = &"SFX"
+
+[node name="RopeRipSoundPlayer" type="AudioStreamPlayer2D" parent="RopeVisuals/VerletRope"]
+stream = ExtResource("15_fpcy8")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="RopeRender" type="Line2D" parent="RopeVisuals/VerletRope"]
+visible = false
+z_index = 1004
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7tfl1")
+points = PackedVector2Array(0, 0, 100, 0, 200, 50)
+width = 30.0
+texture = ExtResource("16_wjlgm")
+texture_mode = 1
+script = ExtResource("17_4xewt")
+
+[node name="TearingParticles" type="CPUParticles2D" parent="RopeVisuals/VerletRope"]
+z_index = 1020
+material = SubResource("ShaderMaterial_2ttrp")
+emitting = false
+amount = 6
+texture = ExtResource("18_reghr")
+lifetime = 0.7
+one_shot = true
+explosiveness = 1.0
+emission_shape = 4
+emission_points = PackedVector2Array(0, 0, 100, 0, 200, 50)
+emission_colors = PackedColorArray()
+direction = Vector2(0, 0)
+spread = 180.0
+gravity = Vector2(0, 500)
+initial_velocity_min = 20.0
+initial_velocity_max = 80.0
+angular_velocity_min = -80.0
+angular_velocity_max = 80.0
+linear_accel_max = 5.0
+linear_accel_curve = SubResource("Curve_lhrto")
+angle_min = -10.0
+angle_max = 10.0
+angle_curve = SubResource("Curve_vip2i")
+scale_amount_min = 0.1
+scale_amount_max = 0.2
+scale_amount_curve = SubResource("Curve_4s802")
+script = ExtResource("19_4y6sg")
+
+[node name="Sparkle" parent="RopeVisuals" instance=ExtResource("20_rm005")]
+visible = false
+scale = Vector2(0.25, 0.25)
+
+[node name="RopeTearing" type="Node2D" parent="RopeVisuals"]
+
+[node name="CustomJoint" type="Node2D" parent="." node_paths=PackedStringArray("anchor", "anchor_indicator", "sparkle", "character_flipper")]
+top_level = true
+script = ExtResource("21_gc4xl")
+anchor = NodePath("Anchor")
+anchor_indicator = NodePath("Anchor/AnchorIndicator")
+sparkle = NodePath("../RopeVisuals/Sparkle")
+character_flipper = NodePath("../CharacterFlipper")
+
+[node name="Anchor" type="Node2D" parent="CustomJoint"]
+position = Vector2(41, -339)
+
+[node name="AnchorIndicator" type="Sprite2D" parent="CustomJoint/Anchor"]
+visible = false
+z_index = 1681
+material = SubResource("ShaderMaterial_wyey8")
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("22_83mid")
+
+[node name="BackupGroundRaycast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 53.805)
+
+[node name="GroundShapeCheck" type="ShapeCast2D" parent="."]
+shape = SubResource("RectangleShape2D_434gd")
+target_position = Vector2(0, 28.35)
+max_results = 4
+
+[node name="RopeOrigin" type="Node2D" parent="."]
+position = Vector2(19, -20)
+
+[node name="AnchorPointLeft" type="Node2D" parent="."]
+position = Vector2(-19, -20)
+
+[node name="AnchorPointRight" type="Node2D" parent="."]
+position = Vector2(19, -20)
+
+[node name="VerletRope" type="Node2D" parent="." node_paths=PackedStringArray("rope", "rope_anchor", "rope_origin")]
+top_level = true
+script = ExtResource("13_fjopx")
+pull_strength = 100.0
+rope = NodePath("RopeRender")
+rope_anchor = NodePath("../CustomJoint/Anchor")
+rope_origin = NodePath("../RopeOrigin")
+iteration_count = 50
+
+[node name="RopeRender" type="Line2D" parent="VerletRope"]
+visible = false
+z_index = 101
+texture_repeat = 2
+material = SubResource("ShaderMaterial_7tfl1")
+points = PackedVector2Array(0, 0, 41.42, 35.215)
+width = 30.0
+texture = ExtResource("16_wjlgm")
+texture_mode = 1
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-43, 41)
+
+[node name="JumpSpringPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("23_xlenc")
+volume_db = -18.0
+pitch_scale = 1.87
+bus = &"SFX"
+script = ExtResource("24_dvnwn")
+
+[node name="ToiletteFlushPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("25_h0r8o")
+volume_db = -40.0
+pitch_scale = 2.0
+bus = &"SFX"
+script = ExtResource("26_qwnph")
+flush_sfx_arr = Array[AudioStream]([ExtResource("25_h0r8o"), ExtResource("27_eurxh"), ExtResource("28_mg2qj"), ExtResource("29_835g6"), ExtResource("30_ca370")])
+
+[node name="ImpactSoundPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("31_gbq27")
+script = ExtResource("32_aan6m")
+
+[node name="NaddelModeRipTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="HopCD" type="Timer" parent="."]
+wait_time = 0.3
+one_shot = true
+
+[node name="CharacterFlipper" type="Node" parent="." node_paths=PackedStringArray("player_sprite", "left_colliders", "right_colliders", "anchor_node", "anchor_point_left", "anchor_point_right")]
+script = ExtResource("33_1a4wn")
+player_sprite = NodePath("../ToiletteAnimation")
+left_colliders = [NodePath("../LPlayerCollider1"), NodePath("../LPlayerCollider2"), NodePath("../LPlayerCollider3")]
+right_colliders = [NodePath("../RPlayerCollider1"), NodePath("../RPlayerCollider2"), NodePath("../RPlayerCollider3")]
+anchor_node = NodePath("../RopeOrigin")
+anchor_point_left = NodePath("../AnchorPointLeft")
+anchor_point_right = NodePath("../AnchorPointRight")
+
+[node name="ImpactCD" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+material = SubResource("ShaderMaterial_aciub")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AIController" type="Node2D" parent="." node_paths=PackedStringArray("ray_sensor", "character_flipper")]
+script = ExtResource("35_oitdx")
+ray_sensor = NodePath("RaycastSensor2D")
+character_flipper = NodePath("../CharacterFlipper")
+
+[node name="RaycastSensor2D" type="Node2D" parent="AIController"]
+script = ExtResource("36_2sxha")
+ray_length = 525
+metadata/_custom_type_script = "uid://ik58ip17ehdq"
+
+[node name="PositionSensor2D" type="Node2D" parent="AIController"]
+script = ExtResource("34_gsp2o")
+metadata/_custom_type_script = "uid://d045mayjeih03"
+
+[node name="AreaMonitor" type="Area2D" parent="AIController"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AIController/AreaMonitor"]
+shape = SubResource("CapsuleShape2D_gsp2o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="hard_impact" from="." to="ToiletteFlushPlayer" method="_on_player_body_hard_impact"]
+[connection signal="hard_impact" from="." to="ImpactSoundPlayer" method="_on_player_body_hard_impact"]
+[connection signal="hopped_left" from="." to="JumpSpringPlayer" method="_on_player_body_hopped_left"]
+[connection signal="hopped_right" from="." to="JumpSpringPlayer" method="_on_player_body_hopped_right"]
+[connection signal="toilette_paper_activated" from="." to="ToiletteAnimation" method="_on_start_throw"]
+[connection signal="toilette_paper_deactivated" from="." to="ToiletteAnimation" method="_on_end_throw"]
+[connection signal="timeout" from="NaddelModeRipTimer" to="." method="_on_naddel_mode_rip_timer_timeout"]
+[connection signal="area_entered" from="AIController/AreaMonitor" to="AIController" method="_on_area_monitor_area_entered"]

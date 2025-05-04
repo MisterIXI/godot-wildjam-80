@@ -1,0 +1,94 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqfief84800kf"]
+
+[ext_resource type="PackedScene" uid="uid://cfqdomi3fmqmu" path="res://scenes/VFX/bg.tscn" id="2_bvxc7"]
+[ext_resource type="PackedScene" uid="uid://c0wjh7ssovxt3" path="res://scenes/_game/agent_instance.tscn" id="3_vn5qu"]
+[ext_resource type="Script" uid="uid://ddc0nsh30q4og" path="res://scenes/Player/follow_cam.gd" id="4_vn5qu"]
+[ext_resource type="Script" uid="uid://0xluh88ggojl" path="res://addons/godot_rl_agents/sync.gd" id="6_wwqf7"]
+
+[node name="ai_main" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="." groups=["player_camera"]]
+position = Vector2(1084, 55)
+scale = Vector2(0.899733, 0.803258)
+zoom = Vector2(0.38, 0.38)
+script = ExtResource("4_vn5qu")
+disable_cam = true
+
+[node name="Bg" parent="." instance=ExtResource("2_bvxc7")]
+scale = Vector2(28.6653, 28.6653)
+metadata/_edit_lock_ = true
+
+[node name="AgentInstance" parent="." instance=ExtResource("3_vn5qu")]
+
+[node name="AgentInstance2" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(3524, 0)
+
+[node name="AgentInstance3" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(6861, 0)
+
+[node name="AgentInstance4" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(10220, 0)
+
+[node name="AgentInstance5" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(13631, 0)
+
+[node name="AgentInstance6" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(17080, 0)
+
+[node name="AgentInstance7" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(0, -1584)
+
+[node name="AgentInstance8" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(3524, -1584)
+
+[node name="AgentInstance9" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(6861, -1584)
+
+[node name="AgentInstance10" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(10220, -1584)
+
+[node name="AgentInstance11" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(13631, -1584)
+
+[node name="AgentInstance12" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(17080, -1584)
+
+[node name="AgentInstance13" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(0, -3296)
+
+[node name="AgentInstance14" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(3524, -3296)
+
+[node name="AgentInstance15" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(6861, -3296)
+
+[node name="AgentInstance16" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(10220, -3296)
+
+[node name="AgentInstance17" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(13631, -3296)
+
+[node name="AgentInstance18" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(17080, -3296)
+
+[node name="AgentInstance19" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(0, -4957)
+
+[node name="AgentInstance20" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(3524, -4957)
+
+[node name="AgentInstance21" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(6861, -4957)
+
+[node name="AgentInstance22" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(10220, -4957)
+
+[node name="AgentInstance23" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(13631, -4957)
+
+[node name="AgentInstance24" parent="." instance=ExtResource("3_vn5qu")]
+position = Vector2(17080, -4957)
+
+[node name="Sync" type="Node" parent="."]
+script = ExtResource("6_wwqf7")
+metadata/_custom_type_script = "uid://0xluh88ggojl"
